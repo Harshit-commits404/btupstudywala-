@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #090d16;
+    --card-bg: rgba(14, 20, 36, 0.7);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  /* When light mode is toggled */
+  html:not(.dark) {
+    --bg-main: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    color-scheme: light;
+  }
+
+  html:not(.dark) body {
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  body {
+    @apply bg-dark-bg text-slate-100 min-h-screen overflow-x-hidden font-sans;
+  }
+
+  /* Custom sleek scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card Utilities */
+  .glass-card {
+    @apply bg-dark-card/80 backdrop-blur-xl border border-white/[0.07] rounded-2xl shadow-xl transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply hover:border-brand-500/30 hover:bg-dark-cardHover/90 hover:shadow-2xl hover:shadow-brand-500/5;
+  }
+
+  .glass-panel {
+    @apply bg-dark-card/60 backdrop-blur-md border border-white/[0.06] rounded-xl;
+  }
+
+  .glass-pill {
+    @apply bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm rounded-full;
+  }
+
+  /* Accent Glow */
+  .glow-subtle {
+    box-shadow: 0 0 25px -5px rgba(49, 120, 255, 0.15);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+  }
+}
+
+/* Reading content typography enhancements */
+.reading-content h2 {
+  @apply text-2xl font-bold font-display text-white tracking-tight mt-8 mb-4 border-b border-white/[0.08] pb-2 flex items-center gap-2;
+}
+
+.reading-content h3 {
+  @apply text-xl font-semibold text-slate-100 mt-6 mb-3 flex items-center gap-2;
+}
+
+.reading-content p {
+  @apply text-slate-300 leading-relaxed mb-4 text-base;
+}
+
+.reading-content ul {
+  @apply list-disc list-inside space-y-2 mb-4 text-slate-300;
+}
+
+.reading-content li strong {
+  @apply text-slate-100 font-semibold;
+}
+
+/* Dedicated Textbook Formula Block */
+.study-formula-block {
+  @apply my-7 py-5 px-6 rounded-lg text-center relative overflow-hidden transition-all duration-300;
+  background: linear-gradient(180deg, rgba(49, 120, 255, 0.05) 0%, rgba(49, 120, 255, 0.015) 100%);
+  border: 1px solid rgba(49, 120, 255, 0.22);
+  box-shadow: 0 0 20px -5px rgba(49, 120, 255, 0.08);
+}
+
+.dark .study-formula-block {
+  background: linear-gradient(180deg, rgba(49, 120, 255, 0.08) 0%, rgba(49, 120, 255, 0.02) 100%);
+  border: 1px solid rgba(49, 120, 255, 0.28);
+  box-shadow: 0 0 25px -5px rgba(49, 120, 255, 0.12);
+}
+
+.study-formula-block:hover {
+  border-color: rgba(49, 120, 255, 0.45);
+  box-shadow: 0 0 30px -2px rgba(49, 120, 255, 0.2);
+}
+
+/* Subtle scroll reveal animation respecting prefers-reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .study-section-reveal {
+    animation: studyFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes studyFadeIn {
+  from {
+    opacity: 0.94;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
