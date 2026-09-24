@@ -18,6 +18,17 @@ import CnUnit3Content from './cn/CnUnit3Content';
 import CnUnit4Content from './cn/CnUnit4Content';
 import CnUnit5Content from './cn/CnUnit5Content';
 
+import IsUnit1Content from './information-security/IsUnit1Content';
+import IsUnit2Content from './information-security/IsUnit2Content';
+import IsUnit3Content from './information-security/IsUnit3Content';
+import IsUnit4Content from './information-security/IsUnit4Content';
+import IsUnit5Content from './information-security/IsUnit5Content';
+
+import MtUnit1Content from './multimedia-technologies/MtUnit1Content';
+import MtUnit2Content from './multimedia-technologies/MtUnit2Content';
+import MtUnit3Content from './multimedia-technologies/MtUnit3Content';
+import MtUnit4Content from './multimedia-technologies/MtUnit4Content';
+
 // Registry of all study content mapped by subjectId and chapterId
 export const contentRegistry = {
   // Applied Physics 1 (Default / Existing)
@@ -51,6 +62,23 @@ export const contentRegistry = {
     'unit-3': CnUnit3Content,
     'unit-4': CnUnit4Content,
     'unit-5': CnUnit5Content,
+  },
+
+  // Information Security
+  'information-security': {
+    'unit-1': IsUnit1Content,
+    'unit-2': IsUnit2Content,
+    'unit-3': IsUnit3Content,
+    'unit-4': IsUnit4Content,
+    'unit-5': IsUnit5Content,
+  },
+
+  // Multimedia Technologies
+  'multimedia-technologies': {
+    'unit-1': MtUnit1Content,
+    'unit-2': MtUnit2Content,
+    'unit-3': MtUnit3Content,
+    'unit-4': MtUnit4Content,
   },
 };
 
@@ -86,4 +114,13 @@ export {
   CnUnit3Content,
   CnUnit4Content,
   CnUnit5Content,
+  IsUnit1Content,
+  IsUnit2Content,
+  IsUnit3Content,
+  IsUnit4Content,
+  IsUnit5Content,
+  MtUnit1Content,
+  MtUnit2Content,
+  MtUnit3Content,
+  MtUnit4Content,
 };
