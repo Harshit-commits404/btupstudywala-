@@ -1,4 +1,22 @@
 import AppliedPhysicsCh1Content from './applied-physics/AppliedPhysicsCh1Content';
+import AppliedPhysicsCh2Content from './applied-physics/AppliedPhysicsCh2Content';
+import AppliedPhysicsCh3Content from './applied-physics/AppliedPhysicsCh3Content';
+import AppliedPhysicsCh4Content from './applied-physics/AppliedPhysicsCh4Content';
+import AppliedPhysicsCh5Content from './applied-physics/AppliedPhysicsCh5Content';
+import AppliedPhysicsCh6Content from './applied-physics/AppliedPhysicsCh6Content';
+import AppliedPhysicsCh7Content from './applied-physics/AppliedPhysicsCh7Content';
+
+import Maths1Unit1Content from './mathematics-1/Maths1Unit1Content';
+import Maths1Unit2Content from './mathematics-1/Maths1Unit2Content';
+import Maths1Unit3Content from './mathematics-1/Maths1Unit3Content';
+import Maths1Unit4Content from './mathematics-1/Maths1Unit4Content';
+import Maths1Unit5Content from './mathematics-1/Maths1Unit5Content';
+
+import AppliedChemistryUnit1Content from './applied-chemistry/AppliedChemistryUnit1Content';
+import AppliedChemistryUnit2Content from './applied-chemistry/AppliedChemistryUnit2Content';
+import AppliedChemistryUnit3Content from './applied-chemistry/AppliedChemistryUnit3Content';
+import AppliedChemistryUnit4Content from './applied-chemistry/AppliedChemistryUnit4Content';
+import AppliedChemistryUnit5Content from './applied-chemistry/AppliedChemistryUnit5Content';
 
 import DbmsUnit1Content from './dbms/DbmsUnit1Content';
 import DbmsUnit2Content from './dbms/DbmsUnit2Content';
@@ -35,6 +53,30 @@ export const contentRegistry = {
   'applied-physics-1': {
     'units-and-dimensions': AppliedPhysicsCh1Content,
     'ch-1': AppliedPhysicsCh1Content,
+    'force-and-motion': AppliedPhysicsCh2Content,
+    'work-power-and-energy': AppliedPhysicsCh3Content,
+    'circular-motion': AppliedPhysicsCh4Content,
+    'rotational-motion': AppliedPhysicsCh5Content,
+    'properties-of-matter': AppliedPhysicsCh6Content,
+    'heat-and-thermometry': AppliedPhysicsCh7Content,
+  },
+
+  // Mathematics 1
+  'mathematics-1': {
+    'trigonometry': Maths1Unit1Content,
+    'differential-calculus': Maths1Unit2Content,
+    'partial-fractions': Maths1Unit3Content,
+    'binomial-theorem': Maths1Unit4Content,
+    'complex-numbers': Maths1Unit5Content,
+  },
+
+  // Applied Chemistry
+  'applied-chemistry': {
+    'atomic-structure-chemical-bonding-and-solutions': AppliedChemistryUnit1Content,
+    'water': AppliedChemistryUnit2Content,
+    'engineering-materials': AppliedChemistryUnit3Content,
+    'chemistry-of-fuels-and-lubricants': AppliedChemistryUnit4Content,
+    'electro-chemistry': AppliedChemistryUnit5Content,
   },
 
   // DBMS (Database Management System)
@@ -99,6 +141,22 @@ export function getChapterContent(subjectId, chapterId) {
 
 export {
   AppliedPhysicsCh1Content,
+  AppliedPhysicsCh2Content,
+  AppliedPhysicsCh3Content,
+  AppliedPhysicsCh4Content,
+  AppliedPhysicsCh5Content,
+  AppliedPhysicsCh6Content,
+  AppliedPhysicsCh7Content,
+  Maths1Unit1Content,
+  Maths1Unit2Content,
+  Maths1Unit3Content,
+  Maths1Unit4Content,
+  Maths1Unit5Content,
+  AppliedChemistryUnit1Content,
+  AppliedChemistryUnit2Content,
+  AppliedChemistryUnit3Content,
+  AppliedChemistryUnit4Content,
+  AppliedChemistryUnit5Content,
   DbmsUnit1Content,
   DbmsUnit2Content,
   DbmsUnit3Content,
