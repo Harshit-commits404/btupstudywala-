@@ -18,28 +18,16 @@ export const DashboardPage = () => {
       {/* ========================================================================= */}
       <section className="relative w-full min-h-screen min-h-[100dvh] lg:h-screen lg:min-h-[700px] flex flex-col justify-between overflow-hidden">
         
-        {/* Desktop Background Artwork & Cinematic Overlays (Width >= 1024px) */}
-        <div className="hidden lg:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          {/* Hero image with developers Ashish & Harshit and their artwork names */}
-          <img
-            src="/images/bteup-study-hero.jpg"
-            alt="BTEUP Study Creators Ashish and Harshit"
-            className="w-full h-full object-cover object-[67%_center] xl:object-[68%_center] transition-transform duration-700 ease-out"
-            loading="eager"
-            fetchPriority="high"
-          />
+        {/* Subtle Ambient Background Lighting & Vignettes */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {/* Centered ambient radial accent glow */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-1/4 w-[650px] h-[520px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
+          
+          {/* Top subtle vignette for header */}
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#070b14]/80 via-transparent to-transparent pointer-events-none" />
 
-          {/* Left-side dark cinematic gradient overlay to ensure text readability */}
-          <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#070b14] via-[#070b14]/90 to-transparent w-full lg:w-[46%] xl:w-[42%]" />
-
-          {/* Bottom subtle vignette to softly ground the viewport */}
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#070b14] via-[#070b14]/60 to-transparent" />
-
-          {/* Top subtle vignette for the header */}
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#070b14]/75 via-transparent to-transparent" />
-
-          {/* Ambient radial accent glow behind headline */}
-          <div className="absolute -left-24 top-1/4 w-[420px] h-[420px] bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
+          {/* Bottom subtle vignette grounding the hero */}
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#070b14] via-[#070b14]/60 to-transparent pointer-events-none" />
         </div>
 
         {/* Minimal Floating Transparent Header */}
@@ -84,85 +72,53 @@ export const DashboardPage = () => {
         </header>
 
         {/* Hero Main Content Canvas */}
-        <div className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-10 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 flex-1 flex flex-col justify-center items-center px-4 sm:px-8 lg:px-12 py-8 sm:py-12 max-w-4xl mx-auto w-full text-center">
           
-          {/* Mobile & Tablet Developer Showcase (Width < 1024px) */}
-          {/* Intelligently frames both Ashish and Harshit with their artwork names */}
-          <div className="lg:hidden w-full mb-4 sm:mb-6">
-            <div className="relative w-full max-w-xl mx-auto h-[200px] sm:h-[270px] md:h-[340px] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#090d16] group">
-              <img
-                src="/images/bteup-study-hero.jpg"
-                alt="BTEUP Study Creators Ashish and Harshit"
-                className="w-full h-full object-cover object-[62%_32%] transition-transform duration-700 ease-out"
-                loading="eager"
-                fetchPriority="high"
-              />
-
-              {/* Gentle top vignette */}
-              <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-[#070b14]/60 to-transparent pointer-events-none" />
-
-              {/* Gentle bottom edge gradient (preserves painted names ASHISH & HARSHIT) */}
-              <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-[#070b14]/50 to-transparent pointer-events-none" />
-
-              {/* Gentle side vignettes */}
-              <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-[#070b14]/40 to-transparent pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-[#070b14]/40 to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="space-y-5 sm:space-y-6 flex flex-col items-center">
             
-            {/* Left Column: Rebalanced, Prominent Headline & Supporting Info */}
-            <div className="lg:col-span-6 xl:col-span-5 space-y-4 sm:space-y-5 lg:space-y-6 max-w-lg xl:max-w-xl">
-              
-              {/* Top Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-300 text-xs font-semibold tracking-wide backdrop-blur-md">
-                <Sparkles className="w-3.5 h-3.5 text-brand-400 animate-pulse" />
-                <span>For Polytechnic Diploma Students</span>
-              </div>
-
-              {/* Main Brand Title, Headline & Tagline */}
-              <div className="space-y-2 sm:space-y-2.5">
-                <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-brand-400 uppercase block">
-                  BTEUP Study
-                </span>
-                
-                <h1 className="text-2xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold font-display text-white tracking-tight leading-[1.15] sm:leading-[1.12]">
-                  Polytechnic ki padhai, <br className="hidden sm:inline" />
-                  <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-cyan-400 bg-clip-text text-transparent">
-                    ab apni language mein.
-                  </span>
-                </h1>
-
-                <p className="text-sm sm:text-lg lg:text-xl font-medium text-slate-200 font-sans leading-relaxed">
-                  “Ratne ke liye nahi, <span className="text-white font-bold">samajhne ke liye.”</span>
-                </p>
-
-                {/* Subtle secondary supporting line */}
-                <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed pt-0.5">
-                  Simple notes. Clear concepts. Made for Polytechnic students.
-                </p>
-              </div>
-
-              {/* Small Elegant CTA */}
-              <div className="pt-1 sm:pt-2">
-                <a
-                  href="#semesters"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('semesters')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-300 hover:text-white border border-brand-500/30 hover:border-brand-400/50 backdrop-blur-md font-semibold text-xs sm:text-sm tracking-wide transition-all duration-200 group cursor-pointer shadow-lg shadow-brand-500/10 hover:shadow-brand-500/20 hover:-translate-y-0.5"
-                >
-                  <span>Start Learning</span>
-                  <ArrowDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-y-0.5 text-brand-400 group-hover:text-white" />
-                </a>
-              </div>
-
+            {/* Top Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-300 text-xs font-semibold tracking-wide backdrop-blur-md shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-brand-400 animate-pulse" />
+              <span>For Polytechnic Diploma Students</span>
             </div>
 
-            {/* Right Column: Kept completely open for developers in the artwork */}
-            <div className="hidden lg:block lg:col-span-6 xl:col-span-7 h-full pointer-events-none" />
+            {/* Main Brand Title, Headline & Tagline */}
+            <div className="space-y-3 sm:space-y-4">
+              <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.25em] text-brand-400 uppercase block">
+                BTEUP Study
+              </span>
+              
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white tracking-tight leading-[1.15] sm:leading-[1.12]">
+                Polytechnic ki padhai, <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-cyan-400 bg-clip-text text-transparent">
+                  ab apni language mein.
+                </span>
+              </h1>
+
+              <p className="text-base sm:text-xl lg:text-2xl font-medium text-slate-200 font-sans leading-relaxed pt-1">
+                "Ratne ke liye nahi, <span className="text-white font-bold">samajhne ke liye."</span>
+              </p>
+
+              {/* Subtle secondary supporting line */}
+              <p className="text-sm sm:text-base text-slate-400 font-normal leading-relaxed max-w-xl mx-auto">
+                Simple notes. Clear concepts. Made for Polytechnic students.
+              </p>
+            </div>
+
+            {/* Small Elegant CTA */}
+            <div className="pt-2 sm:pt-4">
+              <a
+                href="#semesters"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('semesters')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2.5 px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-300 hover:text-white border border-brand-500/30 hover:border-brand-400/50 backdrop-blur-md font-semibold text-sm sm:text-base tracking-wide transition-all duration-200 group cursor-pointer shadow-lg shadow-brand-500/15 hover:shadow-brand-500/25 hover:-translate-y-0.5"
+              >
+                <span>Start Learning</span>
+                <ArrowDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5 text-brand-400 group-hover:text-white" />
+              </a>
+            </div>
 
           </div>
         </div>
@@ -299,5 +255,3 @@ export const DashboardPage = () => {
 };
 
 export default DashboardPage;
-
-
