@@ -1,210 +1,266 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
+  GraduationCap,
   ArrowRight,
-  BookOpen,
-  Layers,
   Sparkles,
-  CheckCircle2,
-  Compass,
+  Heart,
+  Code2,
 } from 'lucide-react';
-import { semestersData, ACADEMIC_CYCLE } from '../data/semestersData';
-import { SemesterCard } from '../components/cards/SemesterCard';
-import { SectionHeader } from '../components/common/SectionHeader';
-import { Button } from '../components/common/Button';
+import { semestersData } from '../data/semestersData';
+import { ThemeToggle } from '../components/common/ThemeToggle';
 
 export const DashboardPage = () => {
-  const navigate = useNavigate();
-
-  const scrollToSemesters = () => {
-    const el = document.getElementById('semester-grid');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      navigate('/semesters');
-    }
-  };
-
-  const steps = [
-    {
-      number: '01',
-      title: 'Select Semester',
-      description: 'Choose your active odd semester (1st, 3rd, or 5th) to view the curriculum syllabus.',
-      icon: Layers,
-    },
-    {
-      number: '02',
-      title: 'Select Subject',
-      description: 'Pick any subject from your diploma branch to explore its structured modules.',
-      icon: BookOpen,
-    },
-    {
-      number: '03',
-      title: 'Select Chapter',
-      description: 'Access individual chapter units with clearly defined learning outcomes.',
-      icon: Compass,
-    },
-    {
-      number: '04',
-      title: 'Start Learning',
-      description: 'Read concepts, Hinglish breakdowns, circuit diagrams, and exam revision points.',
-      icon: Sparkles,
-    },
-  ];
-
   return (
-    <div className="space-y-16 sm:space-y-24">
-      {/* Hero Section */}
-      <section className="relative pt-8 sm:pt-16 pb-6 text-center max-w-4xl mx-auto px-4">
-        {/* Subtle radial ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[500px] h-64 sm:h-80 bg-brand-500/10 blur-3xl rounded-full -z-10 pointer-events-none" />
-
-        {/* Top Announcement Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 mb-6 backdrop-blur-sm animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>Academic Term: {ACADEMIC_CYCLE.currentTerm} Open</span>
-          <span className="text-slate-400">•</span>
-          <span className="text-slate-500 dark:text-slate-400">100% Free & Open-Source</span>
-        </div>
-
-        {/* Main Hero Heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
-          BTEUP <span className="text-brand-600 dark:text-brand-400">Study</span>
-        </h1>
-
-        {/* Tagline */}
-        <p className="text-xl sm:text-2xl font-medium text-slate-700 dark:text-slate-200 mb-4">
-          Learn your syllabus. Understand the concepts.
-        </p>
-
-        {/* Supporting description */}
-        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-          A clean, student-first learning companion for BTEUP Polytechnic diploma students. Structured, easy-to-understand learning material designed for conceptual clarity and exam confidence.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
-          <Button
-            onClick={scrollToSemesters}
-            size="lg"
-            variant="primary"
-            icon={ArrowRight}
-            iconPosition="right"
-            className="w-full sm:w-auto"
-          >
-            Start Learning
-          </Button>
-
-          <Button
-            onClick={() => navigate('/semesters')}
-            size="lg"
-            variant="secondary"
-            className="w-full sm:w-auto"
-          >
-            Explore All Semesters
-          </Button>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-white/[0.06] grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
-          <div className="flex items-center justify-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-            <span>No Account Required</span>
-          </div>
-          <div className="flex items-center justify-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-            <span>Open Source Project</span>
-          </div>
-          <div className="flex items-center justify-center gap-1.5 col-span-2 sm:col-span-1">
-            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-            <span>Odd Semesters Active</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Semester Selection Grid Section */}
-      <section id="semester-grid" className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Curriculum Directory"
-          title="Choose Your Semester"
-          subtitle="Odd semesters (1st, 3rd, 5th) are actively open. Even semesters (2nd, 4th, 6th) will unlock in the upcoming academic cycle."
-          align="left"
+    <div className="relative w-full min-h-screen lg:h-screen lg:max-h-screen overflow-x-hidden overflow-y-auto lg:overflow-hidden bg-[#070b14] text-white flex flex-col justify-between selection:bg-brand-500/30 selection:text-brand-200">
+      
+      {/* ========================================================================= */}
+      {/* 1. HERO BACKGROUND IMAGE & CINEMATIC OVERLAYS */}
+      {/* ========================================================================= */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* The provided developers hero image */}
+        <img
+          src="/images/bteup-study-hero.jpg"
+          alt="BTEUP Study Creators Ashish and Harshit"
+          className="w-full h-full object-cover object-[72%_15%] sm:object-[76%_center] lg:object-[80%_center] xl:object-[82%_center] transition-transform duration-700 ease-out"
+          loading="eager"
+          fetchPriority="high"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {semestersData.map((semester) => (
-            <SemesterCard key={semester.id} semester={semester} />
-          ))}
+        {/* Left-side dark cinematic gradient overlay to ensure crystal-clear text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070b14] via-[#070b14]/85 sm:via-[#070b14]/75 to-transparent/10 w-full lg:w-[68%] xl:w-[62%]" />
+
+        {/* Mobile full subtle scrim to balance portrait scaling */}
+        <div className="absolute inset-0 bg-[#070b14]/65 sm:hidden" />
+
+        {/* Bottom subtle vignette to ground the viewport */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#070b14] via-[#070b14]/40 to-transparent" />
+
+        {/* Top subtle vignette for the header */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#070b14]/80 via-transparent to-transparent" />
+
+        {/* Ambient radial accent glow behind the main headline */}
+        <div className="absolute -left-20 top-1/3 w-[500px] h-[500px] bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
+      </div>
+
+      {/* ========================================================================= */}
+      {/* 2. MINIMAL FLOATING TRANSPARENT HEADER */}
+      {/* ========================================================================= */}
+      <header className="relative z-30 w-full px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 flex items-center justify-between">
+        {/* Brand Logo & Name */}
+        <Link
+          to="/"
+          className="flex items-center gap-3 group focus:outline-none"
+          aria-label="BTEUP Study Home"
+        >
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 p-[1px] shadow-lg shadow-brand-500/25">
+            <div className="w-full h-full rounded-[11px] bg-slate-950/90 flex items-center justify-center text-brand-400 group-hover:text-white transition-colors duration-200">
+              <GraduationCap className="w-5 h-5" />
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+              BTEUP <span className="text-brand-400">Study</span>
+            </span>
+            <span className="text-[10px] font-mono tracking-wider text-slate-400 uppercase">
+              Polytechnic Learning
+            </span>
+          </div>
+        </Link>
+
+        {/* Minimal Actions */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <Link
+            to="/"
+            className="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/10 backdrop-blur-md transition-colors"
+          >
+            Home
+          </Link>
+          <Link
+            to="/semesters"
+            className="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-500/20 hover:bg-brand-500/30 text-brand-300 border border-brand-500/30 backdrop-blur-md transition-colors"
+          >
+            All Semesters
+          </Link>
+          <ThemeToggle />
         </div>
-      </section>
+      </header>
 
-      {/* How It Works Section: 4 Simple Steps */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-slate-50 dark:bg-dark-card/40 p-8 sm:p-12 backdrop-blur-xl">
-          <SectionHeader
-            badge="Simple Learning Journey"
-            title="How BTEUP Study Works"
-            subtitle="Straightforward, barrier-free learning designed for diploma engineering students."
-            align="center"
-          />
+      {/* ========================================================================= */}
+      {/* 3. MAIN CONTENT CANVAS (LEFT-ALIGNED) */}
+      {/* ========================================================================= */}
+      <main className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-12 py-8 sm:py-10 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          {/* Left Column: Headlines, Tagline & Semester Selection */}
+          <div className="lg:col-span-7 xl:col-span-7 space-y-6 sm:space-y-7 max-w-xl xl:max-w-2xl">
+            
+            {/* Top Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-300 text-xs font-semibold tracking-wide backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-brand-400 animate-pulse" />
+              <span>For Polytechnic Diploma Students</span>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {steps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <div
-                  key={step.number}
-                  className="rounded-2xl border border-slate-200/80 dark:border-white/[0.06] bg-white dark:bg-dark-card/80 p-6 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="font-mono text-xs font-bold text-brand-600 dark:text-brand-400">
-                        Step {step.number}
-                      </span>
-                      <div className="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center">
-                        <Icon className="w-4 h-4" />
+            {/* Main Headlines */}
+            <div className="space-y-2 sm:space-y-3">
+              <span className="text-xs sm:text-sm font-mono font-bold tracking-widest text-brand-400 uppercase block">
+                BTEUP Study
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-extrabold font-display text-white tracking-tight leading-[1.12]">
+                Polytechnic ki padhai, <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-cyan-400 bg-clip-text text-transparent">
+                  ab apni language mein.
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl font-medium text-slate-300 font-sans">
+                “Ratne ke liye nahi, <span className="text-white font-bold">samajhne ke liye.”</span>
+              </p>
+            </div>
+
+            {/* Mobile / Inline Creator Badge */}
+            <div className="flex sm:hidden items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md text-xs text-slate-300 w-fit">
+              <span className="text-slate-400">Created by:</span>
+              <span className="font-bold text-brand-300 font-mono text-[11px]">ASHISH</span>
+              <span className="text-slate-500">&</span>
+              <span className="font-bold text-cyan-300 font-mono text-[11px]">HARSHIT</span>
+            </div>
+
+            {/* Semester Selection Box */}
+            <div className="pt-2 sm:pt-3 space-y-3">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xs sm:text-sm font-mono font-bold text-slate-200 uppercase tracking-widest flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-brand-400 shadow-[0_0_8px_#38bdf8] inline-block" />
+                  <span>Choose Your Semester</span>
+                </h2>
+                <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">
+                  Odd Semesters Active
+                </span>
+              </div>
+
+              {/* 6 Semester Cards Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
+                {semestersData.map((sem) => {
+                  const isActive = sem.isAvailable;
+                  return (
+                    <Link
+                      key={sem.id}
+                      to={`/semester/${sem.id}`}
+                      className={`group relative p-3 sm:p-3.5 rounded-2xl border transition-all duration-200 flex flex-col justify-between backdrop-blur-xl ${
+                        isActive
+                          ? 'bg-slate-900/65 hover:bg-brand-950/50 border-white/15 hover:border-brand-400/60 shadow-lg hover:shadow-brand-500/20 hover:-translate-y-0.5'
+                          : 'bg-slate-950/45 hover:bg-slate-900/60 border-white/5 hover:border-amber-500/30'
+                      }`}
+                    >
+                      {/* Ambient hover glow for active cards */}
+                      {isActive && (
+                        <div className="absolute -top-8 -right-8 w-20 h-20 bg-brand-500/10 rounded-full blur-xl pointer-events-none group-hover:bg-brand-500/25 transition-all" />
+                      )}
+
+                      <div className="flex items-center justify-between mb-2">
+                        <span
+                          className={`font-mono text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md border ${
+                            isActive
+                              ? 'bg-brand-500/15 text-brand-300 border-brand-500/30'
+                              : 'bg-white/5 text-slate-400 border-white/10'
+                          }`}
+                        >
+                          {sem.shortName}
+                        </span>
+
+                        {isActive ? (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            <span>Active</span>
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-medium text-amber-400/90 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
+                            Soon
+                          </span>
+                        )}
                       </div>
-                    </div>
-                    <h3 className="text-base font-bold font-display text-slate-900 dark:text-white mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* Template Preview Callout */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="rounded-3xl border border-dashed border-brand-500/30 bg-gradient-to-br from-brand-500/5 via-transparent to-brand-500/5 p-8 sm:p-10 text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400 mb-4">
-            <BookOpen className="w-6 h-6" />
+                      <div className="flex items-center justify-between mt-1">
+                        <span
+                          className={`text-sm sm:text-base font-bold transition-colors ${
+                            isActive
+                              ? 'text-white group-hover:text-brand-300'
+                              : 'text-slate-300 group-hover:text-white'
+                          }`}
+                        >
+                          {sem.title}
+                        </span>
+                        <ArrowRight
+                          className={`w-4 h-4 transition-all ${
+                            isActive
+                              ? 'text-slate-400 group-hover:text-brand-300 group-hover:translate-x-1'
+                              : 'text-slate-600 group-hover:text-amber-400'
+                          }`}
+                        />
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 dark:text-white mb-3">
-            Open-Source Architecture Ready
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-6">
-            BTEUP Study V1 establishes the clean UI/UX frontend layout, semester routing, and structured reading canvas. Real syllabus subjects, chapter breakdowns, and Hinglish notes will be added by the project owner.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link to="/subject/template-preview">
-              <Button variant="secondary" size="md">
-                Preview Subject Template
-              </Button>
-            </Link>
-            <Link to="/chapter/ch-1">
-              <Button variant="primary" size="md">
-                Preview Reading Notes Template
-              </Button>
-            </Link>
+
+          {/* Right Column: Visual Anchor on Desktop (Developers Position Tags) */}
+          <div className="hidden lg:block lg:col-span-5 xl:col-span-5 relative h-full min-h-[360px] pointer-events-none">
+            
+            {/* Tag for ASHISH (Glasses-wearing developer on the left side of the duo) */}
+            <div className="absolute left-[8%] bottom-[42%] pointer-events-auto">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/75 border border-white/20 backdrop-blur-md shadow-xl text-xs font-mono text-slate-200 hover:border-brand-400/60 transition-colors">
+                <span className="w-2 h-2 rounded-full bg-brand-400 shadow-[0_0_8px_#38bdf8] animate-pulse" />
+                <span className="font-bold tracking-widest text-white">ASHISH</span>
+              </div>
+            </div>
+
+            {/* Tag for HARSHIT (Developer standing beside him on the right) */}
+            <div className="absolute right-[8%] bottom-[38%] pointer-events-auto">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/75 border border-white/20 backdrop-blur-md shadow-xl text-xs font-mono text-slate-200 hover:border-cyan-400/60 transition-colors">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-pulse" />
+                <span className="font-bold tracking-widest text-white">HARSHIT</span>
+              </div>
+            </div>
+
+            {/* Built by Ashish & Harshit Badge over the desk area */}
+            <div className="absolute right-[4%] bottom-[6%] pointer-events-auto">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/85 border border-brand-500/30 backdrop-blur-md shadow-2xl text-xs font-medium text-slate-300">
+                <Code2 className="w-3.5 h-3.5 text-brand-400" />
+                <span>
+                  Built by{' '}
+                  <strong className="text-white font-bold tracking-wide">
+                    Ashish & Harshit
+                  </strong>
+                </span>
+              </div>
+            </div>
+
           </div>
+
         </div>
-      </section>
+      </main>
+
+      {/* ========================================================================= */}
+      {/* 4. SLEEK DESKTOP/MOBILE FOOTER STRIP */}
+      {/* ========================================================================= */}
+      <footer className="relative z-30 w-full px-4 sm:px-8 lg:px-12 py-3 sm:py-4 border-t border-white/10 bg-slate-950/80 backdrop-blur-md flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <span className="text-slate-300 font-medium">BTEUP Diploma Syllabus Companion</span>
+          <span className="text-slate-600 hidden sm:inline">•</span>
+          <span className="hidden sm:inline text-slate-400">100% Free & Open-Source</span>
+        </div>
+
+        <div className="flex items-center gap-1.5 text-slate-300">
+          <span>Crafted with</span>
+          <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
+          <span>by</span>
+          <strong className="text-white font-semibold">Ashish & Harshit</strong>
+        </div>
+      </footer>
+
     </div>
   );
 };
