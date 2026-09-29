@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   BookOpen,
-  Award,
-  Sparkles,
   CheckCircle2,
   Lightbulb,
   AlertCircle,
@@ -35,10 +33,6 @@ export const OsUnit1Content = () => {
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-medium border border-emerald-500/20">
             <Clock className="w-3.5 h-3.5" />
             <span>Syllabus: 6 Periods</span>
-          </span>
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-700 dark:text-amber-400 font-medium border border-amber-500/20">
-            <Award className="w-3.5 h-3.5" />
-            <span>Weightage: 8–10 Marks</span>
           </span>
         </div>
 

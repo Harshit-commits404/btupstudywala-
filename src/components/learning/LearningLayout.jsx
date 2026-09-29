@@ -7,7 +7,6 @@ import {
   ChevronUp,
   ArrowLeft,
   Clock,
-  Sparkles,
   BookOpen,
 } from 'lucide-react';
 
@@ -229,17 +228,6 @@ export const LearningLayout = ({
                 })}
               </nav>
 
-              {/* Exam High-Yield Mini Note */}
-              <div className="mt-5 p-3 rounded-lg border border-amber-500/20 bg-amber-500/5 dark:bg-amber-500/[0.04] text-[11px] text-amber-800 dark:text-amber-300 space-y-1">
-                <div className="font-bold flex items-center gap-1.5 text-xs">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                  <span>BTEUP Exam Weightage</span>
-                </div>
-                <p className="text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                  Chapter 1 carries <strong>8–10 Marks</strong> in final exams. Homogeneity & Simple Pendulum derivation are repeated frequently.
-                </p>
-              </div>
-
               {/* Back to Subject Action */}
               <div className="mt-4 pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
                 <button
@@ -273,7 +261,7 @@ export const LearningLayout = ({
 
               <div className="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500 font-mono">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-                <span>BTEUP Study • Chapter 1 Complete</span>
+                <span>BTEUP Study • {chapterTitle}</span>
               </div>
             </div>
           </main>

@@ -30,10 +30,6 @@ export const AppliedPhysicsCh1Content = () => {
             <Clock className="w-3.5 h-3.5" />
             <span>Syllabus: 6 Periods</span>
           </span>
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-700 dark:text-amber-400 font-medium border border-amber-500/20">
-            <Award className="w-3.5 h-3.5" />
-            <span>Weightage: 8–10 Marks</span>
-          </span>
         </div>
 
         {/* Prominent Bilingual Chapter Title */}
