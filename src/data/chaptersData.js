@@ -5,1104 +5,1616 @@
  */
 
 export const chaptersData = {
-  'communication-skills-english': [
-  {
-    "id": "unit-1",
-    "number": "01",
-    "title": "Unit 1: Communication: Theory and Practice",
-    "duration": "08 Periods",
-    "subjectId": "communication-skills-english",
-    "subjectName": "Communication Skills in English",
-    "semesterId": 1,
-    "description": "Basics of communication, types of communication, barriers to communication, and tools/devices of communication.",
-    "path": "/chapter/communication-skills-english/unit-1",
-    "sections": [
-      {
-        "id": "basics",
-        "title": "1. Basics of communication"
-      },
-      {
-        "id": "types",
-        "title": "2. Types of communication"
-      },
-      {
-        "id": "barriers",
-        "title": "3. Barriers to communication"
-      },
-      {
-        "id": "tools",
-        "title": "4. Tools and devices"
-      }
-    ]
-  },
-  {
-    "id": "unit-2",
-    "number": "02",
-    "title": "Unit 2: Soft Skills for Professional Excellence",
-    "duration": "04 Periods",
-    "subjectId": "communication-skills-english",
-    "subjectName": "Communication Skills in English",
-    "semesterId": 1,
-    "description": "Soft skills vs hard skills, and the importance of soft skills in education and workplace.",
-    "path": "/chapter/communication-skills-english/unit-2",
-    "sections": [
-      {
-        "id": "soft-vs-hard",
-        "title": "1. Soft skills vs hard skills"
-      },
-      {
-        "id": "importance",
-        "title": "2. Importance of soft skills"
-      }
-    ]
-  },
-  {
-    "id": "unit-3",
-    "number": "03",
-    "title": "Unit 3: Reading Comprehension: Unseen Passages",
-    "duration": "08 Periods",
-    "subjectId": "communication-skills-english",
-    "subjectName": "Communication Skills in English",
-    "semesterId": 1,
-    "description": "Reading comprehension, prefix, suffix, antonyms, and synonyms.",
-    "path": "/chapter/communication-skills-english/unit-3",
-    "sections": [
-      {
-        "id": "intro",
-        "title": "1. Introduction"
-      },
-      {
-        "id": "unseen-passages",
-        "title": "2. Unseen passages"
-      },
-      {
-        "id": "prefix-suffix",
-        "title": "3. Prefix and suffix"
-      },
-      {
-        "id": "antonyms-synonyms",
-        "title": "4. Antonyms and synonyms"
-      }
-    ]
-  },
-  {
-    "id": "unit-4",
-    "number": "04",
-    "title": "Unit 4: Functional Grammar",
-    "duration": "08 Periods",
-    "subjectId": "communication-skills-english",
-    "subjectName": "Communication Skills in English",
-    "semesterId": 1,
-    "description": "Sentence types, parts of speech, tenses, active/passive voice, and punctuation.",
-    "path": "/chapter/communication-skills-english/unit-4",
-    "sections": [
-      {
-        "id": "sentence",
-        "title": "1. Sentence and its types"
-      },
-      {
-        "id": "parts-of-speech",
-        "title": "2. Parts of speech"
-      },
-      {
-        "id": "tenses",
-        "title": "3. Tenses"
-      },
-      {
-        "id": "active-passive",
-        "title": "4. Active and passive voice"
-      },
-      {
-        "id": "punctuation",
-        "title": "5. Punctuation"
-      }
-    ]
-  },
-  {
-    "id": "unit-5",
-    "number": "05",
-    "title": "Unit 5: Professional Writing",
-    "duration": "14 Periods",
-    "subjectId": "communication-skills-english",
-    "subjectName": "Communication Skills in English",
-    "semesterId": 1,
-    "description": "CV writing, agenda, minutes, notices, official letters, letter-reports, and e-mail drafting.",
-    "path": "/chapter/communication-skills-english/unit-5",
-    "sections": [
-      {
-        "id": "cv-writing",
-        "title": "1. CV writing"
-      },
-      {
-        "id": "agenda-minutes",
-        "title": "2. Agenda and Minutes"
-      },
-      {
-        "id": "notices",
-        "title": "3. Notices"
-      },
-      {
-        "id": "official-letters",
-        "title": "4. Official letters"
-      },
-      {
-        "id": "letter-reports",
-        "title": "5. Letter-reports"
-      },
-      {
-        "id": "email-drafting",
-        "title": "6. E-mail drafting"
-      }
-    ]
-  }
-],
-  'introduction-to-it': [
-  {
-    "id": "unit-1",
-    "number": "01",
-    "title": "Unit 1: Introduction to Computers and Peripherals",
-    "duration": "05 Periods",
-    "subjectId": "introduction-to-it",
-    "subjectName": "Introduction to IT and AI",
-    "semesterId": 1,
-    "description": "Introduction, generations, components, CPU, memory, I/O devices, printers, and scanners.",
-    "path": "/chapter/introduction-to-it/unit-1",
-    "sections": [
-      {
-        "id": "intro",
-        "title": "1. Intro and Generations"
-      },
-      {
-        "id": "components",
-        "title": "2. Components and CPU"
-      },
-      {
-        "id": "memory",
-        "title": "3. Memory and Types"
-      },
-      {
-        "id": "io-devices",
-        "title": "4. Input/Output Devices"
-      }
-    ]
-  },
-  {
-    "id": "unit-2",
-    "number": "02",
-    "title": "Unit 2: Operating System and Application Software",
-    "duration": "06 Periods",
-    "subjectId": "introduction-to-it",
-    "subjectName": "Introduction to IT and AI",
-    "semesterId": 1,
-    "description": "System software, application software, Windows OS, MS Office, Google Suite, and antivirus.",
-    "path": "/chapter/introduction-to-it/unit-2",
-    "sections": [
-      {
-        "id": "software-types",
-        "title": "1. Software Types"
-      },
-      {
-        "id": "office",
-        "title": "2. Office Suites"
-      },
-      {
-        "id": "windows",
-        "title": "3. Windows OS"
-      },
-      {
-        "id": "gsuite",
-        "title": "4. Google Suite & Installation"
-      }
-    ]
-  },
-  {
-    "id": "unit-3",
-    "number": "03",
-    "title": "Unit 3: Internet",
-    "duration": "06 Periods",
-    "subjectId": "introduction-to-it",
-    "subjectName": "Introduction to IT and AI",
-    "semesterId": 1,
-    "description": "Network topologies, LAN/MAN/WAN, networking devices, Wi-Fi, IP, DNS, and search engines.",
-    "path": "/chapter/introduction-to-it/unit-3",
-    "sections": [
-      {
-        "id": "networks",
-        "title": "1. Networks and Topologies"
-      },
-      {
-        "id": "devices",
-        "title": "2. Networking Devices"
-      },
-      {
-        "id": "internet",
-        "title": "3. Internet and Protocols"
-      }
-    ]
-  },
-  {
-    "id": "unit-4",
-    "number": "04",
-    "title": "Unit 4: Basics of Information Security",
-    "duration": "05 Periods",
-    "subjectId": "introduction-to-it",
-    "subjectName": "Introduction to IT and AI",
-    "semesterId": 1,
-    "description": "CIA Triad, threats, malware, active/passive attacks, cyber frauds, and Indian cyber laws.",
-    "path": "/chapter/introduction-to-it/unit-4",
-    "sections": [
-      {
-        "id": "cia",
-        "title": "1. Info Security & CIA"
-      },
-      {
-        "id": "threats",
-        "title": "2. Threats and Malware"
-      },
-      {
-        "id": "cybersecurity",
-        "title": "3. Cybersecurity & Laws"
-      }
-    ]
-  },
-  {
-    "id": "unit-5",
-    "number": "05",
-    "title": "Unit 5: Fundamentals and Applications of AI",
-    "duration": "06 Periods",
-    "subjectId": "introduction-to-it",
-    "subjectName": "Introduction to IT and AI",
-    "semesterId": 1,
-    "description": "AI definitions, ML vs DL, generative AI (ChatGPT, Gemini), prompt engineering, heuristic search, and AI applications.",
-    "path": "/chapter/introduction-to-it/unit-5",
-    "sections": [
-      {
-        "id": "ai-intro",
-        "title": "1. AI Introduction & History"
-      },
-      {
-        "id": "ai-vs-ml",
-        "title": "2. AI vs ML vs DL"
-      },
-      {
-        "id": "gen-ai",
-        "title": "3. Generative AI & Prompts"
-      },
-      {
-        "id": "search",
-        "title": "4. Heuristic Search"
-      },
-      {
-        "id": "applications",
-        "title": "5. AI Applications"
-      }
-    ]
-  }
-],
-  'fundamental-electrical-electronics': [
-  {
-    "id": "unit-1",
-    "number": "01",
-    "title": "Unit 1: Overview of Electronic Components",
-    "duration": "09 Periods",
-    "subjectId": "fundamental-electrical-electronics",
-    "subjectName": "Fundamentals of Electrical and Electronics",
-    "semesterId": 1,
-    "description": "Active/passive components, resistors, capacitors, inductors, semiconductors, diodes, BJT, and FET.",
-    "path": "/chapter/fundamental-electrical-electronics/unit-1",
-    "sections": [
-      {
-        "id": "components",
-        "title": "1. Active & Passive Components"
-      },
-      {
-        "id": "semiconductors",
-        "title": "2. Semiconductors"
-      },
-      {
-        "id": "diodes",
-        "title": "3. PN Junction Diode"
-      },
-      {
-        "id": "transistors",
-        "title": "4. BJT and FET"
-      }
-    ]
-  },
-  {
-    "id": "unit-2",
-    "number": "02",
-    "title": "Unit 2: Basic Measuring Instruments",
-    "duration": "05 Periods",
-    "subjectId": "fundamental-electrical-electronics",
-    "subjectName": "Fundamentals of Electrical and Electronics",
-    "semesterId": 1,
-    "description": "Voltage/current sources, ammeter, voltmeter, wattmeter, DMM, and CRO.",
-    "path": "/chapter/fundamental-electrical-electronics/unit-2",
-    "sections": [
-      {
-        "id": "sources",
-        "title": "1. Voltage and Current Sources"
-      },
-      {
-        "id": "meters",
-        "title": "2. Basic Meters & DMM"
-      },
-      {
-        "id": "cro",
-        "title": "3. CRO (Cathode Ray Oscilloscope)"
-      }
-    ]
-  },
-  {
-    "id": "unit-3",
-    "number": "03",
-    "title": "Unit 3: Overview of Digital Electronics",
-    "duration": "07 Periods",
-    "subjectId": "fundamental-electrical-electronics",
-    "subjectName": "Fundamentals of Electrical and Electronics",
-    "semesterId": 1,
-    "description": "Analog/digital signals, number systems, boolean algebra, logic gates, and truth tables.",
-    "path": "/chapter/fundamental-electrical-electronics/unit-3",
-    "sections": [
-      {
-        "id": "signals",
-        "title": "1. Analog & Digital Signals"
-      },
-      {
-        "id": "number-systems",
-        "title": "2. Number Systems"
-      },
-      {
-        "id": "logic-gates",
-        "title": "3. Logic Gates & Boolean"
-      }
-    ]
-  },
-  {
-    "id": "unit-4",
-    "number": "04",
-    "title": "Unit 4: Electric and Magnetic Circuits",
-    "duration": "07 Periods",
-    "subjectId": "fundamental-electrical-electronics",
-    "subjectName": "Fundamentals of Electrical and Electronics",
-    "semesterId": 1,
-    "description": "Ohm’s law, Kirchhoff’s laws, magnetic flux, B-H curve, Faraday’s laws, and inductance.",
-    "path": "/chapter/fundamental-electrical-electronics/unit-4",
-    "sections": [
-      {
-        "id": "electric-circuits",
-        "title": "1. Electric Circuits & Laws"
-      },
-      {
-        "id": "magnetic-circuits",
-        "title": "2. Magnetic Circuits"
-      },
-      {
-        "id": "induction",
-        "title": "3. Electromagnetic Induction"
-      }
-    ]
-  },
-  {
-    "id": "unit-5",
-    "number": "05",
-    "title": "Unit 5: A.C. Circuits",
-    "duration": "07 Periods",
-    "subjectId": "fundamental-electrical-electronics",
-    "subjectName": "Fundamentals of Electrical and Electronics",
-    "semesterId": 1,
-    "description": "AC fundamentals, RMS value, impedance, power factor, pure R/L/C circuits, and polyphase systems.",
-    "path": "/chapter/fundamental-electrical-electronics/unit-5",
-    "sections": [
-      {
-        "id": "ac-fundamentals",
-        "title": "1. AC Fundamentals"
-      },
-      {
-        "id": "ac-circuits",
-        "title": "2. AC through R/L/C"
-      },
-      {
-        "id": "power",
-        "title": "3. Power & Polyphase Systems"
-      }
-    ]
-  },
-  {
-    "id": "unit-6",
-    "number": "06",
-    "title": "Unit 6: Transformers and Machines",
-    "duration": "07 Periods",
-    "subjectId": "fundamental-electrical-electronics",
-    "subjectName": "Fundamentals of Electrical and Electronics",
-    "semesterId": 1,
-    "description": "Single-phase transformer, DC machines, and induction motors.",
-    "path": "/chapter/fundamental-electrical-electronics/unit-6",
-    "sections": [
-      {
-        "id": "transformer",
-        "title": "1. Single-phase Transformer"
-      },
-      {
-        "id": "dc-machines",
-        "title": "2. DC Machines"
-      },
-      {
-        "id": "induction-motor",
-        "title": "3. Induction Motors"
-      }
-    ]
-  }
-],
-
-  'applied-physics-1': [
+  "communication-skills-english": [
     {
-      id: 'units-and-dimensions',
-      number: '01',
-      title: 'Units and Dimensions',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Need of measurement in engineering & science, fundamental and derived units, systems of units (FPS, CGS, SI), dimensions, principle of homogeneity, dimensional equations, applications, and limitations.',
-      path: '/chapter/applied-physics-1/units-and-dimensions',
-      sections: [
-        { id: 'sec-1-1', title: '1.1 Need of Measurement & Units' },
-        { id: 'sec-1-2', title: '1.2 Dimensions & Dimensional Formulae' },
-        { id: 'sec-1-3', title: '1.3 Principle of Homogeneity' },
-        { id: 'sec-1-4', title: '1.4 Dimensional Equations & Applications' },
-        { id: 'sec-1-5', title: '1.5 Limitations of Dimensional Analysis' },
-        { id: 'exam-focus', title: '★ Exam Focus (Important Questions)' },
-        { id: 'quick-revision', title: '⚡ Last Minute Quick Revision' },
-      ],
+      "id": "unit-1",
+      "number": "01",
+      "title": "Unit 1: Communication: Theory and Practice",
+      "duration": "08 Periods",
+      "subjectId": "communication-skills-english",
+      "subjectName": "Communication Skills in English",
+      "semesterId": 1,
+      "description": "Basics of communication, types of communication, barriers to communication, and tools/devices of communication.",
+      "path": "/chapter/communication-skills-english/unit-1",
+      "sections": [
+        {
+          "id": "sec-1-1",
+          "title": "1.1. Meaning and Definition of Communication"
+        },
+        {
+          "id": "sec-1-2",
+          "title": "1.2. The Communication Process"
+        },
+        {
+          "id": "sec-1-3",
+          "title": "1.3. Types of Communication"
+        },
+        {
+          "id": "sec-1-4",
+          "title": "1.4. 7 C's of Effective Communication"
+        },
+        {
+          "id": "sec-1-5",
+          "title": "1.5. Barriers to Communication and Tools"
+        }
+      ]
     },
     {
-      id: 'force-and-motion',
-      number: '02',
-      title: 'Force and Motion',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Scalar and vector quantities, addition and subtraction of vectors, resolution of vectors, force, momentum, conservation of linear momentum, and gravitational force.',
-      path: '/chapter/applied-physics-1/force-and-motion',
-      sections: [
-        { id: 'sec-2-1', title: '2.1 Scalar & Vector Quantities' },
-        { id: 'sec-2-2', title: '2.2 Addition & Subtraction of Vectors' },
-        { id: 'sec-2-3', title: '2.3 Resolution of Vectors' },
-        { id: 'sec-2-4', title: '2.4 Force & Momentum' },
-        { id: 'sec-2-5', title: '2.5 Gravitational Force' },
-      ],
+      "id": "unit-2",
+      "number": "02",
+      "title": "Unit 2: Soft Skills for Professional Excellence",
+      "duration": "04 Periods",
+      "subjectId": "communication-skills-english",
+      "subjectName": "Communication Skills in English",
+      "semesterId": 1,
+      "description": "Soft skills vs hard skills, and the importance of soft skills in education and workplace.",
+      "path": "/chapter/communication-skills-english/unit-2",
+      "sections": [
+        {
+          "id": "sec-2-1",
+          "title": "2.1. Meaning and Definition of Soft Skills"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "2.2. Soft Skills vs Hard Skills"
+        },
+        {
+          "id": "sec-2-3",
+          "title": "2.3. Characteristics of Soft Skills"
+        },
+        {
+          "id": "sec-2-4",
+          "title": "2.4. Importance and Examples of Soft Skills"
+        }
+      ]
     },
     {
-      id: 'work-power-and-energy',
-      number: '03',
-      title: 'Work, Power and Energy',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Work and its units, friction (static, limiting, dynamic), energy (kinetic, potential, mechanical), work-energy theorem, conservation of mechanical energy, and power.',
-      path: '/chapter/applied-physics-1/work-power-and-energy',
-      sections: [
-        { id: 'sec-3-1', title: '3.1 Work & its Units' },
-        { id: 'sec-3-2', title: '3.2 Friction' },
-        { id: 'sec-3-3', title: '3.3 Energy & its Units' },
-        { id: 'sec-3-4', title: '3.4 Work-Energy Theorem' },
-        { id: 'sec-3-5', title: '3.5 Power' },
-      ],
+      "id": "unit-3",
+      "number": "03",
+      "title": "Unit 3: Reading Comprehension: Unseen Passages",
+      "duration": "08 Periods",
+      "subjectId": "communication-skills-english",
+      "subjectName": "Communication Skills in English",
+      "semesterId": 1,
+      "description": "Reading comprehension, prefix, suffix, antonyms, and synonyms.",
+      "path": "/chapter/communication-skills-english/unit-3",
+      "sections": [
+        {
+          "id": "sec-3-1",
+          "title": "3.1. Reading Comprehension Basics"
+        },
+        {
+          "id": "sec-3-2",
+          "title": "3.2. Prefix and Suffix"
+        },
+        {
+          "id": "sec-3-3",
+          "title": "3.3. Synonyms and Antonyms"
+        }
+      ]
     },
     {
-      id: 'circular-motion',
-      number: '04',
-      title: 'Circular Motion',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Uniform and non-uniform circular motion, angular displacement, angular velocity, angular acceleration, frequency, time period, centripetal acceleration, and centripetal force.',
-      path: '/chapter/applied-physics-1/circular-motion',
-      sections: [
-        { id: 'sec-4-1', title: '4.1 Circular Motion Basics' },
-        { id: 'sec-4-2', title: '4.2 Angular Definitions' },
-        { id: 'sec-4-3', title: '4.3 Relations between Linear & Angular Quantities' },
-        { id: 'sec-4-4', title: '4.4 Centripetal Acceleration' },
-        { id: 'sec-4-5', title: '4.5 Centripetal & Centrifugal Force' },
-      ],
+      "id": "unit-4",
+      "number": "04",
+      "title": "Unit 4: Functional Grammar",
+      "duration": "08 Periods",
+      "subjectId": "communication-skills-english",
+      "subjectName": "Communication Skills in English",
+      "semesterId": 1,
+      "description": "Sentence types, parts of speech, tenses, active/passive voice, and punctuation.",
+      "path": "/chapter/communication-skills-english/unit-4",
+      "sections": [
+        {
+          "id": "sec-4-1",
+          "title": "4.1. The Sentence and its Types"
+        },
+        {
+          "id": "sec-4-2",
+          "title": "4.2. Parts of Speech"
+        },
+        {
+          "id": "sec-4-3",
+          "title": "4.3. Tenses"
+        },
+        {
+          "id": "sec-4-4",
+          "title": "4.4. Active and Passive Voice"
+        },
+        {
+          "id": "sec-4-5",
+          "title": "4.5. Punctuation"
+        }
+      ]
     },
     {
-      id: 'rotational-motion',
-      number: '05',
-      title: 'Rotational Motion of a Rigid Body',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Rigid body rotation, torque, moment of inertia, radius of gyration, theorems of parallel and perpendicular axes, rotational kinetic energy, and angular momentum.',
-      path: '/chapter/applied-physics-1/rotational-motion',
-      sections: [
-        { id: 'sec-5-1', title: '5.1 Rigid Body & Torque' },
-        { id: 'sec-5-2', title: '5.2 Moment of Inertia Basics' },
-        { id: 'sec-5-3', title: '5.3 Moment of Inertia of Regular Shapes' },
-        { id: 'sec-5-4', title: '5.4 Rotational Kinetic Energy' },
-        { id: 'sec-5-5', title: '5.5 Angular Momentum' },
-      ],
-    },
-    {
-      id: 'properties-of-matter',
-      number: '06',
-      title: 'Properties of Matter',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Elasticity, Hooke\'s law, pressure, surface tension, capillary action, viscous force, Stoke\'s law, streamline flow, equation of continuity, and Bernoulli\'s theorem.',
-      path: '/chapter/applied-physics-1/properties-of-matter',
-      sections: [
-        { id: 'sec-6-1', title: '6.1 Elasticity & Hooke\'s Law' },
-        { id: 'sec-6-2', title: '6.2 Pressure' },
-        { id: 'sec-6-3', title: '6.3 Surface Tension' },
-        { id: 'sec-6-4', title: '6.4 Viscous Force & Stoke\'s Law' },
-        { id: 'sec-6-5', title: '6.5 Fluid Motion & Bernoulli\'s Theorem' },
-      ],
-    },
-    {
-      id: 'heat-and-thermometry',
-      number: '07',
-      title: 'Heat and Thermometry',
-      duration: '6 Periods',
-      subjectId: 'applied-physics-1',
-      subjectName: 'Applied Physics - 1',
-      semesterId: 1,
-      description:
-        'Concept of heat and temperature, temperature scales (Celsius, Kelvin, Fahrenheit), modes of heat transfer, expansion of solids, and concept of Mercury Thermometer.',
-      path: '/chapter/applied-physics-1/heat-and-thermometry',
-      sections: [
-        { id: 'sec-7-1', title: '7.1 Concept of Heat & Temperature' },
-        { id: 'sec-7-2', title: '7.2 Temperature Scales' },
-        { id: 'sec-7-3', title: '7.3 Modes of Transfer of Heat' },
-        { id: 'sec-7-4', title: '7.4 Expansion of Solids' },
-        { id: 'sec-7-5', title: '7.5 Mercury Thermometer' },
-      ],
-    },
+      "id": "unit-5",
+      "number": "05",
+      "title": "Unit 5: Professional Writing",
+      "duration": "14 Periods",
+      "subjectId": "communication-skills-english",
+      "subjectName": "Communication Skills in English",
+      "semesterId": 1,
+      "description": "CV writing, agenda, minutes, notices, official letters, letter-reports, and e-mail drafting.",
+      "path": "/chapter/communication-skills-english/unit-5",
+      "sections": [
+        {
+          "id": "sec-5-1",
+          "title": "5.1. CV / Resume and Covering Letter"
+        },
+        {
+          "id": "sec-5-2",
+          "title": "5.2. Agenda and Minutes"
+        },
+        {
+          "id": "sec-5-3",
+          "title": "5.3. Notices, Memos, and Circulars"
+        },
+        {
+          "id": "sec-5-4",
+          "title": "5.4. Official Letters and Reports"
+        },
+        {
+          "id": "sec-5-5",
+          "title": "5.5. Email Drafting"
+        }
+      ]
+    }
   ],
-  
-  'mathematics-1': [
+  "introduction-to-it": [
     {
-      id: 'trigonometry',
-      number: '01',
-      title: 'Trigonometry',
-      duration: '08 Periods',
-      subjectId: 'mathematics-1',
-      subjectName: 'Mathematics - 1',
-      semesterId: 1,
-      description:
-        'Concept of angles, measurement of angles in degrees and radians, allied angles, sum and difference formulae, product formulae, multiple and sub-multiple angles (2A only), and graphs of |x|, sin x, cos x, e^x.',
-      path: '/chapter/mathematics-1/trigonometry',
-      sections: [
-        { id: 'sec-1-1', title: '1. Concept of Angles & Measurement' },
-        { id: 'sec-1-2', title: '2. T-Ratios of Allied Angles' },
-        { id: 'sec-1-3', title: '3. Sum & Difference Formulae' },
-        { id: 'sec-1-4', title: '4. Product Formulae' },
-        { id: 'sec-1-5', title: '5. T-Ratios of Multiple Angles (2A)' },
-        { id: 'sec-1-6', title: '6. Graphs of Basic Functions' },
-      ],
+      "id": "unit-1",
+      "number": "01",
+      "title": "Unit 1: Introduction to Computers and Peripherals",
+      "duration": "05 Periods",
+      "subjectId": "introduction-to-it",
+      "subjectName": "Introduction to IT and AI",
+      "semesterId": 1,
+      "description": "Introduction, generations, components, CPU, memory, I/O devices, printers, and scanners.",
+      "path": "/chapter/introduction-to-it/unit-1",
+      "sections": [
+        {
+          "id": "sec-1-1",
+          "title": "1.1. Introduction and Generations of Computer"
+        },
+        {
+          "id": "sec-1-2",
+          "title": "1.2. CPU and Memory"
+        },
+        {
+          "id": "sec-1-3",
+          "title": "1.3. Peripherals (Input/Output Devices)"
+        }
+      ]
     },
     {
-      id: 'differential-calculus',
-      number: '02',
-      title: 'Differential Calculus',
-      duration: '10 Periods',
-      subjectId: 'mathematics-1',
-      subjectName: 'Mathematics - 1',
-      semesterId: 1,
-      description:
-        'Definition of function, concept of limits, standard limits, differentiation by definition, differentiation rules (sum, product, quotient, chain rule), and differentiation of trigonometric, exponential, and logarithmic functions.',
-      path: '/chapter/mathematics-1/differential-calculus',
-      sections: [
-        { id: 'sec-2-1', title: '1. Definition of Function' },
-        { id: 'sec-2-2', title: '2. Concept of Limits' },
-        { id: 'sec-2-3', title: '3. Four Standard Limits' },
-        { id: 'sec-2-4', title: '4. Differentiation by Definition' },
-        { id: 'sec-2-5', title: '5. Differentiation Rules' },
-        { id: 'sec-2-6', title: '6. Types of Differentiation' },
-      ],
+      "id": "unit-2",
+      "number": "02",
+      "title": "Unit 2: Operating System and Application Software",
+      "duration": "06 Periods",
+      "subjectId": "introduction-to-it",
+      "subjectName": "Introduction to IT and AI",
+      "semesterId": 1,
+      "description": "System software, application software, Windows OS, MS Office, Google Suite, and antivirus.",
+      "path": "/chapter/introduction-to-it/unit-2",
+      "sections": [
+        {
+          "id": "sec-2-1",
+          "title": "2.1. Software Classification"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "2.2. Operating System and Windows Basics"
+        },
+        {
+          "id": "sec-2-3",
+          "title": "2.3. Application Suites: Office & Google Workspace"
+        }
+      ]
     },
     {
-      id: 'partial-fractions',
-      number: '03',
-      title: 'Partial Fractions',
-      duration: '08 Periods',
-      subjectId: 'mathematics-1',
-      subjectName: 'Mathematics - 1',
-      semesterId: 1,
-      description:
-        'Definition of polynomial fractions, proper and improper fractions, and resolution of proper/improper fractions with non-repeated and repeated linear factors into partial fractions.',
-      path: '/chapter/mathematics-1/partial-fractions',
-      sections: [
-        { id: 'sec-3-1', title: '1. Polynomial Fraction' },
-        { id: 'sec-3-2', title: '2. Proper & Improper Fractions' },
-        { id: 'sec-3-3', title: '3. Partial Fractions Definition' },
-        { id: 'sec-3-4', title: '4. Resolution into Partial Fractions' },
-      ],
+      "id": "unit-3",
+      "number": "03",
+      "title": "Unit 3: Internet",
+      "duration": "06 Periods",
+      "subjectId": "introduction-to-it",
+      "subjectName": "Introduction to IT and AI",
+      "semesterId": 1,
+      "description": "Network topologies, LAN/MAN/WAN, networking devices, Wi-Fi, IP, DNS, and search engines.",
+      "path": "/chapter/introduction-to-it/unit-3",
+      "sections": [
+        {
+          "id": "sec-3-1",
+          "title": "3.1. Network Basics and Geographical Scope"
+        },
+        {
+          "id": "sec-3-2",
+          "title": "3.2. Network Topologies"
+        },
+        {
+          "id": "sec-3-3",
+          "title": "3.3. Networking Devices & Protocols"
+        }
+      ]
     },
     {
-      id: 'binomial-theorem',
-      number: '04',
-      title: 'Binomial Theorem',
-      duration: '06 Periods',
-      subjectId: 'mathematics-1',
-      subjectName: 'Mathematics - 1',
-      semesterId: 1,
-      description:
-        'Permutations and combinations (nPr, nCr), Binomial Theorem for positive integral index, and its applications (general term, middle term, independent term).',
-      path: '/chapter/mathematics-1/binomial-theorem',
-      sections: [
-        { id: 'sec-4-1', title: '1. Permutations & Combinations' },
-        { id: 'sec-4-2', title: '2. Binomial Theorem (Without Proof)' },
-        { id: 'sec-4-3', title: '3. Applications of Binomial Theorem' },
-      ],
+      "id": "unit-4",
+      "number": "04",
+      "title": "Unit 4: Basics of Information Security",
+      "duration": "05 Periods",
+      "subjectId": "introduction-to-it",
+      "subjectName": "Introduction to IT and AI",
+      "semesterId": 1,
+      "description": "CIA Triad, threats, malware, active/passive attacks, cyber frauds, and Indian cyber laws.",
+      "path": "/chapter/introduction-to-it/unit-4",
+      "sections": [
+        {
+          "id": "sec-4-1",
+          "title": "4.1. The CIA Triad"
+        },
+        {
+          "id": "sec-4-2",
+          "title": "4.2. Malware and Attacks"
+        },
+        {
+          "id": "sec-4-3",
+          "title": "4.3. Access Control and Cyber Laws"
+        }
+      ]
     },
     {
-      id: 'complex-numbers',
-      number: '05',
-      title: 'Complex Numbers',
-      duration: '10 Periods',
-      subjectId: 'mathematics-1',
-      subjectName: 'Mathematics - 1',
-      semesterId: 1,
-      description:
-        'Definition, real & imaginary parts, Cartesian and polar forms, conjugate, modulus, amplitude, arithmetic operations, and De Moivre\'s theorem with simple applications.',
-      path: '/chapter/mathematics-1/complex-numbers',
-      sections: [
-        { id: 'sec-5-1', title: '1. Definition & Parts' },
-        { id: 'sec-5-2', title: '2. Forms of Complex Numbers' },
-        { id: 'sec-5-3', title: '3. Conjugate of Complex Number' },
-        { id: 'sec-5-4', title: '4. Modulus & Amplitude' },
-        { id: 'sec-5-5', title: '5. Arithmetic Operations' },
-        { id: 'sec-5-6', title: '6. De Moivre\'s Theorem' },
-      ],
-    },
+      "id": "unit-5",
+      "number": "05",
+      "title": "Unit 5: Fundamentals and Applications of AI",
+      "duration": "06 Periods",
+      "subjectId": "introduction-to-it",
+      "subjectName": "Introduction to IT and AI",
+      "semesterId": 1,
+      "description": "AI definitions, ML vs DL, generative AI (ChatGPT, Gemini), prompt engineering, heuristic search, and AI applications.",
+      "path": "/chapter/introduction-to-it/unit-5",
+      "sections": [
+        {
+          "id": "sec-5-1",
+          "title": "5.1. Definition, Scope and Types of AI"
+        },
+        {
+          "id": "sec-5-2",
+          "title": "5.2. AI vs ML vs DL"
+        },
+        {
+          "id": "sec-5-3",
+          "title": "5.3. Generative AI and Prompt Engineering"
+        },
+        {
+          "id": "sec-5-4",
+          "title": "5.4. Search Algorithms and Applications"
+        }
+      ]
+    }
   ],
-
-  'applied-chemistry': [
+  "fundamental-electrical-electronics": [
     {
-      id: 'atomic-structure-chemical-bonding-and-solutions',
-      number: '01',
-      title: 'Atomic Structure, Chemical Bonding and Solutions',
-      duration: '08 Periods',
-      subjectId: 'applied-chemistry',
-      subjectName: 'Applied Chemistry',
-      semesterId: 1,
-      description: 'Fundamental principles of atomic structure, nature and type of chemical bonding, hybridization, hydrogen and metallic bonding, and various methods for expressing concentration of solution.',
-      path: '/chapter/applied-chemistry/atomic-structure-chemical-bonding-and-solutions',
-      sections: [
-        { id: 'sec-1-1', title: '1.1 Atomic Structure' },
-        { id: 'sec-1-2', title: '1.2 Chemical Bonding' },
-        { id: 'sec-1-3', title: '1.3 Hybridization' },
-        { id: 'sec-1-4', title: '1.4 Hydrogen Bonding' },
-        { id: 'sec-1-5', title: '1.5 Metallic Bonding' },
-        { id: 'sec-1-6', title: '1.6 Solutions' },
-      ],
+      "id": "unit-1",
+      "number": "01",
+      "title": "Unit 1: Overview of Electronic Components",
+      "duration": "09 Periods",
+      "subjectId": "fundamental-electrical-electronics",
+      "subjectName": "Fundamentals of Electrical and Electronics",
+      "semesterId": 1,
+      "description": "Active/passive components, resistors, capacitors, inductors, semiconductors, diodes, BJT, and FET.",
+      "path": "/chapter/fundamental-electrical-electronics/unit-1",
+      "sections": [
+        {
+          "id": "sec-1-1",
+          "title": "1.1. Active and Passive Components"
+        },
+        {
+          "id": "sec-1-2",
+          "title": "1.2. Semiconductors"
+        },
+        {
+          "id": "sec-1-3",
+          "title": "1.3. PN Junction Diode and Transistors"
+        }
+      ]
     },
     {
-      id: 'water',
-      number: '02',
-      title: 'Water',
-      duration: '08 Periods',
-      subjectId: 'applied-chemistry',
-      subjectName: 'Applied Chemistry',
-      semesterId: 1,
-      description: 'Classification of water, hardness of water, problems caused by hard water in boilers, water softening techniques (Soda Lime, Zeolite, Ion Exchange), and municipal water treatment.',
-      path: '/chapter/applied-chemistry/water',
-      sections: [
-        { id: 'sec-2-1', title: '2.1 Classification of Water' },
-        { id: 'sec-2-2', title: '2.2 Water Hardness' },
-        { id: 'sec-2-3', title: '2.3 Hard Water and Soap' },
-        { id: 'sec-2-4', title: '2.4 Problems Caused by Hard Water' },
-        { id: 'sec-2-5', title: '2.5 Water Softening Techniques' },
-        { id: 'sec-2-6', title: '2.6 Municipal Water Treatment' },
-      ],
+      "id": "unit-2",
+      "number": "02",
+      "title": "Unit 2: Basic Measuring Instruments",
+      "duration": "05 Periods",
+      "subjectId": "fundamental-electrical-electronics",
+      "subjectName": "Fundamentals of Electrical and Electronics",
+      "semesterId": 1,
+      "description": "Voltage/current sources, ammeter, voltmeter, wattmeter, DMM, and CRO.",
+      "path": "/chapter/fundamental-electrical-electronics/unit-2",
+      "sections": [
+        {
+          "id": "sec-2-1",
+          "title": "2.1. Voltage and Current Sources"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "2.2. Basic Meters (Ammeter, Voltmeter, Wattmeter)"
+        },
+        {
+          "id": "sec-2-3",
+          "title": "2.3. Cathode Ray Oscilloscope (CRO)"
+        }
+      ]
     },
     {
-      id: 'engineering-materials',
-      number: '03',
-      title: 'Engineering Materials',
-      duration: '08 Periods',
-      subjectId: 'applied-chemistry',
-      subjectName: 'Applied Chemistry',
-      semesterId: 1,
-      description: 'Natural occurrence of metals, general principles of metallurgy, extraction of aluminium, alloys, Portland cement, composite materials, polymers, and rubber.',
-      path: '/chapter/applied-chemistry/engineering-materials',
-      sections: [
-        { id: 'sec-3-1', title: '3.1 Natural Occurrence of Metals' },
-        { id: 'sec-3-2', title: '3.2 General Principles of Metallurgy' },
-        { id: 'sec-3-3', title: '3.3 Extraction of Aluminium' },
-        { id: 'sec-3-4', title: '3.4 Alloys' },
-        { id: 'sec-3-5', title: '3.5 Portland Cement' },
-        { id: 'sec-3-6', title: '3.6 Composite Materials' },
-        { id: 'sec-3-7', title: '3.7 Polymers' },
-        { id: 'sec-3-8', title: '3.8 Rubber' },
-      ],
+      "id": "unit-3",
+      "number": "03",
+      "title": "Unit 3: Overview of Digital Electronics",
+      "duration": "07 Periods",
+      "subjectId": "fundamental-electrical-electronics",
+      "subjectName": "Fundamentals of Electrical and Electronics",
+      "semesterId": 1,
+      "description": "Analog/digital signals, number systems, boolean algebra, logic gates, and truth tables.",
+      "path": "/chapter/fundamental-electrical-electronics/unit-3",
+      "sections": [
+        {
+          "id": "sec-3-1",
+          "title": "3.1. Analog vs Digital Electronics"
+        },
+        {
+          "id": "sec-3-2",
+          "title": "3.2. Number Systems"
+        },
+        {
+          "id": "sec-3-3",
+          "title": "3.3. Logic Gates and Truth Tables"
+        }
+      ]
     },
     {
-      id: 'chemistry-of-fuels-and-lubricants',
-      number: '04',
-      title: 'Chemistry of Fuels and Lubricants',
-      duration: '09 Periods',
-      subjectId: 'applied-chemistry',
-      subjectName: 'Applied Chemistry',
-      semesterId: 1,
-      description: 'Classification, combustion properties, rating and calorific calculations of fuels, as well as functional, physical and chemical characteristics of industrial lubricants.',
-      path: '/chapter/applied-chemistry/chemistry-of-fuels-and-lubricants',
-      sections: [
-        { id: 'sec-4-1', title: '4.1 Fuels' },
-        { id: 'sec-4-2', title: '4.2 Calorific Value' },
-        { id: 'sec-4-3', title: '4.3 Fuel Rating' },
-        { id: 'sec-4-4', title: '4.4 Important Fuels' },
-        { id: 'sec-4-5', title: '4.5 Lubrication' },
-        { id: 'sec-4-6', title: '4.6 Physical Properties of Lubricants' },
-        { id: 'sec-4-7', title: '4.7 Chemical Properties of Lubricants' },
-      ],
+      "id": "unit-4",
+      "number": "04",
+      "title": "Unit 4: Electric and Magnetic Circuits",
+      "duration": "07 Periods",
+      "subjectId": "fundamental-electrical-electronics",
+      "subjectName": "Fundamentals of Electrical and Electronics",
+      "semesterId": 1,
+      "description": "Ohm’s law, Kirchhoff’s laws, magnetic flux, B-H curve, Faraday’s laws, and inductance.",
+      "path": "/chapter/fundamental-electrical-electronics/unit-4",
+      "sections": [
+        {
+          "id": "sec-4-1",
+          "title": "4.1. Ohm's Law and Basic Quantities"
+        },
+        {
+          "id": "sec-4-2",
+          "title": "4.2. Kirchhoff's Laws"
+        },
+        {
+          "id": "sec-4-3",
+          "title": "4.3. Magnetic Circuits and B-H Curve"
+        },
+        {
+          "id": "sec-4-4",
+          "title": "4.4. Electromagnetic Induction"
+        }
+      ]
     },
     {
-      id: 'electro-chemistry',
-      number: '05',
-      title: 'Electro Chemistry',
-      duration: '09 Periods',
-      subjectId: 'applied-chemistry',
-      subjectName: 'Applied Chemistry',
-      semesterId: 1,
-      description: 'Oxidation and reduction, electrolytes, Faraday\'s laws of electrolysis, industrial applications, electrochemical cells, and corrosion of metals with preventive measures.',
-      path: '/chapter/applied-chemistry/electro-chemistry',
-      sections: [
-        { id: 'sec-5-1', title: '5.1 Oxidation and Reduction' },
-        { id: 'sec-5-2', title: '5.2 Electrolytes and Non-Electrolytes' },
-        { id: 'sec-5-3', title: '5.3 Faraday\'s Laws of Electrolysis' },
-        { id: 'sec-5-4', title: '5.4 Industrial Applications of Electrolysis' },
-        { id: 'sec-5-5', title: '5.5 Electrochemical Cells' },
-        { id: 'sec-5-6', title: '5.6 Corrosion of Metals' },
-        { id: 'sec-5-7', title: '5.7 Corrosion Prevention' },
-      ],
+      "id": "unit-5",
+      "number": "05",
+      "title": "Unit 5: A.C. Circuits",
+      "duration": "07 Periods",
+      "subjectId": "fundamental-electrical-electronics",
+      "subjectName": "Fundamentals of Electrical and Electronics",
+      "semesterId": 1,
+      "description": "AC fundamentals, RMS value, impedance, power factor, pure R/L/C circuits, and polyphase systems.",
+      "path": "/chapter/fundamental-electrical-electronics/unit-5",
+      "sections": [
+        {
+          "id": "sec-5-1",
+          "title": "5.1. AC Fundamentals"
+        },
+        {
+          "id": "sec-5-2",
+          "title": "5.2. AC Through Pure R, L, and C"
+        },
+        {
+          "id": "sec-5-3",
+          "title": "5.3. Power in AC Circuits"
+        },
+        {
+          "id": "sec-5-4",
+          "title": "5.4. Polyphase Systems (3-Phase)"
+        }
+      ]
     },
+    {
+      "id": "unit-6",
+      "number": "06",
+      "title": "Unit 6: Transformers and Machines",
+      "duration": "07 Periods",
+      "subjectId": "fundamental-electrical-electronics",
+      "subjectName": "Fundamentals of Electrical and Electronics",
+      "semesterId": 1,
+      "description": "Single-phase transformer, DC machines, and induction motors.",
+      "path": "/chapter/fundamental-electrical-electronics/unit-6",
+      "sections": [
+        {
+          "id": "sec-6-1",
+          "title": "6.1. Single-Phase Transformer"
+        },
+        {
+          "id": "sec-6-2",
+          "title": "6.2. DC Machines"
+        },
+        {
+          "id": "sec-6-3",
+          "title": "6.3. Induction Motors"
+        }
+      ]
+    }
   ],
-
-  // 1. DBMS (Database Management System)
-  'dbms': [
+  "applied-physics-1": [
     {
-      id: 'unit-1',
-      number: '01',
-      title: 'Unit 1: Introduction to DBMS',
-      duration: '6 Periods',
-      subjectId: 'dbms',
-      subjectName: 'Database Management System',
-      semesterId: 3,
-      description:
-        'Database System Concepts, Architecture, Components of DBMS, Table Structure, Schema Definition, aur Three Views of Data (External, Conceptual, Internal View).',
-      path: '/chapter/dbms/unit-1',
-      sections: [
-        { id: 'concepts-architecture', title: '1. Database Concepts & Architecture' },
-        { id: 'components-dbms', title: '2. Components of DBMS' },
-        { id: 'table-structure', title: '3. Table Structure & Terminology' },
-        { id: 'schema-definition', title: '4. Schema Definition' },
-        { id: 'three-views', title: '5. Three Views of Data' },
-      ],
+      "id": "units-and-dimensions",
+      "number": "01",
+      "title": "Units and Dimensions",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Need of measurement in engineering & science, fundamental and derived units, systems of units (FPS, CGS, SI), dimensions, principle of homogeneity, dimensional equations, applications, and limitations.",
+      "path": "/chapter/applied-physics-1/units-and-dimensions",
+      "sections": [
+        {
+          "id": "sec-1-1",
+          "title": "1.1 Need of Measurement & Units"
+        },
+        {
+          "id": "sec-1-2",
+          "title": "1.2 Dimensions & Dimensional Formulae"
+        },
+        {
+          "id": "sec-1-3",
+          "title": "1.3 Principle of Homogeneity"
+        },
+        {
+          "id": "sec-1-4",
+          "title": "1.4 Dimensional Equations & Applications"
+        },
+        {
+          "id": "sec-1-5",
+          "title": "1.5 Limitations of Dimensional Analysis"
+        },
+        {
+          "id": "exam-focus",
+          "title": "★ Exam Focus (Important Questions)"
+        },
+        {
+          "id": "quick-revision",
+          "title": "⚡ Last Minute Quick Revision"
+        }
+      ]
     },
     {
-      id: 'unit-2',
-      number: '02',
-      title: 'Unit 2: Data Model and Keys',
-      duration: '8 Periods',
-      subjectId: 'dbms',
-      subjectName: 'Database Management System',
-      semesterId: 3,
-      description:
-        'Data Model Definition, Network Model, Hierarchical Model, E-R Model, Keys (Primary, Candidate, Super, Foreign), Constraints, aur Strong & Weak Entity Sets.',
-      path: '/chapter/dbms/unit-2',
-      sections: [
-        { id: 'data-model-definition', title: '1. Define Data Model' },
-        { id: 'network-model', title: '2. Network Model' },
-        { id: 'hierarchical-model', title: '3. Hierarchical Model' },
-        { id: 'er-model', title: '4. E-R Model' },
-        { id: 'concept-of-keys', title: '5. Concept of Keys' },
-        { id: 'constraints', title: '6. Constraints' },
-        { id: 'strong-weak-entities', title: '7. Strong & Weak Entity Sets' },
-      ],
+      "id": "force-and-motion",
+      "number": "02",
+      "title": "Force and Motion",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Scalar and vector quantities, addition and subtraction of vectors, resolution of vectors, force, momentum, conservation of linear momentum, and gravitational force.",
+      "path": "/chapter/applied-physics-1/force-and-motion",
+      "sections": [
+        {
+          "id": "sec-2-1",
+          "title": "2.1 Scalar & Vector Quantities"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "2.2 Addition & Subtraction of Vectors"
+        },
+        {
+          "id": "sec-2-3",
+          "title": "2.3 Resolution of Vectors"
+        },
+        {
+          "id": "sec-2-4",
+          "title": "2.4 Force & Momentum"
+        },
+        {
+          "id": "sec-2-5",
+          "title": "2.5 Gravitational Force"
+        }
+      ]
     },
     {
-      id: 'unit-3',
-      number: '03',
-      title: 'Unit 3: Relational Model',
-      duration: '10 Periods',
-      subjectId: 'dbms',
-      subjectName: 'Database Management System',
-      semesterId: 3,
-      description:
-        'The Relational Data Model, Constraints, ER/EER to Relational Mapping, Relational Algebra & Calculus, Basic & Additional Relational Operations.',
-      path: '/chapter/dbms/unit-3',
-      sections: [
-        { id: 'relational-model', title: '1. Relational Data Model' },
-        { id: 'relational-constraints', title: '2. Relational Constraints' },
-        { id: 'er-mapping', title: '3. ER to Relational Mapping' },
-        { id: 'relational-algebra', title: '4. Relational Algebra & Calculus' },
-        { id: 'basic-algebra-ops', title: '5. Basic Relational Operations' },
-        { id: 'additional-algebra-ops', title: '6. Additional Operations & Joins' },
-      ],
+      "id": "work-power-and-energy",
+      "number": "03",
+      "title": "Work, Power and Energy",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Work and its units, friction (static, limiting, dynamic), energy (kinetic, potential, mechanical), work-energy theorem, conservation of mechanical energy, and power.",
+      "path": "/chapter/applied-physics-1/work-power-and-energy",
+      "sections": [
+        {
+          "id": "sec-3-1",
+          "title": "3.1 Work & its Units"
+        },
+        {
+          "id": "sec-3-2",
+          "title": "3.2 Friction"
+        },
+        {
+          "id": "sec-3-3",
+          "title": "3.3 Energy & its Units"
+        },
+        {
+          "id": "sec-3-4",
+          "title": "3.4 Work-Energy Theorem"
+        },
+        {
+          "id": "sec-3-5",
+          "title": "3.5 Power"
+        }
+      ]
     },
     {
-      id: 'unit-4',
-      number: '04',
-      title: 'Unit 4: Relational Database Design & Normalization',
-      duration: '10 Periods',
-      subjectId: 'dbms',
-      subjectName: 'Database Management System',
-      semesterId: 3,
-      description:
-        'Functional Dependencies, Normalization Process, 1NF, 2NF, 3NF, Multivalued Dependencies, BCNF, 4NF, aur 5NF step-by-step transformations ke sath.',
-      path: '/chapter/dbms/unit-4',
-      sections: [
-        { id: 'functional-dependencies', title: '1. Functional Dependencies' },
-        { id: 'normalization-intro', title: '2. Normalization Process' },
-        { id: '1nf', title: '3. First Normal Form (1NF)' },
-        { id: '2nf', title: '4. Second Normal Form (2NF)' },
-        { id: '3nf', title: '5. Third Normal Form (3NF)' },
-        { id: 'bcnf', title: '6. Boyce-Codd Normal Form (BCNF)' },
-        { id: '4nf-5nf', title: '7. 4NF & 5NF' },
-      ],
+      "id": "circular-motion",
+      "number": "04",
+      "title": "Circular Motion",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Uniform and non-uniform circular motion, angular displacement, angular velocity, angular acceleration, frequency, time period, centripetal acceleration, and centripetal force.",
+      "path": "/chapter/applied-physics-1/circular-motion",
+      "sections": [
+        {
+          "id": "sec-4-1",
+          "title": "4.1 Circular Motion Basics"
+        },
+        {
+          "id": "sec-4-2",
+          "title": "4.2 Angular Definitions"
+        },
+        {
+          "id": "sec-4-3",
+          "title": "4.3 Relations between Linear & Angular Quantities"
+        },
+        {
+          "id": "sec-4-4",
+          "title": "4.4 Centripetal Acceleration"
+        },
+        {
+          "id": "sec-4-5",
+          "title": "4.5 Centripetal & Centrifugal Force"
+        }
+      ]
     },
     {
-      id: 'unit-5',
-      number: '05',
-      title: 'Unit 5: SQL/MySQL',
-      duration: '8 Periods',
-      subjectId: 'dbms',
-      subjectName: 'Database Management System',
-      semesterId: 3,
-      description:
-        'MySQL Data Types, Data Definition Commands (DDL), Data Manipulation Commands (DML), Data Retrieval Commands (DQL), aur Types of Operators.',
-      path: '/chapter/dbms/unit-5',
-      sections: [
-        { id: 'mysql-datatypes', title: '1. MySQL Data Types' },
-        { id: 'ddl-commands', title: '2. DDL Commands' },
-        { id: 'dml-commands', title: '3. DML Commands' },
-        { id: 'dql-commands', title: '4. Data Retrieval Commands' },
-        { id: 'sql-operators', title: '5. Types of Operators' },
-      ],
+      "id": "rotational-motion",
+      "number": "05",
+      "title": "Rotational Motion of a Rigid Body",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Rigid body rotation, torque, moment of inertia, radius of gyration, theorems of parallel and perpendicular axes, rotational kinetic energy, and angular momentum.",
+      "path": "/chapter/applied-physics-1/rotational-motion",
+      "sections": [
+        {
+          "id": "sec-5-1",
+          "title": "5.1 Rigid Body & Torque"
+        },
+        {
+          "id": "sec-5-2",
+          "title": "5.2 Moment of Inertia Basics"
+        },
+        {
+          "id": "sec-5-3",
+          "title": "5.3 Moment of Inertia of Regular Shapes"
+        },
+        {
+          "id": "sec-5-4",
+          "title": "5.4 Rotational Kinetic Energy"
+        },
+        {
+          "id": "sec-5-5",
+          "title": "5.5 Angular Momentum"
+        }
+      ]
     },
+    {
+      "id": "properties-of-matter",
+      "number": "06",
+      "title": "Properties of Matter",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Elasticity, Hooke's law, pressure, surface tension, capillary action, viscous force, Stoke's law, streamline flow, equation of continuity, and Bernoulli's theorem.",
+      "path": "/chapter/applied-physics-1/properties-of-matter",
+      "sections": [
+        {
+          "id": "sec-6-1",
+          "title": "6.1 Elasticity & Hooke's Law"
+        },
+        {
+          "id": "sec-6-2",
+          "title": "6.2 Pressure"
+        },
+        {
+          "id": "sec-6-3",
+          "title": "6.3 Surface Tension"
+        },
+        {
+          "id": "sec-6-4",
+          "title": "6.4 Viscous Force & Stoke's Law"
+        },
+        {
+          "id": "sec-6-5",
+          "title": "6.5 Fluid Motion & Bernoulli's Theorem"
+        }
+      ]
+    },
+    {
+      "id": "heat-and-thermometry",
+      "number": "07",
+      "title": "Heat and Thermometry",
+      "duration": "6 Periods",
+      "subjectId": "applied-physics-1",
+      "subjectName": "Applied Physics - 1",
+      "semesterId": 1,
+      "description": "Concept of heat and temperature, temperature scales (Celsius, Kelvin, Fahrenheit), modes of heat transfer, expansion of solids, and concept of Mercury Thermometer.",
+      "path": "/chapter/applied-physics-1/heat-and-thermometry",
+      "sections": [
+        {
+          "id": "sec-7-1",
+          "title": "7.1 Concept of Heat & Temperature"
+        },
+        {
+          "id": "sec-7-2",
+          "title": "7.2 Temperature Scales"
+        },
+        {
+          "id": "sec-7-3",
+          "title": "7.3 Modes of Transfer of Heat"
+        },
+        {
+          "id": "sec-7-4",
+          "title": "7.4 Expansion of Solids"
+        },
+        {
+          "id": "sec-7-5",
+          "title": "7.5 Mercury Thermometer"
+        }
+      ]
+    }
   ],
-
-  // 2. OPERATING SYSTEM
-  'operating-system': [
+  "mathematics-1": [
     {
-      id: 'unit-1',
-      number: '01',
-      title: 'Unit 1: Overview of Operating System',
-      duration: '6 Periods',
-      subjectId: 'operating-system',
-      subjectName: 'Operating System',
-      semesterId: 3,
-      description:
-        'Introduction, Types of OS, Functions & Services, UNIX/LINUX Architecture, Kernel, System Calls, aur System Programs.',
-      path: '/chapter/operating-system/unit-1',
-      sections: [
-        { id: 'introduction-os', title: '1. Introduction to OS' },
-        { id: 'types-of-os', title: '2. Different Types of OS' },
-        { id: 'functions-services', title: '3. Functions & Services' },
-        { id: 'unix-linux-architecture', title: '4. UNIX/LINUX Architecture' },
-        { id: 'kernel-system-calls', title: '5. Kernel & System Calls' },
-        { id: 'system-programs', title: '6. System Programs' },
-      ],
+      "id": "trigonometry",
+      "number": "01",
+      "title": "Trigonometry",
+      "duration": "08 Periods",
+      "subjectId": "mathematics-1",
+      "subjectName": "Mathematics - 1",
+      "semesterId": 1,
+      "description": "Concept of angles, measurement of angles in degrees and radians, allied angles, sum and difference formulae, product formulae, multiple and sub-multiple angles (2A only), and graphs of |x|, sin x, cos x, e^x.",
+      "path": "/chapter/mathematics-1/trigonometry",
+      "sections": [
+        {
+          "id": "sec-1-1",
+          "title": "1. Concept of Angles & Measurement"
+        },
+        {
+          "id": "sec-1-2",
+          "title": "2. T-Ratios of Allied Angles"
+        },
+        {
+          "id": "sec-1-3",
+          "title": "3. Sum & Difference Formulae"
+        },
+        {
+          "id": "sec-1-4",
+          "title": "4. Product Formulae"
+        },
+        {
+          "id": "sec-1-5",
+          "title": "5. T-Ratios of Multiple Angles (2A)"
+        },
+        {
+          "id": "sec-1-6",
+          "title": "6. Graphs of Basic Functions"
+        }
+      ]
     },
     {
-      id: 'unit-2',
-      number: '02',
-      title: 'Unit 2: Process Management',
-      duration: '10 Periods',
-      subjectId: 'operating-system',
-      subjectName: 'Operating System',
-      semesterId: 3,
-      description:
-        'Process Concepts, State Diagram, CPU Scheduling Algorithms (FCFS, SJF, RR, Priority), IPC, Synchronization, Critical Section, aur Deadlock.',
-      path: '/chapter/operating-system/unit-2',
-      sections: [
-        { id: 'process-concepts', title: '1. Process Concepts & States' },
-        { id: 'operations-on-processes', title: '2. Operations on Processes' },
-        { id: 'cpu-scheduling', title: '3. CPU Scheduling Concepts' },
-        { id: 'scheduling-algorithms', title: '4. Scheduling Algorithms' },
-        { id: 'ipc', title: '5. Inter-Process Communication' },
-        { id: 'process-synchronization', title: '6. Process Synchronization' },
-        { id: 'deadlock', title: '7. Deadlock Concepts' },
-      ],
+      "id": "differential-calculus",
+      "number": "02",
+      "title": "Differential Calculus",
+      "duration": "10 Periods",
+      "subjectId": "mathematics-1",
+      "subjectName": "Mathematics - 1",
+      "semesterId": 1,
+      "description": "Definition of function, concept of limits, standard limits, differentiation by definition, differentiation rules (sum, product, quotient, chain rule), and differentiation of trigonometric, exponential, and logarithmic functions.",
+      "path": "/chapter/mathematics-1/differential-calculus",
+      "sections": [
+        {
+          "id": "sec-2-1",
+          "title": "1. Definition of Function"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "2. Concept of Limits"
+        },
+        {
+          "id": "sec-2-3",
+          "title": "3. Four Standard Limits"
+        },
+        {
+          "id": "sec-2-4",
+          "title": "4. Differentiation by Definition"
+        },
+        {
+          "id": "sec-2-5",
+          "title": "5. Differentiation Rules"
+        },
+        {
+          "id": "sec-2-6",
+          "title": "6. Types of Differentiation"
+        }
+      ]
     },
     {
-      id: 'unit-3',
-      number: '03',
-      title: 'Unit 3: Memory Management',
-      duration: '10 Periods',
-      subjectId: 'operating-system',
-      subjectName: 'Operating System',
-      semesterId: 3,
-      description:
-        'Memory Allocation (First Fit, Best Fit, Worst Fit), Swapping, Paging, Segmentation, Page Faults, Page Replacement Algorithms, Fragmentation, Compaction, aur Virtual Memory.',
-      path: '/chapter/operating-system/unit-3',
-      sections: [
-        { id: 'memory-allocation', title: '1. Memory Allocation' },
-        { id: 'fragmentation', title: '2. Fragmentation & Compaction' },
-        { id: 'swapping', title: '3. Swapping' },
-        { id: 'paging', title: '4. Paging & Address Translation' },
-        { id: 'segmentation', title: '5. Segmentation' },
-        { id: 'virtual-memory', title: '6. Virtual Memory & Page Faults' },
-        { id: 'page-replacement', title: '7. Page Replacement Algorithms' },
-      ],
+      "id": "partial-fractions",
+      "number": "03",
+      "title": "Partial Fractions",
+      "duration": "08 Periods",
+      "subjectId": "mathematics-1",
+      "subjectName": "Mathematics - 1",
+      "semesterId": 1,
+      "description": "Definition of polynomial fractions, proper and improper fractions, and resolution of proper/improper fractions with non-repeated and repeated linear factors into partial fractions.",
+      "path": "/chapter/mathematics-1/partial-fractions",
+      "sections": [
+        {
+          "id": "sec-3-1",
+          "title": "1. Polynomial Fraction"
+        },
+        {
+          "id": "sec-3-2",
+          "title": "2. Proper & Improper Fractions"
+        },
+        {
+          "id": "sec-3-3",
+          "title": "3. Partial Fractions Definition"
+        },
+        {
+          "id": "sec-3-4",
+          "title": "4. Resolution into Partial Fractions"
+        }
+      ]
     },
     {
-      id: 'unit-4',
-      number: '04',
-      title: 'Unit 4: I/O System',
-      duration: '8 Periods',
-      subjectId: 'operating-system',
-      subjectName: 'Operating System',
-      semesterId: 3,
-      description:
-        'Mass Storage Structure Overview, Disk Structure, Disk Attachment (Host-Attached, NAS, SAN), Disk Scheduling Algorithms, Swap Space Management, aur RAID Types.',
-      path: '/chapter/operating-system/unit-4',
-      sections: [
-        { id: 'mass-storage-overview', title: '1. Mass Storage Overview' },
-        { id: 'disk-structure', title: '2. Physical Disk Structure' },
-        { id: 'disk-attachment', title: '3. Disk Attachment Methods' },
-        { id: 'disk-scheduling', title: '4. Disk Scheduling Algorithms' },
-        { id: 'swap-space-management', title: '5. Swap Space Management' },
-        { id: 'raid-types', title: '6. RAID Types' },
-      ],
+      "id": "binomial-theorem",
+      "number": "04",
+      "title": "Binomial Theorem",
+      "duration": "06 Periods",
+      "subjectId": "mathematics-1",
+      "subjectName": "Mathematics - 1",
+      "semesterId": 1,
+      "description": "Permutations and combinations (nPr, nCr), Binomial Theorem for positive integral index, and its applications (general term, middle term, independent term).",
+      "path": "/chapter/mathematics-1/binomial-theorem",
+      "sections": [
+        {
+          "id": "sec-4-1",
+          "title": "1. Permutations & Combinations"
+        },
+        {
+          "id": "sec-4-2",
+          "title": "2. Binomial Theorem (Without Proof)"
+        },
+        {
+          "id": "sec-4-3",
+          "title": "3. Applications of Binomial Theorem"
+        }
+      ]
     },
     {
-      id: 'unit-5',
-      number: '05',
-      title: 'Unit 5: File Management',
-      duration: '8 Periods',
-      subjectId: 'operating-system',
-      subjectName: 'Operating System',
-      semesterId: 3,
-      description:
-        'Concept of a File, Access Methods, Directory Structure, File System Mounting, Sharing & Protection, Inodes, Free-Space Management, aur Types of File Systems.',
-      path: '/chapter/operating-system/unit-5',
-      sections: [
-        { id: 'file-concept', title: '1. Concept of a File' },
-        { id: 'access-methods', title: '2. File Access Methods' },
-        { id: 'directory-structure', title: '3. Directory Structure' },
-        { id: 'mounting-protection', title: '4. Mounting, Sharing & Protection' },
-        { id: 'file-system-structure', title: '5. File System & Inodes' },
-        { id: 'free-space-management', title: '6. Free-Space Management' },
-        { id: 'types-of-file-systems', title: '7. Types of File Systems' },
-      ],
-    },
+      "id": "complex-numbers",
+      "number": "05",
+      "title": "Complex Numbers",
+      "duration": "10 Periods",
+      "subjectId": "mathematics-1",
+      "subjectName": "Mathematics - 1",
+      "semesterId": 1,
+      "description": "Definition, real & imaginary parts, Cartesian and polar forms, conjugate, modulus, amplitude, arithmetic operations, and De Moivre's theorem with simple applications.",
+      "path": "/chapter/mathematics-1/complex-numbers",
+      "sections": [
+        {
+          "id": "sec-5-1",
+          "title": "1. Definition & Parts"
+        },
+        {
+          "id": "sec-5-2",
+          "title": "2. Forms of Complex Numbers"
+        },
+        {
+          "id": "sec-5-3",
+          "title": "3. Conjugate of Complex Number"
+        },
+        {
+          "id": "sec-5-4",
+          "title": "4. Modulus & Amplitude"
+        },
+        {
+          "id": "sec-5-5",
+          "title": "5. Arithmetic Operations"
+        },
+        {
+          "id": "sec-5-6",
+          "title": "6. De Moivre's Theorem"
+        }
+      ]
+    }
   ],
-
-  // 3. COMPUTER NETWORK
-  'computer-network': [
+  "applied-chemistry": [
     {
-      id: 'unit-1',
-      number: '01',
-      title: 'Unit 1: Introduction to Computer Networks',
-      duration: '6 Periods',
-      subjectId: 'computer-network',
-      subjectName: 'Computer Network',
-      semesterId: 3,
-      description:
-        'Introduction to Computer Networks, Network Models, OSI Reference Model (7 Layers), TCP/IP Model (4 Layers), aur OSI vs TCP/IP Comparison.',
-      path: '/chapter/computer-network/unit-1',
-      sections: [
-        { id: 'network-intro', title: '1. Introduction to Networks' },
-        { id: 'layered-architecture', title: '2. Layered Architecture' },
-        { id: 'osi-model', title: '3. OSI Reference Model' },
-        { id: 'tcp-ip-model', title: '4. TCP/IP Model' },
-        { id: 'comparison-table', title: '5. OSI vs TCP/IP Comparison' },
-      ],
+      "id": "atomic-structure-chemical-bonding-and-solutions",
+      "number": "01",
+      "title": "Atomic Structure, Chemical Bonding and Solutions",
+      "duration": "08 Periods",
+      "subjectId": "applied-chemistry",
+      "subjectName": "Applied Chemistry",
+      "semesterId": 1,
+      "description": "Fundamental principles of atomic structure, nature and type of chemical bonding, hybridization, hydrogen and metallic bonding, and various methods for expressing concentration of solution.",
+      "path": "/chapter/applied-chemistry/atomic-structure-chemical-bonding-and-solutions",
+      "sections": [
+        {
+          "id": "sec-1-1",
+          "title": "1.1 Atomic Structure"
+        },
+        {
+          "id": "sec-1-2",
+          "title": "1.2 Chemical Bonding"
+        },
+        {
+          "id": "sec-1-3",
+          "title": "1.3 Hybridization"
+        },
+        {
+          "id": "sec-1-4",
+          "title": "1.4 Hydrogen Bonding"
+        },
+        {
+          "id": "sec-1-5",
+          "title": "1.5 Metallic Bonding"
+        },
+        {
+          "id": "sec-1-6",
+          "title": "1.6 Solutions"
+        }
+      ]
     },
     {
-      id: 'unit-2',
-      number: '02',
-      title: 'Unit 2: Data Communication & Methodologies',
-      duration: '10 Periods',
-      subjectId: 'computer-network',
-      subjectName: 'Computer Network',
-      semesterId: 3,
-      description:
-        'Transmission Media (Coaxial, UTP, STP, Fiber Optic, HF, VHF, UHF, Microwave, Ku Band), Topologies, DLL Design Issues & Protocols (Ethernet, WLAN, Bluetooth), Switching Techniques.',
-      path: '/chapter/computer-network/unit-2',
-      sections: [
-        { id: 'transmission-media', title: '1. Transmission Media Issues' },
-        { id: 'wired-media', title: '2. Wired (Guided) Media' },
-        { id: 'wireless-media', title: '3. Wireless (Unguided) Media' },
-        { id: 'network-topologies', title: '4. Network Topologies' },
-        { id: 'data-link-layer', title: '5. Data Link Layer & Protocols' },
-        { id: 'switching-techniques', title: '6. Switching Techniques' },
-      ],
+      "id": "water",
+      "number": "02",
+      "title": "Water",
+      "duration": "08 Periods",
+      "subjectId": "applied-chemistry",
+      "subjectName": "Applied Chemistry",
+      "semesterId": 1,
+      "description": "Classification of water, hardness of water, problems caused by hard water in boilers, water softening techniques (Soda Lime, Zeolite, Ion Exchange), and municipal water treatment.",
+      "path": "/chapter/applied-chemistry/water",
+      "sections": [
+        {
+          "id": "sec-2-1",
+          "title": "2.1 Classification of Water"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "2.2 Water Hardness"
+        },
+        {
+          "id": "sec-2-3",
+          "title": "2.3 Hard Water and Soap"
+        },
+        {
+          "id": "sec-2-4",
+          "title": "2.4 Problems Caused by Hard Water"
+        },
+        {
+          "id": "sec-2-5",
+          "title": "2.5 Water Softening Techniques"
+        },
+        {
+          "id": "sec-2-6",
+          "title": "2.6 Municipal Water Treatment"
+        }
+      ]
     },
     {
-      id: 'unit-3',
-      number: '03',
-      title: 'Unit 3: Network Layer',
-      duration: '10 Periods',
-      subjectId: 'computer-network',
-      subjectName: 'Computer Network',
-      semesterId: 3,
-      description:
-        'Network Layer Design Issues, IPv4 Datagram & Classes, Concept of IPv6, Routing Principles, Distance-Vector vs Link-State Algorithms, RIP vs OSPF Protocols.',
-      path: '/chapter/computer-network/unit-3',
-      sections: [
-        { id: 'network-layer-design', title: '1. Network Layer Design' },
-        { id: 'ipv4-protocol', title: '2. IPv4 Header & Classes' },
-        { id: 'ipv6-concept', title: '3. Concept of IPv6' },
-        { id: 'routing-algorithms', title: '4. Routing Algorithms' },
-        { id: 'rip-vs-ospf', title: '5. RIP vs OSPF Protocols' },
-      ],
+      "id": "engineering-materials",
+      "number": "03",
+      "title": "Engineering Materials",
+      "duration": "08 Periods",
+      "subjectId": "applied-chemistry",
+      "subjectName": "Applied Chemistry",
+      "semesterId": 1,
+      "description": "Natural occurrence of metals, general principles of metallurgy, extraction of aluminium, alloys, Portland cement, composite materials, polymers, and rubber.",
+      "path": "/chapter/applied-chemistry/engineering-materials",
+      "sections": [
+        {
+          "id": "sec-3-1",
+          "title": "3.1 Natural Occurrence of Metals"
+        },
+        {
+          "id": "sec-3-2",
+          "title": "3.2 General Principles of Metallurgy"
+        },
+        {
+          "id": "sec-3-3",
+          "title": "3.3 Extraction of Aluminium"
+        },
+        {
+          "id": "sec-3-4",
+          "title": "3.4 Alloys"
+        },
+        {
+          "id": "sec-3-5",
+          "title": "3.5 Portland Cement"
+        },
+        {
+          "id": "sec-3-6",
+          "title": "3.6 Composite Materials"
+        },
+        {
+          "id": "sec-3-7",
+          "title": "3.7 Polymers"
+        },
+        {
+          "id": "sec-3-8",
+          "title": "3.8 Rubber"
+        }
+      ]
     },
     {
-      id: 'unit-4',
-      number: '04',
-      title: 'Unit 4: Transport Layer',
-      duration: '8 Periods',
-      subjectId: 'computer-network',
-      subjectName: 'Computer Network',
-      semesterId: 3,
-      description:
-        'Transport Layer Design Issues, Socket Addressing, TCP (3-Way Handshake) vs UDP Comparison Table, Application Layer Protocols: SMTP aur DNS.',
-      path: '/chapter/computer-network/unit-4',
-      sections: [
-        { id: 'transport-design', title: '1. Transport Layer Design' },
-        { id: 'tcp-protocol', title: '2. TCP & 3-Way Handshake' },
-        { id: 'udp-protocol', title: '3. UDP Protocol' },
-        { id: 'tcp-vs-udp', title: '4. TCP vs UDP Comparison' },
-        { id: 'application-protocols', title: '5. SMTP & DNS Protocols' },
-      ],
+      "id": "chemistry-of-fuels-and-lubricants",
+      "number": "04",
+      "title": "Chemistry of Fuels and Lubricants",
+      "duration": "09 Periods",
+      "subjectId": "applied-chemistry",
+      "subjectName": "Applied Chemistry",
+      "semesterId": 1,
+      "description": "Classification, combustion properties, rating and calorific calculations of fuels, as well as functional, physical and chemical characteristics of industrial lubricants.",
+      "path": "/chapter/applied-chemistry/chemistry-of-fuels-and-lubricants",
+      "sections": [
+        {
+          "id": "sec-4-1",
+          "title": "4.1 Fuels"
+        },
+        {
+          "id": "sec-4-2",
+          "title": "4.2 Calorific Value"
+        },
+        {
+          "id": "sec-4-3",
+          "title": "4.3 Fuel Rating"
+        },
+        {
+          "id": "sec-4-4",
+          "title": "4.4 Important Fuels"
+        },
+        {
+          "id": "sec-4-5",
+          "title": "4.5 Lubrication"
+        },
+        {
+          "id": "sec-4-6",
+          "title": "4.6 Physical Properties of Lubricants"
+        },
+        {
+          "id": "sec-4-7",
+          "title": "4.7 Chemical Properties of Lubricants"
+        }
+      ]
     },
     {
-      id: 'unit-5',
-      number: '05',
-      title: 'Unit 5: Network Devices & NMS',
-      duration: '8 Periods',
-      subjectId: 'computer-network',
-      subjectName: 'Computer Network',
-      semesterId: 3,
-      description:
-        'Functioning of Network Devices (NIC, Hub, Bridge, Switch, Router, WiFi Devices), Network Management System (FCAPS), aur SNMP Protocol Architecture.',
-      path: '/chapter/computer-network/unit-5',
-      sections: [
-        { id: 'network-devices', title: '1. Network Devices Functioning' },
-        { id: 'devices-comparison', title: '2. Devices Comparative Summary' },
-        { id: 'nms-system', title: '3. NMS & FCAPS Model' },
-        { id: 'snmp-protocol', title: '4. SNMP Protocol Architecture' },
-      ],
-    },
+      "id": "electro-chemistry",
+      "number": "05",
+      "title": "Electro Chemistry",
+      "duration": "09 Periods",
+      "subjectId": "applied-chemistry",
+      "subjectName": "Applied Chemistry",
+      "semesterId": 1,
+      "description": "Oxidation and reduction, electrolytes, Faraday's laws of electrolysis, industrial applications, electrochemical cells, and corrosion of metals with preventive measures.",
+      "path": "/chapter/applied-chemistry/electro-chemistry",
+      "sections": [
+        {
+          "id": "sec-5-1",
+          "title": "5.1 Oxidation and Reduction"
+        },
+        {
+          "id": "sec-5-2",
+          "title": "5.2 Electrolytes and Non-Electrolytes"
+        },
+        {
+          "id": "sec-5-3",
+          "title": "5.3 Faraday's Laws of Electrolysis"
+        },
+        {
+          "id": "sec-5-4",
+          "title": "5.4 Industrial Applications of Electrolysis"
+        },
+        {
+          "id": "sec-5-5",
+          "title": "5.5 Electrochemical Cells"
+        },
+        {
+          "id": "sec-5-6",
+          "title": "5.6 Corrosion of Metals"
+        },
+        {
+          "id": "sec-5-7",
+          "title": "5.7 Corrosion Prevention"
+        }
+      ]
+    }
   ],
+  "dbms": [
+    {
+      "id": "unit-1",
+      "number": "01",
+      "title": "Unit 1: Introduction to DBMS",
+      "duration": "6 Periods",
+      "subjectId": "dbms",
+      "subjectName": "Database Management System",
+      "semesterId": 3,
+      "description": "Database System Concepts, Architecture, Components of DBMS, Table Structure, Schema Definition, aur Three Views of Data (External, Conceptual, Internal View).",
+      "path": "/chapter/dbms/unit-1",
+      "sections": [
+        {
+          "id": "concepts-architecture",
+          "title": "1. Database Concepts & Architecture"
+        },
+        {
+          "id": "components-dbms",
+          "title": "2. Components of DBMS"
+        },
+        {
+          "id": "table-structure",
+          "title": "3. Table Structure & Terminology"
+        },
+        {
+          "id": "schema-definition",
+          "title": "4. Schema Definition"
+        },
+        {
+          "id": "three-views",
+          "title": "5. Three Views of Data"
+        }
+      ]
+    },
+    {
+      "id": "unit-2",
+      "number": "02",
+      "title": "Unit 2: Data Model and Keys",
+      "duration": "8 Periods",
+      "subjectId": "dbms",
+      "subjectName": "Database Management System",
+      "semesterId": 3,
+      "description": "Data Model Definition, Network Model, Hierarchical Model, E-R Model, Keys (Primary, Candidate, Super, Foreign), Constraints, aur Strong & Weak Entity Sets.",
+      "path": "/chapter/dbms/unit-2",
+      "sections": [
+        {
+          "id": "data-model-definition",
+          "title": "1. Define Data Model"
+        },
+        {
+          "id": "network-model",
+          "title": "2. Network Model"
+        },
+        {
+          "id": "hierarchical-model",
+          "title": "3. Hierarchical Model"
+        },
+        {
+          "id": "er-model",
+          "title": "4. E-R Model"
+        },
+        {
+          "id": "concept-of-keys",
+          "title": "5. Concept of Keys"
+        },
+        {
+          "id": "constraints",
+          "title": "6. Constraints"
+        },
+        {
+          "id": "strong-weak-entities",
+          "title": "7. Strong & Weak Entity Sets"
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "number": "03",
+      "title": "Unit 3: Relational Model",
+      "duration": "10 Periods",
+      "subjectId": "dbms",
+      "subjectName": "Database Management System",
+      "semesterId": 3,
+      "description": "The Relational Data Model, Constraints, ER/EER to Relational Mapping, Relational Algebra & Calculus, Basic & Additional Relational Operations.",
+      "path": "/chapter/dbms/unit-3",
+      "sections": [
+        {
+          "id": "relational-model",
+          "title": "1. Relational Data Model"
+        },
+        {
+          "id": "relational-constraints",
+          "title": "2. Relational Constraints"
+        },
+        {
+          "id": "er-mapping",
+          "title": "3. ER to Relational Mapping"
+        },
+        {
+          "id": "relational-algebra",
+          "title": "4. Relational Algebra & Calculus"
+        },
+        {
+          "id": "basic-algebra-ops",
+          "title": "5. Basic Relational Operations"
+        },
+        {
+          "id": "additional-algebra-ops",
+          "title": "6. Additional Operations & Joins"
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "number": "04",
+      "title": "Unit 4: Relational Database Design & Normalization",
+      "duration": "10 Periods",
+      "subjectId": "dbms",
+      "subjectName": "Database Management System",
+      "semesterId": 3,
+      "description": "Functional Dependencies, Normalization Process, 1NF, 2NF, 3NF, Multivalued Dependencies, BCNF, 4NF, aur 5NF step-by-step transformations ke sath.",
+      "path": "/chapter/dbms/unit-4",
+      "sections": [
+        {
+          "id": "functional-dependencies",
+          "title": "1. Functional Dependencies"
+        },
+        {
+          "id": "normalization-intro",
+          "title": "2. Normalization Process"
+        },
+        {
+          "id": "1nf",
+          "title": "3. First Normal Form (1NF)"
+        },
+        {
+          "id": "2nf",
+          "title": "4. Second Normal Form (2NF)"
+        },
+        {
+          "id": "3nf",
+          "title": "5. Third Normal Form (3NF)"
+        },
+        {
+          "id": "bcnf",
+          "title": "6. Boyce-Codd Normal Form (BCNF)"
+        },
+        {
+          "id": "4nf-5nf",
+          "title": "7. 4NF & 5NF"
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "number": "05",
+      "title": "Unit 5: SQL/MySQL",
+      "duration": "8 Periods",
+      "subjectId": "dbms",
+      "subjectName": "Database Management System",
+      "semesterId": 3,
+      "description": "MySQL Data Types, Data Definition Commands (DDL), Data Manipulation Commands (DML), Data Retrieval Commands (DQL), aur Types of Operators.",
+      "path": "/chapter/dbms/unit-5",
+      "sections": [
+        {
+          "id": "mysql-datatypes",
+          "title": "1. MySQL Data Types"
+        },
+        {
+          "id": "ddl-commands",
+          "title": "2. DDL Commands"
+        },
+        {
+          "id": "dml-commands",
+          "title": "3. DML Commands"
+        },
+        {
+          "id": "dql-commands",
+          "title": "4. Data Retrieval Commands"
+        },
+        {
+          "id": "sql-operators",
+          "title": "5. Types of Operators"
+        }
+      ]
+    }
+  ],
+  "operating-system": [
+    {
+      "id": "unit-1",
+      "number": "01",
+      "title": "Unit 1: Overview of Operating System",
+      "duration": "6 Periods",
+      "subjectId": "operating-system",
+      "subjectName": "Operating System",
+      "semesterId": 3,
+      "description": "Introduction, Types of OS, Functions & Services, UNIX/LINUX Architecture, Kernel, System Calls, aur System Programs.",
+      "path": "/chapter/operating-system/unit-1",
+      "sections": [
+        {
+          "id": "introduction-os",
+          "title": "1. Introduction to OS"
+        },
+        {
+          "id": "types-of-os",
+          "title": "2. Different Types of OS"
+        },
+        {
+          "id": "functions-services",
+          "title": "3. Functions & Services"
+        },
+        {
+          "id": "unix-linux-architecture",
+          "title": "4. UNIX/LINUX Architecture"
+        },
+        {
+          "id": "kernel-system-calls",
+          "title": "5. Kernel & System Calls"
+        },
+        {
+          "id": "system-programs",
+          "title": "6. System Programs"
+        }
+      ]
+    },
+    {
+      "id": "unit-2",
+      "number": "02",
+      "title": "Unit 2: Process Management",
+      "duration": "10 Periods",
+      "subjectId": "operating-system",
+      "subjectName": "Operating System",
+      "semesterId": 3,
+      "description": "Process Concepts, State Diagram, CPU Scheduling Algorithms (FCFS, SJF, RR, Priority), IPC, Synchronization, Critical Section, aur Deadlock.",
+      "path": "/chapter/operating-system/unit-2",
+      "sections": [
+        {
+          "id": "process-concepts",
+          "title": "1. Process Concepts & States"
+        },
+        {
+          "id": "operations-on-processes",
+          "title": "2. Operations on Processes"
+        },
+        {
+          "id": "cpu-scheduling",
+          "title": "3. CPU Scheduling Concepts"
+        },
+        {
+          "id": "scheduling-algorithms",
+          "title": "4. Scheduling Algorithms"
+        },
+        {
+          "id": "ipc",
+          "title": "5. Inter-Process Communication"
+        },
+        {
+          "id": "process-synchronization",
+          "title": "6. Process Synchronization"
+        },
+        {
+          "id": "deadlock",
+          "title": "7. Deadlock Concepts"
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "number": "03",
+      "title": "Unit 3: Memory Management",
+      "duration": "10 Periods",
+      "subjectId": "operating-system",
+      "subjectName": "Operating System",
+      "semesterId": 3,
+      "description": "Memory Allocation (First Fit, Best Fit, Worst Fit), Swapping, Paging, Segmentation, Page Faults, Page Replacement Algorithms, Fragmentation, Compaction, aur Virtual Memory.",
+      "path": "/chapter/operating-system/unit-3",
+      "sections": [
+        {
+          "id": "memory-allocation",
+          "title": "1. Memory Allocation"
+        },
+        {
+          "id": "fragmentation",
+          "title": "2. Fragmentation & Compaction"
+        },
+        {
+          "id": "swapping",
+          "title": "3. Swapping"
+        },
+        {
+          "id": "paging",
+          "title": "4. Paging & Address Translation"
+        },
+        {
+          "id": "segmentation",
+          "title": "5. Segmentation"
+        },
+        {
+          "id": "virtual-memory",
+          "title": "6. Virtual Memory & Page Faults"
+        },
+        {
+          "id": "page-replacement",
+          "title": "7. Page Replacement Algorithms"
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "number": "04",
+      "title": "Unit 4: I/O System",
+      "duration": "8 Periods",
+      "subjectId": "operating-system",
+      "subjectName": "Operating System",
+      "semesterId": 3,
+      "description": "Mass Storage Structure Overview, Disk Structure, Disk Attachment (Host-Attached, NAS, SAN), Disk Scheduling Algorithms, Swap Space Management, aur RAID Types.",
+      "path": "/chapter/operating-system/unit-4",
+      "sections": [
+        {
+          "id": "mass-storage-overview",
+          "title": "1. Mass Storage Overview"
+        },
+        {
+          "id": "disk-structure",
+          "title": "2. Physical Disk Structure"
+        },
+        {
+          "id": "disk-attachment",
+          "title": "3. Disk Attachment Methods"
+        },
+        {
+          "id": "disk-scheduling",
+          "title": "4. Disk Scheduling Algorithms"
+        },
+        {
+          "id": "swap-space-management",
+          "title": "5. Swap Space Management"
+        },
+        {
+          "id": "raid-types",
+          "title": "6. RAID Types"
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "number": "05",
+      "title": "Unit 5: File Management",
+      "duration": "8 Periods",
+      "subjectId": "operating-system",
+      "subjectName": "Operating System",
+      "semesterId": 3,
+      "description": "Concept of a File, Access Methods, Directory Structure, File System Mounting, Sharing & Protection, Inodes, Free-Space Management, aur Types of File Systems.",
+      "path": "/chapter/operating-system/unit-5",
+      "sections": [
+        {
+          "id": "file-concept",
+          "title": "1. Concept of a File"
+        },
+        {
+          "id": "access-methods",
+          "title": "2. File Access Methods"
+        },
+        {
+          "id": "directory-structure",
+          "title": "3. Directory Structure"
+        },
+        {
+          "id": "mounting-protection",
+          "title": "4. Mounting, Sharing & Protection"
+        },
+        {
+          "id": "file-system-structure",
+          "title": "5. File System & Inodes"
+        },
+        {
+          "id": "free-space-management",
+          "title": "6. Free-Space Management"
+        },
+        {
+          "id": "types-of-file-systems",
+          "title": "7. Types of File Systems"
+        }
+      ]
+    }
+  ],
+  "computer-network": [
+    {
+      "id": "unit-1",
+      "number": "01",
+      "title": "Unit 1: Introduction to Computer Networks",
+      "duration": "6 Periods",
+      "subjectId": "computer-network",
+      "subjectName": "Computer Network",
+      "semesterId": 3,
+      "description": "Introduction to Computer Networks, Network Models, OSI Reference Model (7 Layers), TCP/IP Model (4 Layers), aur OSI vs TCP/IP Comparison.",
+      "path": "/chapter/computer-network/unit-1",
+      "sections": [
+        {
+          "id": "network-intro",
+          "title": "1. Introduction to Networks"
+        },
+        {
+          "id": "layered-architecture",
+          "title": "2. Layered Architecture"
+        },
+        {
+          "id": "osi-model",
+          "title": "3. OSI Reference Model"
+        },
+        {
+          "id": "tcp-ip-model",
+          "title": "4. TCP/IP Model"
+        },
+        {
+          "id": "comparison-table",
+          "title": "5. OSI vs TCP/IP Comparison"
+        }
+      ]
+    },
+    {
+      "id": "unit-2",
+      "number": "02",
+      "title": "Unit 2: Data Communication & Methodologies",
+      "duration": "10 Periods",
+      "subjectId": "computer-network",
+      "subjectName": "Computer Network",
+      "semesterId": 3,
+      "description": "Transmission Media (Coaxial, UTP, STP, Fiber Optic, HF, VHF, UHF, Microwave, Ku Band), Topologies, DLL Design Issues & Protocols (Ethernet, WLAN, Bluetooth), Switching Techniques.",
+      "path": "/chapter/computer-network/unit-2",
+      "sections": [
+        {
+          "id": "transmission-media",
+          "title": "1. Transmission Media Issues"
+        },
+        {
+          "id": "wired-media",
+          "title": "2. Wired (Guided) Media"
+        },
+        {
+          "id": "wireless-media",
+          "title": "3. Wireless (Unguided) Media"
+        },
+        {
+          "id": "network-topologies",
+          "title": "4. Network Topologies"
+        },
+        {
+          "id": "data-link-layer",
+          "title": "5. Data Link Layer & Protocols"
+        },
+        {
+          "id": "switching-techniques",
+          "title": "6. Switching Techniques"
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "number": "03",
+      "title": "Unit 3: Network Layer",
+      "duration": "10 Periods",
+      "subjectId": "computer-network",
+      "subjectName": "Computer Network",
+      "semesterId": 3,
+      "description": "Network Layer Design Issues, IPv4 Datagram & Classes, Concept of IPv6, Routing Principles, Distance-Vector vs Link-State Algorithms, RIP vs OSPF Protocols.",
+      "path": "/chapter/computer-network/unit-3",
+      "sections": [
+        {
+          "id": "network-layer-design",
+          "title": "1. Network Layer Design"
+        },
+        {
+          "id": "ipv4-protocol",
+          "title": "2. IPv4 Header & Classes"
+        },
+        {
+          "id": "ipv6-concept",
+          "title": "3. Concept of IPv6"
+        },
+        {
+          "id": "routing-algorithms",
+          "title": "4. Routing Algorithms"
+        },
+        {
+          "id": "rip-vs-ospf",
+          "title": "5. RIP vs OSPF Protocols"
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "number": "04",
+      "title": "Unit 4: Transport Layer",
+      "duration": "8 Periods",
+      "subjectId": "computer-network",
+      "subjectName": "Computer Network",
+      "semesterId": 3,
+      "description": "Transport Layer Design Issues, Socket Addressing, TCP (3-Way Handshake) vs UDP Comparison Table, Application Layer Protocols: SMTP aur DNS.",
+      "path": "/chapter/computer-network/unit-4",
+      "sections": [
+        {
+          "id": "transport-design",
+          "title": "1. Transport Layer Design"
+        },
+        {
+          "id": "tcp-protocol",
+          "title": "2. TCP & 3-Way Handshake"
+        },
+        {
+          "id": "udp-protocol",
+          "title": "3. UDP Protocol"
+        },
+        {
+          "id": "tcp-vs-udp",
+          "title": "4. TCP vs UDP Comparison"
+        },
+        {
+          "id": "application-protocols",
+          "title": "5. SMTP & DNS Protocols"
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "number": "05",
+      "title": "Unit 5: Network Devices & NMS",
+      "duration": "8 Periods",
+      "subjectId": "computer-network",
+      "subjectName": "Computer Network",
+      "semesterId": 3,
+      "description": "Functioning of Network Devices (NIC, Hub, Bridge, Switch, Router, WiFi Devices), Network Management System (FCAPS), aur SNMP Protocol Architecture.",
+      "path": "/chapter/computer-network/unit-5",
+      "sections": [
+        {
+          "id": "network-devices",
+          "title": "1. Network Devices Functioning"
+        },
+        {
+          "id": "devices-comparison",
+          "title": "2. Devices Comparative Summary"
+        },
+        {
+          "id": "nms-system",
+          "title": "3. NMS & FCAPS Model"
+        },
+        {
+          "id": "snmp-protocol",
+          "title": "4. SNMP Protocol Architecture"
+        }
+      ]
+    }
+  ]
 };
 
 /**
@@ -1139,3 +1651,4 @@ export const getChapter = (subjectId, chapterId) => {
 
   return null;
 };
+
