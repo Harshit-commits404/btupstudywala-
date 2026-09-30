@@ -4,18 +4,18 @@
 
 @layer base {
   :root {
-    --bg-main: #080808;
-    --bg-surface: #0d0d0d;
-    --bg-section: #111111;
-    --card-bg: #171717;
-    --card-hover: #1e1e1e;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(230, 57, 70, 0.45);
-    --text-primary: #f5f5f5;
-    --text-secondary: #a3a3a3;
-    --accent-red: #e63946;
-    --accent-crimson: #c1121f;
-    --accent-dark-crimson: #8b0000;
+    --bg-main: #060914;
+    --bg-surface: #0d1424;
+    --bg-section: #0d1424;
+    --card-bg: #111b2e;
+    --card-hover: #17243d;
+    --border-subtle: #22304a;
+    --border-hover: #8b5cf6;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-red: #8b5cf6;
+    --accent-crimson: #6d28d9;
+    --accent-dark-crimson: #4c1d95;
   }
 
   html.dark, html {
@@ -24,66 +24,62 @@
   }
 
   body {
-    background-color: #080808;
-    color: #f5f5f5;
+    background-color: #060914;
+    color: #f8fafc;
     min-height: 100vh;
     overflow-x: hidden;
-    font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Custom Red-Black Engineering Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #080808;
+    background: #060914;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #2b2b2b;
+    background: #22304a;
     border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #c1121f;
+    background: #8b5cf6;
   }
 }
 
 @layer components {
-  /* Subtle Engineering Red Grid Patterns */
   .bg-tech-grid {
-    background-image: radial-gradient(rgba(230, 57, 70, 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(139, 92, 246, 0.12) 1px, transparent 1px);
     background-size: 26px 26px;
   }
 
   .bg-blueprint-lines {
     background-image: 
-      linear-gradient(to right, rgba(230, 57, 70, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(230, 57, 70, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
     background-size: 42px 42px;
   }
 
-  /* Interactive Academic / Course Card with 220ms Transition & -6px / 1.01 Scale Hover */
   .card-academic {
     position: relative;
-    background-color: #171717;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #111b2e;
+    border: 1px solid #22304a;
     border-radius: 1rem;
     overflow: hidden;
     transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
   }
 
   .card-academic:hover {
-    transform: translateY(-6px) scale(1.01);
-    border-color: rgba(230, 57, 70, 0.45);
-    background-color: #1c1c1c;
-    box-shadow: 0 14px 35px -8px rgba(230, 57, 70, 0.22);
+    transform: translateY(-4px);
+    border-color: #8b5cf6;
+    background-color: #17243d;
+    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.25);
   }
 
-  /* Interactive Button Base with Smooth Hover & Scale-down on Active */
   .btn-primary-red {
     display: inline-flex;
     align-items: center;
@@ -91,11 +87,11 @@
     gap: 0.5rem;
     padding: 0.625rem 1.25rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, #c1121f 0%, #8b0000 100%);
-    border: 1px solid rgba(230, 57, 70, 0.4);
+    background: #8b5cf6;
+    border: 1px solid rgba(139, 92, 246, 0.4);
     color: #ffffff;
     font-weight: 600;
-    box-shadow: 0 4px 15px -3px rgba(193, 18, 31, 0.35);
+    box-shadow: 0 4px 15px -3px rgba(139, 92, 246, 0.35);
     transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease;
     cursor: pointer;
     user-select: none;
@@ -103,9 +99,9 @@
 
   .btn-primary-red:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
-    border-color: rgba(230, 57, 70, 0.7);
-    box-shadow: 0 8px 25px -4px rgba(230, 57, 70, 0.45);
+    background: #7c3aed;
+    border-color: rgba(139, 92, 246, 0.7);
+    box-shadow: 0 8px 25px -4px rgba(139, 92, 246, 0.45);
   }
 
   .btn-primary-red:active {
@@ -119,9 +115,9 @@
     gap: 0.5rem;
     padding: 0.625rem 1.25rem;
     border-radius: 0.75rem;
-    background: #141414;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #f5f5f5;
+    background: #0d1424;
+    border: 1px solid #22304a;
+    color: #f8fafc;
     font-weight: 600;
     transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
     cursor: pointer;
@@ -130,8 +126,8 @@
 
   .btn-secondary-dark:hover {
     transform: translateY(-2px);
-    background: #1c1c1c;
-    border-color: rgba(230, 57, 70, 0.4);
+    background: #111b2e;
+    border-color: #8b5cf6;
     color: #ffffff;
   }
 
@@ -151,9 +147,9 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background-color: rgba(230, 57, 70, 0.1);
-    color: #e63946;
-    border: 1px solid rgba(230, 57, 70, 0.25);
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    border: 1px solid rgba(139, 92, 246, 0.25);
   }
 
   /* Formula Block with Engineering Styling */
@@ -165,53 +161,53 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(230, 57, 70, 0.05) 0%, rgba(139, 0, 0, 0.02) 100%);
-    border: 1px solid rgba(230, 57, 70, 0.25);
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.05) 0%, rgba(76, 29, 149, 0.02) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.25);
     transition: border-color 200ms ease;
   }
 
   .study-formula-block:hover {
-    border-color: rgba(230, 57, 70, 0.5);
+    border-color: rgba(139, 92, 246, 0.5);
   }
 
-  /* Definition Highlight Box with Red Accent */
+  /* Definition Highlight Box with Accent */
   .study-callout-def {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     padding: 1.25rem;
     border-radius: 0.75rem;
-    border-left: 4px solid #e63946;
-    background-color: rgba(230, 57, 70, 0.06);
-    border-top: 1px solid rgba(230, 57, 70, 0.15);
-    border-right: 1px solid rgba(230, 57, 70, 0.15);
-    border-bottom: 1px solid rgba(230, 57, 70, 0.15);
+    border-left: 4px solid #2DD4BF;
+    background-color: rgba(45, 212, 191, 0.06);
+    border-top: 1px solid rgba(45, 212, 191, 0.15);
+    border-right: 1px solid rgba(45, 212, 191, 0.15);
+    border-bottom: 1px solid rgba(45, 212, 191, 0.15);
   }
 
-  /* Important Exam Focus Box with Dark Crimson / Amber border */
+  /* Important Exam Focus Box */
   .study-callout-imp {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     padding: 1.25rem;
     border-radius: 0.75rem;
-    border-left: 4px solid #c1121f;
-    background-color: rgba(193, 18, 31, 0.07);
-    border-top: 1px solid rgba(193, 18, 31, 0.18);
-    border-right: 1px solid rgba(193, 18, 31, 0.18);
-    border-bottom: 1px solid rgba(193, 18, 31, 0.18);
+    border-left: 4px solid #8b5cf6;
+    background-color: rgba(139, 92, 246, 0.07);
+    border-top: 1px solid rgba(139, 92, 246, 0.18);
+    border-right: 1px solid rgba(139, 92, 246, 0.18);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.18);
   }
 }
 
-/* Digital Textbook Reading Typography in Red & Black Theme */
+/* Digital Textbook Reading Typography */
 .reading-content h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: "Outfit", sans-serif;
-  color: #f5f5f5;
+  font-family: "Inter", sans-serif;
+  color: #f8fafc;
   letter-spacing: -0.025em;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -226,8 +222,8 @@
 .reading-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  font-family: "Outfit", sans-serif;
-  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
+  color: #e2e8f0;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   display: flex;
@@ -238,13 +234,13 @@
 .reading-content h4 {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #d4d4d4;
+  color: #cbd5e1;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .reading-content p {
-  color: #d4d4d4;
+  color: #cbd5e1;
   line-height: 1.85;
   margin-bottom: 1rem;
   font-size: 1rem;
@@ -254,7 +250,7 @@
   list-style-type: disc;
   list-style-position: inside;
   margin-bottom: 1.25rem;
-  color: #d4d4d4;
+  color: #cbd5e1;
 }
 
 .reading-content ul li {
@@ -265,7 +261,7 @@
   list-style-type: decimal;
   list-style-position: inside;
   margin-bottom: 1.25rem;
-  color: #d4d4d4;
+  color: #cbd5e1;
 }
 
 .reading-content ol li {
@@ -273,7 +269,7 @@
 }
 
 .reading-content li strong {
-  color: #f5f5f5;
+  color: #f8fafc;
   font-weight: 600;
 }
 

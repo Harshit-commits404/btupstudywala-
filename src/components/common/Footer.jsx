@@ -5,9 +5,9 @@ import { semestersData } from '../../data/semestersData';
 
 export const Footer = ({ onOpenCreatorModal }) => {
   return (
-    <footer className="border-t border-white/[0.08] bg-[#0a0a0a] text-neutral-300 transition-colors duration-200 mt-20 relative overflow-hidden">
-      {/* Top subtle crimson hairline */}
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-red-600/40 to-transparent" />
+    <footer className="border-t border-slate-300 dark:border-[#22304a] bg-slate-100 dark:bg-[#060914] text-slate-600 dark:text-neutral-300 transition-colors duration-200 mt-20 relative overflow-hidden">
+      {/* Top subtle purple hairline */}
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-purple-500/30 dark:via-[#8b5cf6]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
@@ -15,11 +15,11 @@ export const Footer = ({ onOpenCreatorModal }) => {
           {/* Brand & Platform Identity */}
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-[#141414] border border-red-600/30 flex items-center justify-center text-red-500">
+              <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-[#111b2e] border border-slate-300 dark:border-[#22304a] flex items-center justify-center text-purple-600 dark:text-[#8b5cf6]">
                 <Cpu className="w-5 h-5" />
               </div>
-              <span className="font-display font-bold text-xl text-white">
-                BTEUP <span className="text-red-500">STUDY</span>
+              <span className="font-display font-bold text-xl text-slate-800 dark:text-white">
+                BTEUP <span className="text-purple-600 dark:text-[#8b5cf6]">STUDY</span>
               </span>
             </Link>
 
@@ -39,7 +39,7 @@ export const Footer = ({ onOpenCreatorModal }) => {
 
           {/* Polytechnic Engineering Branches */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-white flex items-center gap-1.5">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-800 dark:text-white flex items-center gap-1.5">
               <span>Engineering Streams</span>
             </h4>
             <ul className="space-y-2 text-sm">
@@ -75,7 +75,7 @@ export const Footer = ({ onOpenCreatorModal }) => {
 
           {/* Quick Curriculum Semesters */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-white">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-800 dark:text-white">
               CSE Curriculum
             </h4>
             <ul className="space-y-2 text-sm">
@@ -104,7 +104,7 @@ export const Footer = ({ onOpenCreatorModal }) => {
         </div>
 
         {/* Disclaimer & Bottom Bar — CORRECT WORDING: Final-Year Students */}
-        <div className="mt-12 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="mt-12 pt-8 border-t border-slate-300 dark:border-[#22304a] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-neutral-400">
           <p className="text-center sm:text-left">
             Disclaimer: BTEUP Study is an independent open educational resource for Uttar Pradesh Polytechnic students.
           </p>

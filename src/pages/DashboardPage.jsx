@@ -39,7 +39,7 @@ export const DashboardPage = () => {
 
   const handleStartLearningFromModal = () => {
     handleCloseDeveloperModal();
-    navigate('/semesters');
+    navigate('/');
   };
 
   // Branch data
@@ -106,7 +106,7 @@ export const DashboardPage = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#080808] text-[#f5f5f5] selection:bg-red-600/30 selection:text-red-200">
+    <div className="relative w-full min-h-screen bg-slate-100 dark:bg-[#060914] text-slate-800 dark:text-[#f8fafc] selection:bg-[#8b5cf6]/30 selection:text-slate-800 dark:selection:text-white pb-16 transition-colors duration-200">
       
       {/* 1. DEVELOPER PROMOTIONAL POPUP / MODAL */}
       <DeveloperModal
@@ -120,35 +120,35 @@ export const DashboardPage = () => {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xs animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 dark:bg-[#060914]/85 backdrop-blur-sm animate-fadeIn"
           onClick={() => setSelectedBranchModal(null)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-[#111111] border border-red-600/30 p-6 shadow-2xl space-y-4"
+            className="relative w-full max-w-md rounded-2xl bg-slate-50 dark:bg-[#0d1424] border border-slate-300 dark:border-[#22304a] p-6 shadow-2xl space-y-4"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedBranchModal(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+              className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-500 dark:text-[#94a3b8] hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-red-600/15 border border-red-600/30 flex items-center justify-center text-red-500">
+              <div className="w-11 h-11 rounded-xl bg-purple-100 dark:bg-[#8b5cf6]/15 border border-purple-200 dark:border-[#8b5cf6]/30 flex items-center justify-center text-purple-600 dark:text-[#8b5cf6]">
                 <Clock className="w-5 h-5" />
               </div>
               <div>
-                <span className="font-mono text-xs text-red-400 font-bold uppercase tracking-wider block">
+                <span className="font-mono text-xs text-purple-600 dark:text-[#a78bfa] font-bold uppercase tracking-wider block">
                   {selectedBranchModal.code} • Coming Soon
                 </span>
-                <h3 className="text-lg font-bold font-display text-white">
+                <h3 className="text-lg font-bold font-display text-slate-800 dark:text-white">
                   {selectedBranchModal.name}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-neutral-300 leading-relaxed">
+            <p className="text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed">
               Is branch ke notes aur official BTEUP syllabus preparation phase mein hain. Filhal <strong>Computer Science & Engineering (CSE)</strong> ke Semester 1, 3, aur 5 ke comprehensive notes live hain!
             </p>
 
@@ -175,111 +175,108 @@ export const DashboardPage = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* 3. HERO SECTION — RED + BLACK ENGINEERING THEME */}
+      {/* 3. BENTO HERO SECTION */}
       {/* ========================================================================= */}
-      <section className="relative w-full pt-12 sm:pt-20 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 border-b border-white/[0.08] overflow-hidden bg-[#0a0a0a]">
-        {/* Subtle engineering red grid & blueprint lines */}
-        <div className="absolute inset-0 bg-tech-grid opacity-60 pointer-events-none" />
-        <div className="absolute inset-0 bg-blueprint-lines opacity-40 pointer-events-none" />
-
-        {/* Ambient subtle crimson glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[320px] bg-red-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-
-        <div className="relative max-w-5xl mx-auto text-center space-y-6 sm:space-y-8">
+      <section className="relative w-full pt-8 sm:pt-12 pb-8 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
           
-          {/* Engineering Metadata Eyebrow Stamp */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#141414] border border-red-600/30 text-neutral-300 text-xs font-mono tracking-wider shadow-xs backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <span className="font-bold text-red-400">BTEUP DIPLOMA COMPANION</span>
-            <span className="text-neutral-600">•</span>
-            <span>UP POLYTECHNIC 2026</span>
+          {/* Left: Main Hero Card */}
+          <div className="col-span-1 lg:col-span-8 rounded-[20px] bg-slate-50 dark:bg-[#0d1424] border border-slate-300 dark:border-[#22304a] p-8 sm:p-12 relative overflow-hidden flex flex-col justify-center min-h-[400px] shadow-lg">
+            {/* Ambient subtle purple/teal glow */}
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-purple-200/50 dark:bg-[#8b5cf6]/15 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[400px] h-[400px] bg-teal-100/50 dark:bg-[#2dd4bf]/10 rounded-full blur-[80px] pointer-events-none" />
+            
+            <div className="absolute inset-0 bg-tech-grid opacity-[0.15] dark:opacity-30 pointer-events-none" />
+
+            <div className="relative z-10 space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-[#111b2e] border border-slate-300 dark:border-[#8b5cf6]/30 text-slate-600 dark:text-[#94a3b8] text-xs font-mono tracking-wider shadow-sm backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-purple-500 dark:bg-[#8b5cf6] animate-pulse" />
+                <span className="font-bold text-purple-700 dark:text-[#a78bfa]">BTEUP DIPLOMA COMPANION</span>
+                <span className="text-slate-400 dark:text-[#94a3b8]">•</span>
+                <span>UP POLYTECHNIC 2026</span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="font-mono text-xs sm:text-sm font-extrabold tracking-widest text-purple-600 dark:text-[#8b5cf6] uppercase">
+                  BTEUP STUDY
+                </div>
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display text-slate-800 dark:text-white tracking-tight leading-[1.15] sm:leading-[1.12]">
+                  Polytechnic ki padhai, <br className="hidden sm:inline" />
+                  <span className="text-teal-600 dark:text-[#2dd4bf]">
+                    ab thodi aur simple.
+                  </span>
+                </h1>
+                <p className="text-base sm:text-xl font-medium text-slate-600 dark:text-[#94a3b8] max-w-2xl leading-relaxed">
+                  "Concept samjho. Notes padho. <span className="font-bold text-slate-800 dark:text-white">Exam ke liye confidently prepare karo."</span>
+                </p>
+                <p className="text-xs sm:text-sm font-mono text-slate-500 dark:text-[#64748b]">
+                  [No Paywalls • Pure Conceptual Hinglish Notes • BTEUP Syllabus-Aligned]
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+                <button
+                  onClick={() => document.getElementById('branches')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-primary-red text-sm !px-6 !py-3 group cursor-pointer"
+                >
+                  <span>Start Learning</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </button>
+                <button
+                  onClick={() => document.getElementById('branches')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-secondary-dark text-sm !px-6 !py-3"
+                >
+                  <span>Explore Courses</span>
+                  <ArrowDown className="w-4 h-4 transition-transform duration-200 hover:translate-y-0.5" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Hero Titles */}
-          <div className="space-y-3 sm:space-y-4">
-            <div className="font-mono text-xs sm:text-sm font-extrabold tracking-widest text-red-500 uppercase">
-              BTEUP STUDY
+          {/* Right: Small Bento Grid */}
+          <div className="col-span-1 lg:col-span-4 flex flex-col gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 gap-4 flex-1">
+              <div className="card-academic p-5 flex flex-col justify-center text-center items-center bg-slate-50 dark:bg-[#111b2e] border-slate-300 dark:border-[#22304a]">
+                <span className="text-[10px] font-mono text-teal-600 dark:text-[#2dd4bf] uppercase font-bold block mb-2">01 // Language</span>
+                <span className="text-sm sm:text-base font-bold text-slate-800 dark:text-white block">Bilingual Hinglish</span>
+                <span className="text-[11px] text-slate-500 dark:text-[#94a3b8] mt-1">Clear & intuitive</span>
+              </div>
+              <div className="card-academic p-5 flex flex-col justify-center text-center items-center bg-slate-50 dark:bg-[#111b2e] border-slate-300 dark:border-[#22304a]">
+                <span className="text-[10px] font-mono text-purple-600 dark:text-[#a78bfa] uppercase font-bold block mb-2">02 // Accuracy</span>
+                <span className="text-sm sm:text-base font-bold text-slate-800 dark:text-white block">Official Syllabus</span>
+                <span className="text-[11px] text-slate-500 dark:text-[#94a3b8] mt-1">Strict BTEUP units</span>
+              </div>
+              <div className="card-academic p-5 flex flex-col justify-center text-center items-center bg-slate-50 dark:bg-[#111b2e] border-slate-300 dark:border-[#22304a]">
+                <span className="text-[10px] font-mono text-cyan-600 dark:text-[#22d3ee] uppercase font-bold block mb-2">03 // Exam Focus</span>
+                <span className="text-sm sm:text-base font-bold text-slate-800 dark:text-white block">Repeated PYQs</span>
+                <span className="text-[11px] text-slate-500 dark:text-[#94a3b8] mt-1">Starred questions</span>
+              </div>
+              <div className="card-academic p-5 flex flex-col justify-center text-center items-center bg-slate-50 dark:bg-[#111b2e] border-slate-300 dark:border-[#22304a]">
+                <span className="text-[10px] font-mono text-emerald-600 dark:text-[#34d399] uppercase font-bold block mb-2">04 // Access</span>
+                <span className="text-sm sm:text-base font-bold text-slate-800 dark:text-white block">100% Free</span>
+                <span className="text-[11px] text-slate-500 dark:text-[#94a3b8] mt-1">Zero login barriers</span>
+              </div>
             </div>
-
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white tracking-tight leading-[1.15] sm:leading-[1.12]">
-              Polytechnic ki padhai, <br className="hidden sm:inline" />
-              <span className="text-red-500">
-                ab thodi aur simple.
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-xl lg:text-2xl font-medium text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-              "Concept samjho. Notes padho. <span className="font-bold text-white">Exam ke liye confidently prepare karo."</span>
-            </p>
-
-            <p className="text-xs sm:text-sm font-mono text-neutral-400 max-w-xl mx-auto">
-              [No Paywalls • Pure Conceptual Hinglish Notes • BTEUP Syllabus-Aligned]
-            </p>
-          </div>
-
-          {/* Primary CTAs with Smooth Micro-Animations */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4">
-            {/* Primary CTA: Explore Courses */}
-            <button
-              onClick={() => {
-                document.getElementById('branches')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="btn-secondary-dark text-sm !px-6 !py-3"
-            >
-              <span>Explore Courses</span>
-              <ArrowDown className="w-4 h-4 transition-transform duration-200 hover:translate-y-0.5" />
-            </button>
-
-            {/* Secondary CTA: Start Learning */}
-            <Link
-              to="/semesters"
-              className="btn-primary-red text-sm !px-6 !py-3 group"
-            >
-              <span>Start Learning</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          {/* Technical Specs Strip */}
-          <div className="pt-8 sm:pt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto text-left">
-            <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#141414] hover:border-red-500/30 transition-colors">
-              <span className="text-[10px] font-mono text-red-400 uppercase font-bold block mb-0.5">
-                01 // Language
-              </span>
-              <span className="text-xs sm:text-sm font-bold text-white block">
-                Bilingual Hinglish
-              </span>
-              <span className="text-[11px] text-neutral-400">Clear & intuitive</span>
-            </div>
-
-            <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#141414] hover:border-red-500/30 transition-colors">
-              <span className="text-[10px] font-mono text-red-400 uppercase font-bold block mb-0.5">
-                02 // Accuracy
-              </span>
-              <span className="text-xs sm:text-sm font-bold text-white block">
-                Official Syllabus
-              </span>
-              <span className="text-[11px] text-neutral-400">Strict BTEUP units</span>
-            </div>
-
-            <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#141414] hover:border-red-500/30 transition-colors">
-              <span className="text-[10px] font-mono text-red-400 uppercase font-bold block mb-0.5">
-                03 // Exam Focus
-              </span>
-              <span className="text-xs sm:text-sm font-bold text-white block">
-                Repeated PYQs
-              </span>
-              <span className="text-[11px] text-neutral-400">Starred questions</span>
-            </div>
-
-            <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#141414] hover:border-red-500/30 transition-colors">
-              <span className="text-[10px] font-mono text-red-400 uppercase font-bold block mb-0.5">
-                04 // Access
-              </span>
-              <span className="text-xs sm:text-sm font-bold text-white block">
-                100% Free
-              </span>
-              <span className="text-[11px] text-neutral-400">Zero login barriers</span>
+            
+            {/* Creator intro card */}
+            <div className="card-academic p-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-between gap-4 border-slate-300 dark:border-[#8b5cf6]/30 bg-slate-50 dark:bg-gradient-to-br dark:from-[#111b2e] dark:to-[#0d1424]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-[#8b5cf6]/15 border border-purple-200 dark:border-[#8b5cf6]/30 flex items-center justify-center text-purple-600 dark:text-[#8b5cf6] shrink-0">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-slate-500 dark:text-[#94a3b8] font-bold block uppercase tracking-wider">
+                    MADE BY FINAL-YEAR POLYTECHNIC STUDENTS
+                  </span>
+                  <span className="text-sm font-bold text-slate-800 dark:text-white">Ashish & Harshit</span>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowDeveloperModal(true)}
+                className="text-xs font-medium text-slate-700 dark:text-[#f8fafc] hover:text-purple-600 dark:hover:text-[#2dd4bf] transition-colors flex items-center gap-1 shrink-0 bg-slate-200 dark:bg-white/5 px-3 py-1.5 rounded-full border border-slate-300 dark:border-white/10"
+              >
+                Meet the Creators <ArrowRight className="w-3 h-3" />
+              </button>
             </div>
           </div>
 
@@ -287,143 +284,123 @@ export const DashboardPage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. CHOOSE YOUR BRANCH SECTION (WITH RED ACCENT HEADING & 220MS CARDS) */}
+      {/* 4. CHOOSE YOUR BRANCH SECTION (Bento Grid) */}
       {/* ========================================================================= */}
       <section
         id="branches"
-        className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-14"
+        className="relative w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto scroll-mt-14"
       >
-        <div className="space-y-10 sm:space-y-12">
+        <div className="space-y-8">
           
-          {/* Section Heading with Red Vertical Accent Line */}
-          <div className="text-center space-y-3 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md font-mono text-xs font-semibold uppercase tracking-wider bg-red-600/10 text-red-400 border border-red-600/25">
-              <Compass className="w-3.5 h-3.5 text-red-500" />
-              <span>Select Your Stream</span>
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md font-mono text-xs font-semibold uppercase tracking-wider bg-purple-100 dark:bg-[#8b5cf6]/10 text-purple-700 dark:text-[#a78bfa] border border-purple-200 dark:border-[#8b5cf6]/25">
+                <Compass className="w-3.5 h-3.5 text-purple-600 dark:text-[#8b5cf6]" />
+                <span>Select Your Stream</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold font-display text-slate-800 dark:text-white tracking-tight flex items-center gap-3">
+                <span>Choose Your Branch</span>
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-[#94a3b8] font-sans">
+                Apni branch select karo aur apni preparation start karo.
+              </p>
             </div>
-            
-            <h2 className="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight flex items-center justify-center gap-3">
-              <span className="w-1.5 h-8 rounded-full bg-red-600 inline-block shadow-[0_0_12px_rgba(230,57,70,0.6)]" />
-              <span>Choose Your Branch</span>
-            </h2>
-
-            <p className="text-sm sm:text-base text-neutral-400 font-sans">
-              Apni branch select karo aur apni preparation start karo.
-            </p>
           </div>
 
-          {/* 5 Engineering Branch Cards Grid with 220ms Hover Interaction */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {branches.map((branch) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {/* CSE gets a larger visual treatment in the Bento Grid */}
+            {branches.map((branch, index) => {
               const Icon = branch.icon;
               const isActive = branch.isAvailable;
+              const isPrimary = index === 0;
 
               return (
                 <div
                   key={branch.id}
                   onClick={() => handleBranchClick(branch)}
-                  className={`group relative rounded-2xl border p-6 flex flex-col justify-between cursor-pointer overflow-hidden ${
-                    isActive
-                      ? 'bg-[#171717] border-white/10 hover:border-red-500/70 shadow-lg hover:shadow-[0_14px_35px_-8px_rgba(230,57,70,0.25)]'
-                      : 'bg-[#121212] border-white/5 hover:border-red-500/40 opacity-80 hover:opacity-100'
+                  className={`card-academic group relative p-6 sm:p-8 flex flex-col justify-between cursor-pointer ${
+                    isPrimary 
+                      ? 'md:col-span-2 lg:col-span-2 bg-slate-50 dark:bg-gradient-to-br dark:from-[#111b2e] dark:to-[#0d1424] border-slate-300 dark:border-[#8b5cf6]/30' 
+                      : 'col-span-1 bg-slate-50 dark:bg-[#0d1424] border-slate-300 dark:border-[#22304a]'
                   }`}
-                  style={{
-                    transition: 'transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-6px) scale(1.01)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  }}
                 >
-                  {/* Subtle top crimson hairline for active stream */}
-                  {isActive && (
-                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-700 via-red-500 to-red-600" />
+                  {isActive && isPrimary && (
+                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-500 via-teal-400 to-cyan-400 dark:from-[#8b5cf6] dark:via-[#2dd4bf] dark:to-[#22d3ee]" />
+                  )}
+                  {isActive && !isPrimary && (
+                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 dark:from-[#8b5cf6] dark:to-[#6d28d9]" />
                   )}
 
                   <div>
-                    {/* Top Meta: Prominent Branch Abbreviation & Status Tag */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-2.5">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-3">
                         <div
-                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105 ${
+                          className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105 ${
                             isActive
-                              ? 'bg-red-600/15 text-red-400 border border-red-600/30'
-                              : 'bg-white/5 text-neutral-400 border border-white/10'
+                              ? 'bg-purple-100 dark:bg-[#8b5cf6]/15 text-purple-600 dark:text-[#8b5cf6] border border-purple-200 dark:border-[#8b5cf6]/30'
+                              : 'bg-slate-200 dark:bg-white/5 text-slate-500 dark:text-[#94a3b8] border border-slate-300 dark:border-[#22304a]'
                           }`}
                         >
-                          <Icon className="w-5 h-5" />
+                          <Icon className="w-6 h-6" />
                         </div>
-                        <span className="font-mono text-base font-black tracking-wider text-red-400">
+                        <span className="font-mono text-lg font-black tracking-wider text-purple-600 dark:text-[#a78bfa]">
                           [{branch.code}]
                         </span>
                       </div>
 
                       {isActive ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-[#34d399]/10 text-emerald-600 dark:text-[#34d399] border border-emerald-200 dark:border-[#34d399]/25">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-[#34d399] animate-pulse" />
                           <span>{branch.statusText}</span>
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/5 text-neutral-400 border border-white/10">
-                          <Clock className="w-3 h-3 text-red-400" />
+                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-white/5 text-slate-500 dark:text-[#94a3b8] border border-slate-300 dark:border-[#22304a]">
+                          <Clock className="w-3 h-3" />
                           <span>{branch.statusText}</span>
                         </span>
                       )}
                     </div>
 
-                    {/* Branch Title */}
-                    <h3
-                      className={`text-lg sm:text-xl font-bold font-display mb-2.5 transition-colors ${
-                        isActive
-                          ? 'text-white group-hover:text-red-400'
-                          : 'text-neutral-300'
-                      }`}
-                    >
+                    <h3 className={`text-xl sm:text-2xl font-bold font-display mb-3 transition-colors ${isActive ? 'text-slate-800 dark:text-white group-hover:text-purple-600 dark:group-hover:text-[#a78bfa]' : 'text-slate-600 dark:text-[#e2e8f0]'}`}>
                       {branch.name}
                     </h3>
-
-                    {/* Branch Description */}
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-6">
+                    
+                    <p className={`text-sm leading-relaxed mb-8 ${isPrimary ? 'text-slate-600 dark:text-[#cbd5e1] max-w-md' : 'text-slate-500 dark:text-[#94a3b8]'}`}>
                       {branch.description}
                     </p>
                   </div>
 
-                  {/* Card Footer: Animated Arrow → */}
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                    <span className="text-xs font-mono font-medium text-neutral-400">
+                  <div className="pt-4 border-t border-slate-200 dark:border-[#22304a] flex items-center justify-between">
+                    <span className="text-xs font-mono font-medium text-slate-500 dark:text-[#64748b]">
                       {branch.semestersAvailable}
                     </span>
 
                     <div
-                      className={`inline-flex items-center gap-1.5 text-xs font-bold transition-all duration-200 ${
+                      className={`inline-flex items-center gap-1.5 text-sm font-bold transition-all duration-200 ${
                         isActive
-                          ? 'text-red-400 group-hover:text-red-300'
-                          : 'text-neutral-400 group-hover:text-red-400'
+                          ? 'text-purple-600 dark:text-[#8b5cf6] group-hover:text-purple-700 dark:group-hover:text-[#a78bfa]'
+                          : 'text-slate-500 dark:text-[#64748b] group-hover:text-slate-600 dark:group-hover:text-[#94a3b8]'
                       }`}
                     >
                       <span>{isActive ? 'Enter Branch' : 'Notify Me'}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1.5" />
+                      <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </div>
                   </div>
-
                 </div>
               );
             })}
           </div>
-
-          {/* Primary CSE Active Notice Banner */}
-          <div className="p-4 sm:p-5 rounded-2xl border border-red-600/30 bg-[#121212] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-left">
-              <div className="w-10 h-10 rounded-xl bg-red-600/15 border border-red-600/30 flex items-center justify-center text-red-500 shrink-0">
-                <Laptop className="w-5 h-5" />
+          
+          <div className="card-academic p-5 sm:p-6 bg-slate-50 dark:bg-[#0d1424] border-slate-300 dark:border-[#22304a] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4 text-left">
+              <div className="w-12 h-12 rounded-xl bg-teal-50 dark:bg-[#2dd4bf]/10 border border-teal-100 dark:border-[#2dd4bf]/20 flex items-center justify-center text-teal-600 dark:text-[#2dd4bf] shrink-0">
+                <Laptop className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider block">
+                <span className="text-xs font-mono font-bold text-teal-600 dark:text-[#2dd4bf] uppercase tracking-wider block mb-1">
                   ACTIVE BRANCH • COMPUTER SCIENCE & ENGINEERING
                 </span>
-                <p className="text-xs sm:text-sm text-neutral-300">
+                <p className="text-sm text-slate-600 dark:text-[#94a3b8]">
                   Semester 1, 3, aur 5 ke units, formulas aur exam notes currently active hain.
                 </p>
               </div>
@@ -431,10 +408,10 @@ export const DashboardPage = () => {
 
             <Link
               to="/semesters"
-              className="btn-primary-red text-xs sm:text-sm whitespace-nowrap group"
+              className="btn-primary-red text-sm whitespace-nowrap group bg-slate-900 dark:bg-[#111b2e] hover:bg-slate-800 dark:hover:bg-[#17243d] border-slate-800 dark:border-[#22304a] text-white hover:border-purple-500/50 dark:hover:border-[#8b5cf6]/50 shadow-none"
             >
               <span>Explore CSE Path</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -446,89 +423,63 @@ export const DashboardPage = () => {
       {/* ========================================================================= */}
       <section
         id="about"
-        className="relative w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/[0.08] bg-[#0c0c0c] scroll-mt-14"
+        className="relative w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto scroll-mt-14"
       >
-        <div className="max-w-5xl mx-auto space-y-10">
+        <div className="space-y-8">
           
-          <div className="text-center space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md font-mono text-xs font-semibold uppercase tracking-wider bg-red-600/10 text-red-400 border border-red-600/25">
-              <Users className="w-3.5 h-3.5 text-red-500" />
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md font-mono text-xs font-semibold uppercase tracking-wider bg-teal-50 dark:bg-[#2dd4bf]/10 text-teal-600 dark:text-[#2dd4bf] border border-teal-200 dark:border-[#2dd4bf]/25">
+              <Users className="w-3.5 h-3.5 text-teal-600 dark:text-[#2dd4bf]" />
               <span>Platform Philosophy</span>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white tracking-tight flex items-center justify-center gap-2.5">
-              <span className="w-1.5 h-7 rounded-full bg-red-600 inline-block" />
+            <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-800 dark:text-white tracking-tight flex items-center gap-3">
               <span>Polytechnic Diploma Students Ke Liye, Students Dwara</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94a3b8] max-w-2xl">
               BTEUP Study ka vision diploma students ko bina kisi complex subscription ya heavy language ke, unki apni bolchal wali bhasha mein technical concepts sikhana hai.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl border border-white/[0.08] bg-[#141414] hover:border-red-600/30 transition-colors space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-red-600/15 text-red-500 flex items-center justify-center font-mono font-bold text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="card-academic p-6 sm:p-8 bg-slate-50 dark:bg-[#0d1424] border-slate-300 dark:border-[#22304a] space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-[#8b5cf6]/15 text-purple-600 dark:text-[#8b5cf6] flex items-center justify-center font-mono font-bold text-base border border-purple-200 dark:border-[#8b5cf6]/30">
                 01
               </div>
-              <h3 className="font-display font-bold text-base text-white">
+              <h3 className="font-display font-bold text-lg text-slate-800 dark:text-white">
                 Conceptual Clarity
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed">
                 Ratne ke bajaye concept ko intuitively samjho. Formulas aur derivations step-by-step breakdown ke sath provide kiye gaye hain.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl border border-white/[0.08] bg-[#141414] hover:border-red-600/30 transition-colors space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-red-600/15 text-red-500 flex items-center justify-center font-mono font-bold text-sm">
+            <div className="card-academic p-6 sm:p-8 bg-slate-50 dark:bg-[#0d1424] border-slate-300 dark:border-[#22304a] space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-teal-50 dark:bg-[#2dd4bf]/15 text-teal-600 dark:text-[#2dd4bf] flex items-center justify-center font-mono font-bold text-base border border-teal-200 dark:border-[#2dd4bf]/30">
                 02
               </div>
-              <h3 className="font-display font-bold text-base text-white">
+              <h3 className="font-display font-bold text-lg text-slate-800 dark:text-white">
                 Exam Preparation
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed">
                 Har chapter mein high-probability repeated exam questions aur quick revision points highlighted hain taaki paper mein direct benefit ho.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl border border-white/[0.08] bg-[#141414] hover:border-red-600/30 transition-colors space-y-2">
-              <div className="w-8 h-8 rounded-lg bg-red-600/15 text-red-500 flex items-center justify-center font-mono font-bold text-sm">
+            <div className="card-academic p-6 sm:p-8 bg-slate-50 dark:bg-[#0d1424] border-slate-300 dark:border-[#22304a] space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-cyan-50 dark:bg-[#22d3ee]/15 text-cyan-600 dark:text-[#22d3ee] flex items-center justify-center font-mono font-bold text-base border border-cyan-200 dark:border-[#22d3ee]/30">
                 03
               </div>
-              <h3 className="font-display font-bold text-base text-white">
+              <h3 className="font-display font-bold text-lg text-slate-800 dark:text-white">
                 Open & Independent
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed">
                 Koi login barrier nahi, koi ads nahi. Ek pure digital textbook experience jo har diploma student ke mobile par bina lag ke chale.
               </p>
             </div>
           </div>
-
-          {/* Creators Strip — EXACT CORRECT WORDING: Final-Year Polytechnic Students (NO alumni/graduates) */}
-          <div className="p-4 sm:p-6 rounded-2xl border border-red-600/30 bg-[#141414] flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-red-600/15 border border-red-600/30 flex items-center justify-center text-red-500">
-                <GraduationCap className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-xs font-mono text-red-400 font-bold block">
-                  MADE BY FINAL-YEAR POLYTECHNIC STUDENTS
-                </span>
-                <span className="text-sm font-bold text-white">
-                  Ashish & Harshit • Building for Fellow Students
-                </span>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setShowDeveloperModal(true)}
-              className="btn-secondary-dark text-xs !py-2 !px-4"
-            >
-              <span>View Creator Intro</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
+          
         </div>
       </section>
 
