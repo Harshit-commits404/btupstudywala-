@@ -97,7 +97,7 @@ export const FeeeUnit5Content = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6 text-xs sm:text-sm">
           <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 space-y-1">
             <strong className="text-slate-900 dark:text-white block font-bold text-primary">1. Peak Value ($V_m$ or $I_m$)</strong>
-            <p className="text-xs text-slate-600 dark:text-slate-300">Waveform ke positive ya negative half-cycle me achieve hone wali maximum amplitude. Peak-to-Peak $V_{p-p} = 2V_m$.</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300">Waveform ke positive ya negative half-cycle me achieve hone wali maximum amplitude. Peak-to-Peak V_(p-p) = 2·V_m.</p>
           </div>
 
           <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 space-y-1">

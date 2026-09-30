@@ -153,9 +153,9 @@ export const FeeeUnit2Content = () => {
             </p>
             <div className="p-2.5 rounded bg-primary/5 border border-primary/20 space-y-1">
               <strong className="block text-primary">Range Extension Method:</strong>
-              Galvanometer coil ke <strong>Parallel</strong> me ek bohot chhota resistance (jise <strong>Shunt Resistance, $R_{sh}$</strong> kehte hain) joda jata hai taaki maximum current bypass ho jaye.
+              Galvanometer coil ke <strong>Parallel</strong> me ek bohot chhota resistance (jise <strong>Shunt Resistance, R_sh</strong> kehte hain) joda jata hai taaki maximum current bypass ho jaye.
               <div className="font-mono text-xs font-bold text-primary pt-1">
-                $R_{sh} = \frac{R_m}{m - 1} \quad \text{where } m = \frac{I}{I_m}$
+                R_sh = R_m / (m - 1)  [where m = I / I_m]
               </div>
             </div>
             <p className="text-[11px] text-slate-500 dark:text-slate-400">
@@ -174,9 +174,9 @@ export const FeeeUnit2Content = () => {
             </p>
             <div className="p-2.5 rounded bg-emerald-500/5 border border-emerald-500/20 space-y-1">
               <strong className="block text-emerald-600 dark:text-emerald-400">Range Extension Method:</strong>
-              Galvanometer coil ke <strong>Series</strong> me ek bohot bada resistance (jise <strong>Multiplier Resistance, $R_{se}$</strong> kehte hain) joda jata hai taaki meter jalne se bache.
+              Galvanometer coil ke <strong>Series</strong> me ek bohot bada resistance (jise <strong>Multiplier Resistance, R_se</strong> kehte hain) joda jata hai taaki meter jalne se bache.
               <div className="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400 pt-1">
-                $R_{se} = R_m \cdot (m - 1) \quad \text{where } m = \frac{V}{V_m}$
+                R_se = R_m · (m - 1)  [where m = V / V_m]
               </div>
             </div>
             <p className="text-[11px] text-slate-500 dark:text-slate-400">

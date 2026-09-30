@@ -227,7 +227,7 @@ export const CsUnit3Content = () => {
               </tr>
               <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
                 <td className="p-3 font-mono font-bold text-brand-600 dark:text-brand-400 border border-slate-200 dark:border-slate-700">micro-</td>
-                <td className="p-3 border border-slate-200 dark:border-slate-700">Extremely small ($10^{-6}$)</td>
+                <td className="p-3 border border-slate-200 dark:border-slate-700">Extremely small (10⁻⁶)</td>
                 <td className="p-3 border border-slate-200 dark:border-slate-700">Microscope, Microorganism</td>
                 <td className="p-3 border border-slate-200 dark:border-slate-700"><strong>Microcontroller</strong>, Microprocessor, Micrometer</td>
               </tr>

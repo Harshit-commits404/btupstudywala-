@@ -395,7 +395,7 @@ export const ItaiUnit3Content = () => {
             <ul className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside space-y-1">
               <li><strong>Size:</strong> <strong>32 bits</strong> (4 bytes).</li>
               <li><strong>Format:</strong> 4 decimal numbers separated by dots (e.g. <code>192.168.1.1</code>).</li>
-              <li><strong>Total Addresses:</strong> $2^{32} \approx 4.3 \text{ billion}$ addresses (jo aaj duniya bhar me lagbhag exhaust ho chuke hain).</li>
+              <li><strong>Total Addresses:</strong> 2³² ≈ 4.3 billion addresses (jo aaj duniya bhar me lagbhag exhaust ho chuke hain).</li>
             </ul>
           </div>
 
@@ -404,7 +404,7 @@ export const ItaiUnit3Content = () => {
             <ul className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside space-y-1">
               <li><strong>Size:</strong> <strong>128 bits</strong> (16 bytes).</li>
               <li><strong>Format:</strong> 8 hexadecimal groups separated by colons (e.g. <code>2001:0db8:85a3::8a2e:0370:7334</code>).</li>
-              <li><strong>Total Addresses:</strong> $2^{128} \approx 3.4 \times 10^{38}$ addresses (virtually inexhaustible, built-in IPsec security).</li>
+              <li><strong>Total Addresses:</strong> 2¹²⁸ ≈ 3.4 × 10³⁸ addresses (virtually inexhaustible, built-in IPsec security).</li>
             </ul>
           </div>
         </div>

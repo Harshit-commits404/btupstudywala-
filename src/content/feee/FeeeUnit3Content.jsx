@@ -104,7 +104,7 @@ export const FeeeUnit3Content = () => {
               <tr>
                 <td className="p-3 font-bold text-slate-900 dark:text-slate-100">Signal Nature</td>
                 <td className="p-3 text-slate-700 dark:text-slate-300">Continuous values over continuous time (Smooth curves)</td>
-                <td className="p-3 text-emerald-600 dark:text-emerald-400 font-bold">Discrete two binary levels: Logic 0 ($0\text{V}$) & Logic 1 ($5\text{V}$ / $3.3\text{V}$)</td>
+                <td className="p-3 text-emerald-600 dark:text-emerald-400 font-bold">Discrete two binary levels: Logic 0 (0 V) &amp; Logic 1 (5 V / 3.3 V)</td>
               </tr>
               <tr>
                 <td className="p-3 font-bold text-slate-900 dark:text-slate-100">Noise Immunity</td>

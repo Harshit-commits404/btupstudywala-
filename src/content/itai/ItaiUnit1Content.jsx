@@ -151,7 +151,7 @@ export const ItaiUnit1Content = () => {
               1. Speed (Gati)
             </h5>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Computer calculations ko microseconds ($10^{-6}$ s), nanoseconds ($10^{-9}$ s) ya picoseconds ($10^{-12}$ s) me perform karta hai. Modern CPUs billions of instructions per second (Gigahertz clock speed) execute karte hain.
+              Computer calculations ko microseconds (10⁻⁶ s), nanoseconds (10⁻⁹ s) ya picoseconds (10⁻¹² s) me perform karta hai. Modern CPUs billions of instructions per second (Gigahertz clock speed) execute karte hain.
             </p>
           </div>
           <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30">

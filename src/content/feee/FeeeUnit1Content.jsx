@@ -204,11 +204,11 @@ export const FeeeUnit1Content = () => {
           </div>
           <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40">
             <strong className="text-slate-900 dark:text-white block font-bold mb-1">2. Insulators (Glass, Rubber):</strong>
-            Bohot bada forbidden gap hota hai ($E_g &gt; 5\text{ eV}$). Normal temperature par koi bhi electron jump karke CB me nahi ja sakta. Zero conductivity.
+            Bohot bada forbidden gap hota hai (Eg &gt; 5 eV). Normal temperature par koi bhi electron jump karke CB me nahi ja sakta. Zero conductivity.
           </div>
           <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40">
             <strong className="text-slate-900 dark:text-white block font-bold mb-1 text-primary">3. Semiconductors (Si, Ge):</strong>
-            Chhota energy gap hota hai: Silicon me $E_g = 1.1\text{ eV}$ aur Germanium me $E_g = 0.72\text{ eV}$. 0 Kelvin par insulator hote hain, lekin room temp par electrons jump karke conduction karte hain.
+            Chhota energy gap hota hai: Silicon me Eg = 1.1 eV aur Germanium me Eg = 0.72 eV. 0 Kelvin par insulator hote hain, lekin room temp par electrons jump karke conduction karte hain.
           </div>
         </div>
 
@@ -267,14 +267,14 @@ export const FeeeUnit1Content = () => {
           <span>PN Junction Diode: Formation & Biasing</span>
         </h3>
         <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-          Jab P-type aur N-type semiconductors ko molecular level par join kiya jata hai, to boundary par electrons aur holes diffuse hokar recombine ho jate hain. Isse junction par immobile positive aur negative ions ki ek layer ban jati hai jise <strong>Depletion Layer</strong> kehte hain. Yeh ek internal electric field create karti hai jise <strong>Barrier Potential ($V_0$)</strong> kehte hain ($0.7\text{V}$ for Silicon, $0.3\text{V}$ for Germanium).
+          Jab P-type aur N-type semiconductors ko molecular level par join kiya jata hai, to boundary par electrons aur holes diffuse hokar recombine ho jate hain. Isse junction par immobile positive aur negative ions ki ek layer ban jati hai jise <strong>Depletion Layer</strong> kehte hain. Yeh ek internal electric field create karti hai jise <strong>Barrier Potential (V_0)</strong> kehte hain (0.7 V for Silicon, 0.3 V for Germanium).
         </p>
 
         {/* Biasing Modes */}
         <div className="grid sm:grid-cols-2 gap-4 mb-6 text-xs sm:text-sm">
           <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 space-y-1.5">
             <strong className="text-emerald-600 dark:text-emerald-400 font-bold block text-sm">Forward Bias (Current Flows):</strong>
-            P-region ko battery ke <strong>Positive (+)</strong> terminal se aur N-region ko <strong>Negative (-)</strong> terminal se connect kiya jata hai. External voltage barrier potential ($0.7\text{V}$) ko overcome karke depletion layer ko patla kar deta hai, aur heavy forward current (milliamperes me) flow hota hai.
+            P-region ko battery ke <strong>Positive (+)</strong> terminal se aur N-region ko <strong>Negative (-)</strong> terminal se connect kiya jata hai. External voltage barrier potential (0.7 V) ko overcome karke depletion layer ko patla kar deta hai, aur heavy forward current (milliamperes me) flow hota hai.
           </div>
           <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 space-y-1.5">
             <strong className="text-rose-500 font-bold block text-sm">Reverse Bias (Current Blocked):</strong>
@@ -313,7 +313,7 @@ export const FeeeUnit1Content = () => {
           </div>
           <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40">
             <strong className="text-slate-900 dark:text-white block font-bold mb-1">2. Base (B):</strong>
-            Center me located extremely thin ($&lt; 1\,\mu\text{m}$) aur lightly doped layer jo emitter se aane wale 95-98% carriers ko collector tak pass kar deta hai.
+            Center me located extremely thin (&lt; 1 µm) aur lightly doped layer jo emitter se aane wale 95-98% carriers ko collector tak pass kar deta hai.
           </div>
           <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40">
             <strong className="text-slate-900 dark:text-white block font-bold mb-1">3. Collector (C):</strong>
