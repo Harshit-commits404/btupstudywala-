@@ -14,6 +14,7 @@ import {
   Server,
   UserCheck,
   FileSpreadsheet,
+  Sparkles,
 } from 'lucide-react';
 import EducationalFigure from '../../components/common/EducationalFigure';
 
