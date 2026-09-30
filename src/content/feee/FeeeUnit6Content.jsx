@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Sparkles, AlertCircle, Clock, Compass } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 export const FeeeUnit6Content = () => {
   return (
