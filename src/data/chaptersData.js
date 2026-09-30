@@ -5,6 +5,457 @@
  */
 
 export const chaptersData = {
+  'communication-skills-english': [
+  {
+    "id": "unit-1",
+    "number": "01",
+    "title": "Unit 1: Communication: Theory and Practice",
+    "duration": "08 Periods",
+    "subjectId": "communication-skills-english",
+    "subjectName": "Communication Skills in English",
+    "semesterId": 1,
+    "description": "Basics of communication, types of communication, barriers to communication, and tools/devices of communication.",
+    "path": "/chapter/communication-skills-english/unit-1",
+    "sections": [
+      {
+        "id": "basics",
+        "title": "1. Basics of communication"
+      },
+      {
+        "id": "types",
+        "title": "2. Types of communication"
+      },
+      {
+        "id": "barriers",
+        "title": "3. Barriers to communication"
+      },
+      {
+        "id": "tools",
+        "title": "4. Tools and devices"
+      }
+    ]
+  },
+  {
+    "id": "unit-2",
+    "number": "02",
+    "title": "Unit 2: Soft Skills for Professional Excellence",
+    "duration": "04 Periods",
+    "subjectId": "communication-skills-english",
+    "subjectName": "Communication Skills in English",
+    "semesterId": 1,
+    "description": "Soft skills vs hard skills, and the importance of soft skills in education and workplace.",
+    "path": "/chapter/communication-skills-english/unit-2",
+    "sections": [
+      {
+        "id": "soft-vs-hard",
+        "title": "1. Soft skills vs hard skills"
+      },
+      {
+        "id": "importance",
+        "title": "2. Importance of soft skills"
+      }
+    ]
+  },
+  {
+    "id": "unit-3",
+    "number": "03",
+    "title": "Unit 3: Reading Comprehension: Unseen Passages",
+    "duration": "08 Periods",
+    "subjectId": "communication-skills-english",
+    "subjectName": "Communication Skills in English",
+    "semesterId": 1,
+    "description": "Reading comprehension, prefix, suffix, antonyms, and synonyms.",
+    "path": "/chapter/communication-skills-english/unit-3",
+    "sections": [
+      {
+        "id": "intro",
+        "title": "1. Introduction"
+      },
+      {
+        "id": "unseen-passages",
+        "title": "2. Unseen passages"
+      },
+      {
+        "id": "prefix-suffix",
+        "title": "3. Prefix and suffix"
+      },
+      {
+        "id": "antonyms-synonyms",
+        "title": "4. Antonyms and synonyms"
+      }
+    ]
+  },
+  {
+    "id": "unit-4",
+    "number": "04",
+    "title": "Unit 4: Functional Grammar",
+    "duration": "08 Periods",
+    "subjectId": "communication-skills-english",
+    "subjectName": "Communication Skills in English",
+    "semesterId": 1,
+    "description": "Sentence types, parts of speech, tenses, active/passive voice, and punctuation.",
+    "path": "/chapter/communication-skills-english/unit-4",
+    "sections": [
+      {
+        "id": "sentence",
+        "title": "1. Sentence and its types"
+      },
+      {
+        "id": "parts-of-speech",
+        "title": "2. Parts of speech"
+      },
+      {
+        "id": "tenses",
+        "title": "3. Tenses"
+      },
+      {
+        "id": "active-passive",
+        "title": "4. Active and passive voice"
+      },
+      {
+        "id": "punctuation",
+        "title": "5. Punctuation"
+      }
+    ]
+  },
+  {
+    "id": "unit-5",
+    "number": "05",
+    "title": "Unit 5: Professional Writing",
+    "duration": "14 Periods",
+    "subjectId": "communication-skills-english",
+    "subjectName": "Communication Skills in English",
+    "semesterId": 1,
+    "description": "CV writing, agenda, minutes, notices, official letters, letter-reports, and e-mail drafting.",
+    "path": "/chapter/communication-skills-english/unit-5",
+    "sections": [
+      {
+        "id": "cv-writing",
+        "title": "1. CV writing"
+      },
+      {
+        "id": "agenda-minutes",
+        "title": "2. Agenda and Minutes"
+      },
+      {
+        "id": "notices",
+        "title": "3. Notices"
+      },
+      {
+        "id": "official-letters",
+        "title": "4. Official letters"
+      },
+      {
+        "id": "letter-reports",
+        "title": "5. Letter-reports"
+      },
+      {
+        "id": "email-drafting",
+        "title": "6. E-mail drafting"
+      }
+    ]
+  }
+],
+  'introduction-to-it': [
+  {
+    "id": "unit-1",
+    "number": "01",
+    "title": "Unit 1: Introduction to Computers and Peripherals",
+    "duration": "05 Periods",
+    "subjectId": "introduction-to-it",
+    "subjectName": "Introduction to IT and AI",
+    "semesterId": 1,
+    "description": "Introduction, generations, components, CPU, memory, I/O devices, printers, and scanners.",
+    "path": "/chapter/introduction-to-it/unit-1",
+    "sections": [
+      {
+        "id": "intro",
+        "title": "1. Intro and Generations"
+      },
+      {
+        "id": "components",
+        "title": "2. Components and CPU"
+      },
+      {
+        "id": "memory",
+        "title": "3. Memory and Types"
+      },
+      {
+        "id": "io-devices",
+        "title": "4. Input/Output Devices"
+      }
+    ]
+  },
+  {
+    "id": "unit-2",
+    "number": "02",
+    "title": "Unit 2: Operating System and Application Software",
+    "duration": "06 Periods",
+    "subjectId": "introduction-to-it",
+    "subjectName": "Introduction to IT and AI",
+    "semesterId": 1,
+    "description": "System software, application software, Windows OS, MS Office, Google Suite, and antivirus.",
+    "path": "/chapter/introduction-to-it/unit-2",
+    "sections": [
+      {
+        "id": "software-types",
+        "title": "1. Software Types"
+      },
+      {
+        "id": "office",
+        "title": "2. Office Suites"
+      },
+      {
+        "id": "windows",
+        "title": "3. Windows OS"
+      },
+      {
+        "id": "gsuite",
+        "title": "4. Google Suite & Installation"
+      }
+    ]
+  },
+  {
+    "id": "unit-3",
+    "number": "03",
+    "title": "Unit 3: Internet",
+    "duration": "06 Periods",
+    "subjectId": "introduction-to-it",
+    "subjectName": "Introduction to IT and AI",
+    "semesterId": 1,
+    "description": "Network topologies, LAN/MAN/WAN, networking devices, Wi-Fi, IP, DNS, and search engines.",
+    "path": "/chapter/introduction-to-it/unit-3",
+    "sections": [
+      {
+        "id": "networks",
+        "title": "1. Networks and Topologies"
+      },
+      {
+        "id": "devices",
+        "title": "2. Networking Devices"
+      },
+      {
+        "id": "internet",
+        "title": "3. Internet and Protocols"
+      }
+    ]
+  },
+  {
+    "id": "unit-4",
+    "number": "04",
+    "title": "Unit 4: Basics of Information Security",
+    "duration": "05 Periods",
+    "subjectId": "introduction-to-it",
+    "subjectName": "Introduction to IT and AI",
+    "semesterId": 1,
+    "description": "CIA Triad, threats, malware, active/passive attacks, cyber frauds, and Indian cyber laws.",
+    "path": "/chapter/introduction-to-it/unit-4",
+    "sections": [
+      {
+        "id": "cia",
+        "title": "1. Info Security & CIA"
+      },
+      {
+        "id": "threats",
+        "title": "2. Threats and Malware"
+      },
+      {
+        "id": "cybersecurity",
+        "title": "3. Cybersecurity & Laws"
+      }
+    ]
+  },
+  {
+    "id": "unit-5",
+    "number": "05",
+    "title": "Unit 5: Fundamentals and Applications of AI",
+    "duration": "06 Periods",
+    "subjectId": "introduction-to-it",
+    "subjectName": "Introduction to IT and AI",
+    "semesterId": 1,
+    "description": "AI definitions, ML vs DL, generative AI (ChatGPT, Gemini), prompt engineering, heuristic search, and AI applications.",
+    "path": "/chapter/introduction-to-it/unit-5",
+    "sections": [
+      {
+        "id": "ai-intro",
+        "title": "1. AI Introduction & History"
+      },
+      {
+        "id": "ai-vs-ml",
+        "title": "2. AI vs ML vs DL"
+      },
+      {
+        "id": "gen-ai",
+        "title": "3. Generative AI & Prompts"
+      },
+      {
+        "id": "search",
+        "title": "4. Heuristic Search"
+      },
+      {
+        "id": "applications",
+        "title": "5. AI Applications"
+      }
+    ]
+  }
+],
+  'fundamental-electrical-electronics': [
+  {
+    "id": "unit-1",
+    "number": "01",
+    "title": "Unit 1: Overview of Electronic Components",
+    "duration": "09 Periods",
+    "subjectId": "fundamental-electrical-electronics",
+    "subjectName": "Fundamentals of Electrical and Electronics",
+    "semesterId": 1,
+    "description": "Active/passive components, resistors, capacitors, inductors, semiconductors, diodes, BJT, and FET.",
+    "path": "/chapter/fundamental-electrical-electronics/unit-1",
+    "sections": [
+      {
+        "id": "components",
+        "title": "1. Active & Passive Components"
+      },
+      {
+        "id": "semiconductors",
+        "title": "2. Semiconductors"
+      },
+      {
+        "id": "diodes",
+        "title": "3. PN Junction Diode"
+      },
+      {
+        "id": "transistors",
+        "title": "4. BJT and FET"
+      }
+    ]
+  },
+  {
+    "id": "unit-2",
+    "number": "02",
+    "title": "Unit 2: Basic Measuring Instruments",
+    "duration": "05 Periods",
+    "subjectId": "fundamental-electrical-electronics",
+    "subjectName": "Fundamentals of Electrical and Electronics",
+    "semesterId": 1,
+    "description": "Voltage/current sources, ammeter, voltmeter, wattmeter, DMM, and CRO.",
+    "path": "/chapter/fundamental-electrical-electronics/unit-2",
+    "sections": [
+      {
+        "id": "sources",
+        "title": "1. Voltage and Current Sources"
+      },
+      {
+        "id": "meters",
+        "title": "2. Basic Meters & DMM"
+      },
+      {
+        "id": "cro",
+        "title": "3. CRO (Cathode Ray Oscilloscope)"
+      }
+    ]
+  },
+  {
+    "id": "unit-3",
+    "number": "03",
+    "title": "Unit 3: Overview of Digital Electronics",
+    "duration": "07 Periods",
+    "subjectId": "fundamental-electrical-electronics",
+    "subjectName": "Fundamentals of Electrical and Electronics",
+    "semesterId": 1,
+    "description": "Analog/digital signals, number systems, boolean algebra, logic gates, and truth tables.",
+    "path": "/chapter/fundamental-electrical-electronics/unit-3",
+    "sections": [
+      {
+        "id": "signals",
+        "title": "1. Analog & Digital Signals"
+      },
+      {
+        "id": "number-systems",
+        "title": "2. Number Systems"
+      },
+      {
+        "id": "logic-gates",
+        "title": "3. Logic Gates & Boolean"
+      }
+    ]
+  },
+  {
+    "id": "unit-4",
+    "number": "04",
+    "title": "Unit 4: Electric and Magnetic Circuits",
+    "duration": "07 Periods",
+    "subjectId": "fundamental-electrical-electronics",
+    "subjectName": "Fundamentals of Electrical and Electronics",
+    "semesterId": 1,
+    "description": "Ohm’s law, Kirchhoff’s laws, magnetic flux, B-H curve, Faraday’s laws, and inductance.",
+    "path": "/chapter/fundamental-electrical-electronics/unit-4",
+    "sections": [
+      {
+        "id": "electric-circuits",
+        "title": "1. Electric Circuits & Laws"
+      },
+      {
+        "id": "magnetic-circuits",
+        "title": "2. Magnetic Circuits"
+      },
+      {
+        "id": "induction",
+        "title": "3. Electromagnetic Induction"
+      }
+    ]
+  },
+  {
+    "id": "unit-5",
+    "number": "05",
+    "title": "Unit 5: A.C. Circuits",
+    "duration": "07 Periods",
+    "subjectId": "fundamental-electrical-electronics",
+    "subjectName": "Fundamentals of Electrical and Electronics",
+    "semesterId": 1,
+    "description": "AC fundamentals, RMS value, impedance, power factor, pure R/L/C circuits, and polyphase systems.",
+    "path": "/chapter/fundamental-electrical-electronics/unit-5",
+    "sections": [
+      {
+        "id": "ac-fundamentals",
+        "title": "1. AC Fundamentals"
+      },
+      {
+        "id": "ac-circuits",
+        "title": "2. AC through R/L/C"
+      },
+      {
+        "id": "power",
+        "title": "3. Power & Polyphase Systems"
+      }
+    ]
+  },
+  {
+    "id": "unit-6",
+    "number": "06",
+    "title": "Unit 6: Transformers and Machines",
+    "duration": "07 Periods",
+    "subjectId": "fundamental-electrical-electronics",
+    "subjectName": "Fundamentals of Electrical and Electronics",
+    "semesterId": 1,
+    "description": "Single-phase transformer, DC machines, and induction motors.",
+    "path": "/chapter/fundamental-electrical-electronics/unit-6",
+    "sections": [
+      {
+        "id": "transformer",
+        "title": "1. Single-phase Transformer"
+      },
+      {
+        "id": "dc-machines",
+        "title": "2. DC Machines"
+      },
+      {
+        "id": "induction-motor",
+        "title": "3. Induction Motors"
+      }
+    ]
+  }
+],
+
   'applied-physics-1': [
     {
       id: 'units-and-dimensions',
