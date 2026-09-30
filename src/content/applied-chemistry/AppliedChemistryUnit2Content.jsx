@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const AppliedChemistryUnit2Content = () => {
   return (
@@ -308,6 +309,16 @@ export const AppliedChemistryUnit2Content = () => {
 
           <div className="font-mono text-emerald-700 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-900/30 px-4 py-2 rounded-full border border-emerald-200 dark:border-emerald-800">Treated / Potable Water</div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Typical_drinking_water_treatment_plant_flow_diagram.svg/640px-Typical_drinking_water_treatment_plant_flow_diagram.svg.png"
+          alt="Flow diagram of municipal drinking water treatment plant"
+          caption="Figure 2.1: Flow diagram of municipal water treatment stages: screening, coagulation, sedimentation, filtration, and disinfection."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Typical_drinking_water_treatment_plant_flow_diagram.svg"
+          license="Public Domain / EPA"
+          maxWidth="max-w-xl"
+        />
       </section>
 
     </article>

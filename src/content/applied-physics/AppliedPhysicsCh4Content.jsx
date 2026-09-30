@@ -9,6 +9,11 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  CircularMotionSvg,
+  BankingOfRoadsSvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh4Content = () => {
   return (
@@ -183,6 +188,15 @@ export const AppliedPhysicsCh4Content = () => {
           a_c = v² / r = r ω²
         </div>
 
+        {/* Figure 4.1: Uniform Circular Motion & Centripetal Acceleration */}
+        <EducationalFigure
+          caption="Figure 4.1: Vector representation of Uniform Circular Motion showing tangential velocity and radial centripetal acceleration."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <CircularMotionSvg />
+        </EducationalFigure>
+
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />
           <span>Centripetal Force (अभिकेन्द्रीय बल)</span>
@@ -201,6 +215,15 @@ export const AppliedPhysicsCh4Content = () => {
             <li><strong>Bending of Cyclist:</strong> Turn lete samay cyclist ander ki taraf jhuk jata hai, taaki normal reaction ka ek component usko circle me ghoomne ke liye centripetal force pradan kar sake.</li>
           </ul>
         </div>
+
+        {/* Figure 4.2: Banking of Roads Dynamics */}
+        <EducationalFigure
+          caption="Figure 4.2: Force resolution diagram of a vehicle negotiating a curved track banked at angle θ."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <BankingOfRoadsSvg />
+        </EducationalFigure>
 
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />

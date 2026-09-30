@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const Maths1Unit5Content = () => {
   return (
@@ -111,6 +112,16 @@ export const Maths1Unit5Content = () => {
             </div>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Complex_number_illustration.svg/640px-Complex_number_illustration.svg.png"
+          alt="Argand plane illustration showing complex number z with real part x, imaginary part y, modulus r and argument theta"
+          caption="Figure 5.1: Representation of a complex number z = x + iy in the Argand (complex) plane, showing modulus r and argument θ."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Complex_number_illustration.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
 
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />

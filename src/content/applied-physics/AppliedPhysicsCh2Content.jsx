@@ -9,6 +9,12 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  VectorAdditionSvg,
+  VectorResolutionSvg,
+  RecoilOfGunSvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh2Content = () => {
   return (
@@ -133,6 +139,16 @@ export const AppliedPhysicsCh2Content = () => {
           </p>
         </div>
 
+        {/* Figure 2.1: Triangle & Parallelogram Laws of Vector Addition */}
+        <EducationalFigure
+          caption="Figure 2.1: Geometric addition of vectors using Triangle Law (head-to-tail) and Parallelogram Law (co-initial sides)."
+          source="Wikimedia Commons / Educational Vector Diagram"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Vector_addition.svg"
+          license="CC BY-SA 3.0"
+        >
+          <VectorAdditionSvg />
+        </EducationalFigure>
+
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />
           <span>Scalar (Dot) Product</span>
@@ -179,6 +195,16 @@ export const AppliedPhysicsCh2Content = () => {
         <div className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg flex justify-center mb-6 text-xl font-mono text-brand-700 dark:text-brand-400">
           A = √(Ax² + Ay²)
         </div>
+
+        {/* Figure 2.2: Resolution of Vectors */}
+        <EducationalFigure
+          caption="Figure 2.2: Resolution of a 2D vector A⃗ into mutually perpendicular components (Ax = A cos θ, Ay = A sin θ)."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+          maxWidth="max-w-lg"
+        >
+          <VectorResolutionSvg />
+        </EducationalFigure>
       </section>
 
       {/* 2.4 FORCE AND MOMENTUM */}
@@ -238,6 +264,15 @@ export const AppliedPhysicsCh2Content = () => {
         <p className="text-slate-700 dark:text-slate-300 mb-6">
           Jab bullet fire ki jati hai, toh bullet aage ki taraf momentum gain karti hai. Momentum conservation ke karan, gun piche ki taraf ek velocity se dhakka (recoil) deti hai. Total momentum shoot karne se pehle aur baad mein zero hota hai.
         </p>
+
+        {/* Figure 2.3: Conservation of Linear Momentum - Recoil of Gun */}
+        <EducationalFigure
+          caption="Figure 2.3: Conservation of linear momentum demonstrated during the firing and recoil of a gun."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <RecoilOfGunSvg />
+        </EducationalFigure>
       </section>
 
       {/* 2.5 GRAVITATIONAL FORCE */}

@@ -14,6 +14,7 @@ import {
   Edit,
   Trash2,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const DbmsUnit5Content = () => {
   return (
@@ -175,6 +176,16 @@ export const DbmsUnit5Content = () => {
         <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed mb-4">
           DDL commands database ke <strong>Structure / Schema</strong> ko create, modify aur delete karte hain. Yeh <strong>Auto-Committed</strong> hote hain (inhe rollback nahi kiya ja sakta):
         </p>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/SQL_commands.svg/640px-SQL_commands.svg.png"
+          alt="Classification of SQL commands into DDL, DML, DQL, DCL, and TCL"
+          caption="Figure 5.1: Structural classification of SQL commands into sublanguages: DDL (Schema), DML (Data manipulation), DQL (Query retrieval), DCL (Permissions), and TCL (Transactions)."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:SQL_commands.svg"
+          license="Creative Commons Attribution-ShareAlike"
+          maxWidth="max-w-lg"
+        />
 
         <div className="space-y-5 my-6 text-sm">
           {/* CREATE */}

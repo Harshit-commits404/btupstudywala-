@@ -14,6 +14,7 @@ import {
   Timer,
   Lock,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const OsUnit2Content = () => {
   return (
@@ -124,6 +125,16 @@ export const OsUnit2Content = () => {
             <strong>• I/O Status Info:</strong> Allocated devices aur open files ki list.
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Process_states.svg/640px-Process_states.svg.png"
+          alt="Five-state process transition model showing new, ready, running, waiting, and terminated states"
+          caption="Figure 2.1: Classic Five-State Process Lifecycle Model showing transitions: New (Admitted), Ready (Scheduled), Running (Interrupt/Wait), and Terminated."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Process_states.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
 
         {/* EDUCATIONAL PROCESS STATE TRANSITION DIAGRAM */}
         <div className="my-8 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/50 space-y-4">

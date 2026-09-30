@@ -13,6 +13,7 @@ import {
   X,
   Layers,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const DbmsUnit4Content = () => {
   return (
@@ -268,6 +269,16 @@ export const DbmsUnit4Content = () => {
             <span className="p-2 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/20">5NF</span>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Database_normalization.svg/640px-Database_normalization.svg.png"
+          alt="Database normalization relationship Venn diagram from unnormalized to 5NF"
+          caption="Figure 4.1: Database Normalization containment hierarchy: Each higher normal form (1NF ⊂ 2NF ⊂ 3NF ⊂ BCNF ⊂ 4NF ⊂ 5NF) imposes stricter rules on functional dependencies."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Database_normalization.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
       </section>
 
       {/* ========================================================= */}

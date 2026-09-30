@@ -11,6 +11,7 @@ import {
   Database,
   Layers
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const OsUnit5Content = () => {
   return (
@@ -153,6 +154,16 @@ const OsUnit5Content = () => {
             </p>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Directory_tree.svg/640px-Directory_tree.svg.png"
+          alt="Hierarchical tree-structured directory system showing root, subdirectories, and files"
+          caption="Figure 5.1: Hierarchical Tree-Structured Directory system showing Root directory, nested subdirectories, and user files."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Directory_tree.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
       </section>
 
       {/* SECTION 4: File System Mounting, Sharing & Protection */}

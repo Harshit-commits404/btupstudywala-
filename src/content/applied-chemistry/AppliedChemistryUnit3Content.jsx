@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const AppliedChemistryUnit3Content = () => {
   return (
@@ -130,6 +131,16 @@ export const AppliedChemistryUnit3Content = () => {
             <h4 className="font-bold text-brand-700 dark:text-brand-400">Step 2: Electrolytic Reduction of Alumina (Hall-Heroult Process)</h4>
             <p className="mb-1">Pure Alumina ka melting point bahut high (2050°C) hota hai. Isliye isme <strong>Cryolite (Na₃AlF₆)</strong> aur <strong>Fluorspar (CaF₂)</strong> milaya jata hai, jisse melting point kam (~900°C) ho jata hai aur conductivity badh jati hai.</p>
             <p>Ise carbon (graphite) electrodes ke sath electolyse karte hain, aur Aluminium cathode par jama ho jata hai.</p>
+
+            <EducationalFigure
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Hall-heroult-kk-2008-12-31.png/640px-Hall-heroult-kk-2008-12-31.png"
+              alt="Hall-Heroult electrolytic cell diagram for extraction of Aluminium"
+              caption="Figure 3.1: Hall-Héroult electrolytic cell for industrial Aluminium extraction showing carbon anodes, molten cryolite-alumina electrolyte, and liquid aluminium at the cathode."
+              source="Wikimedia Commons"
+              sourceUrl="https://commons.wikimedia.org/wiki/File:Hall-heroult-kk-2008-12-31.png"
+              license="Creative Commons Attribution-ShareAlike"
+              maxWidth="max-w-lg"
+            />
           </div>
 
           <div className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded border border-slate-200 dark:border-slate-700">

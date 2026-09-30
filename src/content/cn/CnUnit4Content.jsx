@@ -11,6 +11,7 @@ import {
   Layers, 
   FileText
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const CnUnit4Content = () => {
   return (
@@ -108,6 +109,14 @@ const CnUnit4Content = () => {
             Handshake poora hote hi connection <strong>ESTABLISHED</strong> state me chala jata hai aur reliable data transfer shuru hota hai.
           </p>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/Tcp-handshake.svg"
+          alt="Sequence diagram showing TCP three-way handshake: Client sends SYN, Server responds with SYN-ACK, Client replies with ACK"
+          caption="Figure 4.1: TCP 3-Way Handshake Connection Establishment Flow"
+          source="Wikimedia Commons"
+          maxWidth="max-w-md"
+        />
 
         {/* TCP Header Summary */}
         <div className="p-4 rounded-xl border border-border bg-card space-y-2">

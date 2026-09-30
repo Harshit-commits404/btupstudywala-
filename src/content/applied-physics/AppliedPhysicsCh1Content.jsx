@@ -9,6 +9,11 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  PlaneAndSolidAngleSvg,
+  SimplePendulumSvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh1Content = () => {
   return (
@@ -231,6 +236,15 @@ export const AppliedPhysicsCh1Content = () => {
             </table>
           </div>
         </div>
+
+        {/* Figure 1.1: Plane Angle and Solid Angle */}
+        <EducationalFigure
+          caption="Figure 1.1: Geometric representation of Plane Angle (radian) in 2D and Solid Angle (steradian) in 3D."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <PlaneAndSolidAngleSvg />
+        </EducationalFigure>
 
         {/* Systems of Units */}
         <h3 className="text-lg sm:text-[19px] font-bold text-slate-900 dark:text-slate-100 mt-8 mb-3">
@@ -789,6 +803,17 @@ export const AppliedPhysicsCh1Content = () => {
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Let time period (T) depend on: (1) Mass of bob (m), (2) Effective length (l), and (3) Acceleration due to gravity (g).
             </p>
+
+            {/* Figure 1.2: Simple Pendulum Mechanics */}
+            <EducationalFigure
+              caption="Figure 1.2: Schematic diagram of a Simple Pendulum showing length (l), bob mass (m), and restoring force components."
+              source="Wikimedia Commons / Open Educational Diagram"
+              sourceUrl="https://commons.wikimedia.org/wiki/File:Simple_pendulum.svg"
+              license="CC BY-SA 4.0"
+              maxWidth="max-w-lg"
+            >
+              <SimplePendulumSvg />
+            </EducationalFigure>
 
             <div className="space-y-3 text-sm text-slate-700 dark:text-slate-300 pt-1">
               <div className="p-2.5 rounded bg-white/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">

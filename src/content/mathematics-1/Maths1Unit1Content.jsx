@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const Maths1Unit1Content = () => {
   return (
@@ -88,6 +89,16 @@ export const Maths1Unit1Content = () => {
             </p>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Circle_radians.svg/640px-Circle_radians.svg.png"
+          alt="Geometric definition of a radian on a circular arc where arc length equals radius"
+          caption="Figure 1.1: Geometric definition of a radian (angle subtended at center by an arc whose length equals the radius, s = r)."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Circle_radians.svg"
+          license="Creative Commons Attribution-ShareAlike"
+          maxWidth="max-w-md"
+        />
 
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />
@@ -336,6 +347,16 @@ export const Maths1Unit1Content = () => {
               Range: [-1, 1]
             </div>
           </div>
+
+          <EducationalFigure
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Sine_cosine_one_period.svg/640px-Sine_cosine_one_period.svg.png"
+            alt="One complete period of sine and cosine functions showing phase shift"
+            caption="Figure 1.2: One complete period of Sine (sin x) and Cosine (cos x) curves from 0 to 2π, illustrating the 90° (π/2) phase difference."
+            source="Wikimedia Commons"
+            sourceUrl="https://commons.wikimedia.org/wiki/File:Sine_cosine_one_period.svg"
+            license="Public Domain / Educational"
+            maxWidth="max-w-lg"
+          />
 
           <div className="bg-slate-50 dark:bg-slate-800/50 p-5 rounded-lg border border-slate-200 dark:border-slate-700">
             <h4 className="font-bold text-slate-800 dark:text-slate-200 mb-2 text-lg">4. Graph of eˣ (Exponential Function)</h4>

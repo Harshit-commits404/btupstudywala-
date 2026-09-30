@@ -11,6 +11,7 @@ import {
   Cpu,
   FileText
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const OsUnit4Content = () => {
   return (
@@ -98,6 +99,16 @@ const OsUnit4Content = () => {
             </div>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Disk-structure.svg/640px-Disk-structure.svg.png"
+          alt="Diagram of a magnetic hard disk geometry showing cylinder, tracks, and geometric sectors"
+          caption="Figure 4.1: Magnetic Hard Disk physical architecture showing tracks, sectors, platters, and vertical cylinders."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Disk-structure.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
 
         {/* Disk Access Latency Terms */}
         <div className="p-4 rounded-xl border border-primary/20 bg-primary/5 space-y-2">

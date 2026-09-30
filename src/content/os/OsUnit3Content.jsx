@@ -13,6 +13,7 @@ import {
   Server,
   FileText
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const OsUnit3Content = () => {
   return (
@@ -250,6 +251,16 @@ const OsUnit3Content = () => {
             </p>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Paging_address_mapping.svg/640px-Paging_address_mapping.svg.png"
+          alt="Paging hardware address translation architecture diagram with page table and memory frame"
+          caption="Figure 3.1: Paging hardware architecture: The MMU translates CPU logical address (p, d) using the Page Table into physical frame address (f, d)."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Paging_address_mapping.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
 
         {/* Address Translation Diagram */}
         <div className="p-5 rounded-xl border border-border bg-muted/20 space-y-4">

@@ -12,6 +12,7 @@ import {
   Activity,
   FileText
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const CnUnit5Content = () => {
   return (
@@ -260,6 +261,32 @@ const CnUnit5Content = () => {
             </div>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/2/26/SNMP_communication_principles_diagram.PNG"
+          alt="Architectural diagram of SNMP network management model illustrating NMS manager, SNMP agent on managed device, and MIB database"
+          caption="Figure 5.1: SNMP (Simple Network Management Protocol) Communication and Architecture Model"
+          source="Wikimedia Commons"
+          maxWidth="max-w-xl"
+          fallback={
+            <div className="p-4 rounded-lg bg-card text-center text-xs font-mono border border-border space-y-2">
+              <div className="font-bold text-primary text-sm">SNMP Architectural Model</div>
+              <div className="flex flex-col md:flex-row items-center justify-around gap-2 text-left">
+                <div className="p-3 bg-primary/10 rounded border border-primary/20">
+                  <div className="font-bold text-primary">SNMP Manager (NMS)</div>
+                  <div>• Issues Get/Set requests</div>
+                  <div>• Receives Trap alerts</div>
+                </div>
+                <div className="text-center font-bold text-muted-foreground">⇄ UDP 161 / 162 ⇄</div>
+                <div className="p-3 bg-muted/40 rounded border border-border">
+                  <div className="font-bold text-foreground">Managed Device</div>
+                  <div>• SNMP Agent Software</div>
+                  <div>• MIB (Management Info Base)</div>
+                </div>
+              </div>
+            </div>
+          }
+        />
 
         {/* Components Explained */}
         <div className="grid md:grid-cols-3 gap-4 pt-2">

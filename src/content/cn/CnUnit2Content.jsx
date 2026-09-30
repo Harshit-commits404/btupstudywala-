@@ -14,6 +14,7 @@ import {
   Network,
   Bluetooth
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const CnUnit2Content = () => {
   return (
@@ -270,6 +271,14 @@ const CnUnit2Content = () => {
             </p>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopologies.svg"
+          alt="Diagram comparing common physical network topologies: Bus, Star, Ring, Mesh, Tree, and Fully Connected"
+          caption="Figure 2.1: Common Physical and Logical Network Topologies (Bus, Star, Ring, Mesh, Tree)"
+          source="Wikimedia Commons"
+          maxWidth="max-w-xl"
+        />
       </section>
 
       {/* SECTION 5: Data Link Layer Design Issues & Protocols */}

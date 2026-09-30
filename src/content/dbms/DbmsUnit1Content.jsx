@@ -15,6 +15,7 @@ import {
   UserCheck,
   FileSpreadsheet,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const DbmsUnit1Content = () => {
   return (
@@ -583,6 +584,16 @@ export const DbmsUnit1Content = () => {
         <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed mb-6">
           1975 mein ANSI-SPARC committee ne DBMS ke liye 3-level architecture prastut kiya tha jiska main objective users ko physical storage details se alag (abstract) rakhna tha:
         </p>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Three-schema_architecture.svg/640px-Three-schema_architecture.svg.png"
+          alt="Three-schema ANSI-SPARC architecture diagram showing external, conceptual, and internal levels"
+          caption="Figure 1.1: ANSI-SPARC Three-Schema Architecture displaying External Level (User Views), Conceptual Level (Logical Schema), and Internal Level (Physical Storage)."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Three-schema_architecture.svg"
+          license="Creative Commons Attribution-ShareAlike"
+          maxWidth="max-w-md"
+        />
 
         {/* EDUCATIONAL 3-LEVEL ARCHITECTURE DIAGRAM */}
         <div className="my-8 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/50 space-y-4">

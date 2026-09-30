@@ -14,6 +14,7 @@ import {
   Activity,
   Server,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const OsUnit1Content = () => {
   return (
@@ -350,6 +351,16 @@ export const OsUnit1Content = () => {
         <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed mb-6">
           UNIX aur Linux ka architecture 4 concentric layers (संकेंद्री परतों) mein design kiya gaya hai:
         </p>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Operating_system_placement.svg/640px-Operating_system_placement.svg.png"
+          alt="Operating system layered architecture diagram showing hardware, kernel, system calls, shell, and user software"
+          caption="Figure 1.1: General Operating System placement showing the kernel and system call interface positioned between user applications and computer hardware."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Operating_system_placement.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
 
         {/* EDUCATIONAL UNIX LAYERED DIAGRAM */}
         <div className="my-8 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/50 space-y-4">

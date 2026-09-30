@@ -13,6 +13,7 @@ import {
   TableProperties,
   ArrowRightLeft,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const DbmsUnit3Content = () => {
   return (
@@ -540,6 +541,16 @@ export const DbmsUnit3Content = () => {
                 </span>
               </li>
             </ul>
+
+            <EducationalFigure
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/SQL_Joins.svg/640px-SQL_Joins.svg.png"
+              alt="Venn diagrams representing relational algebra and SQL joins: Inner Join, Left Join, Right Join, and Full Outer Join"
+              caption="Figure 3.1: Set-theoretic Venn diagram representation of Relational Joins: Inner Join, Left Outer Join, Right Outer Join, and Full Outer Join."
+              source="Wikimedia Commons"
+              sourceUrl="https://commons.wikimedia.org/wiki/File:SQL_Joins.svg"
+              license="Creative Commons Attribution-ShareAlike"
+              maxWidth="max-w-lg"
+            />
           </div>
 
           {/* Division Operation */}

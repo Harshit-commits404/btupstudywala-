@@ -11,6 +11,7 @@ import {
   Server,
   FileText
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const CnUnit1Content = () => {
   return (
@@ -156,6 +157,14 @@ const CnUnit1Content = () => {
             <strong>Memory Trick:</strong> <em>"All People Seem To Need Data Processing"</em> (Top to Bottom) ya <em>"Please Do Not Throw Sausage Pizza Away"</em> (Bottom to Top).
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/8/8d/OSI_Model_v1.svg"
+          alt="Seven-layer OSI reference model architecture diagram showing Application, Presentation, Session, Transport, Network, Data Link, and Physical layers"
+          caption="Figure 1.1: The 7-Layer OSI (Open Systems Interconnection) Reference Model Architecture"
+          source="Wikimedia Commons"
+          maxWidth="max-w-xl"
+        />
 
         {/* Detailed 7 Layers Explanation */}
         <div className="space-y-4 pt-2">
@@ -306,6 +315,35 @@ const CnUnit1Content = () => {
             </p>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/5/53/TCP-IP_OSI_comparison_table.jpg"
+          alt="Comparison diagram mapping the 7 OSI layers to the 4 TCP/IP protocol stack layers"
+          caption="Figure 1.2: Layer Mapping and Architecture Comparison between OSI Model and TCP/IP Protocol Suite"
+          source="Wikimedia Commons"
+          maxWidth="max-w-xl"
+          fallback={
+            <div className="p-4 rounded-lg bg-card text-center text-xs font-mono border border-border space-y-2">
+              <div className="font-bold text-primary text-sm">OSI vs TCP/IP Layer Mapping</div>
+              <div className="grid grid-cols-2 gap-2 text-left">
+                <div className="p-2 bg-muted/40 rounded">
+                  <div className="font-bold text-foreground">OSI 7 Layers</div>
+                  <div>7. Application, 6. Presentation, 5. Session</div>
+                  <div>4. Transport Layer</div>
+                  <div>3. Network Layer</div>
+                  <div>2. Data Link, 1. Physical Layer</div>
+                </div>
+                <div className="p-2 bg-muted/40 rounded">
+                  <div className="font-bold text-foreground">TCP/IP 4 Layers</div>
+                  <div>Application Layer (HTTP, FTP, DNS)</div>
+                  <div>Transport Layer (TCP, UDP)</div>
+                  <div>Internet Layer (IP, ICMP, ARP)</div>
+                  <div>Network Access Layer (Ethernet, WiFi)</div>
+                </div>
+              </div>
+            </div>
+          }
+        />
       </section>
 
       {/* SECTION 5: OSI vs TCP/IP Comparison */}

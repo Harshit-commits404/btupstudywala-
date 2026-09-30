@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const Maths1Unit4Content = () => {
   return (
@@ -123,6 +124,16 @@ export const Maths1Unit4Content = () => {
             <li>Start se aur end se equidistant (saman doori par) terms ke binomial coefficients (ⁿCr) barabar hote hain (Kyunki ⁿCr = ⁿCₙ₋ᵣ).</li>
           </ul>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pascal%27s_triangle_5.svg/640px-Pascal%27s_triangle_5.svg.png"
+          alt="Pascal's triangle displaying combinatorial binomial coefficients from row 0 to 5"
+          caption="Figure 4.1: Pascal's Triangle displaying binomial coefficients (ⁿCᵣ) for powers n = 0 to 5."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Pascal%27s_triangle_5.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
       </section>
 
       {/* 4.3 APPLICATIONS OF BINOMIAL THEOREM */}

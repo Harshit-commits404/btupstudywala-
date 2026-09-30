@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const AppliedChemistryUnit1Content = () => {
   return (
@@ -84,6 +85,16 @@ export const AppliedChemistryUnit1Content = () => {
               <li>Electron ki angular momentum (mvr) hamesha h/2π ka integral multiple hota hai (mvr = nh/2π).</li>
             </ul>
             <p className="text-xs text-slate-500 italic mt-2">(Note: Derivations of energy and radius are omitted as per syllabus)</p>
+
+            <EducationalFigure
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Bohr-atom-PAR.svg/640px-Bohr-atom-PAR.svg.png"
+              alt="Bohr model of the hydrogen atom showing quantized energy orbits and photon emission"
+              caption="Figure 1.1: Bohr's atomic model displaying circular discrete energy levels (n = 1, 2, 3...) and photon emission during electron transition."
+              source="Wikimedia Commons"
+              sourceUrl="https://commons.wikimedia.org/wiki/File:Bohr-atom-PAR.svg"
+              license="Creative Commons Attribution-ShareAlike"
+              maxWidth="max-w-md"
+            />
           </div>
 
           <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
@@ -190,6 +201,16 @@ export const AppliedChemistryUnit1Content = () => {
             </p>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ionic_bonding.svg/640px-Ionic_bonding.svg.png"
+          alt="Ionic bond formation through transfer of an electron from sodium to chlorine"
+          caption="Figure 1.2: Ionic bond formation in Sodium Chloride (NaCl) via transfer of valence electron from Na to Cl."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Ionic_bonding.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
       </section>
 
       {/* 1.3 HYBRIDIZATION */}

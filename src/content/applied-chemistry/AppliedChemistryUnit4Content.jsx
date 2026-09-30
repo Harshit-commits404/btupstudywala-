@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const AppliedChemistryUnit4Content = () => {
   return (
@@ -269,6 +270,16 @@ export const AppliedChemistryUnit4Content = () => {
         <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
           Machine ke do moving parts (jaise gears) ke beech friction (gharsan), wear and tear (ghisna) aur heat ko kam karne ke liye jo substances lagaye jate hain (jaise oil, grease), unhe <strong>Lubricants</strong> kehte hain. Is process ko <strong>Lubrication</strong> kehte hain.
         </p>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hydrodynamic_lubrication.svg/640px-Hydrodynamic_lubrication.svg.png"
+          alt="Hydrodynamic fluid film lubrication between two moving surfaces"
+          caption="Figure 4.1: Mechanism of hydrodynamic fluid-film lubrication separating two sliding machine surfaces to reduce friction and wear."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Hydrodynamic_lubrication.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
 
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />

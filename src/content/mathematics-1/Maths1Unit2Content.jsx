@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const Maths1Unit2Content = () => {
   return (
@@ -167,6 +168,16 @@ export const Maths1Unit2Content = () => {
             Ise "First Principle of Differentiation" ya "Differentiation from First Principles" kehte hain.
           </p>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tangent_to_a_curve.svg/640px-Tangent_to_a_curve.svg.png"
+          alt="Geometric interpretation of derivative as secant line approaching tangent line slope"
+          caption="Figure 2.1: Geometric meaning of derivative: The slope of the secant line approaches the tangent line slope as h approaches 0."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Tangent_to_a_curve.svg"
+          license="Creative Commons Attribution-ShareAlike"
+          maxWidth="max-w-md"
+        />
 
         <p className="text-slate-700 dark:text-slate-300 mb-4 font-bold">Standard Derivatives (Derived by First Principle):</p>
         <ul className="list-none space-y-2 font-mono text-sm text-slate-800 dark:text-slate-200">

@@ -9,6 +9,13 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  StressStrainCurveSvg,
+  CapillaryActionSvg,
+  StokesLawSphereSvg,
+  VenturiTubeSvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh6Content = () => {
   return (
@@ -103,6 +110,16 @@ export const AppliedPhysicsCh6Content = () => {
         <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 text-center">
           (Jahan E = Modulus of Elasticity)
         </p>
+
+        {/* Figure 6.1: Stress-Strain Curve */}
+        <EducationalFigure
+          caption="Figure 6.1: Typical Stress-Strain curve of a ductile material showing elastic limit, yield point, and fracture point."
+          source="Wikimedia Commons / Educational Engineering Mechanics"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Stress_v_strain_A36_2.svg"
+          license="CC BY-SA 3.0"
+        >
+          <StressStrainCurveSvg />
+        </EducationalFigure>
       </section>
 
       {/* 6.2 PRESSURE */}
@@ -181,6 +198,15 @@ export const AppliedPhysicsCh6Content = () => {
           </p>
         </div>
 
+        {/* Figure 6.2: Capillary Rise & Surface Tension */}
+        <EducationalFigure
+          caption="Figure 6.2: Capillary rise in a fine glass tube showing surface tension force, angle of contact θ, and liquid column height h."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <CapillaryActionSvg />
+        </EducationalFigure>
+
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />
           <span>Applications & Effect of Temperature</span>
@@ -238,6 +264,15 @@ export const AppliedPhysicsCh6Content = () => {
           Jab ek spherical body (radius r) kisi viscous medium (viscosity η) mein velocity 'v' se girti hai, toh uspar lagne wala viscous drag force is formule se diya jata hai.
         </p>
 
+        {/* Figure 6.3: Stoke's Law on Falling Sphere */}
+        <EducationalFigure
+          caption="Figure 6.3: Force equilibrium on a spherical body falling through a viscous medium under Stoke's law."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <StokesLawSphereSvg />
+        </EducationalFigure>
+
         <p className="text-slate-700 dark:text-slate-300 mb-6 font-medium">
           <strong>Effect of Temperature on Viscosity:</strong> Liquids ka temperature badhane par unki viscosity (gadhapan) kam hoti hai, jabki gases ki viscosity badh jati hai.
         </p>
@@ -280,6 +315,16 @@ export const AppliedPhysicsCh6Content = () => {
             P + ½ ρv² + ρgh = Constant
           </div>
         </div>
+
+        {/* Figure 6.4: Continuity & Bernoulli's Principle in Venturi Tube */}
+        <EducationalFigure
+          caption="Figure 6.4: Streamline fluid flow through a Venturi tube illustrating the Equation of Continuity and Bernoulli's Principle."
+          source="Wikimedia Commons / Educational Fluid Dynamics"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Venturi-tube.svg"
+          license="Public Domain"
+        >
+          <VenturiTubeSvg />
+        </EducationalFigure>
 
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />

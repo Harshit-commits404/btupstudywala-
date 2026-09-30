@@ -9,6 +9,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const AppliedChemistryUnit5Content = () => {
   return (
@@ -195,6 +196,16 @@ export const AppliedChemistryUnit5Content = () => {
           <span>Electrochemical Cells (Batteries)</span>
         </h3>
         <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">Chemical energy ko electrical energy me badalne wali devices jisme spontanous redox reaction hoti hai.</p>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Galvanic_Cell.svg/640px-Galvanic_Cell.svg.png"
+          alt="Diagram of a Galvanic / Daniell Cell showing Zinc and Copper half cells with salt bridge and electron flow"
+          caption="Figure 5.1: Daniell / Galvanic Cell converting chemical energy into electrical energy using Zn and Cu half-cells and a salt bridge."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Galvanic_Cell.svg"
+          license="Creative Commons Attribution-ShareAlike"
+          maxWidth="max-w-md"
+        />
 
         <div className="space-y-4">
           <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">

@@ -9,6 +9,12 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  TorqueConceptSvg,
+  MoiTheoremsSvg,
+  StandardBodiesMoiSvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh5Content = () => {
   return (
@@ -98,6 +104,15 @@ export const AppliedPhysicsCh5Content = () => {
             <li>Nut kholne ke liye lambe handle wala wrench (spanner) use karna.</li>
           </ul>
         </div>
+
+        {/* Figure 5.1: Concept of Torque */}
+        <EducationalFigure
+          caption="Figure 5.1: Generation of Torque (turning moment) by an applied force acting at distance r from the axis of rotation."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <TorqueConceptSvg />
+        </EducationalFigure>
       </section>
 
       {/* 5.2 MOMENT OF INERTIA */}
@@ -154,6 +169,15 @@ export const AppliedPhysicsCh5Content = () => {
             </p>
           </div>
         </div>
+
+        {/* Figure 5.2: Theorems of Moment of Inertia */}
+        <EducationalFigure
+          caption="Figure 5.2: Geometric illustrations of Parallel Axes Theorem (I = Ic + Mh²) and Perpendicular Axes Theorem (Iz = Ix + Iy)."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <MoiTheoremsSvg />
+        </EducationalFigure>
       </section>
 
       {/* 5.3 MOI FORMULAE */}
@@ -208,6 +232,15 @@ export const AppliedPhysicsCh5Content = () => {
             </tbody>
           </table>
         </div>
+
+        {/* Figure 5.3: Standard Bodies Moment of Inertia */}
+        <EducationalFigure
+          caption="Figure 5.3: Schematic shapes and rotational axes for standard bodies in the BTEUP syllabus."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <StandardBodiesMoiSvg />
+        </EducationalFigure>
       </section>
 
       {/* 5.4 ROTATIONAL KINETIC ENERGY */}

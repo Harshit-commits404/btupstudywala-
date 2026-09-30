@@ -9,6 +9,13 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  TemperatureScalesSvg,
+  HeatTransferModesSvg,
+  ThermalExpansionSvg,
+  MercuryThermometerSvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh7Content = () => {
   return (
@@ -110,6 +117,16 @@ export const AppliedPhysicsCh7Content = () => {
           <li><strong>Fahrenheit (°F):</strong> Freezing point 32°F aur Boiling point 212°F. Medical thermometers me common.</li>
           <li><strong>Kelvin (K):</strong> Absolute temperature scale. K = C + 273.15. Zero Kelvin (Absolute Zero) wo theoretical temp hai jahan particles ki thermal energy zero ho jati hai.</li>
         </ul>
+
+        {/* Figure 7.1: Temperature Scales Comparison */}
+        <EducationalFigure
+          caption="Figure 7.1: Comparison and fundamental calibration points of Celsius, Fahrenheit, and Kelvin temperature scales."
+          source="Wikimedia Commons / Educational Physics Resources"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Comparison_of_temperature_scales.svg"
+          license="CC BY-SA 3.0"
+        >
+          <TemperatureScalesSvg />
+        </EducationalFigure>
       </section>
 
       {/* 7.3 MODES OF HEAT TRANSFER */}
@@ -158,6 +175,16 @@ export const AppliedPhysicsCh7Content = () => {
             </div>
           </div>
         </div>
+
+        {/* Figure 7.2: Modes of Heat Transfer */}
+        <EducationalFigure
+          caption="Figure 7.2: Physical demonstration of the three modes of heat transfer: Conduction, Convection, and Radiation."
+          source="Wikimedia Commons / Educational Physics Series"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Kettle-convection-conduction-radiation.png"
+          license="CC BY-SA 3.0"
+        >
+          <HeatTransferModesSvg />
+        </EducationalFigure>
       </section>
 
       {/* 7.4 EXPANSION OF SOLIDS */}
@@ -208,6 +235,15 @@ export const AppliedPhysicsCh7Content = () => {
         <p className="text-slate-700 dark:text-slate-300 mb-6 text-sm">
           Yani, β = 2α aur γ = 3α.
         </p>
+
+        {/* Figure 7.3: Thermal Expansion of Solids */}
+        <EducationalFigure
+          caption="Figure 7.3: Dimensional representation of Linear (1D), Superficial (2D), and Cubical (3D) thermal expansion."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <ThermalExpansionSvg />
+        </EducationalFigure>
       </section>
 
       {/* 7.5 MERCURY THERMOMETER */}
@@ -237,6 +273,15 @@ export const AppliedPhysicsCh7Content = () => {
             <li>Heat ka achha conductor hai, isliye turant temperature record karta hai.</li>
           </ul>
         </div>
+
+        {/* Figure 7.4: Construction of Mercury Thermometer */}
+        <EducationalFigure
+          caption="Figure 7.4: Constructional details of a liquid-in-glass Mercury Thermometer showing bulb, capillary bore, and stem scale."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <MercuryThermometerSvg />
+        </EducationalFigure>
       </section>
 
     </article>

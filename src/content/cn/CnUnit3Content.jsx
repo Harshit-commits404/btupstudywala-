@@ -12,6 +12,7 @@ import {
   Cpu, 
   FileText
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 const CnUnit3Content = () => {
   return (
@@ -113,6 +114,14 @@ const CnUnit3Content = () => {
             </div>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/6/60/IPv4_Packet-en.svg"
+          alt="Technical diagram of IPv4 header format detailing bit fields, version, IHL, TOS, total length, flags, TTL, protocol, and addresses"
+          caption="Figure 3.1: Complete Bit-Field Architecture of the IPv4 Datagram Header"
+          source="Wikimedia Commons"
+          maxWidth="max-w-2xl"
+        />
 
         {/* IPv4 Classful Addressing Table */}
         <h3 className="text-xl font-bold text-foreground pt-2">Classful IPv4 Addressing</h3>

@@ -13,6 +13,7 @@ import {
   Share2,
   Lock,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
 
 export const DbmsUnit2Content = () => {
   return (
@@ -301,6 +302,16 @@ export const DbmsUnit2Content = () => {
             </div>
           </div>
         </div>
+
+        <EducationalFigure
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Chen_ERD_symbols.svg/640px-Chen_ERD_symbols.svg.png"
+          alt="Chen's notation ER diagram standard symbols with entity, attribute, relationship, and cardinalities"
+          caption="Figure 2.1: Peter Chen's standard Entity-Relationship (ER) diagram notation: Entity (Rectangle), Attribute (Ellipse), Relationship (Diamond), and Linkages."
+          source="Wikimedia Commons"
+          sourceUrl="https://commons.wikimedia.org/wiki/File:Chen_ERD_symbols.svg"
+          license="Public Domain / Creative Commons"
+          maxWidth="max-w-md"
+        />
       </section>
 
       {/* ========================================================= */}

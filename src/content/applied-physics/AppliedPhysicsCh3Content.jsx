@@ -9,6 +9,12 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import EducationalFigure from '../../components/common/EducationalFigure';
+import {
+  WorkDoneAngleSvg,
+  FrictionFbdSvg,
+  ConservationOfEnergySvg,
+} from './diagrams';
 
 export const AppliedPhysicsCh3Content = () => {
   return (
@@ -76,6 +82,15 @@ export const AppliedPhysicsCh3Content = () => {
           </div>
         </div>
 
+        {/* Figure 3.1: Work Done by Force at an Angle */}
+        <EducationalFigure
+          caption="Figure 3.1: Work done by an external force F acting at an angle θ with horizontal displacement s."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <WorkDoneAngleSvg />
+        </EducationalFigure>
+
         <div className="space-y-4 mb-6">
           <div className="bg-emerald-50 dark:bg-emerald-900/10 p-4 rounded-lg border border-emerald-200 dark:border-emerald-800">
             <h4 className="font-bold text-emerald-800 dark:text-emerald-400 mb-1">1. Positive Work</h4>
@@ -142,6 +157,15 @@ export const AppliedPhysicsCh3Content = () => {
         <div className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg mb-6 flex justify-center text-xl font-mono text-brand-700 dark:text-brand-400">
           μ = F / R
         </div>
+
+        {/* Figure 3.2: Friction & Free-Body Diagram */}
+        <EducationalFigure
+          caption="Figure 3.2: Free-body diagram illustrating forces on a block: Applied force, Normal reaction, Weight, and Friction force."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <FrictionFbdSvg />
+        </EducationalFigure>
       </section>
 
       {/* 3.3 ENERGY AND ITS UNITS */}
@@ -223,6 +247,15 @@ export const AppliedPhysicsCh3Content = () => {
         <p className="text-slate-700 dark:text-slate-300 mb-4">
           Jab koi body sirf gravity (conservative force) ke under freely fall karti hai (air resistance negligible ho), toh uski total mechanical energy (K.E. + P.E.) har point par constant rehti hai. Jab body neeche girti hai, PE ghat-ti hai aur utni hi KE badh jati hai.
         </p>
+
+        {/* Figure 3.3: Conservation of Mechanical Energy in Free Fall */}
+        <EducationalFigure
+          caption="Figure 3.3: Total mechanical energy (PE + KE = mgh) remaining constant at different stages of free fall."
+          source="Original Educational Diagram • BTEUP Syllabus Aligned"
+          license="Open Reusable"
+        >
+          <ConservationOfEnergySvg />
+        </EducationalFigure>
       </section>
 
       {/* 3.5 POWER */}
