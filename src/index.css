@@ -4,33 +4,38 @@
 
 @layer base {
   :root {
-    --bg-main: #090d16;
-    --card-bg: rgba(14, 20, 36, 0.7);
-    --border-subtle: rgba(255, 255, 255, 0.08);
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --card-hover: #f1f5f9;
+    --border-subtle: rgba(15, 23, 42, 0.08);
+    --border-hover: rgba(14, 165, 233, 0.4);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-cyan: #0284c7;
+    --accent-amber: #d97706;
+  }
+
+  html.dark {
+    --bg-main: #070f1c;
+    --card-bg: #0c1a2d;
+    --card-hover: #12263d;
+    --border-subtle: rgba(56, 189, 248, 0.12);
+    --border-hover: rgba(56, 189, 248, 0.45);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-cyan: #38bdf8;
+    --accent-amber: #fbbf24;
   }
 
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
-  }
-
-  /* When light mode is toggled */
-  html:not(.dark) {
-    --bg-main: #f8fafc;
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    color-scheme: light;
-  }
-
-  html:not(.dark) body {
-    @apply bg-slate-50 text-slate-900;
   }
 
   body {
-    @apply bg-dark-bg text-slate-100 min-h-screen overflow-x-hidden font-sans;
+    @apply bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen overflow-x-hidden font-sans antialiased transition-colors duration-200;
   }
 
-  /* Custom sleek scrollbar */
+  /* Sleek modern engineering scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -41,97 +46,130 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-700/50 rounded-full;
+    @apply bg-slate-300 dark:bg-slate-700/60 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-600;
+    @apply bg-cyan-600 dark:bg-cyan-500;
   }
 }
 
 @layer components {
-  /* Glassmorphism Card Utilities */
-  .glass-card {
-    @apply bg-dark-card/80 backdrop-blur-xl border border-white/[0.07] rounded-2xl shadow-xl transition-all duration-300;
+  /* Subtle Engineering Grid Patterns */
+  .bg-tech-grid {
+    background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
-  .glass-card-hover {
-    @apply hover:border-brand-500/30 hover:bg-dark-cardHover/90 hover:shadow-2xl hover:shadow-brand-500/5;
+  .dark .bg-tech-grid {
+    background-image: radial-gradient(rgba(56, 189, 248, 0.14) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
-  .glass-panel {
-    @apply bg-dark-card/60 backdrop-blur-md border border-white/[0.06] rounded-xl;
+  .bg-blueprint-lines {
+    background-image: 
+      linear-gradient(to right, rgba(14, 165, 233, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
-  .glass-pill {
-    @apply bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm rounded-full;
+  .dark .bg-blueprint-lines {
+    background-image: 
+      linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
-  /* Accent Glow */
-  .glow-subtle {
-    box-shadow: 0 0 25px -5px rgba(49, 120, 255, 0.15);
+  /* Academic Course & Stream Cards */
+  .card-academic {
+    @apply relative rounded-2xl border transition-all duration-200 overflow-hidden;
+    background-color: var(--card-bg);
+    border-color: var(--border-subtle);
   }
 
-  .glow-emerald {
-    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+  .card-academic:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.12);
+  }
+
+  .dark .card-academic:hover {
+    box-shadow: 0 12px 35px -10px rgba(56, 189, 248, 0.15);
+  }
+
+  /* Technical Badge */
+  .tech-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md font-mono text-[11px] font-semibold tracking-wider uppercase;
+  }
+
+  /* Formula Block with Engineering Styling */
+  .study-formula-block {
+    @apply my-6 py-4 px-6 rounded-xl text-center relative overflow-hidden transition-all duration-200 border;
+    background: linear-gradient(180deg, rgba(14, 165, 233, 0.03) 0%, rgba(14, 165, 233, 0.01) 100%);
+    border-color: rgba(14, 165, 233, 0.25);
+  }
+
+  .dark .study-formula-block {
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0.06) 0%, rgba(56, 189, 248, 0.01) 100%);
+    border-color: rgba(56, 189, 248, 0.25);
+  }
+
+  .study-formula-block:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+  }
+
+  /* Definition Highlight Box */
+  .study-callout-def {
+    @apply my-5 p-4 sm:p-5 rounded-xl border-l-4 border-l-cyan-500 bg-cyan-500/5 dark:bg-cyan-500/10 border-t border-r border-b border-cyan-500/15;
+  }
+
+  /* Important Exam Focus Box */
+  .study-callout-imp {
+    @apply my-5 p-4 sm:p-5 rounded-xl border-l-4 border-l-amber-500 bg-amber-500/5 dark:bg-amber-500/10 border-t border-r border-b border-amber-500/15;
   }
 }
 
-/* Reading content typography enhancements */
+/* Digital Textbook Reading Typography */
 .reading-content h2 {
-  @apply text-2xl font-bold font-display text-white tracking-tight mt-8 mb-4 border-b border-white/[0.08] pb-2 flex items-center gap-2;
+  @apply text-2xl sm:text-3xl font-bold font-display text-slate-900 dark:text-white tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200 dark:border-cyan-500/15 flex items-center gap-2;
 }
 
 .reading-content h3 {
-  @apply text-xl font-semibold text-slate-100 mt-6 mb-3 flex items-center gap-2;
+  @apply text-xl sm:text-2xl font-semibold font-display text-slate-800 dark:text-slate-100 mt-8 mb-3 flex items-center gap-2;
+}
+
+.reading-content h4 {
+  @apply text-lg font-bold text-slate-800 dark:text-slate-200 mt-6 mb-2;
 }
 
 .reading-content p {
-  @apply text-slate-300 leading-relaxed mb-4 text-base;
+  @apply text-slate-700 dark:text-slate-300 leading-[1.85] mb-4 text-base;
 }
 
 .reading-content ul {
-  @apply list-disc list-inside space-y-2 mb-4 text-slate-300;
+  @apply list-disc list-inside space-y-2 mb-5 text-slate-700 dark:text-slate-300;
+}
+
+.reading-content ol {
+  @apply list-decimal list-inside space-y-2 mb-5 text-slate-700 dark:text-slate-300;
 }
 
 .reading-content li strong {
-  @apply text-slate-100 font-semibold;
+  @apply text-slate-900 dark:text-white font-semibold;
 }
 
-/* Dedicated Textbook Formula Block */
-.study-formula-block {
-  @apply my-7 py-5 px-6 rounded-lg text-center relative overflow-hidden transition-all duration-300;
-  background: linear-gradient(180deg, rgba(49, 120, 255, 0.05) 0%, rgba(49, 120, 255, 0.015) 100%);
-  border: 1px solid rgba(49, 120, 255, 0.22);
-  box-shadow: 0 0 20px -5px rgba(49, 120, 255, 0.08);
-}
-
-.dark .study-formula-block {
-  background: linear-gradient(180deg, rgba(49, 120, 255, 0.08) 0%, rgba(49, 120, 255, 0.02) 100%);
-  border: 1px solid rgba(49, 120, 255, 0.28);
-  box-shadow: 0 0 25px -5px rgba(49, 120, 255, 0.12);
-}
-
-.study-formula-block:hover {
-  border-color: rgba(49, 120, 255, 0.45);
-  box-shadow: 0 0 30px -2px rgba(49, 120, 255, 0.2);
-}
-
-/* Subtle scroll reveal animation respecting prefers-reduced-motion */
-@media (prefers-reduced-motion: no-preference) {
-  .study-section-reveal {
-    animation: studyFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-}
-
-@keyframes studyFadeIn {
+/* Sub-animations */
+@keyframes fadeIn {
   from {
-    opacity: 0.94;
-    transform: translateY(4px);
+    opacity: 0;
+    transform: scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -18,13 +18,13 @@ export const SectionHeader = ({
   return (
     <div className={`flex flex-col ${alignClass} mb-6 sm:mb-8 ${className}`}>
       {badge && (
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-brand-500/10 text-brand-400 border border-brand-500/20 mb-3 backdrop-blur-sm">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-bold tracking-wide uppercase bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 mb-3">
           {badge}
         </div>
       )}
 
       {title && (
-        <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 dark:text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
           {title}
         </h2>
       )}
@@ -39,3 +39,5 @@ export const SectionHeader = ({
     </div>
   );
 };
+
+export default SectionHeader;

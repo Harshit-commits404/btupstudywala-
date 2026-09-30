@@ -11,10 +11,10 @@ export const EmptyState = ({
 }) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center p-8 sm:p-12 text-center rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-dark-card/50 backdrop-blur-md shadow-xs ${className}`}
+      className={`flex flex-col items-center justify-center p-8 sm:p-12 text-center rounded-3xl border border-slate-200 dark:border-cyan-500/20 bg-white dark:bg-[#0c1a2d] shadow-xs ${className}`}
     >
       {Icon && (
-        <div className="w-16 h-16 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-4 text-brand-600 dark:text-brand-400">
+        <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4 text-cyan-600 dark:text-cyan-400">
           <Icon className="w-8 h-8" />
         </div>
       )}
@@ -32,3 +32,5 @@ export const EmptyState = ({
     </div>
   );
 };
+
+export default EmptyState;

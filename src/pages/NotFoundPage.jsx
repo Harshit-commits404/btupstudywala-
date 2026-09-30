@@ -8,11 +8,11 @@ export const NotFoundPage = () => {
 
   return (
     <div className="max-w-xl mx-auto px-4 py-16 sm:py-24 text-center">
-      <div className="w-20 h-20 rounded-3xl bg-brand-500/10 border border-brand-500/20 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto mb-6">
-        <Compass className="w-10 h-10 animate-spin-slow" />
+      <div className="w-20 h-20 rounded-3xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mx-auto mb-6">
+        <Compass className="w-10 h-10" />
       </div>
 
-      <span className="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200 dark:bg-white/[0.06] text-slate-600 dark:text-slate-400 mb-4 inline-block">
+      <span className="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 mb-4 inline-block">
         Error 404 • Page Not Found
       </span>
 
@@ -21,7 +21,7 @@ export const NotFoundPage = () => {
       </h1>
 
       <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-        The page you are looking for doesn't exist or has moved. Explore the available semesters or return to the home dashboard.
+        The page you are looking for doesn't exist or has moved. Explore the available semesters or return to the home platform.
       </p>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
@@ -42,7 +42,7 @@ export const NotFoundPage = () => {
             icon={Home}
             iconPosition="left"
           >
-            Home Dashboard
+            Home Platform
           </Button>
         </Link>
 
@@ -53,7 +53,7 @@ export const NotFoundPage = () => {
             icon={Layers}
             iconPosition="left"
           >
-            View Semesters
+            CSE Learning Path
           </Button>
         </Link>
       </div>
