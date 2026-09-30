@@ -4,165 +4,284 @@
 
 @layer base {
   :root {
-    --bg-main: #f8fafc;
-    --card-bg: #ffffff;
-    --card-hover: #f1f5f9;
-    --border-subtle: rgba(15, 23, 42, 0.08);
-    --border-hover: rgba(14, 165, 233, 0.4);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent-cyan: #0284c7;
-    --accent-amber: #d97706;
+    --bg-main: #080808;
+    --bg-surface: #0d0d0d;
+    --bg-section: #111111;
+    --card-bg: #171717;
+    --card-hover: #1e1e1e;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(230, 57, 70, 0.45);
+    --text-primary: #f5f5f5;
+    --text-secondary: #a3a3a3;
+    --accent-red: #e63946;
+    --accent-crimson: #c1121f;
+    --accent-dark-crimson: #8b0000;
   }
 
-  html.dark {
-    --bg-main: #070f1c;
-    --card-bg: #0c1a2d;
-    --card-hover: #12263d;
-    --border-subtle: rgba(56, 189, 248, 0.12);
-    --border-hover: rgba(56, 189, 248, 0.45);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-cyan: #38bdf8;
-    --accent-amber: #fbbf24;
-  }
-
-  html {
+  html.dark, html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 min-h-screen overflow-x-hidden font-sans antialiased transition-colors duration-200;
+    background-color: #080808;
+    color: #f5f5f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Sleek modern engineering scrollbar */
+  /* Custom Red-Black Engineering Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #080808;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-300 dark:bg-slate-700/60 rounded-full;
+    background: #2b2b2b;
+    border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-cyan-600 dark:bg-cyan-500;
+    background: #c1121f;
   }
 }
 
 @layer components {
-  /* Subtle Engineering Grid Patterns */
+  /* Subtle Engineering Red Grid Patterns */
   .bg-tech-grid {
-    background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  .dark .bg-tech-grid {
-    background-image: radial-gradient(rgba(56, 189, 248, 0.14) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(230, 57, 70, 0.12) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
 
   .bg-blueprint-lines {
     background-image: 
-      linear-gradient(to right, rgba(14, 165, 233, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(to right, rgba(230, 57, 70, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(230, 57, 70, 0.04) 1px, transparent 1px);
+    background-size: 42px 42px;
   }
 
-  .dark .bg-blueprint-lines {
-    background-image: 
-      linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* Academic Course & Stream Cards */
+  /* Interactive Academic / Course Card with 220ms Transition & -6px / 1.01 Scale Hover */
   .card-academic {
-    @apply relative rounded-2xl border transition-all duration-200 overflow-hidden;
-    background-color: var(--card-bg);
-    border-color: var(--border-subtle);
+    position: relative;
+    background-color: #171717;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
   }
 
   .card-academic:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.12);
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(230, 57, 70, 0.45);
+    background-color: #1c1c1c;
+    box-shadow: 0 14px 35px -8px rgba(230, 57, 70, 0.22);
   }
 
-  .dark .card-academic:hover {
-    box-shadow: 0 12px 35px -10px rgba(56, 189, 248, 0.15);
+  /* Interactive Button Base with Smooth Hover & Scale-down on Active */
+  .btn-primary-red {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #c1121f 0%, #8b0000 100%);
+    border: 1px solid rgba(230, 57, 70, 0.4);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 15px -3px rgba(193, 18, 31, 0.35);
+    transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .btn-primary-red:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+    border-color: rgba(230, 57, 70, 0.7);
+    box-shadow: 0 8px 25px -4px rgba(230, 57, 70, 0.45);
+  }
+
+  .btn-primary-red:active {
+    transform: scale(0.98);
+  }
+
+  .btn-secondary-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+    font-weight: 600;
+    transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .btn-secondary-dark:hover {
+    transform: translateY(-2px);
+    background: #1c1c1c;
+    border-color: rgba(230, 57, 70, 0.4);
+    color: #ffffff;
+  }
+
+  .btn-secondary-dark:active {
+    transform: scale(0.98);
   }
 
   /* Technical Badge */
-  .tech-badge {
-    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md font-mono text-[11px] font-semibold tracking-wider uppercase;
+  .tech-badge-red {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.375rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background-color: rgba(230, 57, 70, 0.1);
+    color: #e63946;
+    border: 1px solid rgba(230, 57, 70, 0.25);
   }
 
   /* Formula Block with Engineering Styling */
   .study-formula-block {
-    @apply my-6 py-4 px-6 rounded-xl text-center relative overflow-hidden transition-all duration-200 border;
-    background: linear-gradient(180deg, rgba(14, 165, 233, 0.03) 0%, rgba(14, 165, 233, 0.01) 100%);
-    border-color: rgba(14, 165, 233, 0.25);
-  }
-
-  .dark .study-formula-block {
-    background: linear-gradient(180deg, rgba(56, 189, 248, 0.06) 0%, rgba(56, 189, 248, 0.01) 100%);
-    border-color: rgba(56, 189, 248, 0.25);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(230, 57, 70, 0.05) 0%, rgba(139, 0, 0, 0.02) 100%);
+    border: 1px solid rgba(230, 57, 70, 0.25);
+    transition: border-color 200ms ease;
   }
 
   .study-formula-block:hover {
-    border-color: rgba(56, 189, 248, 0.45);
+    border-color: rgba(230, 57, 70, 0.5);
   }
 
-  /* Definition Highlight Box */
+  /* Definition Highlight Box with Red Accent */
   .study-callout-def {
-    @apply my-5 p-4 sm:p-5 rounded-xl border-l-4 border-l-cyan-500 bg-cyan-500/5 dark:bg-cyan-500/10 border-t border-r border-b border-cyan-500/15;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid #e63946;
+    background-color: rgba(230, 57, 70, 0.06);
+    border-top: 1px solid rgba(230, 57, 70, 0.15);
+    border-right: 1px solid rgba(230, 57, 70, 0.15);
+    border-bottom: 1px solid rgba(230, 57, 70, 0.15);
   }
 
-  /* Important Exam Focus Box */
+  /* Important Exam Focus Box with Dark Crimson / Amber border */
   .study-callout-imp {
-    @apply my-5 p-4 sm:p-5 rounded-xl border-l-4 border-l-amber-500 bg-amber-500/5 dark:bg-amber-500/10 border-t border-r border-b border-amber-500/15;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid #c1121f;
+    background-color: rgba(193, 18, 31, 0.07);
+    border-top: 1px solid rgba(193, 18, 31, 0.18);
+    border-right: 1px solid rgba(193, 18, 31, 0.18);
+    border-bottom: 1px solid rgba(193, 18, 31, 0.18);
   }
 }
 
-/* Digital Textbook Reading Typography */
+/* Digital Textbook Reading Typography in Red & Black Theme */
 .reading-content h2 {
-  @apply text-2xl sm:text-3xl font-bold font-display text-slate-900 dark:text-white tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200 dark:border-cyan-500/15 flex items-center gap-2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Outfit", sans-serif;
+  color: #f5f5f5;
+  letter-spacing: -0.025em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .reading-content h2 {
+    font-size: 1.875rem;
+  }
 }
 
 .reading-content h3 {
-  @apply text-xl sm:text-2xl font-semibold font-display text-slate-800 dark:text-slate-100 mt-8 mb-3 flex items-center gap-2;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  color: #e5e5e5;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .reading-content h4 {
-  @apply text-lg font-bold text-slate-800 dark:text-slate-200 mt-6 mb-2;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #d4d4d4;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .reading-content p {
-  @apply text-slate-700 dark:text-slate-300 leading-[1.85] mb-4 text-base;
+  color: #d4d4d4;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .reading-content ul {
-  @apply list-disc list-inside space-y-2 mb-5 text-slate-700 dark:text-slate-300;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1.25rem;
+  color: #d4d4d4;
+}
+
+.reading-content ul li {
+  margin-bottom: 0.5rem;
 }
 
 .reading-content ol {
-  @apply list-decimal list-inside space-y-2 mb-5 text-slate-700 dark:text-slate-300;
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-bottom: 1.25rem;
+  color: #d4d4d4;
+}
+
+.reading-content ol li {
+  margin-bottom: 0.5rem;
 }
 
 .reading-content li strong {
-  @apply text-slate-900 dark:text-white font-semibold;
+  color: #f5f5f5;
+  font-weight: 600;
 }
 
-/* Sub-animations */
+/* Section Reveal / Fade Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.98);
+    transform: scale(0.96);
   }
   to {
     opacity: 1;
@@ -171,5 +290,33 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.study-section-reveal {
+  animation: sectionReveal 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn,
+  .study-section-reveal,
+  .card-academic,
+  .btn-primary-red,
+  .btn-secondary-dark {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
 }

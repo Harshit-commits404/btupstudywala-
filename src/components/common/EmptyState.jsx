@@ -11,17 +11,17 @@ export const EmptyState = ({
 }) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center p-8 sm:p-12 text-center rounded-3xl border border-slate-200 dark:border-cyan-500/20 bg-white dark:bg-[#0c1a2d] shadow-xs ${className}`}
+      className={`flex flex-col items-center justify-center p-8 sm:p-12 text-center rounded-3xl border border-white/10 bg-[#121212] shadow-xs text-white ${className}`}
     >
       {Icon && (
-        <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4 text-cyan-600 dark:text-cyan-400">
+        <div className="w-16 h-16 rounded-2xl bg-red-600/15 border border-red-600/30 flex items-center justify-center mb-4 text-red-500">
           <Icon className="w-8 h-8" />
         </div>
       )}
-      <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white mb-2">
+      <h3 className="text-xl sm:text-2xl font-bold font-display text-white mb-2">
         {title}
       </h3>
-      <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
+      <p className="text-sm text-neutral-400 max-w-md mb-6 leading-relaxed">
         {description}
       </p>
       {actionLabel && (

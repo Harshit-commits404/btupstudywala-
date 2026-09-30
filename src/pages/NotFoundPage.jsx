@@ -7,20 +7,20 @@ export const NotFoundPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-xl mx-auto px-4 py-16 sm:py-24 text-center">
-      <div className="w-20 h-20 rounded-3xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mx-auto mb-6">
+    <div className="max-w-xl mx-auto px-4 py-16 sm:py-24 text-center text-white">
+      <div className="w-20 h-20 rounded-3xl bg-red-600/15 border border-red-600/30 text-red-500 flex items-center justify-center mx-auto mb-6">
         <Compass className="w-10 h-10" />
       </div>
 
-      <span className="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 mb-4 inline-block">
+      <span className="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-red-600/15 text-red-400 border border-red-600/30 mb-4 inline-block">
         Error 404 • Page Not Found
       </span>
 
-      <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mb-3">
+      <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-white mb-3">
         Lost in the Syllabus?
       </h1>
 
-      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+      <p className="text-sm sm:text-base text-neutral-400 leading-relaxed mb-8">
         The page you are looking for doesn't exist or has moved. Explore the available semesters or return to the home platform.
       </p>
 

@@ -23,19 +23,19 @@ export const Button = ({
 
   const variantStyles = {
     primary:
-      'bg-cyan-600 hover:bg-cyan-500 text-white shadow-md shadow-cyan-600/25 focus:ring-cyan-500 border border-cyan-500/30',
+      'bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white shadow-md shadow-red-700/30 focus:ring-red-500 border border-red-500/40 hover:-translate-y-0.5',
     secondary:
-      'bg-slate-100 hover:bg-slate-200 dark:bg-[#0c1a2d] dark:hover:bg-[#12263d] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-cyan-500/30 focus:ring-slate-500',
+      'bg-[#171717] hover:bg-[#222222] text-neutral-200 border border-white/10 hover:border-red-500/40 focus:ring-red-500 hover:-translate-y-0.5',
     glass:
-      'bg-black/5 dark:bg-white/[0.05] hover:bg-black/10 dark:hover:bg-white/[0.1] text-slate-800 dark:text-slate-200 border border-black/10 dark:border-white/[0.1] backdrop-blur-md hover:border-cyan-500/40 focus:ring-cyan-500',
+      'bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-red-500/40 focus:ring-red-500',
     outline:
-      'border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-cyan-500 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-transparent focus:ring-slate-500',
+      'border border-white/15 hover:border-red-500/60 text-neutral-300 hover:text-white bg-transparent focus:ring-red-500',
     ghost:
-      'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/[0.05] focus:ring-slate-500',
+      'text-neutral-400 hover:text-white hover:bg-white/5 focus:ring-red-500',
     emerald:
-      'bg-emerald-500 hover:bg-emerald-600 text-white shadow-md shadow-emerald-500/25 focus:ring-emerald-500 border border-emerald-400/30',
+      'bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/25 focus:ring-emerald-500 border border-emerald-400/30',
     danger:
-      'bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400 border border-rose-500/20 focus:ring-rose-500',
+      'bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30 focus:ring-red-500',
   };
 
   return (

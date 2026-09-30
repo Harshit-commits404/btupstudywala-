@@ -8,71 +8,50 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Deep Navy / Midnight Blue scale (Primary dark background and surfaces)
-        navy: {
-          50: '#f0f5fa',
-          100: '#e2ebf5',
-          200: '#c5d8ec',
-          300: '#99bcdd',
-          400: '#649bc9',
-          500: '#3f7eb2',
-          600: '#2d6495',
-          700: '#245179',
-          800: '#1b3a57',
-          850: '#12263d',
-          900: '#0c1a2d',
-          950: '#070f1c',
+        // Red scale (Primary & Secondary accents: Deep Crimson to Bright Red)
+        red: {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#E63946', // Bright controlled red
+          700: '#C1121F', // Deep crimson red
+          800: '#8B0000', // Deepest dark crimson
+          900: '#7f1d1d',
+          950: '#450a0a',
         },
-        // Electric Cyan / Aqua (Secondary & Accent highlight)
-        cyan: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#22d3ee',
-          500: '#06b6d4',
-          600: '#0891b2',
-          700: '#0e7490',
-          800: '#155e75',
-          900: '#164e63',
-          950: '#083344',
+        crimson: {
+          bright: '#E63946',
+          deep: '#C1121F',
+          dark: '#8B0000',
         },
-        // Warm Amber / Gold (Accent for highlights and Coming Soon states)
-        amber: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-        },
+        // Dark & Layered Black surfaces
         dark: {
-          bg: '#070f1c', // Deepest midnight navy
-          surface: '#0c1a2d', // Midnight surface
-          card: '#0f2037', // Card surface
-          cardHover: '#142946', // Card hover state
-          elevated: '#172f4f',
-          border: 'rgba(56, 189, 248, 0.12)',
-          borderHover: 'rgba(56, 189, 248, 0.35)',
-          muted: '#8ca2bc',
+          bg: '#080808', // Main near-black background
+          surface: '#0D0D0D', // Layer 1
+          section: '#111111', // Layer 2
+          card: '#171717', // Layer 3 (Cards)
+          cardHover: '#1c1c1c',
+          elevated: '#212121',
+          border: 'rgba(255, 255, 255, 0.08)',
+          borderHover: 'rgba(230, 57, 70, 0.45)',
+          muted: '#a3a3a3',
         },
-        // Brand mapped to Electric Cyan & Deep Navy
+        // Brand mapped directly to red/crimson
         brand: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8', // Electric cyan
-          500: '#0ea5e9', // Core cyan
-          600: '#0284c7', // Deep cyan
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#E63946',
+          700: '#C1121F',
+          800: '#8B0000',
+          900: '#7f1d1d',
+          950: '#450a0a',
         },
       },
       fontFamily: {
@@ -84,8 +63,8 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'tech-glow': 'radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 65%)',
-        'subtle-grid': 'linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px)',
+        'tech-glow': 'radial-gradient(circle at 50% 0%, rgba(193, 18, 31, 0.18) 0%, transparent 65%)',
+        'subtle-grid': 'linear-gradient(to right, rgba(230, 57, 70, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(230, 57, 70, 0.05) 1px, transparent 1px)',
       }
     },
   },

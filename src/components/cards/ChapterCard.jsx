@@ -15,36 +15,47 @@ export const ChapterCard = ({
   const targetUrl = to || `/chapter/${chapterId}`;
 
   return (
-    <div className="group rounded-2xl border border-slate-200/80 dark:border-cyan-500/20 bg-white dark:bg-[#0c1a2d] p-5 sm:p-6 transition-all duration-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div
+      className="group rounded-2xl border border-white/10 bg-[#171717] hover:border-red-500/70 hover:bg-[#1c1c1c] p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs hover:shadow-[0_14px_35px_-8px_rgba(230,57,70,0.22)]"
+      style={{
+        transition: 'transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-6px) scale(1.01)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateY(0) scale(1)';
+      }}
+    >
       <div className="flex items-start gap-4">
         {/* Unit number badge */}
-        <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/25 flex flex-col items-center justify-center font-mono shrink-0">
-          <span className="text-[9px] uppercase font-bold text-slate-500 dark:text-slate-400 leading-none">UNIT</span>
+        <div className="w-12 h-12 rounded-xl bg-red-600/15 text-red-400 border border-red-600/30 flex flex-col items-center justify-center font-mono shrink-0">
+          <span className="text-[9px] uppercase font-bold text-neutral-400 leading-none">UNIT</span>
           <span className="font-extrabold text-sm leading-none mt-0.5">{number}</span>
         </div>
 
         <div className="space-y-1">
           <div className="flex items-center gap-2 flex-wrap">
-            <h4 className="text-base sm:text-lg font-bold font-display text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+            <h4 className="text-base sm:text-lg font-bold font-display text-white group-hover:text-red-400 transition-colors">
               {title}
             </h4>
-            <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+            <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-red-600/15 text-red-400 border border-red-600/30">
               {badge}
             </span>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-neutral-300 max-w-2xl leading-relaxed">
             {description}
           </p>
 
-          <div className="flex items-center gap-4 pt-1 text-xs font-mono text-slate-500 dark:text-slate-400">
+          <div className="flex items-center gap-4 pt-1 text-xs font-mono text-neutral-400">
             <span className="inline-flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-cyan-500" />
+              <Clock className="w-3.5 h-3.5 text-red-400" />
               <span>{estimatedTime}</span>
             </span>
             <span>•</span>
             <span className="inline-flex items-center gap-1.5">
-              <FileText className="w-3.5 h-3.5 text-cyan-500" />
+              <FileText className="w-3.5 h-3.5 text-red-400" />
               <span>Complete Study Notes</span>
             </span>
           </div>
@@ -54,10 +65,10 @@ export const ChapterCard = ({
       <div className="sm:shrink-0 pt-2 sm:pt-0">
         <Link
           to={targetUrl}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-cyan-600/25 transition-all w-full sm:w-auto"
+          className="btn-primary-red text-xs sm:text-sm w-full sm:w-auto group"
         >
           <span>{actionLabel}</span>
-          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
       </div>
     </div>
