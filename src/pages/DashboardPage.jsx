@@ -53,55 +53,59 @@ export const DashboardPage = () => {
       statusText: 'Available Now',
       icon: Laptop,
       semestersAvailable: 'Sem 1, 3, 5 Open',
-      link: '/semesters',
+      link: '/branch/cse',
     },
     {
-      id: 'me',
+      id: 'mechanical',
       code: 'ME',
       name: 'Mechanical Engineering',
       description: 'Machines, manufacturing, thermodynamics aur mechanical fundamentals.',
-      isAvailable: false,
-      statusText: 'Coming Soon',
+      isAvailable: true,
+      statusText: 'Sem 1 Common Live',
       icon: Wrench,
-      semestersAvailable: 'Curriculum in Review',
+      semestersAvailable: 'Sem 1 Common Open • Sem 3, 5 Soon',
+      link: '/branch/mechanical',
     },
     {
-      id: 'ece',
+      id: 'electronics',
       code: 'ECE',
       name: 'Electronics Engineering',
       description: 'Electronic devices, circuits, communication aur digital concepts.',
-      isAvailable: false,
-      statusText: 'Coming Soon',
+      isAvailable: true,
+      statusText: 'Sem 1 Common Live',
       icon: Radio,
-      semestersAvailable: 'Curriculum in Review',
+      semestersAvailable: 'Sem 1 Common Open • Sem 3, 5 Soon',
+      link: '/branch/electronics',
     },
     {
-      id: 'ic',
+      id: 'instrumentation',
       code: 'IC',
       name: 'Instrumentation & Control',
       description: 'Measurement, sensors, control systems aur instrumentation concepts.',
-      isAvailable: false,
-      statusText: 'Coming Soon',
+      isAvailable: true,
+      statusText: 'Sem 1 Common Live',
       icon: Sliders,
-      semestersAvailable: 'Curriculum in Review',
+      semestersAvailable: 'Sem 1 Common Open • Sem 3, 5 Soon',
+      link: '/branch/instrumentation',
     },
     {
-      id: 'it',
+      id: 'information-technology',
       code: 'IT',
       name: 'Information Technology',
       description: 'IT fundamentals, programming, networking aur modern technology concepts.',
-      isAvailable: false,
-      statusText: 'Coming Soon',
+      isAvailable: true,
+      statusText: 'Sem 1 Common Live',
       icon: Cpu,
-      semestersAvailable: 'Curriculum in Review',
+      semestersAvailable: 'Sem 1 Common Open • Sem 3, 5 Soon',
+      link: '/branch/information-technology',
     },
   ];
 
   const handleBranchClick = (branch) => {
-    if (branch.isAvailable) {
+    if (branch.link) {
       navigate(branch.link);
     } else {
-      setSelectedBranchModal(branch);
+      navigate(`/branch/${branch.id}`);
     }
   };
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { getSubjectById } from '../data/subjectsData';
 import { getChaptersBySubject } from '../data/chaptersData';
+import { getBranchById } from '../data/branchesData';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import {
   BookOpen,
@@ -9,12 +10,27 @@ import {
   ArrowLeft,
   ArrowRight,
   AlertCircle,
-  ListOrdered
+  ListOrdered,
+  Sparkles,
 } from 'lucide-react';
 
 export const SubjectPage = () => {
-  const { subjectId } = useParams();
+  const { subjectId, branchId: paramBranchId } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
+
+  // Detect branch context
+  const queryBranch = new URLSearchParams(location.search).get('branch');
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  let detectedBranch = paramBranchId || queryBranch;
+  if (!detectedBranch && pathParts.length > 0) {
+    const firstPart = pathParts[0];
+    if (['cse', 'mechanical', 'me', 'electronics', 'ece', 'instrumentation', 'ic', 'information-technology', 'it'].includes(firstPart.toLowerCase())) {
+      detectedBranch = firstPart;
+    }
+  }
+  const branch = getBranchById(detectedBranch || 'cse');
+
   const subject = getSubjectById(subjectId);
 
   // If subject ID is invalid or not found
@@ -31,23 +47,29 @@ export const SubjectPage = () => {
           The requested subject does not exist in the curriculum structure.
         </p>
         <button
-          onClick={() => navigate('/semesters')}
+          onClick={() => navigate(`/branch/${branch.id}`)}
           className="btn-primary-red text-sm"
         >
-          Back to CSE Learning Path
+          Back to {branch.code} Learning Path
         </button>
       </div>
     );
   }
 
   const semesterNum = subject.semesterId || 1;
+  const isCommonSemester = semesterNum === 1;
   const semesterTitle = `${semesterNum}${semesterNum === 1 ? 'st' : semesterNum === 2 ? 'nd' : semesterNum === 3 ? 'rd' : 'th'} Semester`;
   const chapters = getChaptersBySubject(subject.id);
   const hasChapters = chapters && chapters.length > 0;
 
+  const semesterBackUrl = isCommonSemester
+    ? `/${branch.id}/semester-1`
+    : `/semester/${semesterNum}`;
+
   const breadcrumbItems = [
-    { label: 'CSE Learning Path', to: '/semesters' },
-    { label: semesterTitle, to: `/semester/${semesterNum}` },
+    { label: 'Branches', to: '/#branches' },
+    { label: `${branch.code} Learning Path`, to: `/branch/${branch.id}` },
+    { label: `${semesterTitle}${isCommonSemester ? ' (Common)' : ''}`, to: semesterBackUrl },
     { label: subject.name },
   ];
 
@@ -67,10 +89,18 @@ export const SubjectPage = () => {
 
         <div className="relative space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-red-600/15 text-red-400 border border-red-600/30">
-                CSE • SEMESTER 0{semesterNum}
+                {branch.code} • SEMESTER 0{semesterNum}
               </span>
+
+              {isCommonSemester && (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md font-mono text-xs font-bold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Common BTEUP Subject</span>
+                </span>
+              )}
+
               <span className="font-mono text-xs text-neutral-400">
                 BTEUP CURRICULUM
               </span>
@@ -115,6 +145,14 @@ export const SubjectPage = () => {
               <span className="text-red-400 font-bold">★</span>
               <span>Exam PYQ Highlights</span>
             </div>
+            {isCommonSemester && (
+              <>
+                <span>•</span>
+                <div className="flex items-center gap-1.5 text-emerald-400">
+                  <span>Common across all branches</span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -138,7 +176,8 @@ export const SubjectPage = () => {
         {hasChapters ? (
           <div className="space-y-4">
             {chapters.map((ch, idx) => {
-              const targetUrl = ch.path || `/chapter/${subject.id}/${ch.id}`;
+              const baseTarget = ch.path || `/chapter/${subject.id}/${ch.id}`;
+              const targetUrl = queryBranch ? `${baseTarget}?branch=${branch.id}` : baseTarget;
               const unitNum = ch.number || `0${idx + 1}`;
 
               return (
@@ -229,7 +268,7 @@ export const SubjectPage = () => {
             </p>
             <div className="pt-2">
               <button
-                onClick={() => navigate(`/semester/${semesterNum}`)}
+                onClick={() => navigate(semesterBackUrl)}
                 className="btn-secondary-dark text-xs sm:text-sm"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -242,7 +281,7 @@ export const SubjectPage = () => {
         {/* Back to Semester Action */}
         <div className="pt-4 flex items-center justify-between">
           <button
-            onClick={() => navigate(`/semester/${semesterNum}`)}
+            onClick={() => navigate(semesterBackUrl)}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-400 hover:text-red-400 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />

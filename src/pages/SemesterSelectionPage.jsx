@@ -1,27 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useParams, useLocation, Link } from 'react-router-dom';
 import { Breadcrumb } from '../components/common/Breadcrumb';
-import { semestersData } from '../data/semestersData';
+import { getSemestersByBranch } from '../data/semestersData';
+import { getBranchById } from '../data/branchesData';
 import {
   Laptop,
   ArrowRight,
   Clock,
   Lock,
+  Sparkles,
 } from 'lucide-react';
 
 export const SemesterSelectionPage = () => {
+  const { branchId: paramBranchId } = useParams();
+  const location = useLocation();
+
+  // Extract branch ID from route params, path segments, or query string
+  const queryBranch = new URLSearchParams(location.search).get('branch');
+  const pathSegment = location.pathname.split('/').filter(Boolean)[0];
+  const detectedBranchId = paramBranchId || queryBranch || (pathSegment !== 'semesters' ? pathSegment : 'cse');
+
+  const branch = getBranchById(detectedBranchId);
+  const semesters = getSemestersByBranch(branch.id);
+  const BranchIcon = branch.icon || Laptop;
+
   const breadcrumbItems = [
     { label: 'Branches', to: '/#branches' },
-    { label: 'CSE Learning Path' }
+    { label: `${branch.code} Learning Path` }
   ];
 
   // Subject quick tags for each semester
   const semesterSubjectsPreview = {
     1: ['Applied Physics - 1', 'Mathematics - 1', 'Applied Chemistry', 'FEEE', 'Intro to IT', 'Communication Skills'],
     2: ['Applied Mathematics - 2', 'Applied Physics - 2', 'Programming in C', 'Basics of IT'],
-    3: ['DBMS (Database Management)', 'Computer Network (CN)', 'Operating System (OS)'],
+    3: branch.id === 'cse' 
+      ? ['DBMS (Database Management)', 'Computer Network (CN)', 'Operating System (OS)']
+      : ['Branch Core Subjects', 'Specialized Theory', 'Lab Practical Curriculum'],
     4: ['Data Structures using C', 'Communication Skills - 2', 'E-Commerce', 'Energy Conservation'],
-    5: ['Information Security', 'Multimedia Technologies', 'Industrial Training'],
+    5: branch.id === 'cse'
+      ? ['Information Security', 'Multimedia Technologies', 'Industrial Training']
+      : ['Advanced Branch Electives', 'Industrial Training', 'Project Outline'],
     6: ['Android Apps Development', 'Cloud Computing', 'Major Engineering Project'],
   };
 
@@ -31,7 +49,7 @@ export const SemesterSelectionPage = () => {
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
 
-      {/* CSE Learning Path Header Plate */}
+      {/* Branch Learning Path Header Plate */}
       <div className="relative rounded-3xl border border-white/10 bg-[#121212] p-6 sm:p-10 overflow-hidden shadow-sm">
         {/* Subtle red engineering hairline along the top */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-700 via-red-500 to-red-600" />
@@ -42,8 +60,8 @@ export const SemesterSelectionPage = () => {
         <div className="relative space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md font-mono text-xs font-bold uppercase tracking-wider bg-red-600/10 text-red-400 border border-red-600/30">
-              <Laptop className="w-3.5 h-3.5" />
-              <span>DIPLOMA IN COMPUTER SCIENCE & ENGINEERING</span>
+              <BranchIcon className="w-3.5 h-3.5" />
+              <span>{branch.fullName}</span>
             </div>
 
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
@@ -54,15 +72,17 @@ export const SemesterSelectionPage = () => {
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight flex items-center gap-3">
             <span className="w-2 h-8 sm:w-2.5 sm:h-10 rounded-full bg-red-600 inline-block shadow-[0_0_12px_rgba(230,57,70,0.6)]" />
-            <span>CSE Learning Path</span>
+            <span>{branch.code} Learning Path</span>
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-300 max-w-3xl leading-relaxed">
-            Uttar Pradesh Polytechnic 3-year diploma curriculum progression. Select your semester below to access structured unit notes, derivations, and BTEUP exam preparation.
+            Uttar Pradesh Polytechnic 3-year diploma curriculum progression for {branch.name}.
+            First semester subjects are common across all BTEUP engineering branches. Select your semester below to access verified unit notes, derivations, and BTEUP exam preparation.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-400">
-            <span>• Odd Semesters: 01, 03, 05 (Available Now)</span>
+            <span>• Semester 01: Common Across All Branches (Available Now)</span>
+            <span>• Odd Semesters: 01{branch.id === 'cse' ? ', 03, 05 (Active)' : ' (Live)'}</span>
             <span>• Even Semesters: 02, 04, 06 (Upcoming Cycle)</span>
           </div>
         </div>
@@ -77,9 +97,15 @@ export const SemesterSelectionPage = () => {
         <div className="hidden md:block absolute left-8 lg:left-12 top-6 bottom-6 w-0.5 border-l-2 border-dashed border-red-600/25" />
 
         <div className="space-y-6">
-          {semestersData.map((sem) => {
+          {semesters.map((sem) => {
             const isActive = sem.isAvailable;
+            const isCommon = sem.isCommon || sem.number === 1;
             const subjectsList = semesterSubjectsPreview[sem.number] || [];
+            
+            // Build the destination URL
+            const semesterLink = isCommon
+              ? `/${branch.id}/semester-1`
+              : `/semester/${sem.id}`;
 
             return (
               <div
@@ -141,7 +167,7 @@ export const SemesterSelectionPage = () => {
                           </span>
                         ) : (
                           <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-neutral-400 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
-                            Coming Soon
+                            {sem.statusText || 'Coming Soon'}
                           </span>
                         )}
                       </div>
@@ -150,6 +176,14 @@ export const SemesterSelectionPage = () => {
                         <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10">
                           {sem.year} • {sem.cycle}
                         </span>
+
+                        {/* Subtle Informational Label for Common Semester 1 */}
+                        {isCommon && (
+                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-red-600/15 text-red-400 border border-red-600/30">
+                            <Sparkles className="w-3 h-3 text-red-400" />
+                            <span>Common BTEUP Semester</span>
+                          </span>
+                        )}
 
                         <div className="hidden md:inline-flex">
                           {isActive ? (
@@ -160,24 +194,31 @@ export const SemesterSelectionPage = () => {
                           ) : (
                             <span className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
                               <Clock className="w-3 h-3 text-red-400" />
-                              <span>Coming Soon</span>
+                              <span>{sem.statusText || 'Coming Soon'}</span>
                             </span>
                           )}
                         </div>
                       </div>
 
-                      <h2 className="text-xl sm:text-2xl font-bold font-display text-white">
-                        {sem.title}
+                      <h2 className="text-xl sm:text-2xl font-bold font-display text-white flex items-center gap-2">
+                        <span>{sem.title}</span>
+                        {isCommon && (
+                          <span className="text-xs font-mono font-normal text-neutral-400 hidden sm:inline">
+                            (Common Across Branches)
+                          </span>
+                        )}
                       </h2>
 
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-2xl">
-                        {sem.description}
+                        {isCommon
+                          ? 'Foundational engineering curriculum common across all BTEUP polytechnic branches (CSE, Mechanical, Electronics, Instrumentation & IT). Access unified verified subject textbooks and chapter notes.'
+                          : sem.description}
                       </p>
 
                       {/* Subject Preview Pills */}
                       <div className="pt-1">
                         <span className="text-[11px] font-mono text-neutral-500 uppercase font-semibold block mb-1.5">
-                          Curriculum Subjects:
+                          {isCommon ? 'Common BTEUP Subjects:' : 'Curriculum Subjects:'}
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {subjectsList.map((subj, idx) => (
@@ -200,7 +241,7 @@ export const SemesterSelectionPage = () => {
                     <div className="lg:shrink-0 pt-3 lg:pt-0">
                       {isActive ? (
                         <Link
-                          to={`/semester/${sem.id}`}
+                          to={semesterLink}
                           className="btn-primary-red text-xs sm:text-sm w-full lg:w-auto group"
                         >
                           <span>Explore Semester {sem.number}</span>
@@ -209,7 +250,7 @@ export const SemesterSelectionPage = () => {
                       ) : (
                         <div className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-neutral-400 text-xs sm:text-sm font-medium w-full lg:w-auto select-none bg-white/[0.02]">
                           <Lock className="w-3.5 h-3.5 text-neutral-400" />
-                          <span>Opens in Even Term</span>
+                          <span>{sem.statusText === 'Curriculum in Review' ? 'In Curriculum Review' : 'Opens in Even Term'}</span>
                         </div>
                       )}
                     </div>

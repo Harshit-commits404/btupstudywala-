@@ -25,9 +25,12 @@ export const semestersData = [
     cycle: 'Odd Semester',
     isAvailable: true,
     isOdd: true,
+    isCommon: true,
+    commonLabel: 'Common BTEUP Semester',
+    commonBadge: 'Semester 1 • Common Across Branches',
     statusText: 'Available',
-    description: 'Foundational curriculum for first-year polytechnic engineering diploma students.',
-    tagline: 'First Year • Odd Semester',
+    description: 'Common foundational curriculum across all BTEUP polytechnic engineering streams (CSE, Mechanical, Electronics, Instrumentation, and IT).',
+    tagline: 'First Year • Common Across Branches',
   },
   {
     id: 2,
@@ -96,12 +99,81 @@ export const semestersData = [
   },
 ];
 
-export const getSemesterById = (id) => {
+/**
+ * Get all semesters structured for a specific engineering branch.
+ * Semester 1 is COMMON and active across all branches.
+ *
+ * @param {string} [branchId='cse']
+ * @returns {Array} List of semester objects tailored for the branch
+ */
+export const getSemestersByBranch = (branchId = 'cse') => {
+  const cleanBranch = String(branchId || 'cse').toLowerCase().trim();
+  const normalizedBranch = 
+    cleanBranch === 'me' ? 'mechanical' :
+    cleanBranch === 'ece' ? 'electronics' :
+    cleanBranch === 'ic' ? 'instrumentation' :
+    cleanBranch === 'it' ? 'information-technology' :
+    cleanBranch;
+
+  const isCse = normalizedBranch === 'cse';
+
+  return semestersData.map((sem) => {
+    // Semester 1 is ALWAYS common and available
+    if (sem.number === 1) {
+      return {
+        ...sem,
+        isAvailable: true,
+        isCommon: true,
+        commonLabel: 'Common BTEUP Semester',
+        commonBadge: 'Semester 1 • Common Across Branches',
+        statusText: 'Available Now',
+      };
+    }
+
+    // Even semesters are always Even Cycle (Coming Soon)
+    if (!sem.isOdd) {
+      return {
+        ...sem,
+        isAvailable: false,
+        statusText: 'Coming Soon',
+      };
+    }
+
+    // Odd semesters 3 and 5 are available for CSE, and in review for other branches
+    if (isCse) {
+      return {
+        ...sem,
+        isAvailable: true,
+        statusText: 'Available',
+      };
+    }
+
+    return {
+      ...sem,
+      isAvailable: false,
+      statusText: 'Curriculum in Review',
+      description: `Branch-specific ${sem.title} curriculum notes are currently under preparation for this stream.`,
+    };
+  });
+};
+
+/**
+ * Get semester configuration by semester ID, optionally tailored for a branch.
+ * Semester 1 is always returned as common and available.
+ *
+ * @param {number|string} id
+ * @param {string} [branchId='cse']
+ * @returns {Object|null}
+ */
+export const getSemesterById = (id, branchId = 'cse') => {
   const numericId = parseInt(id, 10);
-  return semestersData.find((s) => s.id === numericId || s.number === numericId) || null;
+  const branchSemesters = getSemestersByBranch(branchId);
+  return branchSemesters.find((s) => s.id === numericId || s.number === numericId) || null;
 };
 
 export {
+  COMMON_SEMESTER_1,
+  branchSubjects,
   semester1Subjects,
   semester3Subjects,
   semester5Subjects,
@@ -109,6 +181,7 @@ export {
   getSubjectsBySemester,
   getSubjectById,
 } from './subjectsData.js';
+
 
 
 

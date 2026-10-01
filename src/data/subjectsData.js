@@ -75,15 +75,90 @@ export const subjectsData = {
   5: semester5Subjects,
 };
 
+/**
+ * Reusable Common Semester 1 configuration for all BTEUP polytechnic branches.
+ * First semester syllabus is unified across CSE, Mechanical, Electronics,
+ * Instrumentation & Control, and Information Technology.
+ */
+export const COMMON_SEMESTER_1 = {
+  id: 1,
+  number: 1,
+  title: '1st Semester',
+  shortName: 'Sem 1',
+  isCommon: true,
+  commonLabel: 'Common BTEUP Semester',
+  commonBadge: 'Semester 1 • Common Across Branches',
+  description: 'Common foundational curriculum for all BTEUP polytechnic engineering branches (CSE, Mechanical, Electronics, Instrumentation, and IT).',
+  subjects: semester1Subjects,
+};
 
 /**
- * Get all subjects for a specific semester.
+ * Branch-specific curriculum mappings.
+ * All branches share the exact same COMMON_SEMESTER_1.subjects.
+ */
+export const branchSubjects = {
+  cse: {
+    1: COMMON_SEMESTER_1.subjects,
+    3: semester3Subjects,
+    5: semester5Subjects,
+  },
+  mechanical: {
+    1: COMMON_SEMESTER_1.subjects,
+    3: [],
+    5: [],
+  },
+  electronics: {
+    1: COMMON_SEMESTER_1.subjects,
+    3: [],
+    5: [],
+  },
+  instrumentation: {
+    1: COMMON_SEMESTER_1.subjects,
+    3: [],
+    5: [],
+  },
+  'information-technology': {
+    1: COMMON_SEMESTER_1.subjects,
+    3: [],
+    5: [],
+  },
+};
+
+/**
+ * Get all subjects for a specific semester and branch.
+ * Semester 1 always returns the verified common BTEUP Semester 1 subjects.
+ *
  * @param {number|string} semesterId
+ * @param {string} [branchId='cse']
  * @returns {Array} List of subjects or empty array
  */
-export const getSubjectsBySemester = (semesterId) => {
+export const getSubjectsBySemester = (semesterId, branchId = 'cse') => {
   const numericId = parseInt(semesterId, 10);
-  return subjectsData[numericId] || [];
+  
+  // Semester 1 is COMMON across all BTEUP engineering streams
+  if (numericId === 1) {
+    return COMMON_SEMESTER_1.subjects;
+  }
+
+  // Branch-specific subjects for upper semesters (Sem 3, Sem 5)
+  const cleanBranch = String(branchId || 'cse').toLowerCase().trim();
+  const normalizedBranch = 
+    cleanBranch === 'me' ? 'mechanical' :
+    cleanBranch === 'ece' ? 'electronics' :
+    cleanBranch === 'ic' ? 'instrumentation' :
+    cleanBranch === 'it' ? 'information-technology' :
+    cleanBranch;
+
+  if (branchSubjects[normalizedBranch] && branchSubjects[normalizedBranch][numericId]) {
+    return branchSubjects[normalizedBranch][numericId];
+  }
+
+  // Fallback for default backward compatibility (CSE odd semesters)
+  if (!branchId || normalizedBranch === 'cse') {
+    return subjectsData[numericId] || [];
+  }
+
+  return [];
 };
 
 /**
@@ -111,3 +186,4 @@ export const getSubjectById = (subjectId) => {
 
   return null;
 };
+

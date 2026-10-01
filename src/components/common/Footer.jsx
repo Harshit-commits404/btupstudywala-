@@ -45,8 +45,8 @@ export const Footer = ({ onOpenCreatorModal }) => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  to="/semesters"
-                  className="text-red-400 hover:text-red-300 hover:underline flex items-center justify-between font-medium"
+                  to="/branch/cse"
+                  className="text-neutral-400 hover:text-red-400 transition-colors flex items-center justify-between font-medium"
                 >
                   <span>Computer Science (CSE)</span>
                   <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-red-600/15 text-red-300 border border-red-600/30">
@@ -54,21 +54,49 @@ export const Footer = ({ onOpenCreatorModal }) => {
                   </span>
                 </Link>
               </li>
-              <li className="text-neutral-500 flex items-center justify-between text-xs">
-                <span>Mechanical Engg. (ME)</span>
-                <span className="text-[10px] font-mono text-neutral-400">Soon</span>
+              <li>
+                <Link
+                  to="/mechanical/semester-1"
+                  className="text-neutral-400 hover:text-red-400 transition-colors flex items-center justify-between text-xs"
+                >
+                  <span>Mechanical Engg. (ME)</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Sem 1 Live
+                  </span>
+                </Link>
               </li>
-              <li className="text-neutral-500 flex items-center justify-between text-xs">
-                <span>Electronics Engg. (ECE)</span>
-                <span className="text-[10px] font-mono text-neutral-400">Soon</span>
+              <li>
+                <Link
+                  to="/electronics/semester-1"
+                  className="text-neutral-400 hover:text-red-400 transition-colors flex items-center justify-between text-xs"
+                >
+                  <span>Electronics Engg. (ECE)</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Sem 1 Live
+                  </span>
+                </Link>
               </li>
-              <li className="text-neutral-500 flex items-center justify-between text-xs">
-                <span>Instrumentation & Control (IC)</span>
-                <span className="text-[10px] font-mono text-neutral-400">Soon</span>
+              <li>
+                <Link
+                  to="/instrumentation/semester-1"
+                  className="text-neutral-400 hover:text-red-400 transition-colors flex items-center justify-between text-xs"
+                >
+                  <span>Instrumentation & Control (IC)</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Sem 1 Live
+                  </span>
+                </Link>
               </li>
-              <li className="text-neutral-500 flex items-center justify-between text-xs">
-                <span>Information Technology (IT)</span>
-                <span className="text-[10px] font-mono text-neutral-400">Soon</span>
+              <li>
+                <Link
+                  to="/information-technology/semester-1"
+                  className="text-neutral-400 hover:text-red-400 transition-colors flex items-center justify-between text-xs"
+                >
+                  <span>Information Technology (IT)</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Sem 1 Live
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>

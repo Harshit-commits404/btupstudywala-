@@ -1,21 +1,54 @@
 import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { getSemesterById, semestersData } from '../data/semestersData';
+import { useParams, useLocation, Link, useNavigate } from 'react-router-dom';
+import { getSemesterById } from '../data/semestersData';
 import { getSubjectsBySemester } from '../data/subjectsData';
 import { getChaptersBySubject } from '../data/chaptersData';
+import { getBranchById } from '../data/branchesData';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import {
   BookOpen,
   Clock,
   ArrowLeft,
   ArrowRight,
-  AlertCircle
+  AlertCircle,
+  Sparkles,
+  Layers,
 } from 'lucide-react';
 
-export const SemesterPage = () => {
-  const { semesterId } = useParams();
+export const SemesterPage = ({ fixedSemesterId }) => {
+  const { semesterId: rawSemesterId, branchId: rawBranchId, semesterNum } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
-  const semester = getSemesterById(semesterId);
+
+  // 1. Detect branch from params, pathname, or query string
+  const queryBranch = new URLSearchParams(location.search).get('branch');
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  
+  // If first part is a branch slug (e.g. /cse/semester-1, /mechanical/semester-1)
+  let detectedBranch = rawBranchId || queryBranch;
+  if (!detectedBranch && pathParts.length > 0) {
+    const firstPart = pathParts[0];
+    if (['cse', 'mechanical', 'me', 'electronics', 'ece', 'instrumentation', 'ic', 'information-technology', 'it'].includes(firstPart.toLowerCase())) {
+      detectedBranch = firstPart;
+    }
+  }
+  const branch = getBranchById(detectedBranch || 'cse');
+
+  // 2. Detect semester ID
+  let targetSemesterId = fixedSemesterId || rawSemesterId || semesterNum;
+  if (!targetSemesterId) {
+    if (location.pathname.includes('semester-1')) {
+      targetSemesterId = 1;
+    } else {
+      // Check for /semester/X
+      const semIndex = pathParts.indexOf('semester');
+      if (semIndex !== -1 && pathParts[semIndex + 1]) {
+        targetSemesterId = pathParts[semIndex + 1];
+      }
+    }
+  }
+
+  const semester = getSemesterById(targetSemesterId || 1, branch.id);
 
   // If invalid semester ID
   if (!semester) {
@@ -31,22 +64,26 @@ export const SemesterPage = () => {
           The requested semester does not exist in the curriculum structure.
         </p>
         <button
-          onClick={() => navigate('/semesters')}
+          onClick={() => navigate(`/branch/${branch.id}`)}
           className="btn-primary-red text-sm"
         >
-          View CSE Learning Path
+          View {branch.code} Learning Path
         </button>
       </div>
     );
   }
 
+  const isCommonSemester = semester.isCommon || semester.number === 1;
+
   const breadcrumbItems = [
-    { label: 'CSE Learning Path', to: '/semesters' },
-    { label: semester.title },
+    { label: 'Branches', to: '/#branches' },
+    { label: `${branch.code} Learning Path`, to: `/branch/${branch.id}` },
+    { label: `${semester.title}${isCommonSemester ? ' (Common)' : ''}` },
   ];
 
-  // If even semester (Coming Soon)
+  // If semester is unavailable (Even Cycle or Branch Curriculum in Review)
   if (!semester.isAvailable) {
+    const isEven = !semester.isOdd;
     return (
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 text-white">
         <Breadcrumb items={breadcrumbItems} />
@@ -57,30 +94,33 @@ export const SemesterPage = () => {
           </div>
 
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-red-600/15 text-red-400 border border-red-600/30 mb-4">
-            EVEN CYCLE • COMING SOON
+            {isEven ? 'EVEN CYCLE • COMING SOON' : 'CURRICULUM IN REVIEW • COMING SOON'}
           </span>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-white mb-3">
-            {semester.title}
+            {branch.name} • {semester.title}
           </h1>
 
           <p className="text-base text-neutral-300 max-w-xl mx-auto leading-relaxed mb-8">
-            This semester is scheduled for the upcoming even academic cycle. Active study material is currently live for odd semesters (1st, 3rd, and 5th Semester).
+            {isEven
+              ? 'This semester is scheduled for the upcoming even academic cycle. Active study material is currently live for odd semesters.'
+              : `Is branch ke ${semester.title} ke specialized syllabus aur notes preparation phase mein hain. BTEUP ka 1st Semester sabhi branches ke liye common hai aur live available hai.`}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
-              onClick={() => navigate('/semesters')}
+              onClick={() => navigate(`/branch/${branch.id}`)}
               className="btn-secondary-dark text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Back to Learning Path</span>
+              <span>Back to {branch.code} Path</span>
             </button>
             <button
-              onClick={() => navigate('/semester/1')}
+              onClick={() => navigate(`/${branch.id}/semester-1`)}
               className="btn-primary-red text-sm"
             >
-              <span>Explore 1st Semester</span>
+              <Sparkles className="w-4 h-4" />
+              <span>Explore 1st Semester (Common)</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -89,7 +129,8 @@ export const SemesterPage = () => {
     );
   }
 
-  const subjects = getSubjectsBySemester(semester.id);
+  // Retrieve subjects (for Semester 1, this returns the shared common subjects)
+  const subjects = getSubjectsBySemester(semester.id, branch.id);
   const hasSubjects = subjects && subjects.length > 0;
 
   return (
@@ -103,10 +144,19 @@ export const SemesterPage = () => {
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-700 via-red-500 to-red-600" />
         
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md bg-red-600/15 text-red-400 border border-red-600/30">
-              CSE • SEMESTER 0{semester.number}
+              {branch.code} • SEMESTER 0{semester.number}
             </span>
+
+            {/* Subtle Informational Label for Common Semester 1 */}
+            {isCommonSemester && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md font-mono text-xs font-bold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Common BTEUP Semester</span>
+              </span>
+            )}
+
             <span className="text-xs font-mono text-neutral-400">
               {semester.year} • {semester.cycle}
             </span>
@@ -124,28 +174,51 @@ export const SemesterPage = () => {
         </h1>
 
         <p className="text-base text-neutral-300 max-w-3xl leading-relaxed">
-          {semester.description} Select a curriculum subject below to enter its digital textbook, study unit breakdown, derivations, and exam focus points.
+          {isCommonSemester
+            ? `Unified first-year engineering syllabus for UP Polytechnic diploma students (${branch.name}). Select a curriculum subject below to enter its verified digital textbook, study unit breakdown, derivations, and exam focus points.`
+            : `${semester.description} Select a curriculum subject below to enter its digital textbook, study unit breakdown, derivations, and exam focus points.`}
         </p>
+
+        {/* Subtle Common Semester Informational Label / Card */}
+        {isCommonSemester && (
+          <div className="mt-6 flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-neutral-300 text-xs sm:text-sm">
+            <div className="w-8 h-8 rounded-lg bg-red-600/15 text-red-400 flex items-center justify-center shrink-0 mt-0.5 border border-red-600/30">
+              <Layers className="w-4 h-4" />
+            </div>
+            <div className="space-y-0.5">
+              <span className="font-mono text-xs font-bold text-red-400 uppercase tracking-wider block">
+                Semester 1 • Common Across Branches
+              </span>
+              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+                BTEUP polytechnic first semester curriculum is uniform for CSE, Mechanical, Electronics, Instrumentation, and IT streams. Study content, chapters, and derivations are verified and shared across all branches.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Switch odd semester quick pills in Red-Black theme */}
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs">
-          <span className="font-mono text-neutral-400">Switch Active Odd Semester:</span>
+          <span className="font-mono text-neutral-400">Available Odd Semesters in {branch.code}:</span>
           <div className="flex items-center gap-2">
-            {semestersData
-              .filter((s) => s.isAvailable)
-              .map((s) => (
+            {branch.id === 'cse' ? (
+              [1, 3, 5].map((num) => (
                 <Link
-                  key={s.id}
-                  to={`/semester/${s.id}`}
+                  key={num}
+                  to={num === 1 ? `/${branch.id}/semester-1` : `/semester/${num}`}
                   className={`px-3 py-1.5 rounded-lg font-mono text-xs font-semibold transition-all ${
-                    s.id === semester.id
+                    num === semester.number
                       ? 'bg-red-600 text-white shadow-xs'
                       : 'bg-white/5 hover:bg-white/10 text-neutral-300'
                   }`}
                 >
-                  0{s.number} - {s.shortName}
+                  0{num} - Sem {num}
                 </Link>
-              ))}
+              ))
+            ) : (
+              <span className="px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-red-600 text-white shadow-xs">
+                01 - Sem 1 (Common)
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -161,7 +234,9 @@ export const SemesterPage = () => {
               Course Subjects ({subjects.length})
             </h2>
           </div>
-          <span className="text-xs font-mono text-neutral-500">BTEUP Syllabus 2026</span>
+          <span className="text-xs font-mono text-neutral-500">
+            {isCommonSemester ? 'BTEUP Common First Year • 2026' : 'BTEUP Syllabus 2026'}
+          </span>
         </div>
 
         {hasSubjects ? (
@@ -173,7 +248,7 @@ export const SemesterPage = () => {
               return (
                 <Link
                   key={subject.id}
-                  to={`/subject/${subject.id}`}
+                  to={`/subject/${subject.id}?branch=${branch.id}`}
                   className="group relative rounded-2xl border border-white/10 bg-[#171717] hover:border-red-500/70 hover:bg-[#1c1c1c] p-6 flex flex-col justify-between overflow-hidden shadow-xs hover:shadow-[0_14px_35px_-8px_rgba(230,57,70,0.22)]"
                   style={{
                     transition: 'transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease',

@@ -20,10 +20,26 @@ export function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<DashboardPage />} />
             <Route path="semesters" element={<SemesterSelectionPage />} />
+            <Route path="branch/:branchId" element={<SemesterSelectionPage />} />
+            <Route path=":branchId/semesters" element={<SemesterSelectionPage />} />
+
+            {/* Direct branch-wise and common semester routes */}
             <Route path="semester/:semesterId" element={<SemesterPage />} />
+            <Route path=":branchId/semester-1" element={<SemesterPage fixedSemesterId="1" />} />
+            <Route path=":branchId/semester-:semesterNum" element={<SemesterPage />} />
+            <Route path=":branchId/semester/:semesterId" element={<SemesterPage />} />
+            <Route path="branch/:branchId/semester/:semesterId" element={<SemesterPage />} />
+
+            {/* Subject routes (global and branch-contextual) */}
             <Route path="subject/:subjectId" element={<SubjectPage />} />
+            <Route path=":branchId/subject/:subjectId" element={<SubjectPage />} />
+            <Route path="branch/:branchId/subject/:subjectId" element={<SubjectPage />} />
+
+            {/* Chapter study routes */}
             <Route path="chapter/:chapterId" element={<ChapterPage />} />
             <Route path="chapter/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path=":branchId/chapter/:chapterId" element={<ChapterPage />} />
+            <Route path=":branchId/chapter/:subjectId/:chapterId" element={<ChapterPage />} />
 
             {/* Catch-all 404 Route */}
             <Route path="*" element={<NotFoundPage />} />
