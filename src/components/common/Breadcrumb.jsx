@@ -6,11 +6,11 @@ export const Breadcrumb = ({ items = [], className = '' }) => {
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`flex items-center flex-wrap gap-1.5 text-xs sm:text-sm text-neutral-400 ${className}`}
+      className={`flex items-center flex-wrap gap-1.5 text-xs sm:text-sm text-text-muted ${className}`}
     >
       <Link
         to="/"
-        className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-red-400 transition-colors py-1"
+        className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors py-1"
         title="Home"
       >
         <Home className="w-3.5 h-3.5" />
@@ -21,10 +21,10 @@ export const Breadcrumb = ({ items = [], className = '' }) => {
         const isLast = index === items.length - 1;
         return (
           <React.Fragment key={index}>
-            <ChevronRight className="w-3.5 h-3.5 text-neutral-600 shrink-0" aria-hidden="true" />
+            <ChevronRight className="w-3.5 h-3.5 text-text-muted/60 shrink-0" aria-hidden="true" />
             {isLast || !item.to ? (
               <span
-                className="text-white font-semibold truncate max-w-[200px] sm:max-w-xs"
+                className="text-text-primary font-bold truncate max-w-[200px] sm:max-w-xs"
                 aria-current={isLast ? 'page' : undefined}
               >
                 {item.label}
@@ -32,7 +32,7 @@ export const Breadcrumb = ({ items = [], className = '' }) => {
             ) : (
               <Link
                 to={item.to}
-                className="text-neutral-400 hover:text-red-400 transition-colors truncate max-w-[150px] sm:max-w-xs py-1"
+                className="text-text-secondary hover:text-accent transition-colors truncate max-w-[150px] sm:max-w-xs py-1"
               >
                 {item.label}
               </Link>

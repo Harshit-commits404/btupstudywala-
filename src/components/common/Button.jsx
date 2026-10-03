@@ -23,19 +23,19 @@ export const Button = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white shadow-md shadow-red-700/30 focus:ring-red-500 border border-red-500/40 hover:-translate-y-0.5',
+      'bg-gradient-to-r from-red-700 via-red-600 to-red-600 dark:from-red-600 dark:to-red-700 hover:from-red-600 hover:to-red-500 text-white shadow-md shadow-red-700/20 focus:ring-accent border border-red-600/40 hover:-translate-y-0.5',
     secondary:
-      'bg-[#171717] hover:bg-[#222222] text-neutral-200 border border-white/10 hover:border-red-500/40 focus:ring-red-500 hover:-translate-y-0.5',
+      'bg-surface hover:bg-secondary text-text-primary border border-border hover:border-border-hover focus:ring-accent hover:-translate-y-0.5 shadow-xs',
     glass:
-      'bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-red-500/40 focus:ring-red-500',
+      'bg-surface/80 hover:bg-secondary text-text-primary border border-border hover:border-border-hover focus:ring-accent shadow-xs',
     outline:
-      'border border-white/15 hover:border-red-500/60 text-neutral-300 hover:text-white bg-transparent focus:ring-red-500',
+      'border border-border hover:border-border-hover text-text-primary hover:text-accent bg-transparent focus:ring-accent',
     ghost:
-      'text-neutral-400 hover:text-white hover:bg-white/5 focus:ring-red-500',
+      'text-text-secondary hover:text-text-primary hover:bg-secondary focus:ring-accent',
     emerald:
       'bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/25 focus:ring-emerald-500 border border-emerald-400/30',
     danger:
-      'bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30 focus:ring-red-500',
+      'bg-red-600/15 hover:bg-red-600/25 text-accent border border-red-600/30 focus:ring-accent',
   };
 
   return (

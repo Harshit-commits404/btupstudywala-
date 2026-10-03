@@ -19,10 +19,13 @@ export const ThemeProvider = ({ children }) => {
       console.error(err);
     }
 
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#090d16');
     } else {
       document.documentElement.classList.remove('dark');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#f8fafc');
     }
   }, [theme]);
 

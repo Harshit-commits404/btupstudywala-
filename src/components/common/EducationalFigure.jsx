@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 /**
  * EducationalFigure component for physics chapter notes.
  *
- * Integrates cleanly with the Red + Black theme:
- * - Subtle border, rounded corners, subtle red accent on top
+ * Integrates cleanly with both Light Mode & Dark Mode:
+ * - Subtle border, rounded corners, subtle crimson accent on top
  * - Responsive centering and scaling (no horizontal overflow)
- * - Clear educational caption
- * - Small source / attribution line
+ * - Clear, high-contrast educational caption
+ * - Clean source / attribution line
  * - Supports web-sourced images with lazy loading and error fallback
- * - Supports direct SVG/children diagrams
+ * - Supports direct SVG/children diagrams with clean background
  */
 export const EducationalFigure = ({
   src,
@@ -27,10 +27,10 @@ export const EducationalFigure = ({
 
   return (
     <figure
-      className={`my-8 mx-auto w-full ${maxWidth} rounded-xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#121212] shadow-xs overflow-hidden border-t-2 border-t-red-600/80 transition-colors ${className}`}
+      className={`my-8 mx-auto w-full ${maxWidth} rounded-xl border border-border bg-surface shadow-card-light dark:shadow-card-dark overflow-hidden border-t-2 border-t-accent transition-colors ${className}`}
     >
       {/* Diagram container */}
-      <div className="w-full flex items-center justify-center p-3 sm:p-5 bg-slate-50/70 dark:bg-black/40 overflow-hidden min-h-[140px]">
+      <div className="w-full flex items-center justify-center p-3 sm:p-5 bg-secondary/50 dark:bg-black/40 overflow-hidden min-h-[140px]">
         {children ? (
           <div className="w-full flex items-center justify-center">{children}</div>
         ) : src && !imageFailed ? (
@@ -45,7 +45,7 @@ export const EducationalFigure = ({
         ) : fallback ? (
           <div className="w-full flex items-center justify-center">{fallback}</div>
         ) : (
-          <div className="py-8 text-center text-xs text-slate-400 dark:text-slate-500 font-mono">
+          <div className="py-8 text-center text-xs text-text-muted font-mono">
             [Educational Visual Diagram]
           </div>
         )}
@@ -53,31 +53,31 @@ export const EducationalFigure = ({
 
       {/* Caption & Source Footer */}
       {(caption || source) && (
-        <figcaption className="p-3 sm:px-4 sm:py-2.5 border-t border-slate-100 dark:border-slate-800/80 bg-white dark:bg-[#121212] select-text">
+        <figcaption className="p-3 sm:px-4 sm:py-2.5 border-t border-border bg-surface select-text">
           {caption && (
-            <p className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 text-center leading-snug">
+            <p className="text-xs sm:text-sm font-medium text-text-primary text-center leading-snug">
               {caption}
             </p>
           )}
           {source && (
-            <div className="mt-1 text-[11px] text-slate-400 dark:text-slate-500 text-center flex flex-wrap items-center justify-center gap-1.5">
+            <div className="mt-1 text-[11px] text-text-muted text-center flex flex-wrap items-center justify-center gap-1.5">
               <span>Source:</span>
               {sourceUrl ? (
                 <a
                   href={sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-0.5"
+                  className="text-accent hover:underline inline-flex items-center gap-0.5 font-medium"
                 >
                   {source}
                 </a>
               ) : (
-                <span className="text-slate-600 dark:text-slate-400 font-medium">{source}</span>
+                <span className="text-text-secondary font-medium">{source}</span>
               )}
               {license && (
                 <>
-                  <span className="text-slate-300 dark:text-slate-700">•</span>
-                  <span className="text-slate-500 dark:text-slate-400">{license}</span>
+                  <span className="text-border">•</span>
+                  <span className="text-text-muted">{license}</span>
                 </>
               )}
             </div>
