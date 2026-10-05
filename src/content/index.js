@@ -56,6 +56,11 @@ import CnUnit3Content from './cn/CnUnit3Content';
 import CnUnit4Content from './cn/CnUnit4Content';
 import CnUnit5Content from './cn/CnUnit5Content';
 
+import MtUnit1Content from './multimedia-technologies/MtUnit1Content';
+import MtUnit2Content from './multimedia-technologies/MtUnit2Content';
+import MtUnit3Content from './multimedia-technologies/MtUnit3Content';
+import MtUnit4Content from './multimedia-technologies/MtUnit4Content';
+
 
 // Registry of all study content mapped by subjectId and chapterId
 export const contentRegistry = {

@@ -1615,6 +1615,78 @@ export const chaptersData = {
       ]
     }
   ]
+,
+
+  // 5. MULTIMEDIA TECHNOLOGIES (Semester 5)
+  'multimedia-technologies': [
+    {
+      id: 'unit-1',
+      number: '01',
+      title: 'Unit 1: Introduction to Multimedia',
+      duration: '10 Periods',
+      subjectId: 'multimedia-technologies',
+      subjectName: 'Multimedia Technologies',
+      semesterId: 5,
+      description: 'Multimedia Foundation and Concepts, Multimedia Hardware, Multimedia Software, Multimedia Operating Systems, aur Multimedia Communication System.',
+      path: '/chapter/multimedia-technologies/unit-1',
+      sections: [
+        { id: 'multimedia-foundation', title: '1. Foundation & Concepts of Multimedia' },
+        { id: 'multimedia-hardware', title: '2. Multimedia Hardware Systems' },
+        { id: 'multimedia-software', title: '3. Multimedia Software & Production' },
+        { id: 'multimedia-os', title: '4. Multimedia Operating Systems' },
+        { id: 'multimedia-communication', title: '5. Multimedia Communication System' },
+      ],
+    },
+    {
+      id: 'unit-2',
+      number: '02',
+      title: 'Unit 2: Basic Compression Techniques',
+      duration: '12 Periods',
+      subjectId: 'multimedia-technologies',
+      subjectName: 'Multimedia Technologies',
+      semesterId: 5,
+      description: 'Video and Audio Data Compression, Lossy/Lossless, Huffman, RLE, JPEG, MPEG, MP3, MP4, LZMA, FLAC, ALAC, ITU G.722, H.261, H.265.',
+      path: '/chapter/multimedia-technologies/unit-2',
+      sections: [
+        { id: 'compression-intro', title: '1. Compression Techniques Intro' },
+        { id: 'lossless-methods', title: '2. Lossless Methods (Huffman, RLE, LZMA)' },
+        { id: 'image-video', title: '3. Image & Video Formats (JPEG, MPEG, H.26x)' },
+        { id: 'audio-formats', title: '4. Audio Formats (MP3, FLAC, ALAC)' },
+      ],
+    },
+    {
+      id: 'unit-3',
+      number: '03',
+      title: 'Unit 3: Content Development and Distribution',
+      duration: '10 Periods',
+      subjectId: 'multimedia-technologies',
+      subjectName: 'Multimedia Technologies',
+      semesterId: 5,
+      description: 'Desktop Publishing, CorelDRAW, Photoshop, PageMaker, Multimedia Animation, Special Effects, 2D/3D Animation, Flash.',
+      path: '/chapter/multimedia-technologies/unit-3',
+      sections: [
+        { id: 'dtp-tools', title: '1. Desktop Publishing Tools' },
+        { id: 'multimedia-animation', title: '2. Multimedia Animation & Effects' },
+        { id: '2d-3d-flash', title: '3. 2D/3D Animation & Flash' },
+      ],
+    },
+    {
+      id: 'unit-4',
+      number: '04',
+      title: 'Unit 4: Introduction to Digital Imaging',
+      duration: '10 Periods',
+      subjectId: 'multimedia-technologies',
+      subjectName: 'Multimedia Technologies',
+      semesterId: 5,
+      description: 'Basics of Graphic Design, Use of Digital Technology, Definition of Digital Images, Digital Imaging in Multimedia.',
+      path: '/chapter/multimedia-technologies/unit-4',
+      sections: [
+        { id: 'graphic-design', title: '1. Basics of Graphic Design' },
+        { id: 'digital-images', title: '2. Digital Images & Technology' },
+        { id: 'imaging-in-multimedia', title: '3. Digital Imaging in Multimedia' },
+      ],
+    },
+  ]
 };
 
 /**
