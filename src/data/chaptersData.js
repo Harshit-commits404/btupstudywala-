@@ -1614,8 +1614,96 @@ export const chaptersData = {
         }
       ]
     }
-  ]
-,
+  ],
+
+  // 5. INFORMATION SECURITY (Semester 5)
+  'information-security': [
+    {
+      id: 'unit-1',
+      number: '01',
+      title: 'Unit 1: Introduction to Information Security',
+      duration: '8 Periods',
+      subjectId: 'information-security',
+      subjectName: 'Information Security',
+      semesterId: 5,
+      description: 'Introduction to Information Security, PAIN aspects, OS Security Features, Authentication, Logs, Audit, File System Protection.',
+      path: '/chapter/information-security/unit-1',
+      sections: [
+        { id: 'info-sec-intro', title: '1. Introduction to InfoSec' },
+        { id: 'pain-aspects', title: '2. PAIN Aspects' },
+        { id: 'os-security', title: '3. OS Security Features' },
+        { id: 'auth-logs', title: '4. Authentication & Logs' },
+        { id: 'audit-file-protection', title: '5. Audit & File Protection' },
+      ],
+    },
+    {
+      id: 'unit-2',
+      number: '02',
+      title: 'Unit 2: Networking Security',
+      duration: '10 Periods',
+      subjectId: 'information-security',
+      subjectName: 'Information Security',
+      semesterId: 5,
+      description: 'Security weaknesses in networking protocols and devices, solutions like IPSec, HTTPS, VLAN, VPN, and Ingress Filtering.',
+      path: '/chapter/information-security/unit-2',
+      sections: [
+        { id: 'protocol-weaknesses', title: '1. Protocol Weaknesses' },
+        { id: 'device-weaknesses', title: '2. Device Weaknesses' },
+        { id: 'protocol-solutions', title: '3. Protocol Security Solutions' },
+        { id: 'device-solutions', title: '4. Device Security Solutions' },
+      ],
+    },
+    {
+      id: 'unit-3',
+      number: '03',
+      title: 'Unit 3: Cryptography and Secure Software',
+      duration: '8 Periods',
+      subjectId: 'information-security',
+      subjectName: 'Information Security',
+      semesterId: 5,
+      description: 'Basics of Cryptography, PKI, and Security considerations while developing software.',
+      path: '/chapter/information-security/unit-3',
+      sections: [
+        { id: 'crypto-basics', title: '1. Basics of Cryptography' },
+        { id: 'pki', title: '2. Public Key Infrastructure (PKI)' },
+        { id: 'secure-software', title: '3. Secure Software Development' },
+      ],
+    },
+    {
+      id: 'unit-4',
+      number: '04',
+      title: 'Unit 4: Network Security Products',
+      duration: '8 Periods',
+      subjectId: 'information-security',
+      subjectName: 'Information Security',
+      semesterId: 5,
+      description: 'Firewall, IDS/IPS, VPN Concentrator, Content Screening Gateways.',
+      path: '/chapter/information-security/unit-4',
+      sections: [
+        { id: 'firewall', title: '1. Firewall' },
+        { id: 'ids-ips', title: '2. IDS / IPS' },
+        { id: 'vpn-concentrator', title: '3. VPN Concentrator' },
+        { id: 'content-screening', title: '4. Content Screening Gateways' },
+      ],
+    },
+    {
+      id: 'unit-5',
+      number: '05',
+      title: 'Unit 5: Security Standards, Audit and Continuity',
+      duration: '8 Periods',
+      subjectId: 'information-security',
+      subjectName: 'Information Security',
+      semesterId: 5,
+      description: 'Security Standards, ISO 27001, Indian IT Act, IPR Laws, Security Audit Procedures, Disaster Recovery, BCP.',
+      path: '/chapter/information-security/unit-5',
+      sections: [
+        { id: 'security-standards', title: '1. Security Standards & ISO 27001' },
+        { id: 'laws', title: '2. Indian IT Act & IPR Laws' },
+        { id: 'audit-policies', title: '3. Audit Procedures & Policies' },
+        { id: 'dr-bcp', title: '4. Disaster Recovery & BCP' },
+      ],
+    },
+  ],
 
   // 5. MULTIMEDIA TECHNOLOGIES (Semester 5)
   'multimedia-technologies': [
@@ -1699,26 +1787,111 @@ export const getChaptersBySubject = (subjectId) => {
 };
 
 /**
- * Get a specific chapter by subject ID and chapter ID, or by chapter ID alone.
- * @param {string} subjectId
- * @param {string} chapterId
- * @returns {Object|null}
+ * Get a specific chapter safely scoped by subject ID and chapter ID.
+ * Subject-scoped lookup guarantees that chapters in one subject NEVER collide
+ * with chapters in another subject even if they share IDs or topic names.
+ *
+ * Supports:
+ *   getChapter({ semesterId, subjectId, chapterId })
+ *   getChapter(subjectId, chapterId, semesterId)
+ *
+ * @param {string|Object} subjectOrOptions - Subject ID string or options object
+ * @param {string} [chapterIdParam] - Chapter ID or section slug
+ * @param {number|string} [semesterIdParam] - Optional semester ID
+ * @returns {Object|null} Matching chapter metadata or null
  */
-export const getChapter = (subjectId, chapterId) => {
-  if (subjectId && chapterId && chaptersData[subjectId]) {
-    const found = chaptersData[subjectId].find((ch) => ch.id === chapterId);
-    if (found) return found;
+export const getChapter = (subjectOrOptions, chapterIdParam, semesterIdParam) => {
+  let semesterId;
+  let subjectId;
+  let chapterId;
+
+  if (typeof subjectOrOptions === 'object' && subjectOrOptions !== null) {
+    semesterId = subjectOrOptions.semesterId || subjectOrOptions.semesterNum;
+    subjectId = subjectOrOptions.subjectId;
+    chapterId = subjectOrOptions.chapterId || subjectOrOptions.chapterSlug || subjectOrOptions.id;
+  } else {
+    subjectId = subjectOrOptions;
+    chapterId = chapterIdParam;
+    semesterId = semesterIdParam;
   }
 
+  if (typeof subjectId === 'string') subjectId = subjectId.trim();
+  if (typeof chapterId === 'string') chapterId = chapterId.trim();
+  if (semesterId) semesterId = parseInt(semesterId, 10);
+
+  // 1. PRIMARY: Strictly subject-scoped lookup
+  if (subjectId && chaptersData[subjectId]) {
+    const list = chaptersData[subjectId];
+
+    // a. Direct chapter ID match (e.g. 'unit-1', 'units-and-dimensions')
+    let found = list.find((ch) => ch.id === chapterId);
+    if (found) return found;
+
+    // b. Match by number (e.g. '01', '1') or 'unit-N'
+    if (chapterId) {
+      const padded = String(chapterId).padStart(2, '0');
+      const numMatch = list.find(
+        (ch) => ch.number === chapterId || ch.number === padded || ch.id === `unit-${parseInt(chapterId, 10)}`
+      );
+      if (numMatch) return numMatch;
+    }
+
+    // c. Match by section / sub-topic ID within the chapters of THIS subject
+    // (e.g. 'multimedia-hardware', 'multimedia-software', 'multimedia-os', 'multimedia-communication')
+    if (chapterId) {
+      const sectionMatch = list.find((ch) =>
+        ch.sections?.some(
+          (sec) => sec.id === chapterId || sec.id.toLowerCase() === chapterId.toLowerCase()
+        )
+      );
+      if (sectionMatch) return sectionMatch;
+    }
+
+    // d. Match by chapter title (case-insensitive substring)
+    if (chapterId) {
+      const lower = chapterId.toLowerCase();
+      const titleMatch = list.find((ch) => ch.title.toLowerCase().includes(lower));
+      if (titleMatch) return titleMatch;
+    }
+
+    // e. If no chapterId was specified, return the first unit of THIS subject
+    if (!chapterId) {
+      return list[0] || null;
+    }
+
+    // When a valid subject was queried, NEVER cross boundaries into another subject!
+    return null;
+  }
+
+  // 2. UNQUALIFIED / GLOBAL LOOKUP: Only when subjectId was NOT provided (legacy routes)
   const targetId = chapterId || subjectId;
-  for (const list of Object.values(chaptersData)) {
-    const found = list.find((ch) => ch.id === targetId || ch.number === targetId);
+  if (!targetId) return null;
+
+  let candidateSubjects = Object.keys(chaptersData);
+  if (semesterId) {
+    candidateSubjects = candidateSubjects.filter((sId) => {
+      const first = chaptersData[sId][0];
+      return first && first.semesterId === semesterId;
+    });
+  }
+
+  // Look for exact chapter ID in candidate subjects
+  for (const sId of candidateSubjects) {
+    const list = chaptersData[sId];
+    const found = list.find((ch) => ch.id === targetId);
     if (found) return found;
   }
 
-  // Fallback for units-and-dimensions / ch-1
-  if (targetId === 'units-and-dimensions' || targetId === 'ch-1' || targetId === '1') {
-    return chaptersData['applied-physics-1'][0];
+  // Look for section ID in candidate subjects
+  for (const sId of candidateSubjects) {
+    const list = chaptersData[sId];
+    const found = list.find((ch) => ch.sections?.some((sec) => sec.id === targetId));
+    if (found) return found;
+  }
+
+  // Legacy fallback strictly for Physics Chapter 1 legacy URLs:
+  if (targetId === 'units-and-dimensions' || targetId === 'ch-1') {
+    return chaptersData['applied-physics-1']?.[0] || null;
   }
 
   return null;

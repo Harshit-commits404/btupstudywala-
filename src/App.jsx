@@ -35,11 +35,25 @@ export function App() {
             <Route path=":branchId/subject/:subjectId" element={<SubjectPage />} />
             <Route path="branch/:branchId/subject/:subjectId" element={<SubjectPage />} />
 
-            {/* Chapter study routes */}
+            {/* Chapter study routes (global, branch-scoped, semester-scoped, and topic-scoped) */}
             <Route path="chapter/:chapterId" element={<ChapterPage />} />
             <Route path="chapter/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path="chapter/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
             <Route path=":branchId/chapter/:chapterId" element={<ChapterPage />} />
             <Route path=":branchId/chapter/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path=":branchId/chapter/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
+            <Route path="branch/:branchId/chapter/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path="branch/:branchId/chapter/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
+
+            {/* Semester-scoped and topic-scoped routes */}
+            <Route path="semester-:semesterNum/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path="semester-:semesterNum/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
+            <Route path="semester/:semesterId/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path="semester/:semesterId/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
+            <Route path=":branchId/semester-:semesterNum/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path=":branchId/semester-:semesterNum/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
+            <Route path=":branchId/semester/:semesterId/:subjectId/:chapterId" element={<ChapterPage />} />
+            <Route path=":branchId/semester/:semesterId/:subjectId/:chapterId/:sectionId" element={<ChapterPage />} />
 
             {/* Catch-all 404 Route */}
             <Route path="*" element={<NotFoundPage />} />

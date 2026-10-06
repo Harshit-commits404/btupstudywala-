@@ -208,12 +208,13 @@ export const SubjectPage = () => {
                       {ch.sections && ch.sections.length > 0 && (
                         <div className="pt-2 flex flex-wrap gap-1.5">
                           {ch.sections.slice(0, 4).map((sec) => (
-                            <span
+                            <Link
                               key={sec.id}
-                              className="text-[11px] font-sans px-2.5 py-0.5 rounded-md bg-secondary text-text-secondary border border-border"
+                              to={`${baseTarget}#${sec.id}${queryBranch ? `?branch=${branch.id}` : ''}`}
+                              className="text-[11px] font-sans px-2.5 py-0.5 rounded-md bg-secondary hover:bg-accent-soft hover:text-accent text-text-secondary border border-border transition-colors cursor-pointer"
                             >
                               {sec.title}
-                            </span>
+                            </Link>
                           ))}
                           {ch.sections.length > 4 && (
                             <span className="text-[11px] font-mono text-text-muted px-1 py-0.5">

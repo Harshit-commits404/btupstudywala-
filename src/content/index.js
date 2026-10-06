@@ -61,6 +61,13 @@ import MtUnit2Content from './multimedia-technologies/MtUnit2Content';
 import MtUnit3Content from './multimedia-technologies/MtUnit3Content';
 import MtUnit4Content from './multimedia-technologies/MtUnit4Content';
 
+import IsUnit1Content from './information-security/IsUnit1Content';
+import IsUnit2Content from './information-security/IsUnit2Content';
+import IsUnit3Content from './information-security/IsUnit3Content';
+import IsUnit4Content from './information-security/IsUnit4Content';
+import IsUnit5Content from './information-security/IsUnit5Content';
+
+import { chaptersData } from '../data/chaptersData';
 
 // Registry of all study content mapped by subjectId and chapterId
 export const contentRegistry = {
@@ -148,21 +155,81 @@ export const contentRegistry = {
     'unit-4': CnUnit4Content,
     'unit-5': CnUnit5Content,
   },
+
+  // Information Security (Semester 5)
+  'information-security': {
+    'unit-1': IsUnit1Content,
+    'unit-2': IsUnit2Content,
+    'unit-3': IsUnit3Content,
+    'unit-4': IsUnit4Content,
+    'unit-5': IsUnit5Content,
+  },
+
+  // Multimedia Technologies (Semester 5)
+  'multimedia-technologies': {
+    'unit-1': MtUnit1Content,
+    'unit-2': MtUnit2Content,
+    'unit-3': MtUnit3Content,
+    'unit-4': MtUnit4Content,
+    // Topic & section ID direct mappings to ensure unit resolution
+    'multimedia-foundation': MtUnit1Content,
+    'multimedia-hardware': MtUnit1Content,
+    'multimedia-software': MtUnit1Content,
+    'multimedia-os': MtUnit1Content,
+    'multimedia-communication': MtUnit1Content,
+    'compression-intro': MtUnit2Content,
+    'lossless-methods': MtUnit2Content,
+    'image-video': MtUnit2Content,
+    'audio-formats': MtUnit2Content,
+    'dtp-tools': MtUnit3Content,
+    'multimedia-animation': MtUnit3Content,
+    '2d-3d-flash': MtUnit3Content,
+    'graphic-design': MtUnit4Content,
+    'digital-images': MtUnit4Content,
+    'imaging-in-multimedia': MtUnit4Content,
+  },
 };
 
 /**
- * Helper to get content component by subjectId and chapterId.
- * Falls back to AppliedPhysicsCh1Content if not found to ensure graceful rendering.
+ * Helper to get content component strictly scoped by subjectId and chapterId.
+ * ALWAYS scopes lookup by subjectId so one subject never leaks into another.
  */
 export function getChapterContent(subjectId, chapterId) {
-  if (contentRegistry[subjectId] && contentRegistry[subjectId][chapterId]) {
-    return contentRegistry[subjectId][chapterId];
+  // 1. Direct subject-scoped lookup
+  if (subjectId && contentRegistry[subjectId]) {
+    const subjectContent = contentRegistry[subjectId];
+
+    if (chapterId && subjectContent[chapterId]) {
+      return subjectContent[chapterId];
+    }
+
+    // Try finding parent unit via chaptersData section mapping
+    const subjectChapters = chaptersData[subjectId];
+    if (subjectChapters && chapterId) {
+      const parentUnit = subjectChapters.find((ch) =>
+        ch.sections?.some(
+          (s) => s.id === chapterId || s.id.toLowerCase() === chapterId.toLowerCase()
+        )
+      );
+      if (parentUnit && subjectContent[parentUnit.id]) {
+        return subjectContent[parentUnit.id];
+      }
+    }
+
+    // Default to the first unit of THIS specific subject if available
+    const firstKey = Object.keys(subjectContent)[0];
+    if (firstKey) {
+      return subjectContent[firstKey];
+    }
   }
-  // If only chapterId matched directly (e.g. legacy /chapter/ch-1 URL)
-  if (chapterId === 'units-and-dimensions' || chapterId === 'ch-1') {
+
+  // 2. Legacy fallback ONLY if no subjectId was provided AND chapterId matches physics chapter 1
+  if (!subjectId && (chapterId === 'units-and-dimensions' || chapterId === 'ch-1')) {
     return AppliedPhysicsCh1Content;
   }
-  return AppliedPhysicsCh1Content;
+
+  // 3. Fallback: null if content is not available for this subject (NEVER return Physics for other subjects!)
+  return null;
 }
 
 export {
@@ -215,4 +282,13 @@ export {
   CnUnit3Content,
   CnUnit4Content,
   CnUnit5Content,
+  IsUnit1Content,
+  IsUnit2Content,
+  IsUnit3Content,
+  IsUnit4Content,
+  IsUnit5Content,
+  MtUnit1Content,
+  MtUnit2Content,
+  MtUnit3Content,
+  MtUnit4Content,
 };

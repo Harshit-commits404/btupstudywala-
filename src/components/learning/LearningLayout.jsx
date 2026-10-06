@@ -19,11 +19,24 @@ export const LearningLayout = ({
   sections = [],
   children,
   onBackToSubject,
+  initialSection = null,
 }) => {
-  const [activeSection, setActiveSection] = useState(sections[0]?.id || '');
+  const [activeSection, setActiveSection] = useState(initialSection || sections[0]?.id || '');
   const [fontSize, setFontSize] = useState('base'); // sm, base, lg
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Handle initial section or URL hash scrolling
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    const target = initialSection || hash;
+    if (target) {
+      const timer = setTimeout(() => {
+        scrollToSection(target);
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [initialSection]);
 
   // Track scroll progress and active section
   useEffect(() => {
