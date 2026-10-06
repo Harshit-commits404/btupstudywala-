@@ -12,16 +12,17 @@ export const ChapterCard = ({
 }) => {
   const targetUrl = to || `/chapter/${chapterId}`;
   const cleanTitle = title.replace(/^Unit\s+\d+:\s*/i, '');
+  const formattedNumber = parseInt(number, 10) < 10 ? `0${parseInt(number, 10)}` : `${parseInt(number, 10)}`;
 
   return (
     <Link
       to={targetUrl}
-      className="group rounded-xl border border-border bg-surface hover:border-accent/40 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-150 shadow-xs hover:-translate-y-0.5"
+      className="premium-card group p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
     >
       <div className="space-y-1">
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-xs font-bold text-accent px-2 py-0.5 rounded bg-accent-soft border border-red-500/20">
-            UNIT {parseInt(number, 10) || number}
+        <div className="flex items-center gap-2.5">
+          <span className="font-mono text-sm font-bold text-accent">
+            {formattedNumber}
           </span>
           {topicCount && (
             <span className="text-xs font-mono text-text-muted">
@@ -37,7 +38,7 @@ export const ChapterCard = ({
 
       <div className="shrink-0 flex items-center gap-1.5 text-xs font-semibold text-accent">
         <span>{actionLabel}</span>
-        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-1" />
+        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1.5" />
       </div>
     </Link>
   );

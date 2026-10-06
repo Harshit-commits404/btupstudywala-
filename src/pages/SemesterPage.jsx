@@ -7,6 +7,20 @@ import { getBranchById } from '../data/branchesData';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
+const subjectSubtitles = {
+  'applied-physics-1': 'Physics fundamentals',
+  'fundamental-electrical-electronics': 'FEEE fundamentals',
+  'introduction-to-it': 'Computing & AI concepts',
+  'mathematics-1': 'Algebra & calculus',
+  'applied-chemistry': 'Engineering chemistry',
+  'communication-skills-english': 'Communication theory & practice',
+  'dbms': 'Relational database systems',
+  'computer-network': 'Networking & protocols',
+  'operating-system': 'Kernel, processes & memory',
+  'information-security': 'Cybersecurity & cryptography',
+  'multimedia-technologies': 'Media compression & authoring',
+};
+
 export const SemesterPage = ({ fixedSemesterId }) => {
   const { semesterId: rawSemesterId, branchId: rawBranchId, semesterNum } = useParams();
   const location = useLocation();
@@ -72,7 +86,7 @@ export const SemesterPage = ({ fixedSemesterId }) => {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 space-y-6 text-text-primary">
         <Breadcrumb items={breadcrumbItems} />
 
-        <div className="rounded-xl border border-border bg-surface p-8 sm:p-12 text-center space-y-4">
+        <div className="rounded-2xl border border-border bg-surface p-8 sm:p-12 text-center space-y-4">
           <span className="text-xs font-mono font-semibold text-text-muted px-2.5 py-1 rounded bg-secondary">
             Coming Soon
           </span>
@@ -100,7 +114,7 @@ export const SemesterPage = ({ fixedSemesterId }) => {
   const hasSubjects = subjects && subjects.length > 0;
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8 text-text-primary">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 text-text-primary">
       
       {/* Breadcrumb */}
       <Breadcrumb items={breadcrumbItems} />
@@ -126,47 +140,48 @@ export const SemesterPage = ({ fixedSemesterId }) => {
         </p>
       </div>
 
-      {/* Subjects Grid */}
+      {/* Subjects Grid (Textbook Style Cards) */}
       {hasSubjects ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {subjects.map((subject) => {
+          {subjects.map((subject, idx) => {
             const chapters = getChaptersBySubject(subject.id);
             const chapterCount = chapters?.length || 0;
+            const formattedIdx = idx < 9 ? `0${idx + 1}` : `${idx + 1}`;
+            const subtitle = subjectSubtitles[subject.id] || 'Core Subject Module';
 
             return (
               <Link
                 key={subject.id}
                 to={`/subject/${subject.id}?branch=${branch.id}`}
-                className="group rounded-xl border border-border bg-surface hover:border-accent/40 p-5 flex flex-col justify-between transition-all duration-150 shadow-xs hover:-translate-y-0.5"
+                className="premium-card group p-5 sm:p-6 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3 text-xs font-mono text-text-muted">
-                    <span>{subject.code || 'BTEUP'}</span>
-                    {chapterCount > 0 ? (
-                      <span className="text-emerald-600 dark:text-emerald-400 font-medium">
-                        {chapterCount} {chapterCount === 1 ? 'Unit' : 'Units'}
-                      </span>
-                    ) : (
-                      <span>Coming Soon</span>
-                    )}
-                  </div>
+                  <span className="font-mono text-xs font-bold text-accent group-hover:scale-105 transition-transform duration-200 block mb-3">
+                    {formattedIdx}
+                  </span>
 
-                  <h3 className="text-base sm:text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors leading-snug">
+                  <h3 className="text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors leading-snug">
                     {subject.name}
                   </h3>
+
+                  <p className="text-xs text-text-secondary mt-1 font-medium">
+                    {subtitle}
+                  </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-border flex items-center justify-between text-xs">
-                  <span className="text-accent font-semibold">Open Subject</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-150 group-hover:translate-x-1" />
+                <div className="mt-6 pt-3 border-t border-border flex items-center justify-between text-xs">
+                  <span className="font-mono text-text-muted">
+                    {chapterCount > 0 ? `${chapterCount} Units` : 'Syllabus Notes'}
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:translate-x-1.5" />
                 </div>
               </Link>
             );
           })}
         </div>
       ) : (
-        <div className="rounded-xl border border-border bg-surface p-8 text-center space-y-3">
-          <BookOpen className="w-6 h-6 text-accent mx-auto" />
+        <div className="rounded-2xl border border-border bg-surface p-8 text-center space-y-3">
+          <BookOpen className="w-8 h-8 text-accent mx-auto" />
           <h3 className="text-base font-bold text-text-primary">
             No subjects added yet
           </h3>

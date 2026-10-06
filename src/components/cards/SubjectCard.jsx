@@ -12,31 +12,30 @@ export const SubjectCard = ({
   description,
   chapterCount,
   status,
+  index = 1,
 }) => {
   const resolvedId = subject?.id || propSubjectId || 'template-preview';
   const resolvedName = subject?.name || propTitle || 'Subject';
-  const semesterId = subject?.semesterId || 1;
+  const formattedIndex = index < 10 ? `0${index}` : `${index}`;
 
   if (isTemplate || (!subject && description)) {
     return (
-      <div className="rounded-xl border border-dashed border-border bg-surface p-5 flex flex-col justify-between shadow-xs">
+      <div className="premium-card p-5 sm:p-6 flex flex-col justify-between border-dashed">
         <div>
-          <div className="flex items-center justify-between mb-3 text-xs font-mono text-text-muted">
-            <span>{subjectCode || 'BTEUP'}</span>
-            <span>{status || 'Preview'}</span>
-          </div>
-
+          <span className="font-mono text-xs font-bold text-text-muted block mb-3">
+            {subjectCode || 'BTEUP'}
+          </span>
           <h3 className="text-base sm:text-lg font-bold font-display text-text-primary">
             {resolvedName}
           </h3>
         </div>
 
-        <div className="mt-5 pt-3 border-t border-border flex items-center justify-between">
+        <div className="mt-6 pt-3 border-t border-border flex items-center justify-between text-xs">
           <Link
             to={`/subject/${resolvedId}`}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
+            className="inline-flex items-center gap-1 font-semibold text-accent"
           >
-            <span>Preview</span>
+            <span>{status || 'Preview'}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -47,27 +46,24 @@ export const SubjectCard = ({
   return (
     <Link
       to={`/subject/${resolvedId}`}
-      className="group rounded-xl border border-border bg-surface hover:border-accent/40 p-5 flex flex-col justify-between transition-all duration-150 shadow-xs hover:-translate-y-0.5"
+      className="premium-card group p-5 sm:p-6 flex flex-col justify-between"
       aria-label={`View ${resolvedName}`}
     >
       <div>
-        <div className="flex items-center justify-between mb-3 text-xs font-mono text-text-muted">
-          <span>Semester 0{semesterId}</span>
-          {chapterCount && (
-            <span className="text-emerald-600 dark:text-emerald-400 font-medium">
-              {chapterCount} Units
-            </span>
-          )}
-        </div>
+        <span className="font-mono text-xs font-bold text-accent group-hover:scale-105 transition-transform duration-200 block mb-3">
+          {formattedIndex}
+        </span>
 
         <h3 className="text-base sm:text-lg font-bold font-display text-text-primary leading-snug group-hover:text-accent transition-colors">
           {resolvedName}
         </h3>
       </div>
 
-      <div className="mt-5 pt-3 border-t border-border flex items-center justify-between text-xs">
-        <span className="text-accent font-semibold">{actionText}</span>
-        <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-150 group-hover:translate-x-1" />
+      <div className="mt-6 pt-3 border-t border-border flex items-center justify-between text-xs">
+        <span className="font-mono text-text-muted">
+          {chapterCount ? `${chapterCount} Units` : actionText}
+        </span>
+        <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:translate-x-1.5" />
       </div>
     </Link>
   );

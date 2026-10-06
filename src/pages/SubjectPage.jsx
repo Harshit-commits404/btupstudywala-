@@ -61,16 +61,16 @@ export const SubjectPage = () => {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8 text-text-primary">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 text-text-primary">
       
-      {/* Breadcrumb */}
+      {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
 
-      {/* Clean Subject Header */}
+      {/* Clean Subject Header Plate */}
       <div className="space-y-2 pb-4 border-b border-border">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono font-semibold text-accent uppercase tracking-wider">
-            SEMESTER {semesterNum}
+            SEMESTER 0{semesterNum}
           </span>
           {isCommonSemester && (
             <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10">
@@ -88,15 +88,15 @@ export const SubjectPage = () => {
         </p>
       </div>
 
-      {/* Units List */}
+      {/* Units List (Elegant, Numbered Anchors, Premium Cards) */}
       {hasChapters ? (
-        <div className="space-y-3 sm:space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           {chapters.map((ch, idx) => {
             const baseTarget = ch.path || `/chapter/${subject.id}/${ch.id}`;
             const targetUrl = queryBranch ? `${baseTarget}?branch=${branch.id}` : baseTarget;
-            const unitNumberDisplay = ch.number ? `UNIT ${parseInt(ch.number, 10)}` : `UNIT ${idx + 1}`;
+            const unitNumberDisplay = ch.number ? (parseInt(ch.number, 10) < 10 ? `0${parseInt(ch.number, 10)}` : `${parseInt(ch.number, 10)}`) : (idx < 9 ? `0${idx + 1}` : `${idx + 1}`);
             
-            // Clean unit title without duplicate "Unit X:" prefix if present
+            // Clean unit title without duplicate "Unit X:" prefix
             const cleanTitle = ch.title.replace(/^Unit\s+\d+:\s*/i, '');
             const topicCount = ch.sections?.length || 0;
 
@@ -104,35 +104,36 @@ export const SubjectPage = () => {
               <Link
                 key={ch.id}
                 to={targetUrl}
-                className="group rounded-xl border border-border bg-surface hover:border-accent/40 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-150 shadow-xs hover:-translate-y-0.5"
+                className="premium-card group p-5 sm:p-6 flex flex-col justify-between"
               >
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2.5">
-                    <span className="font-mono text-xs font-bold text-accent px-2 py-0.5 rounded bg-accent-soft border border-red-500/20">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-mono text-xl sm:text-2xl font-extrabold text-accent group-hover:scale-105 transition-transform duration-200">
                       {unitNumberDisplay}
                     </span>
+
                     {topicCount > 0 && (
-                      <span className="text-xs font-mono text-text-muted">
-                        {topicCount} {topicCount === 1 ? 'topic' : 'topics'}
+                      <span className="text-[11px] font-mono text-text-muted px-2 py-0.5 rounded bg-secondary">
+                        {topicCount} topics
                       </span>
                     )}
                   </div>
 
-                  <h2 className="text-base sm:text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors">
+                  <h2 className="text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors leading-snug">
                     {cleanTitle}
                   </h2>
                 </div>
 
-                <div className="shrink-0 flex items-center gap-1.5 text-xs font-semibold text-accent">
-                  <span>Open Chapter</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-1" />
+                <div className="mt-6 pt-3 border-t border-border flex items-center justify-between text-xs">
+                  <span className="text-accent font-semibold">Open Unit</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:translate-x-1.5" />
                 </div>
               </Link>
             );
           })}
         </div>
       ) : (
-        <div className="rounded-xl border border-border bg-surface p-8 sm:p-12 text-center space-y-4">
+        <div className="rounded-2xl border border-border bg-surface p-8 sm:p-12 text-center space-y-4">
           <BookOpen className="w-8 h-8 text-accent mx-auto" />
           <h2 className="text-lg font-bold font-display text-text-primary">
             Content Coming Soon

@@ -239,15 +239,21 @@ export const LearningLayout = ({
 
           {/* Main Reading Document Canvas */}
           <main
-            className={`w-full max-w-[800px] mx-auto lg:mx-0 reading-content ${fontSizeClasses[fontSize]}`}
+            className={`w-full max-w-[820px] mx-auto lg:mx-0 reading-content ${fontSizeClasses[fontSize]}`}
           >
-            <div className="bg-surface rounded-xl p-6 sm:p-10 border border-border shadow-xs mb-8">
+            <div className="bg-surface rounded-2xl p-6 sm:p-10 border border-border shadow-card mb-8">
               {/* Document Header Plate */}
-              <div className="pb-6 mb-8 border-b border-border">
-                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider block mb-1">
-                  {subjectName} • UNIT {chapterNumber}
-                </span>
-                <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-text-primary tracking-tight">
+              <div className="pb-6 mb-8 border-b border-border space-y-1.5">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
+                    {subjectName}
+                  </span>
+                  <span className="text-text-muted text-xs">•</span>
+                  <span className="text-xs font-mono text-text-muted uppercase">
+                    Unit {chapterNumber}
+                  </span>
+                </div>
+                <h1 className="text-2xl sm:text-4xl font-extrabold font-display text-text-primary tracking-tight">
                   {chapterTitle}
                 </h1>
               </div>
