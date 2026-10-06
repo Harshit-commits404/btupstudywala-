@@ -1,60 +1,39 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from '../components/common/Button';
-import { Compass, Home, Layers, ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Home } from 'lucide-react';
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-xl mx-auto px-4 py-16 sm:py-24 text-center text-text-primary">
-      <div className="w-20 h-20 rounded-3xl bg-accent-soft border border-red-500/25 text-accent flex items-center justify-center mx-auto mb-6 shadow-xs">
-        <Compass className="w-10 h-10" />
-      </div>
-
-      <span className="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-red-600/10 text-accent border border-red-600/25 mb-4 inline-block">
-        Error 404 • Page Not Found
+    <div className="max-w-md mx-auto px-4 py-20 text-center text-text-primary space-y-4">
+      <span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-accent-soft text-accent border border-red-500/20 inline-block">
+        404
       </span>
 
-      <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-text-primary mb-3">
-        Lost in the Syllabus?
+      <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-text-primary">
+        Page Not Found
       </h1>
 
-      <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-8">
-        The page you are looking for doesn't exist or has moved. Explore the available semesters or return to the home platform.
+      <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+        The page you are looking for does not exist or has been moved.
       </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        <Button
+      <div className="pt-4 flex items-center justify-center gap-3">
+        <button
           onClick={() => navigate(-1)}
-          variant="secondary"
-          size="md"
-          icon={ArrowLeft}
-          iconPosition="left"
+          className="btn-secondary-dark text-xs !py-2 !px-4 inline-flex items-center gap-1.5"
         >
-          Go Back
-        </Button>
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Go Back</span>
+        </button>
 
-        <Link to="/">
-          <Button
-            variant="primary"
-            size="md"
-            icon={Home}
-            iconPosition="left"
-          >
-            Home Platform
-          </Button>
-        </Link>
-
-        <Link to="/semesters">
-          <Button
-            variant="outline"
-            size="md"
-            icon={Layers}
-            iconPosition="left"
-          >
-            CSE Learning Path
-          </Button>
+        <Link
+          to="/"
+          className="btn-primary-red text-xs !py-2 !px-4 inline-flex items-center gap-1.5"
+        >
+          <Home className="w-3.5 h-3.5" />
+          <span>Home</span>
         </Link>
       </div>
     </div>

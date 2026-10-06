@@ -1,68 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const ChapterCard = ({
   chapterId = 'ch-1',
   number = '01',
-  title = 'Chapter will appear here',
-  description = 'Chapter learning objectives, concept breakdown, and topic explanations will be listed here.',
-  estimatedTime = '6 Periods',
+  title = 'Chapter Title',
+  topicCount,
   to,
-  badge = 'Active Unit',
-  actionLabel = 'Read Unit Notes',
+  actionLabel = 'Open Chapter',
 }) => {
   const targetUrl = to || `/chapter/${chapterId}`;
+  const cleanTitle = title.replace(/^Unit\s+\d+:\s*/i, '');
 
   return (
-    <div
-      className="group rounded-2xl border border-border bg-surface hover:border-border-hover p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-card-light dark:shadow-card-dark hover:shadow-card-hover-light dark:hover:shadow-card-hover-dark transition-all duration-200 hover:-translate-y-1"
+    <Link
+      to={targetUrl}
+      className="group rounded-xl border border-border bg-surface hover:border-accent/40 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-150 shadow-xs hover:-translate-y-0.5"
     >
-      <div className="flex items-start gap-4">
-        {/* Unit number badge */}
-        <div className="w-12 h-12 rounded-xl bg-red-600/10 text-accent border border-red-600/25 flex flex-col items-center justify-center font-mono shrink-0 shadow-xs">
-          <span className="text-[9px] uppercase font-bold text-text-muted leading-none">UNIT</span>
-          <span className="font-extrabold text-sm leading-none mt-0.5">{number}</span>
+      <div className="space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="font-mono text-xs font-bold text-accent px-2 py-0.5 rounded bg-accent-soft border border-red-500/20">
+            UNIT {parseInt(number, 10) || number}
+          </span>
+          {topicCount && (
+            <span className="text-xs font-mono text-text-muted">
+              {topicCount} topics
+            </span>
+          )}
         </div>
 
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h4 className="text-base sm:text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors">
-              {title}
-            </h4>
-            <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-red-600/10 text-accent border border-red-600/25">
-              {badge}
-            </span>
-          </div>
-
-          <p className="text-xs sm:text-sm text-text-secondary max-w-2xl leading-relaxed">
-            {description}
-          </p>
-
-          <div className="flex items-center gap-4 pt-1 text-xs font-mono text-text-muted">
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-accent" />
-              <span>{estimatedTime}</span>
-            </span>
-            <span>•</span>
-            <span className="inline-flex items-center gap-1.5">
-              <FileText className="w-3.5 h-3.5 text-accent" />
-              <span>Complete Study Notes</span>
-            </span>
-          </div>
-        </div>
+        <h4 className="text-base sm:text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors">
+          {cleanTitle}
+        </h4>
       </div>
 
-      <div className="sm:shrink-0 pt-2 sm:pt-0">
-        <Link
-          to={targetUrl}
-          className="btn-primary-red text-xs sm:text-sm w-full sm:w-auto group"
-        >
-          <span>{actionLabel}</span>
-          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-        </Link>
+      <div className="shrink-0 flex items-center gap-1.5 text-xs font-semibold text-accent">
+        <span>{actionLabel}</span>
+        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-1" />
       </div>
-    </div>
+    </Link>
   );
 };
 

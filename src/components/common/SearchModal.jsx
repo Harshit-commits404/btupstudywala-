@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, X, ArrowRight, Clock, AlertCircle } from 'lucide-react';
+import { Search, X, ArrowRight } from 'lucide-react';
 import { semestersData } from '../../data/semestersData';
 
 export const SearchModal = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
-  // Close on Escape key or Ctrl+K
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -27,8 +26,8 @@ export const SearchModal = ({ isOpen, onClose }) => {
   const filteredSemesters = semestersData.filter(
     (sem) =>
       sem.title.toLowerCase().includes(query.toLowerCase()) ||
-      sem.tagline.toLowerCase().includes(query.toLowerCase()) ||
-      sem.cycle.toLowerCase().includes(query.toLowerCase())
+      sem.tagline?.toLowerCase().includes(query.toLowerCase()) ||
+      sem.cycle?.toLowerCase().includes(query.toLowerCase())
   );
 
   const handleSelectSemester = (semester) => {
@@ -43,7 +42,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="search-modal-title"
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-slate-950/70 dark:bg-black/85 backdrop-blur-xs animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/60 backdrop-blur-xs"
     >
       <div
         className="fixed inset-0"
@@ -51,38 +50,32 @@ export const SearchModal = ({ isOpen, onClose }) => {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 w-full max-w-xl rounded-2xl border border-border bg-surface shadow-2xl p-4 sm:p-6 overflow-hidden text-text-primary transition-all duration-200">
+      <div className="relative z-10 w-full max-w-lg rounded-xl border border-border bg-surface shadow-xl p-4 overflow-hidden text-text-primary">
         {/* Search Input Bar */}
-        <div className="relative flex items-center border-b border-border pb-3 mb-4">
-          <Search className="w-5 h-5 text-accent shrink-0 mr-3" />
+        <div className="relative flex items-center border-b border-border pb-3 mb-3">
+          <Search className="w-4 h-4 text-accent shrink-0 mr-2.5" />
           <input
             id="search-modal-title"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search semesters (e.g. 1st Semester, 3rd, Odd)..."
+            placeholder="Search semesters (e.g. 1st Semester, 3rd, 5th)..."
             autoFocus
-            className="w-full bg-transparent text-sm sm:text-base text-text-primary placeholder:text-text-muted focus:outline-none"
+            className="w-full bg-transparent text-sm text-text-primary placeholder:text-text-muted focus:outline-none"
           />
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-secondary transition-colors cursor-pointer"
+            className="p-1 rounded text-text-muted hover:text-text-primary hover:bg-secondary cursor-pointer"
             title="Close (Esc)"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Informational banner */}
-        <div className="flex items-center gap-2 p-2.5 rounded-xl bg-accent-soft border border-red-500/25 text-xs text-accent mb-4">
-          <AlertCircle className="w-4 h-4 shrink-0 text-accent" />
-          <span>Academic Status: Odd semesters (1, 3, 5) are active in CSE stream.</span>
-        </div>
-
         {/* Results List */}
-        <div className="max-h-72 overflow-y-auto space-y-2 pr-1">
+        <div className="max-h-72 overflow-y-auto space-y-1.5 pr-1">
           {filteredSemesters.length === 0 ? (
-            <div className="py-8 text-center text-sm text-text-muted">
+            <div className="py-6 text-center text-xs text-text-muted">
               No matching semesters found for "{query}"
             </div>
           ) : (
@@ -90,48 +83,37 @@ export const SearchModal = ({ isOpen, onClose }) => {
               <div
                 key={sem.id}
                 onClick={() => handleSelectSemester(sem)}
-                className={`p-3 rounded-xl border flex items-center justify-between transition-colors ${
+                className={`p-2.5 rounded-lg border flex items-center justify-between text-xs transition-colors ${
                   sem.isAvailable
-                    ? 'border-border hover:border-border-hover hover:bg-secondary cursor-pointer'
+                    ? 'border-border hover:border-accent/40 hover:bg-secondary cursor-pointer'
                     : 'border-border/50 opacity-50 cursor-not-allowed bg-secondary/30'
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-mono font-bold ${
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className={`font-mono font-bold px-1.5 py-0.5 rounded text-[11px] ${
                       sem.isAvailable
-                        ? 'bg-red-600/10 text-accent border border-red-600/25'
+                        ? 'bg-accent-soft text-accent'
                         : 'bg-secondary text-text-muted'
                     }`}
                   >
                     0{sem.number}
-                  </div>
+                  </span>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-semibold text-text-primary">
-                        {sem.title}
-                      </span>
-                      <span
-                        className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
-                          sem.isAvailable
-                            ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
-                            : 'bg-secondary text-text-muted'
-                        }`}
-                      >
-                        {sem.statusText}
-                      </span>
-                    </div>
-                    <span className="text-xs text-text-secondary">
+                    <span className="font-semibold text-text-primary block">
+                      {sem.title}
+                    </span>
+                    <span className="text-[11px] text-text-muted">
                       {sem.tagline}
                     </span>
                   </div>
                 </div>
 
                 {sem.isAvailable ? (
-                  <ArrowRight className="w-4 h-4 text-accent" />
+                  <ArrowRight className="w-3.5 h-3.5 text-accent" />
                 ) : (
-                  <span className="text-[11px] font-mono text-text-muted flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-accent" /> Even Term
+                  <span className="text-[10px] font-mono text-text-muted">
+                    Coming Soon
                   </span>
                 )}
               </div>
@@ -140,8 +122,8 @@ export const SearchModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Footer shortcuts */}
-        <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-xs text-text-muted font-mono">
-          <span>Tip: Press ESC to close</span>
+        <div className="mt-3 pt-2.5 border-t border-border flex items-center justify-between text-[11px] text-text-muted font-mono">
+          <span>Press ESC to close</span>
           <span>BTEUP Study</span>
         </div>
       </div>

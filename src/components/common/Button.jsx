@@ -13,29 +13,29 @@ export const Button = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none select-none cursor-pointer';
+    'inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none select-none cursor-pointer';
 
   const sizeStyles = {
-    sm: 'text-xs px-3 py-1.5 gap-1.5',
-    md: 'text-sm px-4 py-2.5 gap-2',
-    lg: 'text-base px-6 py-3.5 gap-2.5',
+    sm: 'text-xs px-2.5 py-1.5 gap-1.5',
+    md: 'text-xs sm:text-sm px-3.5 py-2 gap-2',
+    lg: 'text-sm sm:text-base px-5 py-2.5 gap-2.5',
   };
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-red-700 via-red-600 to-red-600 dark:from-red-600 dark:to-red-700 hover:from-red-600 hover:to-red-500 text-white shadow-md shadow-red-700/20 focus:ring-accent border border-red-600/40 hover:-translate-y-0.5',
+      'bg-accent hover:bg-accent-hover text-white border border-accent',
     secondary:
-      'bg-surface hover:bg-secondary text-text-primary border border-border hover:border-border-hover focus:ring-accent hover:-translate-y-0.5 shadow-xs',
+      'bg-surface hover:bg-secondary text-text-primary border border-border',
     glass:
-      'bg-surface/80 hover:bg-secondary text-text-primary border border-border hover:border-border-hover focus:ring-accent shadow-xs',
+      'bg-surface hover:bg-secondary text-text-primary border border-border',
     outline:
-      'border border-border hover:border-border-hover text-text-primary hover:text-accent bg-transparent focus:ring-accent',
+      'border border-border text-text-primary hover:border-accent hover:text-accent bg-transparent',
     ghost:
-      'text-text-secondary hover:text-text-primary hover:bg-secondary focus:ring-accent',
+      'text-text-secondary hover:text-text-primary hover:bg-secondary',
     emerald:
-      'bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/25 focus:ring-emerald-500 border border-emerald-400/30',
+      'bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-600',
     danger:
-      'bg-red-600/15 hover:bg-red-600/25 text-accent border border-red-600/30 focus:ring-accent',
+      'bg-red-600/10 hover:bg-red-600/20 text-accent border border-red-600/20',
   };
 
   return (

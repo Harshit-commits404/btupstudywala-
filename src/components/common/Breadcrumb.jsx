@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 
 export const Breadcrumb = ({ items = [], className = '' }) => {
+  const normalizedItems = items.filter((item) => item.label?.toLowerCase() !== 'home');
+
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`flex items-center flex-wrap gap-1.5 text-xs sm:text-sm text-text-muted ${className}`}
+      className={`flex items-center flex-wrap gap-1.5 text-xs text-text-muted ${className}`}
     >
       <Link
         to="/"
@@ -17,8 +19,8 @@ export const Breadcrumb = ({ items = [], className = '' }) => {
         <span>Home</span>
       </Link>
 
-      {items.map((item, index) => {
-        const isLast = index === items.length - 1;
+      {normalizedItems.map((item, index) => {
+        const isLast = index === normalizedItems.length - 1;
         return (
           <React.Fragment key={index}>
             <ChevronRight className="w-3.5 h-3.5 text-text-muted/60 shrink-0" aria-hidden="true" />

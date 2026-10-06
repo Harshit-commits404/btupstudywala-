@@ -5,7 +5,7 @@ import { getChapter } from '../data/chaptersData';
 import { getChapterContent } from '../content';
 import { getBranchById } from '../data/branchesData';
 import { getSubjectById } from '../data/subjectsData';
-import { AlertCircle, Clock, ArrowLeft } from 'lucide-react';
+import { ArrowLeft, BookOpen } from 'lucide-react';
 
 export const ChapterPage = () => {
   const {
@@ -45,24 +45,20 @@ export const ChapterPage = () => {
   const activeSubjectId = chapter?.subjectId || paramSubjectId;
   const currentSubject = getSubjectById(activeSubjectId);
 
-  // If both chapter and subject are unrecognized, show subject not found
   if (!chapter && !currentSubject) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-16 text-center space-y-4 text-text-primary">
-        <div className="w-16 h-16 rounded-2xl bg-accent-soft text-accent flex items-center justify-center mx-auto border border-red-500/25">
-          <AlertCircle className="w-8 h-8" />
-        </div>
-        <h2 className="text-2xl font-bold font-display text-text-primary">
+      <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-4 text-text-primary">
+        <h2 className="text-xl font-bold font-display text-text-primary">
           Chapter or Subject Not Found
         </h2>
-        <p className="text-sm text-text-secondary max-w-md mx-auto">
-          The requested study unit does not exist in the BTEUP curriculum structure.
+        <p className="text-sm text-text-secondary">
+          The requested study unit does not exist in the curriculum.
         </p>
         <button
           onClick={() => navigate(`/branch/${branch.id}`)}
-          className="btn-primary-red text-sm"
+          className="btn-primary-red text-xs !py-2 !px-4"
         >
-          Back to {branch.code} Learning Path
+          Back to {branch.code} Semesters
         </button>
       </div>
     );
@@ -71,24 +67,23 @@ export const ChapterPage = () => {
   const activeChapterId = chapter?.id || paramChapterId || 'unit-1';
   const semesterNum = chapter?.semesterId || currentSubject?.semesterId || (routeSemesterId ? parseInt(routeSemesterId, 10) : 1);
   const isCommonSemester = semesterNum === 1;
-  const semesterSuffix = semesterNum === 1 ? 'st' : semesterNum === 2 ? 'nd' : semesterNum === 3 ? 'rd' : 'th';
   const subjectName = chapter?.subjectName || currentSubject?.name || 'Subject Notes';
   const chapterTitle = chapter?.title || 'Chapter Notes';
   const chapterNumber = chapter?.number || '01';
-  const duration = chapter?.duration || '8 Periods';
+  const duration = chapter?.duration || '6 Periods';
 
   const semesterBackUrl = isCommonSemester
     ? `/${branch.id}/semester-1`
-    : `/semester/${semesterNum}`;
+    : `/semester/${semesterNum}?branch=${branch.id}`;
 
   const subjectBackUrl = (queryBranch || paramBranchId)
     ? `/subject/${activeSubjectId}?branch=${branch.id}`
     : `/subject/${activeSubjectId}`;
 
   const breadcrumbItems = [
-    { label: 'Branches', to: '/#branches' },
-    { label: `${branch.code} Path`, to: `/branch/${branch.id}` },
-    { label: `${semesterNum}${semesterSuffix} Semester${isCommonSemester ? ' (Common)' : ''}`, to: semesterBackUrl },
+    { label: 'Home', to: '/' },
+    { label: branch.code, to: `/branch/${branch.id}` },
+    { label: `Sem ${semesterNum}${isCommonSemester ? ' (Common)' : ''}`, to: semesterBackUrl },
     { label: subjectName, to: subjectBackUrl },
     { label: chapterTitle },
   ];
@@ -103,12 +98,10 @@ export const ChapterPage = () => {
     navigate(subjectBackUrl);
   };
 
-  // Target section for scrolling if sectionId or sub-topic was passed
   const targetSection =
     paramSectionId ||
     (chapter?.sections?.some((s) => s.id === paramChapterId) ? paramChapterId : null);
 
-  // Get dynamic study content component strictly scoped to activeSubjectId
   const ContentComponent = getChapterContent(activeSubjectId, activeChapterId);
 
   return (
@@ -126,22 +119,20 @@ export const ChapterPage = () => {
         <ContentComponent />
       ) : (
         <div className="py-12 px-4 text-center space-y-4">
-          <div className="w-14 h-14 rounded-2xl bg-accent-soft text-accent flex items-center justify-center mx-auto border border-red-500/25">
-            <Clock className="w-7 h-7" />
-          </div>
-          <h2 className="text-2xl font-bold font-display text-text-primary">
+          <BookOpen className="w-8 h-8 text-accent mx-auto" />
+          <h2 className="text-xl font-bold font-display text-text-primary">
             {chapterTitle} Notes Coming Soon
           </h2>
-          <p className="text-sm text-text-secondary max-w-md mx-auto">
-            The syllabus notes for {subjectName} are currently being prepared for publishing.
+          <p className="text-xs sm:text-sm text-text-secondary max-w-md mx-auto">
+            The study material for this unit is currently being compiled.
           </p>
           <div className="pt-2">
             <button
               onClick={handleBackToSubject}
-              className="btn-primary-red text-sm inline-flex items-center gap-1.5"
+              className="btn-secondary-dark text-xs !py-2 !px-4 inline-flex items-center gap-1.5"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to {subjectName} Index</span>
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to {subjectName}</span>
             </button>
           </div>
         </div>
