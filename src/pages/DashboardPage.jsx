@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Layers } from 'lucide-react';
+import { ArrowRight, BookOpen, Layers, Users, MessageSquare } from 'lucide-react';
 import { branchesData } from '../data/branchesData';
+import { DeveloperModal } from '../components/common/DeveloperModal';
+
+const GOOGLE_FEEDBACK_FORM_URL = "https://forms.gle/as6uMZQ8QxmDpt1q6";
 
 export const DashboardPage = () => {
+  const [isDeveloperModalOpen, setIsDeveloperModalOpen] = useState(false);
+
   return (
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-12 sm:space-y-16 text-text-primary">
       
@@ -145,6 +150,70 @@ export const DashboardPage = () => {
         </Link>
       </section>
 
+      {/* 4. MEET THE DEVELOPERS CARD */}
+      <section 
+        className="premium-card p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <div className="flex items-start gap-4">
+          <div className="w-12 h-12 rounded-xl bg-surface-elevated border border-border flex items-center justify-center shrink-0 overflow-hidden relative transition-colors">
+            <img 
+              src="/images/developer-intro.jpg" 
+              alt="Developers thumbnail" 
+              className="w-full h-full object-cover opacity-70 transition-opacity duration-300" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-surface/80 to-transparent" />
+            <Users className="w-5 h-5 absolute text-text-primary transition-colors" />
+          </div>
+          <div className="space-y-1 mt-0.5">
+            <h2 className="font-display font-bold text-base text-text-primary transition-colors">
+              Meet the Developers
+            </h2>
+            <p className="text-xs text-text-secondary max-w-lg leading-relaxed">
+              Made by two final-year Polytechnic students. Ratne ke liye nahi, samajhne ke liye.
+            </p>
+          </div>
+        </div>
+
+        <button
+          onClick={() => setIsDeveloperModalOpen(true)}
+          className="btn-primary-red text-xs !py-2 !px-4 whitespace-nowrap self-stretch sm:self-auto flex items-center justify-center gap-2"
+        >
+          <span>Meet the Team</span>
+          <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 hover:translate-x-1" />
+        </button>
+      </section>
+
+      {/* 5. FEEDBACK CARD */}
+      <section 
+        className="premium-card p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-surface-elevated border border-border flex items-center justify-center shrink-0 relative transition-colors">
+            <div className="absolute inset-0 bg-gradient-to-tr from-surface/80 to-transparent rounded-xl" />
+            <MessageSquare className="w-4 h-4 text-text-primary transition-colors z-10" />
+          </div>
+          <div className="space-y-0.5">
+            <h2 className="font-display font-bold text-base text-text-primary transition-colors">
+              Share Your Feedback
+            </h2>
+            <p className="text-xs text-text-secondary max-w-md">
+              Help us improve BTEUP Study with your feedback and suggestions.
+            </p>
+          </div>
+        </div>
+
+        <a
+          href={GOOGLE_FEEDBACK_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary-red text-xs !py-2 !px-4 whitespace-nowrap self-stretch sm:self-auto flex items-center justify-center gap-2"
+        >
+          <span>Give Feedback</span>
+          <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 hover:translate-x-1" />
+        </a>
+      </section>
+
+      <DeveloperModal isOpen={isDeveloperModalOpen} onClose={() => setIsDeveloperModalOpen(false)} />
     </div>
   );
 };
