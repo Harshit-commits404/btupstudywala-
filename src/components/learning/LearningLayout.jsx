@@ -78,10 +78,13 @@ export const LearningLayout = ({
   };
 
   return (
-    <div className="min-h-screen pb-24 text-text-primary bg-background relative selection:bg-red-600/20 selection:text-text-primary transition-colors duration-150">
+    <div className="min-h-screen pb-20 text-text-primary bg-background relative selection:bg-teal-500/20 selection:text-teal-900 dark:selection:bg-teal-400/25 dark:selection:text-teal-100 transition-colors duration-200">
       
-      {/* Subtle Reading Scroll Progress Bar */}
-      <div className="fixed top-16 left-0 right-0 h-[2px] bg-secondary z-30 pointer-events-none">
+      {/* Subtle Teal Reading Progress Indicator */}
+      <div 
+        className="fixed top-14 sm:top-16 left-0 right-0 h-[2px] bg-border/40 z-30 pointer-events-none"
+        aria-hidden="true"
+      >
         <div
           className="h-full bg-accent transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
@@ -96,14 +99,14 @@ export const LearningLayout = ({
 
           <div className="flex items-center gap-3 text-text-muted shrink-0 font-mono">
             {duration && (
-              <div className="hidden sm:flex items-center gap-1 text-text-muted">
-                <Clock className="w-3.5 h-3.5" />
+              <div className="hidden sm:flex items-center gap-1.5 text-text-muted">
+                <Clock className="w-3.5 h-3.5 text-accent" />
                 <span>{duration}</span>
               </div>
             )}
 
             {/* Font Size Adjuster */}
-            <div className="flex items-center gap-1 border border-border rounded-lg p-0.5 bg-surface">
+            <div className="flex items-center gap-1 border border-border rounded-md p-0.5 bg-surface">
               <Type className="w-3 h-3 text-text-muted ml-1 mr-0.5" />
               <button
                 type="button"
@@ -141,7 +144,7 @@ export const LearningLayout = ({
 
         {/* Mobile Sticky Index Accordion */}
         {sections.length > 0 && (
-          <div className="lg:hidden mb-6 sticky top-18 z-20 bg-surface/95 backdrop-blur-md border border-border rounded-xl p-3 shadow-xs">
+          <div className="lg:hidden mb-6 sticky top-16 z-20 bg-surface/95 backdrop-blur-md border border-border rounded-lg p-3 shadow-subtle">
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -150,7 +153,7 @@ export const LearningLayout = ({
               <span className="flex items-center gap-2">
                 <List className="w-4 h-4 text-accent" />
                 <span>Contents:</span>
-                <span className="text-accent font-bold truncate max-w-[200px]">
+                <span className="text-accent font-semibold truncate max-w-[180px]">
                   {sections.find((s) => s.id === activeSection)?.title || 'Overview'}
                 </span>
               </span>
@@ -168,10 +171,10 @@ export const LearningLayout = ({
                     key={sec.id}
                     type="button"
                     onClick={() => scrollToSection(sec.id)}
-                    className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-colors flex items-center justify-between cursor-pointer ${
+                    className={`w-full text-left px-3 py-2 rounded-md text-xs transition-colors flex items-center justify-between cursor-pointer ${
                       activeSection === sec.id
-                        ? 'bg-accent-soft text-accent font-bold'
-                        : 'text-text-secondary hover:bg-secondary hover:text-text-primary'
+                        ? 'bg-accent-soft text-accent font-semibold'
+                        : 'text-text-secondary hover:bg-surface-secondary hover:text-text-primary'
                     }`}
                   >
                     <span>{sec.title}</span>
@@ -187,10 +190,10 @@ export const LearningLayout = ({
           
           {/* Chapter Navigation Sidebar (Desktop) */}
           {sections.length > 0 && (
-            <aside className="hidden lg:block w-64 xl:w-72 shrink-0 sticky top-22 self-start">
-              <div className="p-4 rounded-xl border border-border bg-surface shadow-xs">
+            <aside className="hidden lg:block w-64 xl:w-72 shrink-0 sticky top-20 self-start">
+              <div className="p-4 rounded-xl border border-border bg-surface shadow-subtle">
                 <div className="pb-3 mb-3 border-b border-border">
-                  <span className="text-[11px] font-mono font-bold text-accent uppercase tracking-wider block">
+                  <span className="text-[11px] font-mono font-semibold text-accent uppercase tracking-wider block">
                     {subjectName}
                   </span>
                   <h3 className="text-sm font-bold font-display text-text-primary leading-snug mt-1">
@@ -200,7 +203,7 @@ export const LearningLayout = ({
 
                 {/* Table of Contents List */}
                 <nav className="space-y-0.5">
-                  <span className="text-[10px] font-mono font-bold text-text-muted uppercase tracking-wider px-2 block mb-1">
+                  <span className="text-[10px] font-mono font-semibold text-text-muted uppercase tracking-wider px-2 block mb-1">
                     Table of Contents
                   </span>
                   {sections.map((sec) => {
@@ -210,10 +213,10 @@ export const LearningLayout = ({
                         key={sec.id}
                         type="button"
                         onClick={() => scrollToSection(sec.id)}
-                        className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs transition-colors cursor-pointer ${
+                        className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors cursor-pointer ${
                           isActive
-                            ? 'text-accent bg-accent-soft font-bold'
-                            : 'text-text-secondary hover:text-text-primary hover:bg-secondary'
+                            ? 'text-accent bg-accent-soft font-semibold'
+                            : 'text-text-secondary hover:text-text-primary hover:bg-surface-secondary'
                         }`}
                       >
                         <span className="truncate block">{sec.title}</span>
@@ -227,7 +230,7 @@ export const LearningLayout = ({
                   <button
                     type="button"
                     onClick={onBackToSubject}
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs text-text-muted hover:text-accent transition-colors font-medium cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs text-text-muted hover:text-accent transition-colors font-medium cursor-pointer"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
                     <span>Back to Subject</span>
@@ -237,15 +240,15 @@ export const LearningLayout = ({
             </aside>
           )}
 
-          {/* Main Reading Document Canvas */}
+          {/* Main Reading Document Canvas (Digital Textbook Feel) */}
           <main
-            className={`w-full max-w-[820px] mx-auto lg:mx-0 reading-content ${fontSizeClasses[fontSize]}`}
+            className={`w-full max-w-[800px] mx-auto lg:mx-0 reading-content ${fontSizeClasses[fontSize]}`}
           >
-            <div className="bg-surface rounded-2xl p-6 sm:p-10 border border-border shadow-card mb-8">
+            <div className="bg-surface rounded-xl p-6 sm:p-10 border border-border shadow-subtle mb-8">
               {/* Document Header Plate */}
               <div className="pb-6 mb-8 border-b border-border space-y-1.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
+                  <span className="text-xs font-mono font-semibold text-accent uppercase tracking-wider">
                     {subjectName}
                   </span>
                   <span className="text-text-muted text-xs">•</span>
@@ -253,7 +256,7 @@ export const LearningLayout = ({
                     Unit {chapterNumber}
                   </span>
                 </div>
-                <h1 className="text-2xl sm:text-4xl font-extrabold font-display text-text-primary tracking-tight">
+                <h1 className="text-2xl sm:text-3xl font-bold font-display text-text-primary tracking-tight">
                   {chapterTitle}
                 </h1>
               </div>
@@ -263,7 +266,7 @@ export const LearningLayout = ({
             </div>
 
             {/* Document Completion Footer */}
-            <div className="pt-4 flex items-center justify-between gap-4 text-xs">
+            <div className="pt-2 flex items-center justify-between gap-4 text-xs">
               <button
                 type="button"
                 onClick={onBackToSubject}

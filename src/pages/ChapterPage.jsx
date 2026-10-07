@@ -47,16 +47,16 @@ export const ChapterPage = () => {
 
   if (!chapter && !currentSubject) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-4 text-text-primary">
+      <div className="max-w-xl mx-auto px-4 py-16 text-center space-y-4 text-text-primary">
         <h2 className="text-xl font-bold font-display text-text-primary">
           Chapter or Subject Not Found
         </h2>
-        <p className="text-sm text-text-secondary">
+        <p className="text-xs sm:text-sm text-text-secondary">
           The requested study unit does not exist in the curriculum.
         </p>
         <button
           onClick={() => navigate(`/branch/${branch.id}`)}
-          className="btn-primary-red text-xs !py-2 !px-4"
+          className="btn-primary"
         >
           Back to {branch.code} Semesters
         </button>
@@ -129,7 +129,7 @@ export const ChapterPage = () => {
           <div className="pt-2">
             <button
               onClick={handleBackToSubject}
-              className="btn-secondary-dark text-xs !py-2 !px-4 inline-flex items-center gap-1.5"
+              className="btn-secondary inline-flex items-center gap-1.5"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to {subjectName}</span>

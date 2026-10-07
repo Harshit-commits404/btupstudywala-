@@ -8,111 +8,86 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Semantic CSS-variable-backed tokens
+        // Semantic theme tokens aligned with design specifications
         background: 'var(--bg-primary)',
         foreground: 'var(--text-primary)',
         surface: {
           DEFAULT: 'var(--surface)',
-          elevated: 'var(--surface-elevated)',
+          secondary: 'var(--surface-secondary)',
+          elevated: 'var(--surface-secondary)',
         },
-        card: {
-          DEFAULT: 'var(--surface)',
-          foreground: 'var(--text-primary)',
-          elevated: 'var(--surface-elevated)',
+        border: {
+          DEFAULT: 'var(--border)',
+          hover: 'var(--border-hover)',
+          subtle: 'var(--border-subtle)',
         },
-        popover: {
-          DEFAULT: 'var(--surface-elevated)',
-          foreground: 'var(--text-primary)',
-        },
-        border: 'var(--border)',
-        'border-hover': 'var(--border-hover)',
-        input: 'var(--input-border)',
         ring: 'var(--accent)',
-        
+
         // Semantic text tokens
         'text-primary': 'var(--text-primary)',
         'text-secondary': 'var(--text-secondary)',
         'text-muted': 'var(--text-muted)',
 
-        // Authentic BTEUP Red & Crimson Identity
-        red: {
-          50: '#fff1f2',
-          100: '#ffe4e6',
-          200: '#fecdd3',
-          300: '#fda4af',
-          400: '#fb7185',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
-          950: '#450a0a',
-        },
-        crimson: {
-          bright: '#ef4444',
-          deep: '#dc2626',
-          dark: '#b91c1c',
-        },
-        brand: {
-          50: '#fff1f2',
-          100: '#ffe4e6',
-          200: '#fecdd3',
-          300: '#fda4af',
-          400: '#fb7185',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
-          950: '#450a0a',
+        // Primary Accent system (Teal)
+        accent: {
+          DEFAULT: 'var(--accent)',
+          strong: 'var(--accent-strong)',
+          soft: 'var(--accent-soft)',
         },
         primary: {
           DEFAULT: 'var(--accent)',
+          strong: 'var(--accent-strong)',
+          soft: 'var(--accent-soft)',
           foreground: '#ffffff',
         },
         secondary: {
-          DEFAULT: 'var(--bg-secondary)',
+          DEFAULT: 'var(--surface-secondary)',
           foreground: 'var(--text-secondary)',
         },
         muted: {
-          DEFAULT: 'var(--bg-secondary)',
+          DEFAULT: 'var(--surface-secondary)',
           foreground: 'var(--text-muted)',
         },
-        accent: {
-          DEFAULT: 'var(--accent)',
-          soft: 'var(--accent-soft)',
-          foreground: 'var(--accent)',
-          brand: 'var(--accent)',
-          hover: 'var(--accent-hover)',
-        },
+
+        // Tailwind utility colors for nuances
         teal: {
           50: '#f0fdfa',
           100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
           400: '#2dd4bf',
           500: '#14b8a6',
           600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
         },
-        cyan: {
-          50: '#ecfeff',
-          100: '#cffafe',
-          400: '#22d3ee',
-          500: '#06b6d4',
-          600: '#0891b2',
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
         },
-        success: '#10b981',
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', '"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Space Grotesk"', '"Inter"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
         serif: ['"STIX Two Text"', 'Cambria', 'Georgia', 'serif'],
         math: ['"STIX Two Text"', 'Cambria', '"Times New Roman"', 'serif'],
       },
+      transitionTimingFunction: {
+        'educational': 'cubic-bezier(0.2, 0.8, 0.2, 1)',
+      },
       boxShadow: {
-        'card-light': '0 1px 3px rgba(0, 0, 0, 0.04)',
-        'card-hover-light': '0 4px 12px rgba(0, 0, 0, 0.06)',
-        'card-dark': '0 1px 3px rgba(0, 0, 0, 0.3)',
-        'card-hover-dark': '0 4px 12px rgba(0, 0, 0, 0.4)',
+        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
+        'elevated': '0 4px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -2px rgba(0, 0, 0, 0.04)',
       },
     },
   },

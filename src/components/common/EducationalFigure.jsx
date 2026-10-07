@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 /**
- * EducationalFigure component for physics chapter notes.
+ * EducationalFigure component for physics and engineering chapter notes.
  *
  * Integrates cleanly with both Light Mode & Dark Mode:
- * - Subtle border, rounded corners, subtle crimson accent on top
+ * - Subtle border, rounded corners, subtle teal accent on top
  * - Responsive centering and scaling (no horizontal overflow)
  * - Clear, high-contrast educational caption
  * - Clean source / attribution line
@@ -27,10 +27,10 @@ export const EducationalFigure = ({
 
   return (
     <figure
-      className={`my-8 mx-auto w-full ${maxWidth} rounded-xl border border-border bg-surface shadow-card-light dark:shadow-card-dark overflow-hidden border-t-2 border-t-accent transition-colors ${className}`}
+      className={`my-8 mx-auto w-full ${maxWidth} rounded-lg border border-border bg-surface shadow-subtle overflow-hidden border-t-2 border-t-accent transition-colors ${className}`}
     >
       {/* Diagram container */}
-      <div className="w-full flex items-center justify-center p-3 sm:p-5 bg-secondary/50 dark:bg-black/40 overflow-hidden min-h-[140px]">
+      <div className="w-full flex items-center justify-center p-3 sm:p-5 bg-surface-secondary/60 overflow-hidden min-h-[140px]">
         {children ? (
           <div className="w-full flex items-center justify-center">{children}</div>
         ) : src && !imageFailed ? (
@@ -40,7 +40,7 @@ export const EducationalFigure = ({
             loading="lazy"
             decoding="async"
             onError={() => setImageFailed(true)}
-            className="w-full max-h-[380px] object-contain rounded-md transition-opacity duration-300"
+            className="w-full max-h-[380px] object-contain rounded transition-opacity duration-300"
           />
         ) : fallback ? (
           <div className="w-full flex items-center justify-center">{fallback}</div>

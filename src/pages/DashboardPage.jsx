@@ -1,118 +1,122 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Layers, Users, MessageSquare } from 'lucide-react';
+import { ArrowRight, BookOpen, ChevronRight, MessageSquare } from 'lucide-react';
 import { branchesData } from '../data/branchesData';
-import { DeveloperModal } from '../components/common/DeveloperModal';
 
-const GOOGLE_FEEDBACK_FORM_URL = "https://forms.gle/as6uMZQ8QxmDpt1q6";
+export const GOOGLE_FEEDBACK_FORM_URL = "https://forms.gle/as6uMZQ8QxmDpt1q6";
 
 export const DashboardPage = () => {
-  const [isDeveloperModalOpen, setIsDeveloperModalOpen] = useState(false);
-
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-12 sm:space-y-16 text-text-primary">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-14 sm:space-y-18 text-text-primary">
       
-      {/* 1. HOMEPAGE HERO (Compact, Premium, Attractive) */}
-      <section className="relative text-center max-w-3xl mx-auto space-y-4 pt-2 sm:pt-6 pb-2">
-        {/* Subtle Ambient Red Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-36 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
+      {/* 1. HERO SECTION (Concise, Spacious, Hinglish Tone) */}
+      <section className="relative text-center max-w-2xl mx-auto space-y-5 pt-4 sm:pt-10 pb-4">
+        {/* Soft Ambient Teal Glow */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-44 bg-accent-soft rounded-full blur-3xl pointer-events-none -z-10" 
+          aria-hidden="true"
+        />
 
-        <div className="relative z-10 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-soft border border-accent/25 text-accent text-xs font-mono font-semibold tracking-wider uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span>BTEUP STUDY</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display text-text-primary tracking-tight leading-[1.12]">
-            Learn smarter.{' '}
-            <span className="bg-gradient-to-r from-accent via-red-500 to-rose-400 bg-clip-text text-transparent">
-              Understand better.
-            </span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-text-secondary max-w-xl mx-auto font-medium">
-            Polytechnic notes, syllabus and concepts — made simple.
-          </p>
-
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="#branches"
-              className="btn-primary-red !px-5 !py-2.5 text-xs sm:text-sm group"
-            >
-              <span>Choose Branch</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </a>
-
-            <Link
-              to="/semester/1"
-              className="btn-secondary-dark !px-5 !py-2.5 text-xs sm:text-sm"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-accent" />
-              <span>Common 1st Year Notes</span>
-            </Link>
-          </div>
+        {/* Small Eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-accent text-xs font-mono font-medium tracking-wide">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <span>BTEUP STUDY</span>
         </div>
+
+        {/* Main Heading */}
+        <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold font-display text-text-primary tracking-tight leading-[1.18]">
+          Polytechnic ki padhai,<br className="hidden sm:inline" />
+          <span className="text-accent"> ab simple language mein.</span>
+        </h1>
+
+        {/* Supporting Line */}
+        <p className="text-sm sm:text-base text-text-secondary max-w-lg mx-auto font-normal leading-relaxed">
+          Notes, concepts aur syllabus — sab ek jagah.
+        </p>
+
+        {/* Primary & Secondary CTAs */}
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#branches"
+            className="btn-primary group"
+          >
+            <span>Start Learning</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </a>
+
+          <Link
+            to="/semester/1"
+            className="btn-secondary"
+          >
+            <BookOpen className="w-4 h-4 text-accent" />
+            <span>Common 1st Year Notes</span>
+          </Link>
+        </div>
+
+        {/* Secondary Subtle Mantra */}
+        <p className="text-xs font-mono text-text-muted pt-2 tracking-wide">
+          Samjho. Padho. Clear karo.
+        </p>
       </section>
 
-      {/* 2. CHOOSE YOUR BRANCH */}
-      <section id="branches" className="space-y-6 scroll-mt-20">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-3 border-b border-border">
+      {/* 2. EDITORIAL BRANCH SELECTION (Clean List Layout) */}
+      <section id="branches" className="space-y-4 scroll-mt-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1 pb-3 border-b border-border">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-text-primary tracking-tight flex items-center gap-2.5">
-              <span className="w-1.5 h-6 rounded-full bg-accent inline-block" />
-              <span>Choose Your Branch</span>
+            <span className="text-[11px] font-mono font-semibold text-accent uppercase tracking-wider block">
+              Curriculum Streams
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold font-display text-text-primary tracking-tight mt-0.5">
+              Choose Your Branch
             </h2>
-            <p className="text-xs sm:text-sm text-text-muted mt-1">
-              Select your engineering stream to view available semesters
-            </p>
           </div>
-
           <span className="text-xs font-mono text-text-muted">
-            5 Polytechnic Streams
+            5 Polytechnic Disciplines
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {branchesData.map((branch) => {
-            const Icon = branch.icon;
+        {/* Editorial Rows */}
+        <div className="space-y-2.5">
+          {branchesData.map((branch, idx) => {
             const isCse = branch.id === 'cse';
-            const statusLabel = isCse ? 'Sem 1, 3, 5 Live' : 'Sem 1 (Common) Live';
+            const statusLabel = isCse ? 'Sem 1, 3, 5 Live' : 'Sem 1 Common Live';
+            const numberFormatted = `0${idx + 1}`;
 
             return (
               <Link
                 key={branch.id}
                 to={`/branch/${branch.id}`}
-                className="premium-card group p-5 sm:p-6 flex flex-col justify-between"
+                className="editorial-row group"
               >
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent-soft border border-accent/25 flex items-center justify-center text-accent transition-transform duration-200 group-hover:scale-105">
-                      <Icon className="w-5 h-5" />
-                    </div>
+                {/* Left Teal Highlight Accent Line on Hover */}
+                <div 
+                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
+                  aria-hidden="true"
+                />
 
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-bold text-accent px-2 py-0.5 rounded bg-accent-soft border border-accent/20">
-                        {branch.code}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                        <span>{statusLabel}</span>
-                      </span>
-                    </div>
+                <div className="flex items-center gap-3.5 sm:gap-6 min-w-0">
+                  <span className="font-mono text-xs sm:text-sm font-semibold text-text-muted group-hover:text-accent transition-colors shrink-0">
+                    {numberFormatted}
+                  </span>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm sm:text-base font-semibold font-display text-text-primary group-hover:text-accent transition-colors truncate">
+                      {branch.name}
+                    </h3>
+                    <p className="text-xs text-text-muted hidden sm:block truncate mt-0.5">
+                      {branch.description}
+                    </p>
                   </div>
-
-                  <h3 className="text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors leading-snug">
-                    {branch.name}
-                  </h3>
-
-                  <p className="text-xs text-text-secondary mt-1.5 line-clamp-1">
-                    {branch.description}
-                  </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-border flex items-center justify-between text-xs">
-                  <span className="text-text-muted font-medium">Explore Semesters</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:translate-x-1.5" />
+                <div className="flex items-center gap-2.5 sm:gap-4 shrink-0 pl-2">
+                  <span className="font-mono text-[11px] text-text-muted px-2 py-0.5 rounded bg-surface-secondary border border-border group-hover:border-accent/30 group-hover:text-accent transition-colors whitespace-nowrap">
+                    {statusLabel}
+                  </span>
+
+                  <div className="w-7 h-7 rounded-md flex items-center justify-center text-text-muted group-hover:text-accent transition-colors">
+                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </div>
                 </div>
               </Link>
             );
@@ -120,84 +124,55 @@ export const DashboardPage = () => {
         </div>
       </section>
 
-      {/* 3. COMMON SEMESTER 1 SHOWCASE CARD */}
-      <section className="premium-card p-5 sm:p-6 border-l-4 border-l-accent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-start gap-3.5">
-          <div className="w-10 h-10 rounded-xl bg-accent-soft border border-accent/25 flex items-center justify-center text-accent shrink-0 mt-0.5">
-            <Layers className="w-5 h-5" />
+      {/* 3. COMMON SEMESTER 1 SHOWCASE (Editorial Content Block) */}
+      <section className="rounded-xl border border-border bg-surface p-5 sm:p-7 space-y-4 shadow-subtle">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border">
+          <div className="space-y-1">
+            <span className="text-[11px] font-mono font-semibold text-accent uppercase tracking-wider block">
+              Semester 01 • Common Curriculum
+            </span>
+            <h3 className="text-base sm:text-lg font-bold font-display text-text-primary">
+              Ratne se pehle samjho.
+            </h3>
           </div>
-          <div className="space-y-0.5">
-            <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-base text-text-primary">
-                1st Semester Common Curriculum
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold">
-                Unified
-              </span>
-            </div>
-            <p className="text-xs text-text-secondary max-w-xl">
-              Applied Physics, Mathematics-1, Chemistry, FEEE, and IT notes are shared across all BTEUP branches.
-            </p>
-          </div>
+
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-600 dark:text-emerald-400 self-start sm:self-auto">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <span>All Branches Unified</span>
+          </span>
         </div>
 
-        <Link
-          to="/semester/1"
-          className="btn-primary-red text-xs !py-2 !px-4 whitespace-nowrap self-stretch sm:self-auto"
-        >
-          <span>Open Semester 1</span>
-          <ArrowRight className="w-3.5 h-3.5 ml-1" />
-        </Link>
-      </section>
+        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+          Applied Physics-I, Mathematics-I, Applied Chemistry, Fundamentals of Electrical & Electronics (FEEE), aur Introduction to IT & AI sabhi branches ke liye common hain. Jo syllabus mein hai, wahi padho.
+        </p>
 
-      {/* 4. MEET THE DEVELOPERS CARD */}
-      <section 
-        className="premium-card p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-      >
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-xl bg-surface-elevated border border-border flex items-center justify-center shrink-0 overflow-hidden relative transition-colors">
-            <img 
-              src="/images/developer-intro.jpg" 
-              alt="Developers thumbnail" 
-              className="w-full h-full object-cover opacity-70 transition-opacity duration-300" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-surface/80 to-transparent" />
-            <Users className="w-5 h-5 absolute text-text-primary transition-colors" />
-          </div>
-          <div className="space-y-1 mt-0.5">
-            <h2 className="font-display font-bold text-base text-text-primary transition-colors">
-              Meet the Developers
-            </h2>
-            <p className="text-xs text-text-secondary max-w-lg leading-relaxed">
-              Made by two final-year Polytechnic students. Ratne ke liye nahi, samajhne ke liye.
-            </p>
-          </div>
+        <div className="pt-1 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <span className="font-mono text-text-muted">
+            Chapter padho → concept samjho → next unit pe jao.
+          </span>
+
+          <Link
+            to="/semester/1"
+            className="inline-flex items-center gap-1.5 text-accent hover:text-accent-strong font-semibold transition-colors"
+          >
+            <span>Open Semester 1 Notes</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
-
-        <button
-          onClick={() => setIsDeveloperModalOpen(true)}
-          className="btn-primary-red text-xs !py-2 !px-4 whitespace-nowrap self-stretch sm:self-auto flex items-center justify-center gap-2"
-        >
-          <span>Meet the Team</span>
-          <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 hover:translate-x-1" />
-        </button>
       </section>
 
-      {/* 5. FEEDBACK CARD */}
-      <section 
-        className="premium-card p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-      >
+      {/* 4. STUDENT FEEDBACK LINK STRIP */}
+      <section className="rounded-xl border border-border bg-surface p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-subtle">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-surface-elevated border border-border flex items-center justify-center shrink-0 relative transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-tr from-surface/80 to-transparent rounded-xl" />
-            <MessageSquare className="w-4 h-4 text-text-primary transition-colors z-10" />
+          <div className="w-8 h-8 rounded-lg bg-surface-secondary border border-border flex items-center justify-center text-accent shrink-0">
+            <MessageSquare className="w-4 h-4 text-accent" />
           </div>
-          <div className="space-y-0.5">
-            <h2 className="font-display font-bold text-base text-text-primary transition-colors">
-              Share Your Feedback
-            </h2>
-            <p className="text-xs text-text-secondary max-w-md">
-              Help us improve BTEUP Study with your feedback and suggestions.
+          <div>
+            <h3 className="text-sm font-semibold font-display text-text-primary">
+              Feedback & Syllabus Suggestions
+            </h3>
+            <p className="text-xs text-text-muted">
+              Notes aur syllabus ko improve karne ke liye apna feedback share karein.
             </p>
           </div>
         </div>
@@ -206,14 +181,13 @@ export const DashboardPage = () => {
           href={GOOGLE_FEEDBACK_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary-red text-xs !py-2 !px-4 whitespace-nowrap self-stretch sm:self-auto flex items-center justify-center gap-2"
+          className="btn-secondary text-xs !py-1.5 !px-3 shrink-0 whitespace-nowrap self-stretch sm:self-auto inline-flex items-center gap-1.5"
         >
-          <span>Give Feedback</span>
-          <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 hover:translate-x-1" />
+          <span>Open Google Form</span>
+          <ArrowRight className="w-3.5 h-3.5" />
         </a>
       </section>
 
-      <DeveloperModal isOpen={isDeveloperModalOpen} onClose={() => setIsDeveloperModalOpen(false)} />
     </div>
   );
 };

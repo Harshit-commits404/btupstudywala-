@@ -22,10 +22,10 @@ export const ThemeProvider = ({ children }) => {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-      if (metaThemeColor) metaThemeColor.setAttribute('content', '#090d16');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#0B1220');
     } else {
       document.documentElement.classList.remove('dark');
-      if (metaThemeColor) metaThemeColor.setAttribute('content', '#f8fafc');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#F7F9FC');
     }
   }, [theme]);
 

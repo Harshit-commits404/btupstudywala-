@@ -18,20 +18,20 @@ export const SectionHeader = ({
   return (
     <div className={`flex flex-col ${alignClass} mb-6 sm:mb-8 ${className}`}>
       {badge && (
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-bold tracking-wide uppercase bg-red-600/10 text-accent border border-red-600/25 mb-3">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold tracking-wider uppercase bg-accent-soft text-accent border border-accent/20 mb-2.5">
           {badge}
         </div>
       )}
 
       {title && (
-        <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-text-primary tracking-tight flex items-center gap-2.5">
-          <span className="w-1.5 h-6 rounded-full bg-accent inline-block shadow-xs" />
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display text-text-primary tracking-tight flex items-center gap-2.5">
+          <span className="w-1.5 h-5 rounded-full bg-accent inline-block" />
           <span>{title}</span>
         </h2>
       )}
 
       {subtitle && (
-        <p className="mt-2 text-sm sm:text-base text-text-secondary max-w-2xl leading-relaxed">
+        <p className="mt-1.5 text-xs sm:text-sm text-text-secondary max-w-2xl leading-relaxed">
           {subtitle}
         </p>
       )}

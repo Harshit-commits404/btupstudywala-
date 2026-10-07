@@ -4,7 +4,7 @@ import { getSubjectById } from '../data/subjectsData';
 import { getChaptersBySubject } from '../data/chaptersData';
 import { getBranchById } from '../data/branchesData';
 import { Breadcrumb } from '../components/common/Breadcrumb';
-import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowLeft, ChevronRight, BookOpen } from 'lucide-react';
 
 export const SubjectPage = () => {
   const { subjectId, branchId: paramBranchId } = useParams();
@@ -27,16 +27,16 @@ export const SubjectPage = () => {
 
   if (!subject) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-4 text-text-primary">
+      <div className="max-w-xl mx-auto px-4 py-16 text-center space-y-4 text-text-primary">
         <h2 className="text-xl font-bold font-display text-text-primary">
           Subject Not Found
         </h2>
-        <p className="text-sm text-text-secondary">
-          The requested subject does not exist.
+        <p className="text-xs sm:text-sm text-text-secondary">
+          The requested subject does not exist in the curriculum.
         </p>
         <button
           onClick={() => navigate(`/branch/${branch.id}`)}
-          className="btn-primary-red text-xs !py-2 !px-4"
+          className="btn-primary"
         >
           Back to {branch.code} Semesters
         </button>
@@ -61,7 +61,7 @@ export const SubjectPage = () => {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 text-text-primary">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 text-text-primary">
       
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
@@ -70,31 +70,33 @@ export const SubjectPage = () => {
       <div className="space-y-2 pb-4 border-b border-border">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono font-semibold text-accent uppercase tracking-wider">
-            SEMESTER 0{semesterNum}
+            {branch.code} • SEMESTER 0{semesterNum}
           </span>
           {isCommonSemester && (
-            <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10">
+            <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">
               Common BTEUP Subject
             </span>
           )}
         </div>
 
-        <h1 className="text-2xl sm:text-4xl font-extrabold font-display text-text-primary tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold font-display text-text-primary tracking-tight">
           {subject.name}
         </h1>
 
         <p className="text-xs sm:text-sm text-text-secondary">
-          {hasChapters ? `${chapters.length} study units available` : 'Units under preparation'}
+          {hasChapters ? `${chapters.length} syllabus study units available` : 'Units under preparation'}
         </p>
       </div>
 
-      {/* Units List (Elegant, Numbered Anchors, Premium Cards) */}
+      {/* Digital Textbook Shelf: Editorial Unit Rows */}
       {hasChapters ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+        <div className="space-y-2.5">
           {chapters.map((ch, idx) => {
             const baseTarget = ch.path || `/chapter/${subject.id}/${ch.id}`;
             const targetUrl = queryBranch ? `${baseTarget}?branch=${branch.id}` : baseTarget;
-            const unitNumberDisplay = ch.number ? (parseInt(ch.number, 10) < 10 ? `0${parseInt(ch.number, 10)}` : `${parseInt(ch.number, 10)}`) : (idx < 9 ? `0${idx + 1}` : `${idx + 1}`);
+            const unitNumberDisplay = ch.number 
+              ? (parseInt(ch.number, 10) < 10 ? `0${parseInt(ch.number, 10)}` : `${parseInt(ch.number, 10)}`) 
+              : (idx < 9 ? `0${idx + 1}` : `${idx + 1}`);
             
             // Clean unit title without duplicate "Unit X:" prefix
             const cleanTitle = ch.title.replace(/^Unit\s+\d+:\s*/i, '');
@@ -104,49 +106,66 @@ export const SubjectPage = () => {
               <Link
                 key={ch.id}
                 to={targetUrl}
-                className="premium-card group p-5 sm:p-6 flex flex-col justify-between"
+                className="editorial-row group"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xl sm:text-2xl font-extrabold text-accent group-hover:scale-105 transition-transform duration-200">
+                {/* Left Teal Accent Line on Hover */}
+                <div 
+                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
+                  aria-hidden="true"
+                />
+
+                <div className="flex items-center gap-3.5 sm:gap-6 min-w-0">
+                  <div className="flex flex-col items-center justify-center shrink-0 w-8">
+                    <span className="font-mono text-xs sm:text-sm font-semibold text-accent">
                       {unitNumberDisplay}
                     </span>
-
-                    {topicCount > 0 && (
-                      <span className="text-[11px] font-mono text-text-muted px-2 py-0.5 rounded bg-secondary">
-                        {topicCount} topics
-                      </span>
-                    )}
+                    <span className="font-mono text-[9px] text-text-muted uppercase tracking-tight">
+                      Unit
+                    </span>
                   </div>
 
-                  <h2 className="text-lg font-bold font-display text-text-primary group-hover:text-accent transition-colors leading-snug">
-                    {cleanTitle}
-                  </h2>
+                  <div className="min-w-0">
+                    <h2 className="text-sm sm:text-base font-semibold font-display text-text-primary group-hover:text-accent transition-colors truncate">
+                      {cleanTitle}
+                    </h2>
+                    {ch.description && (
+                      <p className="text-xs text-text-muted hidden sm:block truncate mt-0.5">
+                        {ch.description}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-border flex items-center justify-between text-xs">
-                  <span className="text-accent font-semibold">Open Unit</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:translate-x-1.5" />
+                <div className="flex items-center gap-2.5 sm:gap-4 shrink-0 pl-2">
+                  {topicCount > 0 && (
+                    <span className="font-mono text-[11px] text-text-muted px-2 py-0.5 rounded bg-surface-secondary border border-border group-hover:border-accent/30 group-hover:text-accent transition-colors whitespace-nowrap">
+                      {topicCount} topics
+                    </span>
+                  )}
+
+                  <div className="w-7 h-7 rounded-md flex items-center justify-center text-text-muted group-hover:text-accent transition-colors">
+                    <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </div>
                 </div>
               </Link>
             );
           })}
         </div>
       ) : (
-        <div className="rounded-2xl border border-border bg-surface p-8 sm:p-12 text-center space-y-4">
+        <div className="rounded-xl border border-border bg-surface p-8 sm:p-12 text-center space-y-4 shadow-subtle">
           <BookOpen className="w-8 h-8 text-accent mx-auto" />
           <h2 className="text-lg font-bold font-display text-text-primary">
             Content Coming Soon
           </h2>
           <p className="text-xs sm:text-sm text-text-secondary max-w-md mx-auto">
-            The notes for {subject.name} are currently being prepared.
+            The study material for {subject.name} is currently being prepared.
           </p>
           <div className="pt-2">
             <button
               onClick={() => navigate(semesterBackUrl)}
-              className="btn-secondary-dark text-xs !py-2 !px-4 inline-flex items-center gap-1.5"
+              className="btn-secondary inline-flex items-center gap-1.5"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-4 h-4" />
               <span>Back to Semester {semesterNum}</span>
             </button>
           </div>

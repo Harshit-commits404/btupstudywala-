@@ -50,7 +50,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 w-full max-w-lg rounded-xl border border-border bg-surface shadow-xl p-4 overflow-hidden text-text-primary">
+      <div className="relative z-10 w-full max-w-lg rounded-xl border border-border bg-surface shadow-elevated p-4 overflow-hidden text-text-primary">
         {/* Search Input Bar */}
         <div className="relative flex items-center border-b border-border pb-3 mb-3">
           <Search className="w-4 h-4 text-accent shrink-0 mr-2.5" />
@@ -61,11 +61,11 @@ export const SearchModal = ({ isOpen, onClose }) => {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search semesters (e.g. 1st Semester, 3rd, 5th)..."
             autoFocus
-            className="w-full bg-transparent text-sm text-text-primary placeholder:text-text-muted focus:outline-none"
+            className="w-full bg-transparent text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none"
           />
           <button
             onClick={onClose}
-            className="p-1 rounded text-text-muted hover:text-text-primary hover:bg-secondary cursor-pointer"
+            className="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-secondary cursor-pointer"
             title="Close (Esc)"
           >
             <X className="w-4 h-4" />
@@ -75,7 +75,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
         {/* Results List */}
         <div className="max-h-72 overflow-y-auto space-y-1.5 pr-1">
           {filteredSemesters.length === 0 ? (
-            <div className="py-6 text-center text-xs text-text-muted">
+            <div className="py-8 text-center text-xs text-text-muted font-sans">
               No matching semesters found for "{query}"
             </div>
           ) : (
@@ -85,8 +85,8 @@ export const SearchModal = ({ isOpen, onClose }) => {
                 onClick={() => handleSelectSemester(sem)}
                 className={`p-2.5 rounded-lg border flex items-center justify-between text-xs transition-colors ${
                   sem.isAvailable
-                    ? 'border-border hover:border-accent/40 hover:bg-secondary cursor-pointer'
-                    : 'border-border/50 opacity-50 cursor-not-allowed bg-secondary/30'
+                    ? 'border-border hover:border-accent/40 hover:bg-surface-secondary cursor-pointer'
+                    : 'border-border/50 opacity-50 cursor-not-allowed bg-surface-secondary/40'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -94,7 +94,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                     className={`font-mono font-bold px-1.5 py-0.5 rounded text-[11px] ${
                       sem.isAvailable
                         ? 'bg-accent-soft text-accent'
-                        : 'bg-secondary text-text-muted'
+                        : 'bg-surface-secondary text-text-muted'
                     }`}
                   >
                     0{sem.number}

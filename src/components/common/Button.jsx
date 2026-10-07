@@ -13,7 +13,7 @@ export const Button = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none select-none cursor-pointer';
+    'inline-flex items-center justify-center font-semibold rounded-md transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none select-none cursor-pointer';
 
   const sizeStyles = {
     sm: 'text-xs px-2.5 py-1.5 gap-1.5',
@@ -23,19 +23,13 @@ export const Button = ({
 
   const variantStyles = {
     primary:
-      'bg-accent hover:bg-accent-hover text-white border border-accent',
+      'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:bg-[var(--btn-primary-hover)] border border-[var(--btn-primary-bg)] shadow-subtle hover:-translate-y-0.5',
     secondary:
-      'bg-surface hover:bg-secondary text-text-primary border border-border',
-    glass:
-      'bg-surface hover:bg-secondary text-text-primary border border-border',
+      'bg-surface hover:bg-surface-secondary text-text-primary border border-border hover:border-accent/40 shadow-subtle hover:-translate-y-0.5',
     outline:
-      'border border-border text-text-primary hover:border-accent hover:text-accent bg-transparent',
+      'border border-border text-text-primary hover:border-accent hover:text-accent bg-transparent hover:-translate-y-0.5',
     ghost:
-      'text-text-secondary hover:text-text-primary hover:bg-secondary',
-    emerald:
-      'bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-600',
-    danger:
-      'bg-red-600/10 hover:bg-red-600/20 text-accent border border-red-600/20',
+      'text-text-secondary hover:text-text-primary hover:bg-surface-secondary',
   };
 
   return (
@@ -43,7 +37,7 @@ export const Button = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant] || variantStyles.primary} ${className}`}
       {...props}
     >
       {Icon && iconPosition === 'left' && <Icon className="w-4 h-4 shrink-0" />}

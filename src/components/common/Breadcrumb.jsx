@@ -23,10 +23,10 @@ export const Breadcrumb = ({ items = [], className = '' }) => {
         const isLast = index === normalizedItems.length - 1;
         return (
           <React.Fragment key={index}>
-            <ChevronRight className="w-3.5 h-3.5 text-text-muted/60 shrink-0" aria-hidden="true" />
+            <ChevronRight className="w-3.5 h-3.5 text-text-muted/50 shrink-0" aria-hidden="true" />
             {isLast || !item.to ? (
               <span
-                className="text-text-primary font-bold truncate max-w-[200px] sm:max-w-xs"
+                className="text-text-primary font-medium truncate max-w-[200px] sm:max-w-xs"
                 aria-current={isLast ? 'page' : undefined}
               >
                 {item.label}

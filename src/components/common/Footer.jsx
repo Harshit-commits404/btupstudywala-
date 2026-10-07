@@ -1,64 +1,72 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Users } from 'lucide-react';
+import { BookOpen, MessageSquare } from 'lucide-react';
 import { branchesData } from '../../data/branchesData';
-import { DeveloperModal } from './DeveloperModal';
+import { FeedbackModal } from './FeedbackModal';
 
 export const Footer = () => {
-  const [isDeveloperModalOpen, setIsDeveloperModalOpen] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
     <>
-      <footer className="border-t border-border bg-secondary/50 text-text-secondary transition-colors duration-150 mt-16 text-xs">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-6">
+      <footer className="border-t border-border bg-surface text-text-secondary transition-colors duration-200 mt-20 text-xs">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-6">
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-border">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-surface border border-border flex items-center justify-center text-accent">
-                <BookOpen className="w-3.5 h-3.5 text-accent" />
-              </div>
-              <span className="font-display font-bold text-base text-text-primary">
-                BTEUP <span className="text-accent">Study</span>
-              </span>
-            </Link>
+            <div className="space-y-1">
+              <Link to="/" className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-md bg-surface-secondary border border-border flex items-center justify-center text-accent">
+                  <BookOpen className="w-3.5 h-3.5 text-accent" />
+                </div>
+                <span className="font-display font-bold text-sm sm:text-base text-text-primary">
+                  BTEUP <span className="text-accent">STUDY</span>
+                </span>
+              </Link>
+              <p className="text-[11px] text-text-muted">
+                Polytechnic ki padhai, ab simple language mein.
+              </p>
+            </div>
 
-            {/* Quick Branch Links */}
+            {/* Quick Branch Links & Feedback Action */}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
               {branchesData.map((branch) => (
                 <Link
                   key={branch.id}
                   to={`/branch/${branch.id}`}
-                  className="text-text-secondary hover:text-accent transition-colors"
+                  className="text-text-secondary hover:text-accent transition-colors font-medium"
                 >
                   {branch.code}
                 </Link>
               ))}
+
+              <span className="text-border">|</span>
+
+              <button
+                type="button"
+                onClick={() => setIsFeedbackOpen(true)}
+                className="inline-flex items-center gap-1.5 text-accent hover:text-accent-strong font-medium cursor-pointer transition-colors"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Feedback</span>
+              </button>
             </div>
           </div>
 
-          {/* Disclaimer & Copyright */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-text-muted text-[11px]">
-            <p className="text-center sm:text-left">
-              BTEUP Study is an independent study portal for Uttar Pradesh Polytechnic students.
+          {/* Disclaimer & Developer Info */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-[11px] font-mono">
+            <p>
+              BTEUP Study • Free educational resource for UP Polytechnic diploma students.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-              <button
-                onClick={() => setIsDeveloperModalOpen(true)}
-                className="flex items-center gap-1.5 text-text-secondary hover:text-accent transition-colors font-medium cursor-pointer"
-              >
-                <Users className="w-3.5 h-3.5" />
-                Meet the Developers
-              </button>
-              <span className="hidden sm:inline text-border">•</span>
-              <p>
-                Study notes & exam preparation
-              </p>
-            </div>
+            <p className="text-text-secondary font-medium">
+              Engineered by Polytechnic students: Ashish & Harshit
+            </p>
           </div>
 
         </div>
       </footer>
-      <DeveloperModal isOpen={isDeveloperModalOpen} onClose={() => setIsDeveloperModalOpen(false)} />
+
+      {/* Student Feedback Dialog */}
+      <FeedbackModal isOpen={isFeedbackOpen} onClose={() => setIsFeedbackOpen(false)} />
     </>
   );
 };
