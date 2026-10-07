@@ -7,56 +7,71 @@ export const GOOGLE_FEEDBACK_FORM_URL = "https://forms.gle/as6uMZQ8QxmDpt1q6";
 
 export const DashboardPage = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-14 sm:space-y-18 text-text-primary">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 space-y-12 sm:space-y-16 text-text-primary">
       
-      {/* 1. HERO SECTION (Concise, Spacious, Hinglish Tone) */}
-      <section className="relative text-center max-w-2xl mx-auto space-y-5 pt-4 sm:pt-10 pb-4">
-        {/* Soft Ambient Teal Glow */}
-        <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-44 bg-accent-soft rounded-full blur-3xl pointer-events-none -z-10" 
-          aria-hidden="true"
-        />
+      {/* 1. HERO SECTION (With Polytechnic Engineering Background Image & Neutral/Dark Overlay) */}
+      <section className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-subtle text-center max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-14 lg:py-16">
+        
+        {/* Background Image Container */}
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none select-none">
+          <img
+            src="/images/bteup-study-hero.jpg"
+            alt="BTEUP Polytechnic engineering education background"
+            className="w-full h-full object-cover object-center sm:object-[center_35%] scale-[1.02]"
+            loading="eager"
+            fetchPriority="high"
+          />
 
-        {/* Small Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-accent text-xs font-mono font-medium tracking-wide">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-          <span>BTEUP STUDY</span>
+          {/* Responsive Neutral/Dark Overlay (Stronger on Mobile for Maximum Text Readability) */}
+          <div className="absolute inset-0 bg-[#F6F7F3]/90 sm:bg-[#F6F7F3]/82 dark:bg-[#0B1220]/88 sm:dark:bg-[#0B1220]/75 backdrop-blur-[1.5px] transition-colors duration-300" />
+          
+          {/* Subtle Directional Gradient for Edge Smoothing */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F6F7F3]/40 via-transparent to-[#F6F7F3]/60 dark:from-[#0B1220]/40 dark:via-transparent dark:to-[#0B1220]/60" />
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold font-display text-text-primary tracking-tight leading-[1.18]">
-          Polytechnic ki padhai,<br className="hidden sm:inline" />
-          <span className="text-accent"> ab simple language mein.</span>
-        </h1>
+        {/* Content Container (Preserves Exact Text Content & Order) */}
+        <div className="relative z-10 max-w-2xl mx-auto space-y-3.5 sm:space-y-5">
+          {/* Small Eyebrow */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface/90 dark:bg-surface/80 border border-border text-accent text-xs font-mono font-medium tracking-wide shadow-subtle backdrop-blur-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span>BTEUP STUDY</span>
+          </div>
 
-        {/* Supporting Line */}
-        <p className="text-sm sm:text-base text-text-secondary max-w-lg mx-auto font-normal leading-relaxed">
-          Notes, concepts aur syllabus — sab ek jagah.
-        </p>
+          {/* Main Heading */}
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-display text-text-primary tracking-tight leading-[1.18]">
+            Polytechnic ki padhai,<br className="hidden sm:inline" />
+            <span className="text-accent"> ab simple language mein.</span>
+          </h1>
 
-        {/* Primary & Secondary CTAs */}
-        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="#branches"
-            className="btn-primary group"
-          >
-            <span>Start Learning</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
+          {/* Supporting Line */}
+          <p className="text-xs sm:text-base text-text-secondary max-w-lg mx-auto font-normal leading-relaxed">
+            Notes, concepts aur syllabus — sab ek jagah.
+          </p>
 
-          <Link
-            to="/semester/1"
-            className="btn-secondary"
-          >
-            <BookOpen className="w-4 h-4 text-accent" />
-            <span>Common 1st Year Notes</span>
-          </Link>
+          {/* Primary & Secondary CTAs */}
+          <div className="pt-1.5 sm:pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            <a
+              href="#branches"
+              className="btn-primary group shadow-subtle"
+            >
+              <span>Start Learning</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+
+            <Link
+              to="/semester/1"
+              className="btn-secondary backdrop-blur-sm"
+            >
+              <BookOpen className="w-4 h-4 text-accent" />
+              <span>Common 1st Year Notes</span>
+            </Link>
+          </div>
+
+          {/* Secondary Subtle Mantra */}
+          <p className="text-xs font-mono text-text-muted pt-1 tracking-wide">
+            Samjho. Padho. Clear karo.
+          </p>
         </div>
-
-        {/* Secondary Subtle Mantra */}
-        <p className="text-xs font-mono text-text-muted pt-2 tracking-wide">
-          Samjho. Padho. Clear karo.
-        </p>
       </section>
 
       {/* 2. EDITORIAL BRANCH SELECTION (Clean List Layout) */}

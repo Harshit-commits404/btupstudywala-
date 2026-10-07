@@ -14,7 +14,7 @@ export default {
         surface: {
           DEFAULT: 'var(--surface)',
           secondary: 'var(--surface-secondary)',
-          elevated: 'var(--surface-secondary)',
+          elevated: 'var(--surface-elevated)',
         },
         border: {
           DEFAULT: 'var(--border)',
@@ -86,8 +86,9 @@ export default {
         'educational': 'cubic-bezier(0.2, 0.8, 0.2, 1)',
       },
       boxShadow: {
-        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
-        'elevated': '0 4px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -2px rgba(0, 0, 0, 0.04)',
+        'subtle': 'var(--shadow-subtle)',
+        'elevated': 'var(--shadow-elevated)',
+        'hover': 'var(--shadow-hover)',
       },
     },
   },
