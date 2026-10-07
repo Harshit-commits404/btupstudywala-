@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, ChevronRight, MessageSquare } from 'lucide-react';
 import { branchesData } from '../data/branchesData';
+import heroBgImage from '../assets/bteup-study-hero.jpg';
 
 export const GOOGLE_FEEDBACK_FORM_URL = "https://forms.gle/as6uMZQ8QxmDpt1q6";
 
@@ -10,23 +11,23 @@ export const DashboardPage = () => {
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 space-y-12 sm:space-y-16 text-text-primary">
       
       {/* 1. HERO SECTION (With Polytechnic Engineering Background Image & Neutral/Dark Overlay) */}
-      <section className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-subtle text-center max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-14 lg:py-16">
+      <section className="relative z-0 rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-subtle text-center max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-14 lg:py-16">
         
         {/* Background Image Container */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none select-none">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <img
-            src="/images/bteup-study-hero.jpg"
+            src={heroBgImage}
             alt="BTEUP Polytechnic engineering education background"
-            className="w-full h-full object-cover object-center sm:object-[center_35%] scale-[1.02]"
+            className="w-full h-full object-cover object-center sm:object-[center_35%]"
             loading="eager"
             fetchPriority="high"
           />
 
-          {/* Responsive Neutral/Dark Overlay (Stronger on Mobile for Maximum Text Readability) */}
-          <div className="absolute inset-0 bg-[#F6F7F3]/90 sm:bg-[#F6F7F3]/82 dark:bg-[#0B1220]/88 sm:dark:bg-[#0B1220]/75 backdrop-blur-[1.5px] transition-colors duration-300" />
+          {/* Balanced Neutral/Dark Overlay (Preserves Rich Visuals while keeping text crystal clear) */}
+          <div className="absolute inset-0 bg-white/65 dark:bg-black/65 sm:bg-white/55 sm:dark:bg-black/55 backdrop-blur-[1px] transition-colors duration-300" />
           
-          {/* Subtle Directional Gradient for Edge Smoothing */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F6F7F3]/40 via-transparent to-[#F6F7F3]/60 dark:from-[#0B1220]/40 dark:via-transparent dark:to-[#0B1220]/60" />
+          {/* Subtle Vertical Scrim to gently anchor text */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/40 dark:from-black/40 dark:via-transparent dark:to-black/40" />
         </div>
 
         {/* Content Container (Preserves Exact Text Content & Order) */}
